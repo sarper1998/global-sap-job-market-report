@@ -6,6 +6,7 @@ import html
 import json
 from pathlib import Path
 from typing import Dict, List, Tuple
+from urllib.parse import urlencode
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +34,37 @@ def top_items(counts: Dict[str, int], n: int = 8) -> List[Tuple[str, int]]:
 
 def list_counts(items: List[Dict], label_key: str) -> Dict[str, int]:
     return {str(item[label_key]): int(item["count"]) for item in items if item.get(label_key) and item.get("count") is not None}
+
+
+def linkedin_jobs_url(keyword: str = "SAP", location: str = "Worldwide", extra: Dict[str, str] | None = None) -> str:
+    params = {"keywords": keyword, "location": location}
+    if extra:
+        params.update(extra)
+    return "https://www.linkedin.com/jobs/search/?" + urlencode(params)
+
+
+def build_linkedin_search_links(linkedin: Dict) -> str:
+    if not linkedin:
+        return ""
+
+    week_item = next((item for item in linkedin.get("recency_counts", []) if item.get("label") == "Past week"), {})
+    remote_item = next((item for item in linkedin.get("work_model_counts", []) if item.get("label") == "Remote"), {})
+    links = [
+        ("SAP worldwide", linkedin.get("global_count", {}).get("count_text", ""), linkedin_jobs_url()),
+        ("SAP posted past week", week_item.get("count_text", ""), linkedin_jobs_url(extra={"f_TPR": "r604800"})),
+        ("SAP remote", remote_item.get("count_text", ""), linkedin_jobs_url(extra={"f_WT": "2"})),
+    ]
+    for item in linkedin.get("location_counts", [])[:4]:
+        links.append((f"SAP in {item.get('location', '')}", item.get("count_text", ""), linkedin_jobs_url(location=item.get("location", "Worldwide"))))
+    for item in linkedin.get("keyword_counts", [])[1:5]:
+        links.append((item.get("keyword", ""), item.get("count_text", ""), linkedin_jobs_url(keyword=item.get("keyword", "SAP"))))
+
+    cards = []
+    for label, count_text, url in links:
+        cards.append(
+            f"""<a href="{html.escape(url)}" target="_blank" rel="noopener"><span>{html.escape(label)}</span><strong>{html.escape(count_text)}</strong></a>"""
+        )
+    return "\n".join(cards)
 
 
 def chip_list(values: List[str], limit: int = 4) -> str:
@@ -116,6 +148,7 @@ def main() -> None:
     linkedin_global_text = linkedin.get("global_count", {}).get("count_text", "N/A") if linkedin else "N/A"
     linkedin_week_item = next((item for item in linkedin.get("recency_counts", []) if item.get("label") == "Past week"), {}) if linkedin else {}
     linkedin_week_text = linkedin_week_item.get("count_text", "N/A")
+    linkedin_search_links = build_linkedin_search_links(linkedin) if linkedin else ""
 
     chart_payload = {
         "sources": summary.get("sources", {}),
@@ -151,6 +184,13 @@ def main() -> None:
         <div class="kpi"><strong>{html.escape(remote_item.get("count_text", ""))}</strong><span>LinkedIn SAP results marked remote</span></div>
         <div class="kpi"><strong>{html.escape(location_leader.get("location", ""))}</strong><span>Largest sampled LinkedIn country: {html.escape(location_leader.get("count_text", ""))}</span></div>
         <div class="kpi"><strong>{html.escape(keyword_leader.get("keyword", "") if keyword_leader else "")}</strong><span>Largest sampled specialist query: {html.escape(keyword_leader.get("count_text", "") if keyword_leader else "")}</span></div>
+      </div>
+      <div class="note linkedin-links">
+        <h2>Live LinkedIn Validation Links</h2>
+        <p>These links reopen the same live LinkedIn Jobs searches used for the market-signal counts. They are validation links, not a bulk export of individual LinkedIn postings.</p>
+        <div class="link-grid">
+          {linkedin_search_links}
+        </div>
       </div>
     </div>
   </section>
@@ -268,6 +308,11 @@ def main() -> None:
     .chips span {{ background: #eef5f4; color: #24575a; border: 1px solid #d3e4e2; border-radius: 999px; padding: 4px 7px; font-size: 12px; white-space: nowrap; }}
     .source-list {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }}
     .source-list a {{ border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff; color: var(--ink); }}
+    .linkedin-links {{ margin-top: 12px; }}
+    .link-grid {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }}
+    .link-grid a {{ border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; background: #fbfcfd; color: var(--ink); }}
+    .link-grid span {{ display: block; color: var(--muted); font-size: 12px; line-height: 1.35; }}
+    .link-grid strong {{ display: block; margin-top: 4px; color: var(--teal); font-size: 16px; }}
     .actions {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }}
     .button {{ display: inline-flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 13px; background: #fff; color: var(--ink); font-weight: 700; font-size: 13px; }}
     .button.primary {{ background: var(--teal); border-color: var(--teal); color: #fff; }}
@@ -280,7 +325,7 @@ def main() -> None:
     .signal-kpis {{ margin-top: 12px; }}
     footer {{ border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 13px; }}
     @media (max-width: 900px) {{
-      .kpis, .grid-2, .grid-3, .source-list, .callout-grid {{ grid-template-columns: 1fr; }}
+      .kpis, .grid-2, .grid-3, .source-list, .callout-grid, .link-grid {{ grid-template-columns: 1fr; }}
       .table-intro {{ display: block; }}
       header {{ padding-inline: 16px; }}
       .chart {{ min-height: 320px; }}
@@ -392,10 +437,11 @@ def main() -> None:
         <h2>Methodology</h2>
         <ul>
           <li>Open job data was collected from public job-board feeds and normalized into one common structure: title, company, location, salary fields, source link, SAP focus, role family, seniority, module, and skills.</li>
+          <li>Deduplication removes repeated or near-identical postings by comparing normalized title, company, location, and source URL signals, so the same job is less likely to be counted multiple times across feeds.</li>
           <li>SAP matching used strong keyword signals such as SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related terms.</li>
           <li>Salary was not estimated. A posting was marked as salary-disclosed only when the source provided salary fields or the description explicitly mentioned compensation.</li>
           <li>Closed platforms such as LinkedIn and Indeed were not scraped into the job dataset; this report is not an official statistic for the entire market.</li>
-          <li>LinkedIn is included only as a separate market-signal layer: rounded search-result counts observed through the logged-in LinkedIn Jobs UI, without bulk extraction or republication of individual postings.</li>
+          <li>LinkedIn is included only as a separate market-signal layer: rounded search-result counts observed through the logged-in LinkedIn Jobs UI, without bulk extraction or republication of individual postings. The report provides live LinkedIn search links for validation instead of republishing LinkedIn's individual job-result pages.</li>
         </ul>
       </div>
       <div class="note">

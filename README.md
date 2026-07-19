@@ -9,9 +9,10 @@ Public report: https://sarper1998.github.io/global-sap-job-market-report/
 1. Define scope honestly: this is a current snapshot of accessible open job-posting sources, without scraping closed platforms.
 2. Collect raw data from open job sources: Himalayas, Remote First Jobs, Jobicy, Remotive, Remote OK, and Arbeitnow.
 3. Normalize postings: title, company, location, remote status, salary fields, source, and original link.
-4. Apply SAP matching: SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related strong terms.
-5. Tag each posting by SAP module, technical skill, role family, seniority, and SAP focus level.
-6. Generate a publishable HTML report with KPIs, charts, a filterable job table, methodology, and source attribution.
+4. Deduplicate repeated or near-identical postings by normalized title, company, location, and URL signals.
+5. Apply SAP matching: SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related strong terms.
+6. Tag each posting by SAP module, technical skill, role family, seniority, and SAP focus level.
+7. Generate a publishable HTML report with KPIs, charts, a filterable job table, methodology, and source attribution.
 
 ## Run
 
@@ -42,7 +43,7 @@ Processed data files:
 ## Scope Limits
 
 - Closed platforms such as LinkedIn and Indeed are not scraped into the job dataset.
-- LinkedIn is included only as a separate market-signal layer using rounded UI result counts; individual LinkedIn postings are not bulk extracted or republished.
+- LinkedIn is included only as a separate market-signal layer using rounded UI result counts and live LinkedIn search links; individual LinkedIn postings are not bulk extracted or republished.
 - Salary is not estimated; only salary information explicitly available in source fields or posting text is marked.
 - Some sources provide city or region labels rather than normalized countries. These records are shown using the source-provided location when a reliable country mapping is not available.
 - Source feeds change continuously, so report counts are expected to change on each run.

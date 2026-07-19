@@ -84,6 +84,11 @@
     .chips span { background: #eef5f4; color: #24575a; border: 1px solid #d3e4e2; border-radius: 999px; padding: 4px 7px; font-size: 12px; white-space: nowrap; }
     .source-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
     .source-list a { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff; color: var(--ink); }
+    .linkedin-links { margin-top: 12px; }
+    .link-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+    .link-grid a { border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; background: #fbfcfd; color: var(--ink); }
+    .link-grid span { display: block; color: var(--muted); font-size: 12px; line-height: 1.35; }
+    .link-grid strong { display: block; margin-top: 4px; color: var(--teal); font-size: 16px; }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 13px; background: #fff; color: var(--ink); font-weight: 700; font-size: 13px; }
     .button.primary { background: var(--teal); border-color: var(--teal); color: #fff; }
@@ -96,7 +101,7 @@
     .signal-kpis { margin-top: 12px; }
     footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 13px; }
     @media (max-width: 900px) {
-      .kpis, .grid-2, .grid-3, .source-list, .callout-grid { grid-template-columns: 1fr; }
+      .kpis, .grid-2, .grid-3, .source-list, .callout-grid, .link-grid { grid-template-columns: 1fr; }
       .table-intro { display: block; }
       header { padding-inline: 16px; }
       .chart { min-height: 320px; }
@@ -149,6 +154,23 @@
         <div class="kpi"><strong>17,000+</strong><span>LinkedIn SAP results marked remote</span></div>
         <div class="kpi"><strong>United States</strong><span>Largest sampled LinkedIn country: 108,000+</span></div>
         <div class="kpi"><strong>SAP SD</strong><span>Largest sampled specialist query: 50,000+</span></div>
+      </div>
+      <div class="note linkedin-links">
+        <h2>Live LinkedIn Validation Links</h2>
+        <p>These links reopen the same live LinkedIn Jobs searches used for the market-signal counts. They are validation links, not a bulk export of individual LinkedIn postings.</p>
+        <div class="link-grid">
+          <a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=Worldwide" target="_blank" rel="noopener"><span>SAP worldwide</span><strong>371,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=Worldwide&amp;f_TPR=r604800" target="_blank" rel="noopener"><span>SAP posted past week</span><strong>104,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=Worldwide&amp;f_WT=2" target="_blank" rel="noopener"><span>SAP remote</span><strong>17,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=United+States" target="_blank" rel="noopener"><span>SAP in United States</span><strong>108,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=Brazil" target="_blank" rel="noopener"><span>SAP in Brazil</span><strong>36,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=Germany" target="_blank" rel="noopener"><span>SAP in Germany</span><strong>35,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=India" target="_blank" rel="noopener"><span>SAP in India</span><strong>25,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP+SD&amp;location=Worldwide" target="_blank" rel="noopener"><span>SAP SD</span><strong>50,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP+SuccessFactors&amp;location=Worldwide" target="_blank" rel="noopener"><span>SAP SuccessFactors</span><strong>36,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP+ABAP&amp;location=Worldwide" target="_blank" rel="noopener"><span>SAP ABAP</span><strong>30,000+</strong></a>
+<a href="https://www.linkedin.com/jobs/search/?keywords=SAP+HANA&amp;location=Worldwide" target="_blank" rel="noopener"><span>SAP HANA</span><strong>28,000+</strong></a>
+        </div>
       </div>
     </div>
   </section>
@@ -251,10 +273,11 @@
         <h2>Methodology</h2>
         <ul>
           <li>Open job data was collected from public job-board feeds and normalized into one common structure: title, company, location, salary fields, source link, SAP focus, role family, seniority, module, and skills.</li>
+          <li>Deduplication removes repeated or near-identical postings by comparing normalized title, company, location, and source URL signals, so the same job is less likely to be counted multiple times across feeds.</li>
           <li>SAP matching used strong keyword signals such as SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related terms.</li>
           <li>Salary was not estimated. A posting was marked as salary-disclosed only when the source provided salary fields or the description explicitly mentioned compensation.</li>
           <li>Closed platforms such as LinkedIn and Indeed were not scraped into the job dataset; this report is not an official statistic for the entire market.</li>
-          <li>LinkedIn is included only as a separate market-signal layer: rounded search-result counts observed through the logged-in LinkedIn Jobs UI, without bulk extraction or republication of individual postings.</li>
+          <li>LinkedIn is included only as a separate market-signal layer: rounded search-result counts observed through the logged-in LinkedIn Jobs UI, without bulk extraction or republication of individual postings. The report provides live LinkedIn search links for validation instead of republishing LinkedIn's individual job-result pages.</li>
         </ul>
       </div>
       <div class="note">
