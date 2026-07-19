@@ -34,7 +34,7 @@ The latest run on 2026-07-19 collected 3,485 raw records from open sources. Afte
 - Top locations: United States, Germany, India, Canada, United Kingdom.
 - Top role families: Technical / Development, Data / Analytics, Basis / Security, Functional Consulting.
 - Most frequent SAP areas: S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, FI / CO / FICO.
-- LinkedIn Jobs signal: SAP in Worldwide showed 371,000+ results in the logged-in LinkedIn UI on 2026-07-19.
+- LinkedIn Jobs search signal: SAP in Worldwide showed 371,000+ rounded results on 2026-07-19.
 - LinkedIn guest pool: 1,055 deduplicated LinkedIn job links collected across 52 keyword/location/filter partitions.
 - Top collected LinkedIn guest skill signals: S/4HANA, ABAP, SAP BTP, English, SAP HANA.
 - Top collected LinkedIn guest soft-skill signals: consulting mindset, communication, leadership, collaboration, analytical thinking.
@@ -55,7 +55,7 @@ Processed data files:
 ## Scope Limits
 
 - The 371,000+ LinkedIn number is a rounded UI result count and should be read as market-size signal, not as a complete downloadable dataset.
-- The LinkedIn guest job pool is collected from public guest job pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private LinkedIn session data.
+- The LinkedIn guest job pool is collected from public LinkedIn guest job endpoints/search pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private LinkedIn session data.
 - LinkedIn public pagination is limited. The pool grows by partitioning searches across keywords, countries, recency windows, and work-model filters, then deduplicating by LinkedIn job id.
 - Unofficial LinkedIn API/scraper projects are not used as authoritative sources unless a future version can prove compliant access and stable data rights.
 - Salary is not estimated; only salary information explicitly available in source fields or posting text is marked.

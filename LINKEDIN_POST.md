@@ -26,7 +26,7 @@ Important methodology note:
 
 The 371,000+ LinkedIn number is not a downloaded list of 371,000 jobs. It is LinkedIn's rounded search-result count, so I treat it as a market-size signal. The source-linked evidence layer is the downloadable job pool: 1,565 open-feed postings plus 1,055 LinkedIn guest job links collected so far.
 
-The LinkedIn scraper uses public guest job pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private session data. The plan is to grow the pool over time by partitioning searches by SAP keyword, country, recency, and work model, then saving historical snapshots.
+The LinkedIn scraper uses public LinkedIn guest job endpoints/search pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private session data. The plan is to grow the pool over time by partitioning searches by SAP keyword, country, recency, and work model, then saving historical snapshots.
 
 This is a baseline, not a final answer. I want this to become a living SAP market observatory tracking:
 

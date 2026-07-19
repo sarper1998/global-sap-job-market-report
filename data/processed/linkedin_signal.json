@@ -1,7 +1,7 @@
 {
   "observed_at": "2026-07-19T16:30:44+03:00",
-  "source": "LinkedIn Jobs UI through the user's logged-in Chrome session",
-  "methodology": "Limited read-only lookup of LinkedIn Jobs search result counts. Counts are LinkedIn UI-reported rounded values and should be interpreted as directional market signals, not as a deduplicated dataset. Individual LinkedIn postings were not scraped or republished.",
+  "source": "LinkedIn Jobs search-result snapshot",
+  "methodology": "Limited read-only lookup of LinkedIn Jobs search result counts. Counts are LinkedIn-reported rounded values and should be interpreted as directional market signals, not as a deduplicated dataset. Individual LinkedIn postings are collected separately through the public guest job-link pool.",
   "global_count": {
     "query": "SAP",
     "location": "Worldwide",
