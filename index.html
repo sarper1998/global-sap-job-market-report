@@ -38,6 +38,8 @@
     h3 { margin: 0 0 8px; font-size: 17px; letter-spacing: 0; }
     p { color: var(--muted); line-height: 1.6; margin: 0; }
     .intro { max-width: 860px; font-size: 17px; }
+    .layer-note { max-width: 920px; margin-top: 18px; padding: 14px 16px; border: 1px solid #c9dada; border-radius: 8px; background: #f3fbfa; color: var(--ink); line-height: 1.55; }
+    .layer-note strong { color: var(--teal); }
     .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
     .pill { border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; background: #fff; color: var(--muted); font-size: 13px; }
     section { padding: 28px 0; }
@@ -106,14 +108,16 @@
     <div class="wrap">
       <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
       <h1>Global SAP Job Market Report</h1>
-      <p class="intro">This report analyzes SAP-focused job demand across open job-posting sources and a separate LinkedIn Jobs market signal. It is designed to become a living research page: the current version is the baseline, and future snapshots will track how SAP demand, module focus, remote work, salary transparency, and candidate experience change over time.</p>
+      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the open job pool contains the individual postings that can be linked, downloaded, and analyzed transparently.</p>
+      <div class="layer-note"><strong>Read the numbers as two layers:</strong> 371,000+ is the LinkedIn SAP worldwide market signal; 1,565 is the deduplicated source-linked job pool used for the detailed charts and table.</div>
       <div class="meta">
         <span class="pill">Generated at: 2026-07-19T16:08:06</span>
         <span class="pill">Baseline: 2026-07-19</span>
-        <span class="pill">Deduplicated jobs: 1565</span>
+        <span class="pill">LinkedIn signal: 371,000+</span>
+        <span class="pill">Source-linked jobs: 1,565</span>
       </div>
       <div class="actions">
-        <a class="button primary" href="#job-pool">Explore job pool</a>
+        <a class="button primary" href="#job-pool">Explore 1,565 linked jobs</a>
         <a class="button" href="data/sap_jobs.csv">Download CSV</a>
         <a class="button" href="#methodology">How it was built</a>
         <a class="button" href="#community">Contribute anonymously</a>
@@ -123,11 +127,11 @@
 
   <section>
     <div class="wrap kpis">
-      <div class="kpi"><strong>1565</strong><span>Deduplicated SAP-related jobs</span></div>
-      <div class="kpi"><strong>57</strong><span>Country, region, or location labels</span></div>
+      <div class="kpi"><strong>371,000+</strong><span>LinkedIn SAP worldwide market signal</span></div>
+      <div class="kpi"><strong>104,000+</strong><span>LinkedIn SAP market signal from the past week</span></div>
+      <div class="kpi"><strong>1,565</strong><span>Source-linked SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>97.0%</strong><span>Remote or remote-source job share</span></div>
       <div class="kpi"><strong>20.4%</strong><span>Jobs with salary information</span></div>
-      <div class="kpi"><strong>S/4HANA</strong><span>Most frequent SAP area; top role: Technical / Development</span></div>
     </div>
   </section>
 
@@ -136,12 +140,12 @@
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Market Signal</div>
-        <h2>LinkedIn Confirms Much Larger SAP Demand Than Open Sources Alone</h2>
-        <p>Using the logged-in LinkedIn Jobs UI on 2026-07-19T16:30:44+03:00, a read-only search for <strong>SAP</strong> in <strong>Worldwide</strong> showed <strong>371,000+</strong> results. These are rounded LinkedIn UI counts, not a deduplicated posting dataset, so they are used as directional market signal rather than merged with the open-source job pool.</p>
+        <h2>LinkedIn Shows The Market Scale; The Open Pool Shows The Evidence</h2>
+        <p>Using the logged-in LinkedIn Jobs UI on 2026-07-19T16:30:44+03:00, a read-only search for <strong>SAP</strong> in <strong>Worldwide</strong> showed <strong>371,000+</strong> results. That number is LinkedIn's rounded search count, not a downloadable list of 371,000 individual jobs. The source-linked table in this report contains the 1,565 open postings that were collected, deduplicated, classified, and linked back to their original sources.</p>
       </div>
       <div class="kpis signal-kpis">
-        <div class="kpi"><strong>371,000+</strong><span>LinkedIn Jobs results for SAP worldwide</span></div>
-        <div class="kpi"><strong>104,000+</strong><span>LinkedIn SAP results posted in the past week</span></div>
+        <div class="kpi"><strong>371,000+</strong><span>LinkedIn Jobs rounded result count for SAP worldwide</span></div>
+        <div class="kpi"><strong>104,000+</strong><span>LinkedIn SAP rounded result count posted in the past week</span></div>
         <div class="kpi"><strong>17,000+</strong><span>LinkedIn SAP results marked remote</span></div>
         <div class="kpi"><strong>United States</strong><span>Largest sampled LinkedIn country: 108,000+</span></div>
         <div class="kpi"><strong>SAP SD</strong><span>Largest sampled specialist query: 50,000+</span></div>
@@ -181,7 +185,7 @@
       <div class="note">
         <h2>What This Baseline Says</h2>
         <div class="callout-grid">
-          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's rounded worldwide count is far larger than the open-feed dataset, which confirms that open sources are useful for detail while LinkedIn is useful for market scale.</p></div>
+          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's 371,000+ rounded worldwide count is the market-size signal. The 1,565 source-linked postings are the evidence layer used for detailed analysis.</p></div>
           <div class="callout"><strong>Technical roles dominate the open dataset.</strong><p>Technical / Development is the largest role family, followed by Data / Analytics, Basis / Security, Functional Consulting, and Architecture.</p></div>
           <div class="callout"><strong>Salary remains the biggest blind spot.</strong><p>Only 20.4% of deduplicated open postings include salary information. The next phase should focus on salary ranges by module, country, seniority, and work model.</p></div>
         </div>
@@ -296,8 +300,8 @@
     <div class="wrap table-panel" id="job-pool">
       <div class="table-intro">
         <div>
-          <h2>Open Job Pool</h2>
-          <p>All 1565 deduplicated open-source postings used in the analysis are listed below with their original source links. LinkedIn postings are not included in this pool because they were used only as rounded market-signal counts.</p>
+          <h2>Source-Linked Open Job Pool</h2>
+          <p>This table contains 1,565 deduplicated open-source postings with original source links. It is not the full LinkedIn market. LinkedIn is used only for rounded market-signal counts such as 371,000+ SAP results worldwide.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="data/sap_jobs.csv">CSV</a>

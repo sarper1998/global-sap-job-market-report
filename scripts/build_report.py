@@ -23,6 +23,10 @@ def pct(part: int, total: int) -> str:
     return f"{(part / total) * 100:.1f}%"
 
 
+def fmt_int(value: int) -> str:
+    return f"{value:,}"
+
+
 def top_items(counts: Dict[str, int], n: int = 8) -> List[Tuple[str, int]]:
     return sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:n]
 
@@ -102,12 +106,16 @@ def main() -> None:
     linkedin_path = DATA_DIR / "linkedin_signal.json"
     linkedin = load_json(linkedin_path) if linkedin_path.exists() else None
     total = len(jobs)
+    total_text = fmt_int(total)
     salary_disclosed = sum(1 for job in jobs if job.get("salary_status") != "Not disclosed")
     remote_count = sum(1 for job in jobs if job.get("remote"))
     unique_locations = len(summary.get("primary_locations", {}))
     top_module = top_items(summary.get("modules", {}), 1)[0][0] if total else "N/A"
     top_role = top_items(summary.get("role_families", {}), 1)[0][0] if total else "N/A"
     generated = summary.get("generated_at") or dt.datetime.now().isoformat(timespec="seconds")
+    linkedin_global_text = linkedin.get("global_count", {}).get("count_text", "N/A") if linkedin else "N/A"
+    linkedin_week_item = next((item for item in linkedin.get("recency_counts", []) if item.get("label") == "Past week"), {}) if linkedin else {}
+    linkedin_week_text = linkedin_week_item.get("count_text", "N/A")
 
     chart_payload = {
         "sources": summary.get("sources", {}),
@@ -129,18 +137,17 @@ def main() -> None:
         keyword_leader = next((item for item in linkedin.get("keyword_counts", []) if item.get("keyword") != "SAP"), None)
         location_leader = linkedin.get("location_counts", [{}])[0]
         remote_item = next((item for item in linkedin.get("work_model_counts", []) if item.get("label") == "Remote"), {})
-        week_item = next((item for item in linkedin.get("recency_counts", []) if item.get("label") == "Past week"), {})
         linkedin_section = f"""
   <section>
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Market Signal</div>
-        <h2>LinkedIn Confirms Much Larger SAP Demand Than Open Sources Alone</h2>
-        <p>Using the logged-in LinkedIn Jobs UI on {html.escape(linkedin.get("observed_at", ""))}, a read-only search for <strong>SAP</strong> in <strong>Worldwide</strong> showed <strong>{html.escape(linkedin.get("global_count", {}).get("count_text", ""))}</strong> results. These are rounded LinkedIn UI counts, not a deduplicated posting dataset, so they are used as directional market signal rather than merged with the open-source job pool.</p>
+        <h2>LinkedIn Shows The Market Scale; The Open Pool Shows The Evidence</h2>
+        <p>Using the logged-in LinkedIn Jobs UI on {html.escape(linkedin.get("observed_at", ""))}, a read-only search for <strong>SAP</strong> in <strong>Worldwide</strong> showed <strong>{html.escape(linkedin_global_text)}</strong> results. That number is LinkedIn's rounded search count, not a downloadable list of 371,000 individual jobs. The source-linked table in this report contains the {total_text} open postings that were collected, deduplicated, classified, and linked back to their original sources.</p>
       </div>
       <div class="kpis signal-kpis">
-        <div class="kpi"><strong>{html.escape(linkedin.get("global_count", {}).get("count_text", ""))}</strong><span>LinkedIn Jobs results for SAP worldwide</span></div>
-        <div class="kpi"><strong>{html.escape(week_item.get("count_text", ""))}</strong><span>LinkedIn SAP results posted in the past week</span></div>
+        <div class="kpi"><strong>{html.escape(linkedin_global_text)}</strong><span>LinkedIn Jobs rounded result count for SAP worldwide</span></div>
+        <div class="kpi"><strong>{html.escape(linkedin_week_text)}</strong><span>LinkedIn SAP rounded result count posted in the past week</span></div>
         <div class="kpi"><strong>{html.escape(remote_item.get("count_text", ""))}</strong><span>LinkedIn SAP results marked remote</span></div>
         <div class="kpi"><strong>{html.escape(location_leader.get("location", ""))}</strong><span>Largest sampled LinkedIn country: {html.escape(location_leader.get("count_text", ""))}</span></div>
         <div class="kpi"><strong>{html.escape(keyword_leader.get("keyword", "") if keyword_leader else "")}</strong><span>Largest sampled specialist query: {html.escape(keyword_leader.get("count_text", "") if keyword_leader else "")}</span></div>
@@ -215,6 +222,8 @@ def main() -> None:
     h3 {{ margin: 0 0 8px; font-size: 17px; letter-spacing: 0; }}
     p {{ color: var(--muted); line-height: 1.6; margin: 0; }}
     .intro {{ max-width: 860px; font-size: 17px; }}
+    .layer-note {{ max-width: 920px; margin-top: 18px; padding: 14px 16px; border: 1px solid #c9dada; border-radius: 8px; background: #f3fbfa; color: var(--ink); line-height: 1.55; }}
+    .layer-note strong {{ color: var(--teal); }}
     .meta {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }}
     .pill {{ border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; background: #fff; color: var(--muted); font-size: 13px; }}
     section {{ padding: 28px 0; }}
@@ -283,14 +292,16 @@ def main() -> None:
     <div class="wrap">
       <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
       <h1>Global SAP Job Market Report</h1>
-      <p class="intro">This report analyzes SAP-focused job demand across open job-posting sources and a separate LinkedIn Jobs market signal. It is designed to become a living research page: the current version is the baseline, and future snapshots will track how SAP demand, module focus, remote work, salary transparency, and candidate experience change over time.</p>
+      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the open job pool contains the individual postings that can be linked, downloaded, and analyzed transparently.</p>
+      <div class="layer-note"><strong>Read the numbers as two layers:</strong> {html.escape(linkedin_global_text)} is the LinkedIn SAP worldwide market signal; {total_text} is the deduplicated source-linked job pool used for the detailed charts and table.</div>
       <div class="meta">
         <span class="pill">Generated at: {html.escape(generated)}</span>
         <span class="pill">Baseline: 2026-07-19</span>
-        <span class="pill">Deduplicated jobs: {total}</span>
+        <span class="pill">LinkedIn signal: {html.escape(linkedin_global_text)}</span>
+        <span class="pill">Source-linked jobs: {total_text}</span>
       </div>
       <div class="actions">
-        <a class="button primary" href="#job-pool">Explore job pool</a>
+        <a class="button primary" href="#job-pool">Explore {total_text} linked jobs</a>
         <a class="button" href="/data/sap_jobs.csv">Download CSV</a>
         <a class="button" href="#methodology">How it was built</a>
         <a class="button" href="#community">Contribute anonymously</a>
@@ -300,11 +311,11 @@ def main() -> None:
 
   <section>
     <div class="wrap kpis">
-      <div class="kpi"><strong>{total}</strong><span>Deduplicated SAP-related jobs</span></div>
-      <div class="kpi"><strong>{unique_locations}</strong><span>Country, region, or location labels</span></div>
+      <div class="kpi"><strong>{html.escape(linkedin_global_text)}</strong><span>LinkedIn SAP worldwide market signal</span></div>
+      <div class="kpi"><strong>{html.escape(linkedin_week_text)}</strong><span>LinkedIn SAP market signal from the past week</span></div>
+      <div class="kpi"><strong>{total_text}</strong><span>Source-linked SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>{pct(remote_count, total)}</strong><span>Remote or remote-source job share</span></div>
       <div class="kpi"><strong>{pct(salary_disclosed, total)}</strong><span>Jobs with salary information</span></div>
-      <div class="kpi"><strong>{html.escape(top_module)}</strong><span>Most frequent SAP area; top role: {html.escape(top_role)}</span></div>
     </div>
   </section>
 
@@ -315,7 +326,7 @@ def main() -> None:
       <div class="note">
         <h2>What This Baseline Says</h2>
         <div class="callout-grid">
-          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's rounded worldwide count is far larger than the open-feed dataset, which confirms that open sources are useful for detail while LinkedIn is useful for market scale.</p></div>
+          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's {html.escape(linkedin_global_text)} rounded worldwide count is the market-size signal. The {total_text} source-linked postings are the evidence layer used for detailed analysis.</p></div>
           <div class="callout"><strong>Technical roles dominate the open dataset.</strong><p>Technical / Development is the largest role family, followed by Data / Analytics, Basis / Security, Functional Consulting, and Architecture.</p></div>
           <div class="callout"><strong>Salary remains the biggest blind spot.</strong><p>Only {pct(salary_disclosed, total)} of deduplicated open postings include salary information. The next phase should focus on salary ranges by module, country, seniority, and work model.</p></div>
         </div>
@@ -430,8 +441,8 @@ def main() -> None:
     <div class="wrap table-panel" id="job-pool">
       <div class="table-intro">
         <div>
-          <h2>Open Job Pool</h2>
-          <p>All {total} deduplicated open-source postings used in the analysis are listed below with their original source links. LinkedIn postings are not included in this pool because they were used only as rounded market-signal counts.</p>
+          <h2>Source-Linked Open Job Pool</h2>
+          <p>This table contains {total_text} deduplicated open-source postings with original source links. It is not the full LinkedIn market. LinkedIn is used only for rounded market-signal counts such as {html.escape(linkedin_global_text)} SAP results worldwide.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="/data/sap_jobs.csv">CSV</a>

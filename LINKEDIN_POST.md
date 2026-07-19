@@ -15,6 +15,8 @@ SAP iş piyasasıyla ilgili yaşayan bir araştırma başlatıyorum.
 - Açık veri setinde en yoğun SAP alanları: S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, FI / CO / FICO
 - En yoğun açık veri rol ailesi: Technical / Development
 
+Burada iki farklı katman var: LinkedIn sayısı tek tek yayınlanmış ilan havuzu değil, pazar büyüklüğü sinyali. 1.565 ilan ise kaynak linkleriyle doğrulanabilen, tekilleştirilmiş ve detaylı analiz edilen açık veri havuzu.
+
 Bu ilk yayın bir baseline. Bundan sonra düzenli snapshot'larla şunları takip etmek istiyorum:
 
 - Ülke ülke SAP talebi nasıl değişiyor?
@@ -44,6 +46,8 @@ SAP iş piyasası için yaşayan bir araştırma başlatıyorum.
 - Remote LinkedIn SAP sinyali: 17,000+
 - Açık ilanlarda maaş bilgisi oranı: %20.4
 - En yoğun alanlar: S/4HANA, BTP / Integration, ABAP, HANA, FI/CO
+
+Not: 371,000+ LinkedIn'in yuvarlatılmış pazar sinyali; 1.565 ise kaynak linkleriyle yayınlanabilen analiz havuzu.
 
 Bu raporu düzenli snapshot'larla yaşayan bir SAP market observatory haline getirmek istiyorum. Maaş, mülakat süreçleri, çalışma şartları, riskler, stres seviyesi ve insanların SAP rollerinde mutlu oldukları/olmadıkları şeyleri anonim şekilde toplamaya devam edeceğim.
 
