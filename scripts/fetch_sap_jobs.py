@@ -12,6 +12,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
@@ -20,6 +21,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = ROOT / "data" / "raw" / dt.date.today().isoformat()
 PROCESSED_DIR = ROOT / "data" / "processed"
+SNAPSHOT_DIR = ROOT / "data" / "snapshots" / dt.date.today().isoformat()
 
 USER_AGENT = "sap-market-report/1.0 (+research-report)"
 
@@ -232,12 +234,138 @@ SKILL_PATTERNS: List[Tuple[str, str]] = [
 ]
 
 
+SOFT_SKILL_PATTERNS: List[Tuple[str, str]] = [
+    ("Communication", r"\bcommunication\b|\bcommunicate\b|\bkommunikation\b"),
+    ("Stakeholder management", r"\bstakeholder\b|\bstakeholder management\b|\bmanagement stakeholders\b"),
+    ("Collaboration", r"\bcollaboration\b|\bcross[- ]functional\b|\bteamwork\b|\bteam player\b|\bteamf[aä]higkeit\b|\bzusammenarbeit\b"),
+    ("Leadership", r"\bleadership\b|\blead\b|\bmentor\b|\bcoaching\b|\bführung\b|\bteamleitung\b"),
+    ("Problem solving", r"\bproblem[- ]solving\b|\bsolve problems\b|\btroubleshoot\b|\bproblem solving\b|\bprobleml[oö]sung\b"),
+    ("Analytical thinking", r"\banalytical\b|\banalytics?\b|\banalytisch\b|\banalyse\b"),
+    ("Project management", r"\bproject management\b|\bprojektmanagement\b|\bproject manager\b|\bprojektleiter\b"),
+    ("Customer orientation", r"\bcustomer[- ]centric\b|\bcustomer orientation\b|\bkundenorientierung\b|\bcustomer facing\b|\bclient facing\b"),
+    ("Consulting mindset", r"\bconsulting\b|\bconsultant\b|\bberatung\b|\bberater\b"),
+    ("Ownership", r"\bownership\b|\baccountability\b|\beigenverantwortung\b|\bresponsibility\b"),
+    ("Change management", r"\bchange management\b|\btransformation\b|\bchange\b|\bver[aä]nderungsmanagement\b"),
+    ("Presentation", r"\bpresentation\b|\bpresent\b|\bpr[aä]sentation\b|\bworkshop\b"),
+    ("Documentation", r"\bdocumentation\b|\bdokumentation\b|\bwrite documentation\b"),
+    ("Training", r"\btraining\b|\btrain users\b|\buser training\b|\bschulung\b|\bworkshops\b"),
+]
+
+
+DEGREE_LEVEL_PATTERNS: List[Tuple[str, str]] = [
+    ("Bachelor", r"\bbachelor\b|\bb\.s\.\b|\bbsc\b|\bundergraduate\b"),
+    ("Master", r"\bmaster\b|\bm\.s\.\b|\bmsc\b|\bgraduate degree\b"),
+    ("MBA", r"\bMBA\b|\bmaster of business administration\b"),
+    ("PhD", r"\bph\.?d\.?\b|\bdoctorate\b|\bdoktor\b"),
+    ("Vocational / apprenticeship", r"\bapprenticeship\b|\bausbildung\b|\bvocational\b|\bfachinformatiker\b"),
+]
+
+
+DEGREE_FIELD_PATTERNS: List[Tuple[str, str]] = [
+    ("Computer Science / Informatics", r"\bcomputer science\b|\binformatics\b|\binformatik\b|\binformation technology\b|\bIT\b"),
+    ("Business / Economics", r"\bbusiness administration\b|\bbetriebswirtschaft\b|\beconomics\b|\bwirtschaft\b|\bBWL\b"),
+    ("Information Systems", r"\binformation systems\b|\bbusiness informatics\b|\bwirtschaftsinformatik\b"),
+    ("Engineering", r"\bengineering\b|\bengineer\b|\bingenieur\b|\bmaschinenbau\b|\belectrical engineering\b"),
+    ("Finance / Accounting", r"\bfinance\b|\baccounting\b|\bcontrolling\b|\bfinanzen\b|\brechnungswesen\b"),
+    ("Logistics / Supply Chain", r"\blogistics\b|\bsupply chain\b|\blogistik\b"),
+    ("Mathematics / Statistics", r"\bmathematics\b|\bstatistics\b|\bmathematik\b|\bstatistik\b"),
+]
+
+
+DESCRIPTION_STOPWORDS = {
+    "about",
+    "across",
+    "also",
+    "and",
+    "are",
+    "auf",
+    "aus",
+    "bei",
+    "can",
+    "companies",
+    "company",
+    "customers",
+    "das",
+    "der",
+    "die",
+    "ein",
+    "eine",
+    "for",
+    "from",
+    "für",
+    "has",
+    "have",
+    "ich",
+    "im",
+    "in",
+    "ist",
+    "job",
+    "join",
+    "location",
+    "looking",
+    "mit",
+    "not",
+    "of",
+    "on",
+    "or",
+    "our",
+    "people",
+    "role",
+    "sap",
+    "services",
+    "sie",
+    "that",
+    "the",
+    "their",
+    "this",
+    "und",
+    "von",
+    "we",
+    "will",
+    "with",
+    "world",
+    "description",
+    "position",
+    "seeking",
+    "you",
+    "your",
+    "zum",
+    "zur",
+}
+
+
 def regex_hits(patterns: List[Tuple[str, str]], text: str) -> List[str]:
     hits = []
     for label, pattern in patterns:
         if re.search(pattern, text, flags=re.IGNORECASE):
             hits.append(label)
     return hits
+
+
+def count_regex_hits(rows: List[Dict[str, Any]], patterns: List[Tuple[str, str]], field: str = "description_excerpt") -> Dict[str, int]:
+    counts: Dict[str, int] = {}
+    for row in rows:
+        text = normalize_space(f"{row.get('title', '')} {row.get(field, '')}")
+        for label in regex_hits(patterns, text):
+            counts[label] = counts.get(label, 0) + 1
+    return dict(sorted(counts.items(), key=lambda x: (-x[1], x[0])))
+
+
+def description_terms(rows: List[Dict[str, Any]], limit: int = 30) -> Dict[str, int]:
+    counts: Counter[str] = Counter()
+    for row in rows:
+        text = normalize_space(f"{row.get('title', '')} {row.get('description_excerpt', '')}").lower()
+        tokens = re.findall(r"[a-zA-Z][a-zA-Z0-9+/#.-]{2,}", text)
+        seen = set()
+        for token in tokens:
+            token = token.strip(".-/").lower()
+            if len(token) < 4 or token in DESCRIPTION_STOPWORDS:
+                continue
+            if token in {"m/w/d", "w/m/d", "d/m/w", "full-time", "remote"}:
+                continue
+            seen.add(token)
+        counts.update(seen)
+    return dict(counts.most_common(limit))
 
 
 def is_sap_job(text: str) -> bool:
@@ -602,6 +730,57 @@ def build_summary(rows: List[Dict[str, Any]], source_counts: Dict[str, int]) -> 
         "seniority": count_values("seniority"),
         "modules": count_values("modules", multi=True),
         "skills": count_values("skills", multi=True),
+        "soft_skills": count_regex_hits(rows, SOFT_SKILL_PATTERNS),
+        "degree_levels": count_regex_hits(rows, DEGREE_LEVEL_PATTERNS),
+        "degree_fields": count_regex_hits(rows, DEGREE_FIELD_PATTERNS),
+        "description_terms": description_terms(rows),
+    }
+
+
+def write_snapshot(rows: List[Dict[str, Any]], summary: Dict[str, Any]) -> None:
+    SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
+    write_json(SNAPSHOT_DIR / "sap_jobs.json", rows)
+    write_csv(SNAPSHOT_DIR / "sap_jobs.csv", rows)
+    write_json(SNAPSHOT_DIR / "summary.json", summary)
+    linkedin_signal = PROCESSED_DIR / "linkedin_signal.json"
+    if linkedin_signal.exists():
+        write_json(SNAPSHOT_DIR / "linkedin_signal.json", json.loads(linkedin_signal.read_text(encoding="utf-8")))
+
+    root = SNAPSHOT_DIR.parent
+    entries = []
+    for path in sorted(root.iterdir()):
+        if not path.is_dir():
+            continue
+        summary_path = path / "summary.json"
+        if not summary_path.exists():
+            continue
+        item = load_snapshot_summary(summary_path)
+        if item:
+            entries.append(item)
+    write_json(root / "index.json", entries)
+
+
+def load_snapshot_summary(path: Path) -> Optional[Dict[str, Any]]:
+    try:
+        summary = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    linkedin_summary = None
+    linkedin_path = path.parent / "linkedin_signal.json"
+    if linkedin_path.exists():
+        try:
+            linkedin_summary = json.loads(linkedin_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            linkedin_summary = None
+    return {
+        "date": path.parent.name,
+        "generated_at": summary.get("generated_at"),
+        "sap_jobs_after_filter": summary.get("sap_jobs_after_filter", 0),
+        "linkedin_global_count": linkedin_summary.get("global_count", {}).get("count", 0) if linkedin_summary else 0,
+        "linkedin_global_count_text": linkedin_summary.get("global_count", {}).get("count_text", "") if linkedin_summary else "",
+        "salary_disclosure": summary.get("salary_disclosure", {}),
+        "top_modules": dict(list(summary.get("modules", {}).items())[:5]),
+        "top_locations": dict(list(summary.get("primary_locations", {}).items())[:5]),
     }
 
 
@@ -632,6 +811,7 @@ def main() -> None:
     write_json(PROCESSED_DIR / "sap_jobs.json", rows)
     write_csv(PROCESSED_DIR / "sap_jobs.csv", rows)
     write_json(PROCESSED_DIR / "summary.json", summary)
+    write_snapshot(rows, summary)
 
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 

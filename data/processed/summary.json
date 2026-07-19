@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T16:08:06",
+  "generated_at": "2026-07-19T18:56:48",
   "raw_source_counts": {
     "himalayas": 1333,
     "remotefirst": 744,
@@ -154,6 +154,66 @@
     "Concur": 18,
     "SAP QM": 16,
     "SAP GTS": 7
+  },
+  "soft_skills": {
+    "Consulting mindset": 664,
+    "Leadership": 234,
+    "Change management": 214,
+    "Analytical thinking": 71,
+    "Collaboration": 48,
+    "Training": 44,
+    "Ownership": 29,
+    "Project management": 26,
+    "Communication": 11,
+    "Stakeholder management": 10,
+    "Documentation": 9,
+    "Presentation": 8,
+    "Problem solving": 6,
+    "Customer orientation": 4
+  },
+  "degree_levels": {
+    "Master": 19,
+    "Bachelor": 4
+  },
+  "degree_fields": {
+    "Computer Science / Informatics": 335,
+    "Engineering": 203,
+    "Finance / Accounting": 150,
+    "Logistics / Supply Chain": 114,
+    "Information Systems": 6,
+    "Business / Economics": 1
+  },
+  "description_terms": {
+    "consultant": 531,
+    "business": 455,
+    "solutions": 401,
+    "team": 394,
+    "global": 394,
+    "senior": 391,
+    "support": 272,
+    "work": 258,
+    "technology": 253,
+    "data": 248,
+    "management": 243,
+    "experience": 226,
+    "consulting": 221,
+    "lead": 217,
+    "s/4hana": 215,
+    "cloud": 181,
+    "enterprise": 177,
+    "expertise": 175,
+    "transformation": 172,
+    "manager": 163,
+    "clients": 161,
+    "customer": 159,
+    "developer": 152,
+    "processes": 150,
+    "digital": 148,
+    "technical": 147,
+    "functional": 147,
+    "process": 146,
+    "engineer": 145,
+    "experienced": 143
   },
   "errors": {}
 }

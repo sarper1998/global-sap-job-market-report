@@ -12,6 +12,7 @@ from urllib.parse import urlencode
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "processed"
 REPORT_DIR = ROOT / "report"
+SNAPSHOT_INDEX = ROOT / "data" / "snapshots" / "index.json"
 
 
 def load_json(path: Path):
@@ -34,6 +35,13 @@ def top_items(counts: Dict[str, int], n: int = 8) -> List[Tuple[str, int]]:
 
 def list_counts(items: List[Dict], label_key: str) -> Dict[str, int]:
     return {str(item[label_key]): int(item["count"]) for item in items if item.get(label_key) and item.get("count") is not None}
+
+
+def load_snapshots() -> List[Dict]:
+    if not SNAPSHOT_INDEX.exists():
+        return []
+    snapshots = load_json(SNAPSHOT_INDEX)
+    return snapshots if isinstance(snapshots, list) else []
 
 
 def linkedin_jobs_url(keyword: str = "SAP", location: str = "Worldwide", extra: Dict[str, str] | None = None) -> str:
@@ -137,6 +145,7 @@ def main() -> None:
     summary = load_json(DATA_DIR / "summary.json")
     linkedin_path = DATA_DIR / "linkedin_signal.json"
     linkedin = load_json(linkedin_path) if linkedin_path.exists() else None
+    snapshots = load_snapshots()
     total = len(jobs)
     total_text = fmt_int(total)
     salary_disclosed = sum(1 for job in jobs if job.get("salary_status") != "Not disclosed")
@@ -158,7 +167,13 @@ def main() -> None:
         "seniority": summary.get("seniority", {}),
         "modules": dict(top_items(summary.get("modules", {}), 16)),
         "skills": dict(top_items(summary.get("skills", {}), 18)),
+        "softSkills": dict(top_items(summary.get("soft_skills", {}), 14)),
+        "degreeLevels": summary.get("degree_levels", {}),
+        "degreeFields": dict(top_items(summary.get("degree_fields", {}), 10)),
+        "descriptionTerms": dict(top_items(summary.get("description_terms", {}), 20)),
         "salary": summary.get("salary_disclosure", {}),
+        "historyJobs": {item.get("date", ""): item.get("sap_jobs_after_filter", 0) for item in snapshots},
+        "historyLinkedIn": {item.get("date", ""): item.get("linkedin_global_count", 0) for item in snapshots},
         "linkedinKeywords": list_counts(linkedin.get("keyword_counts", []), "keyword") if linkedin else {},
         "linkedinLocations": list_counts(linkedin.get("location_counts", []), "location") if linkedin else {},
         "linkedinWorkModel": list_counts(linkedin.get("work_model_counts", []), "label") if linkedin else {},
@@ -431,6 +446,55 @@ def main() -> None:
     </div>
   </section>
 
+  <section>
+    <div class="wrap grid-2">
+      <div class="chart">
+        <h2>Soft Skill Signals</h2>
+        <canvas id="softSkillsChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Education Field Signals</h2>
+        <canvas id="degreeFieldsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="chart">
+        <h2>Degree Level Mentions</h2>
+        <canvas id="degreeLevelsChart"></canvas>
+      </div>
+      <div class="note">
+        <h2>Common Job Description Terms</h2>
+        <p>Terms are counted by posting, using the available job-description excerpts. This favors recurring market language rather than one-off wording.</p>
+        <div class="bars" id="descriptionTermBars"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="note">
+        <h2>Candidate Interpretation</h2>
+        <div class="callout-grid">
+          <div class="callout"><strong>Build a T-shaped SAP profile.</strong><p>The strongest signal is still module depth: S/4HANA, BTP / Integration, ABAP, HANA / Data, and FI / CO / FICO appear repeatedly. Pair one core module with implementation, integration, and business-process evidence.</p></div>
+          <div class="callout"><strong>Soft skills are not optional.</strong><p>Consulting, leadership, change management, analytical thinking, collaboration, and training appear as explicit job-description signals. SAP work is usually cross-functional, not isolated development.</p></div>
+          <div class="callout"><strong>Degrees help, but roles are skills-led.</strong><p>Computer science, engineering, finance/accounting, and logistics/supply chain show up as education-field signals. Explicit degree-level mentions are much rarer than domain and tool requirements.</p></div>
+        </div>
+      </div>
+      <div class="note">
+        <h2>University & Early-Career Direction</h2>
+        <p>For students choosing a path into SAP, the data points to four practical routes rather than one perfect degree: computer science or informatics for ABAP/BTP/Fiori work, information systems or business informatics for consulting, finance/accounting for FI/CO, and logistics/supply chain or industrial engineering for MM, SD, EWM, PP, and planning roles.</p>
+        <ul>
+          <li>Best early portfolio signal: one SAP module plus one integration/data project.</li>
+          <li>Best business signal: process knowledge in finance, procurement, sales, manufacturing, HR, or supply chain.</li>
+          <li>Best communication signal: documented stakeholder work, training, migration, rollout, or change-management experience.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="methodology">
     <div class="wrap grid-2">
       <div class="note">
@@ -465,12 +529,21 @@ def main() -> None:
       <div class="note">
         <h2>How This Will Stay Alive</h2>
         <ul>
-          <li>This first release is a baseline snapshot. Future runs will save dated snapshots instead of replacing history.</li>
+          <li>This first release is a baseline snapshot. Every future run writes a dated snapshot under <code>data/snapshots/YYYY-MM-DD</code> instead of replacing history.</li>
           <li>Trend charts will compare snapshots across time: module demand, country mix, seniority, remote/hybrid/on-site, salary transparency, and LinkedIn signal shifts.</li>
           <li>The public page can be mirrored to GitHub Pages or any static host, with the source and data snapshots versioned in Git for transparency.</li>
           <li>Community inputs will be anonymized and added as a separate qualitative layer, so market data and human experience remain distinguishable.</li>
         </ul>
       </div>
+      <div class="chart">
+        <h2>Historical Snapshot Count</h2>
+        <canvas id="historyJobsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
       <div class="note">
         <h2>Next Research Questions</h2>
         <ul>
@@ -479,6 +552,28 @@ def main() -> None:
           <li>How do interview processes differ for consulting, in-house, implementation partner, and product-company SAP roles?</li>
           <li>Where do SAP professionals report the best balance between pay, learning, stress, and long-term stability?</li>
         </ul>
+      </div>
+      <div class="chart">
+        <h2>Historical LinkedIn Signal</h2>
+        <canvas id="historyLinkedInChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="note">
+        <h2>Next Data Expansion</h2>
+        <ul>
+          <li>Add more source-linked job boards and direct employer career pages before increasing claims about the full market.</li>
+          <li>Track LinkedIn search counts historically through saved query snapshots and validation links.</li>
+          <li>Store fuller job-description text where source terms allow it, so soft skill, degree, and keyword analysis becomes more reliable.</li>
+          <li>Add anonymous community submissions for salary, interviews, stress, working conditions, and satisfaction.</li>
+        </ul>
+      </div>
+      <div class="note">
+        <h2>LinkedIn API Decision</h2>
+        <p>The GitHub <code>linkedin-api</code> topic mostly contains unofficial scraper and automation projects. This research keeps LinkedIn as a validation and market-signal layer unless official Talent Solutions access is granted. That protects the credibility of the report and avoids republishing logged-in LinkedIn job-result pages.</p>
       </div>
     </div>
   </section>
@@ -596,8 +691,14 @@ def main() -> None:
     makeBarChart("rolesChart", chartData.roles, "Job count", true);
     makeBarChart("seniorityChart", chartData.seniority, "Job count", true);
     makeDoughnut("focusChart", chartData.focus);
+    makeBarChart("softSkillsChart", chartData.softSkills, "Posting count", true);
+    makeBarChart("degreeFieldsChart", chartData.degreeFields, "Posting count", true);
+    makeBarChart("degreeLevelsChart", chartData.degreeLevels, "Posting count", true);
+    makeBarChart("historyJobsChart", chartData.historyJobs, "Source-linked jobs", false);
+    makeBarChart("historyLinkedInChart", chartData.historyLinkedIn, "LinkedIn SAP signal", false);
     renderBars("moduleBars", chartData.modules);
     renderBars("skillBars", chartData.skills);
+    renderBars("descriptionTermBars", chartData.descriptionTerms);
 
     const searchInput = document.getElementById("jobSearch");
     const roleFilter = document.getElementById("roleFilter");

@@ -12,7 +12,9 @@ Public report: https://sarper1998.github.io/global-sap-job-market-report/
 4. Deduplicate repeated or near-identical postings by normalized title, company, location, and URL signals.
 5. Apply SAP matching: SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related strong terms.
 6. Tag each posting by SAP module, technical skill, role family, seniority, and SAP focus level.
-7. Generate a publishable HTML report with KPIs, charts, a filterable job table, methodology, and source attribution.
+7. Extract job-description signals for recurring terms, soft skills, education fields, and degree mentions.
+8. Save dated snapshots under `data/snapshots/YYYY-MM-DD` for historical tracking.
+9. Generate a publishable HTML report with KPIs, charts, a filterable job table, methodology, interpretation, and source attribution.
 
 ## Run
 
@@ -31,6 +33,7 @@ The latest run on 2026-07-19 collected 3,485 raw records from open sources. Afte
 - Top role families: Technical / Development, Data / Analytics, Basis / Security, Functional Consulting.
 - Most frequent SAP areas: S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, FI / CO / FICO.
 - LinkedIn Jobs signal: SAP in Worldwide showed 371,000+ results in the logged-in LinkedIn UI on 2026-07-19.
+- Description analysis now includes soft skill signals, education-field signals, degree-level mentions, and common job-description terms.
 
 Processed data files:
 
@@ -38,13 +41,16 @@ Processed data files:
 - `data/processed/sap_jobs.json`
 - `data/processed/summary.json`
 - `data/processed/linkedin_signal.json`
-- Deployed data links: `/data/sap_jobs.csv`, `/data/sap_jobs.json`, `/data/summary.json`, `/data/linkedin_signal.json`
+- `data/snapshots/index.json`
+- Deployed data links: `/data/sap_jobs.csv`, `/data/sap_jobs.json`, `/data/summary.json`, `/data/linkedin_signal.json`, `/data/snapshots/index.json`
 
 ## Scope Limits
 
 - Closed platforms such as LinkedIn and Indeed are not scraped into the job dataset.
 - LinkedIn is included only as a separate market-signal layer using rounded UI result counts and live LinkedIn search links; individual LinkedIn postings are not bulk extracted or republished.
+- Unofficial LinkedIn scraper projects are not used as primary data sources unless a future version can prove compliant access and stable data rights.
 - Salary is not estimated; only salary information explicitly available in source fields or posting text is marked.
+- Job-description keyword analysis currently uses the stored public excerpt field. Fuller description analysis is planned where source terms allow it.
 - Some sources provide city or region labels rather than normalized countries. These records are shown using the source-provided location when a reliable country mapping is not available.
 - Source feeds change continuously, so report counts are expected to change on each run.
 

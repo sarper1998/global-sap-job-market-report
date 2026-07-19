@@ -116,7 +116,7 @@
       <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the open job pool contains the individual postings that can be linked, downloaded, and analyzed transparently.</p>
       <div class="layer-note"><strong>Read the numbers as two layers:</strong> 371,000+ is the LinkedIn SAP worldwide market signal; 1,565 is the deduplicated source-linked job pool used for the detailed charts and table.</div>
       <div class="meta">
-        <span class="pill">Generated at: 2026-07-19T16:08:06</span>
+        <span class="pill">Generated at: 2026-07-19T18:56:48</span>
         <span class="pill">Baseline: 2026-07-19</span>
         <span class="pill">LinkedIn signal: 371,000+</span>
         <span class="pill">Source-linked jobs: 1,565</span>
@@ -267,6 +267,55 @@
     </div>
   </section>
 
+  <section>
+    <div class="wrap grid-2">
+      <div class="chart">
+        <h2>Soft Skill Signals</h2>
+        <canvas id="softSkillsChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Education Field Signals</h2>
+        <canvas id="degreeFieldsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="chart">
+        <h2>Degree Level Mentions</h2>
+        <canvas id="degreeLevelsChart"></canvas>
+      </div>
+      <div class="note">
+        <h2>Common Job Description Terms</h2>
+        <p>Terms are counted by posting, using the available job-description excerpts. This favors recurring market language rather than one-off wording.</p>
+        <div class="bars" id="descriptionTermBars"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="note">
+        <h2>Candidate Interpretation</h2>
+        <div class="callout-grid">
+          <div class="callout"><strong>Build a T-shaped SAP profile.</strong><p>The strongest signal is still module depth: S/4HANA, BTP / Integration, ABAP, HANA / Data, and FI / CO / FICO appear repeatedly. Pair one core module with implementation, integration, and business-process evidence.</p></div>
+          <div class="callout"><strong>Soft skills are not optional.</strong><p>Consulting, leadership, change management, analytical thinking, collaboration, and training appear as explicit job-description signals. SAP work is usually cross-functional, not isolated development.</p></div>
+          <div class="callout"><strong>Degrees help, but roles are skills-led.</strong><p>Computer science, engineering, finance/accounting, and logistics/supply chain show up as education-field signals. Explicit degree-level mentions are much rarer than domain and tool requirements.</p></div>
+        </div>
+      </div>
+      <div class="note">
+        <h2>University & Early-Career Direction</h2>
+        <p>For students choosing a path into SAP, the data points to four practical routes rather than one perfect degree: computer science or informatics for ABAP/BTP/Fiori work, information systems or business informatics for consulting, finance/accounting for FI/CO, and logistics/supply chain or industrial engineering for MM, SD, EWM, PP, and planning roles.</p>
+        <ul>
+          <li>Best early portfolio signal: one SAP module plus one integration/data project.</li>
+          <li>Best business signal: process knowledge in finance, procurement, sales, manufacturing, HR, or supply chain.</li>
+          <li>Best communication signal: documented stakeholder work, training, migration, rollout, or change-management experience.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="methodology">
     <div class="wrap grid-2">
       <div class="note">
@@ -301,12 +350,21 @@
       <div class="note">
         <h2>How This Will Stay Alive</h2>
         <ul>
-          <li>This first release is a baseline snapshot. Future runs will save dated snapshots instead of replacing history.</li>
+          <li>This first release is a baseline snapshot. Every future run writes a dated snapshot under <code>data/snapshots/YYYY-MM-DD</code> instead of replacing history.</li>
           <li>Trend charts will compare snapshots across time: module demand, country mix, seniority, remote/hybrid/on-site, salary transparency, and LinkedIn signal shifts.</li>
           <li>The public page can be mirrored to GitHub Pages or any static host, with the source and data snapshots versioned in Git for transparency.</li>
           <li>Community inputs will be anonymized and added as a separate qualitative layer, so market data and human experience remain distinguishable.</li>
         </ul>
       </div>
+      <div class="chart">
+        <h2>Historical Snapshot Count</h2>
+        <canvas id="historyJobsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
       <div class="note">
         <h2>Next Research Questions</h2>
         <ul>
@@ -315,6 +373,28 @@
           <li>How do interview processes differ for consulting, in-house, implementation partner, and product-company SAP roles?</li>
           <li>Where do SAP professionals report the best balance between pay, learning, stress, and long-term stability?</li>
         </ul>
+      </div>
+      <div class="chart">
+        <h2>Historical LinkedIn Signal</h2>
+        <canvas id="historyLinkedInChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="note">
+        <h2>Next Data Expansion</h2>
+        <ul>
+          <li>Add more source-linked job boards and direct employer career pages before increasing claims about the full market.</li>
+          <li>Track LinkedIn search counts historically through saved query snapshots and validation links.</li>
+          <li>Store fuller job-description text where source terms allow it, so soft skill, degree, and keyword analysis becomes more reliable.</li>
+          <li>Add anonymous community submissions for salary, interviews, stress, working conditions, and satisfaction.</li>
+        </ul>
+      </div>
+      <div class="note">
+        <h2>LinkedIn API Decision</h2>
+        <p>The GitHub <code>linkedin-api</code> topic mostly contains unofficial scraper and automation projects. This research keeps LinkedIn as a validation and market-signal layer unless official Talent Solutions access is granted. That protects the credibility of the report and avoids republishing logged-in LinkedIn job-result pages.</p>
       </div>
     </div>
   </section>
@@ -16011,7 +16091,7 @@
   </footer>
 
   <script>
-    const chartData = {"sources": {"himalayas": 951, "remotefirst": 542, "arbeitnow": 49, "jobicy": 22, "remoteok": 1}, "focus": {"Core SAP delivery role": 837, "SAP mentioned": 346, "SAP module/technical requirement": 202, "SAP-titled role": 180}, "locations": {"United States": 585, "Germany": 248, "India": 135, "Canada": 50, "Worldwide / Not specified": 48, "United Kingdom": 46, "Poland": 42, "Spain": 39, "Romania": 34, "Mexico": 30, "Philippines": 25, "Brazil": 24, "Hungary": 21, "Austria": 18}, "roles": {"Technical / Development": 754, "Data / Analytics": 288, "Basis / Security": 163, "Functional Consulting": 139, "Architecture": 121, "Other SAP-Related": 54, "Project / Program": 29, "Support / Operations": 17}, "seniority": {"Lead / Manager": 542, "Mid / Unspecified": 503, "Senior": 462, "Junior": 41, "Entry / Intern": 17}, "modules": {"S/4HANA": 687, "Unspecified SAP": 396, "BTP / Integration": 341, "ABAP / Development": 331, "HANA / Data": 327, "FI / CO / FICO": 256, "Fiori / UI5": 219, "HCM / SuccessFactors": 187, "Basis / Security": 174, "MM / Procurement": 131, "EWM / WM / Logistics": 109, "TM / GTS / Supply Chain": 84, "SD / Sales": 77, "PP / QM / Manufacturing": 64, "CRM / CX / Commerce": 29, "PM / Asset Management": 23}, "skills": {"S/4HANA": 687, "English": 451, "ABAP": 289, "SAP HANA": 270, "German": 249, "SAP BTP": 225, "Agile / Scrum": 209, "FICO": 209, "SAP Fiori": 201, "SuccessFactors": 140, "GRC / Security": 131, "OData": 121, "CPI / Integration Suite": 119, "SAPUI5 / UI5": 94, "IDoc": 93, "CDS Views": 83, "RAP / CAP": 74, "SAP Analytics Cloud": 73}, "salary": {"Not disclosed": 1246, "Disclosed": 317, "Mentioned in text": 2}, "linkedinKeywords": {"SAP": 371000, "SAP SD": 50000, "SAP SuccessFactors": 36000, "SAP ABAP": 30000, "SAP HANA": 28000, "SAP S/4HANA": 23000, "SAP FICO": 18000, "SAP MM": 15000, "SAP Consultant": 12000, "SAP Fiori": 9000, "SAP Basis": 8000, "SAP BTP": 5000}, "linkedinLocations": {"United States": 108000, "Brazil": 36000, "Germany": 35000, "India": 25000, "France": 15000, "Netherlands": 9000, "United Kingdom": 8000, "Canada": 7000, "Poland": 6000, "Spain": 5000, "Mexico": 4000, "Australia": 3000, "Turkey": 2000, "Singapore": 2000}, "linkedinWorkModel": {"On-site": 289000, "Hybrid": 56000, "Remote": 17000}, "linkedinRecency": {"Past month": 245000, "Past week": 104000, "Past 24 hours": 8000}};
+    const chartData = {"sources": {"himalayas": 951, "remotefirst": 542, "arbeitnow": 49, "jobicy": 22, "remoteok": 1}, "focus": {"Core SAP delivery role": 837, "SAP mentioned": 346, "SAP module/technical requirement": 202, "SAP-titled role": 180}, "locations": {"United States": 585, "Germany": 248, "India": 135, "Canada": 50, "Worldwide / Not specified": 48, "United Kingdom": 46, "Poland": 42, "Spain": 39, "Romania": 34, "Mexico": 30, "Philippines": 25, "Brazil": 24, "Hungary": 21, "Austria": 18}, "roles": {"Technical / Development": 754, "Data / Analytics": 288, "Basis / Security": 163, "Functional Consulting": 139, "Architecture": 121, "Other SAP-Related": 54, "Project / Program": 29, "Support / Operations": 17}, "seniority": {"Lead / Manager": 542, "Mid / Unspecified": 503, "Senior": 462, "Junior": 41, "Entry / Intern": 17}, "modules": {"S/4HANA": 687, "Unspecified SAP": 396, "BTP / Integration": 341, "ABAP / Development": 331, "HANA / Data": 327, "FI / CO / FICO": 256, "Fiori / UI5": 219, "HCM / SuccessFactors": 187, "Basis / Security": 174, "MM / Procurement": 131, "EWM / WM / Logistics": 109, "TM / GTS / Supply Chain": 84, "SD / Sales": 77, "PP / QM / Manufacturing": 64, "CRM / CX / Commerce": 29, "PM / Asset Management": 23}, "skills": {"S/4HANA": 687, "English": 451, "ABAP": 289, "SAP HANA": 270, "German": 249, "SAP BTP": 225, "Agile / Scrum": 209, "FICO": 209, "SAP Fiori": 201, "SuccessFactors": 140, "GRC / Security": 131, "OData": 121, "CPI / Integration Suite": 119, "SAPUI5 / UI5": 94, "IDoc": 93, "CDS Views": 83, "RAP / CAP": 74, "SAP Analytics Cloud": 73}, "softSkills": {"Consulting mindset": 664, "Leadership": 234, "Change management": 214, "Analytical thinking": 71, "Collaboration": 48, "Training": 44, "Ownership": 29, "Project management": 26, "Communication": 11, "Stakeholder management": 10, "Documentation": 9, "Presentation": 8, "Problem solving": 6, "Customer orientation": 4}, "degreeLevels": {"Master": 19, "Bachelor": 4}, "degreeFields": {"Computer Science / Informatics": 335, "Engineering": 203, "Finance / Accounting": 150, "Logistics / Supply Chain": 114, "Information Systems": 6, "Business / Economics": 1}, "descriptionTerms": {"consultant": 531, "business": 455, "solutions": 401, "global": 394, "team": 394, "senior": 391, "support": 272, "work": 258, "technology": 253, "data": 248, "management": 243, "experience": 226, "consulting": 221, "lead": 217, "s/4hana": 215, "cloud": 181, "enterprise": 177, "expertise": 175, "transformation": 172, "manager": 163}, "salary": {"Not disclosed": 1246, "Disclosed": 317, "Mentioned in text": 2}, "historyJobs": {"2026-07-19": 1565}, "historyLinkedIn": {"2026-07-19": 371000}, "linkedinKeywords": {"SAP": 371000, "SAP SD": 50000, "SAP SuccessFactors": 36000, "SAP ABAP": 30000, "SAP HANA": 28000, "SAP S/4HANA": 23000, "SAP FICO": 18000, "SAP MM": 15000, "SAP Consultant": 12000, "SAP Fiori": 9000, "SAP Basis": 8000, "SAP BTP": 5000}, "linkedinLocations": {"United States": 108000, "Brazil": 36000, "Germany": 35000, "India": 25000, "France": 15000, "Netherlands": 9000, "United Kingdom": 8000, "Canada": 7000, "Poland": 6000, "Spain": 5000, "Mexico": 4000, "Australia": 3000, "Turkey": 2000, "Singapore": 2000}, "linkedinWorkModel": {"On-site": 289000, "Hybrid": 56000, "Remote": 17000}, "linkedinRecency": {"Past month": 245000, "Past week": 104000, "Past 24 hours": 8000}};
     const palette = ["#2f6f73", "#3f6db5", "#d99b24", "#c84e3a", "#4f8a5b", "#725ca8", "#8a6a3b", "#64748b"];
 
     function entries(obj) {
@@ -16081,8 +16161,14 @@
     makeBarChart("rolesChart", chartData.roles, "Job count", true);
     makeBarChart("seniorityChart", chartData.seniority, "Job count", true);
     makeDoughnut("focusChart", chartData.focus);
+    makeBarChart("softSkillsChart", chartData.softSkills, "Posting count", true);
+    makeBarChart("degreeFieldsChart", chartData.degreeFields, "Posting count", true);
+    makeBarChart("degreeLevelsChart", chartData.degreeLevels, "Posting count", true);
+    makeBarChart("historyJobsChart", chartData.historyJobs, "Source-linked jobs", false);
+    makeBarChart("historyLinkedInChart", chartData.historyLinkedIn, "LinkedIn SAP signal", false);
     renderBars("moduleBars", chartData.modules);
     renderBars("skillBars", chartData.skills);
+    renderBars("descriptionTermBars", chartData.descriptionTerms);
 
     const searchInput = document.getElementById("jobSearch");
     const roleFilter = document.getElementById("roleFilter");

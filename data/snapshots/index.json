@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-07-19",
+    "generated_at": "2026-07-19T18:56:48",
+    "sap_jobs_after_filter": 1565,
+    "linkedin_global_count": 371000,
+    "linkedin_global_count_text": "371,000+",
+    "salary_disclosure": {
+      "Not disclosed": 1246,
+      "Disclosed": 317,
+      "Mentioned in text": 2
+    },
+    "top_modules": {
+      "S/4HANA": 687,
+      "Unspecified SAP": 396,
+      "BTP / Integration": 341,
+      "ABAP / Development": 331,
+      "HANA / Data": 327
+    },
+    "top_locations": {
+      "United States": 585,
+      "Germany": 248,
+      "India": 135,
+      "Canada": 50,
+      "Worldwide / Not specified": 48
+    }
+  }
+]

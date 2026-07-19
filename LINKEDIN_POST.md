@@ -14,6 +14,8 @@ SAP iş piyasasıyla ilgili yaşayan bir araştırma başlatıyorum.
 - Açık kaynak veri setinde maaş bilgisi olan ilan oranı: %20.4
 - Açık veri setinde en yoğun SAP alanları: S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, FI / CO / FICO
 - En yoğun açık veri rol ailesi: Technical / Development
+- Job description analizinde öne çıkan soft skill sinyalleri: consulting mindset, leadership, change management, analytical thinking, collaboration
+- Eğitim/bölüm sinyalleri: Computer Science / Informatics, Engineering, Finance / Accounting, Logistics / Supply Chain
 
 Burada iki farklı katman var: LinkedIn sayısı tek tek yayınlanmış ilan havuzu değil, pazar büyüklüğü sinyali. 1.565 ilan ise kaynak linkleriyle doğrulanabilen, tekilleştirilmiş ve detaylı analiz edilen açık veri havuzu.
 
@@ -46,6 +48,7 @@ SAP iş piyasası için yaşayan bir araştırma başlatıyorum.
 - Remote LinkedIn SAP sinyali: 17,000+
 - Açık ilanlarda maaş bilgisi oranı: %20.4
 - En yoğun alanlar: S/4HANA, BTP / Integration, ABAP, HANA, FI/CO
+- Yeni analizler: soft skill sinyalleri, eğitim/bölüm tercihleri, job description terimleri, tarihsel snapshot altyapısı
 
 Not: 371,000+ LinkedIn'in yuvarlatılmış pazar sinyali; 1.565 ise kaynak linkleriyle yayınlanabilen analiz havuzu.
 
