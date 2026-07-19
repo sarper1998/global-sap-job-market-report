@@ -772,12 +772,21 @@ def load_snapshot_summary(path: Path) -> Optional[Dict[str, Any]]:
             linkedin_summary = json.loads(linkedin_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             linkedin_summary = None
+    linkedin_jobs_summary = None
+    linkedin_jobs_path = path.parent / "linkedin_jobs_summary.json"
+    if linkedin_jobs_path.exists():
+        try:
+            linkedin_jobs_summary = json.loads(linkedin_jobs_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            linkedin_jobs_summary = None
     return {
         "date": path.parent.name,
         "generated_at": summary.get("generated_at"),
         "sap_jobs_after_filter": summary.get("sap_jobs_after_filter", 0),
         "linkedin_global_count": linkedin_summary.get("global_count", {}).get("count", 0) if linkedin_summary else 0,
         "linkedin_global_count_text": linkedin_summary.get("global_count", {}).get("count_text", "") if linkedin_summary else "",
+        "linkedin_jobs_collected": linkedin_jobs_summary.get("jobs_collected", 0) if linkedin_jobs_summary else 0,
+        "linkedin_guest_searches": linkedin_jobs_summary.get("searches_attempted", 0) if linkedin_jobs_summary else 0,
         "salary_disclosure": summary.get("salary_disclosure", {}),
         "top_modules": dict(list(summary.get("modules", {}).items())[:5]),
         "top_locations": dict(list(summary.get("primary_locations", {}).items())[:5]),

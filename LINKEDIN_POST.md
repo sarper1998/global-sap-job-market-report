@@ -2,59 +2,67 @@
 
 ## Long Version
 
-SAP iş piyasasıyla ilgili yaşayan bir araştırma başlatıyorum.
+I am starting a living research project on the global SAP job market.
 
-İlk snapshot'ta açık iş kaynaklarından SAP ile ilişkili 3.485 ham ilan toplandı. Filtreleme ve tekilleştirme sonrası 1.565 açık ilan analiz edildi. LinkedIn Jobs tarafını ise ayrı bir market signal olarak ele aldım; ilanları scrape etmeden sadece arama hacmi sinyallerini kullandım.
+For the first baseline snapshot, I collected 3,485 raw postings from open job sources. After SAP filtering and deduplication, 1,565 source-linked SAP postings were analyzed in detail.
 
-İlk bulgular:
+I also added two LinkedIn layers:
 
-- LinkedIn Jobs'ta `SAP` + Worldwide araması: 371,000+ sonuç
-- LinkedIn'de son 1 haftada görünen SAP sonuçları: 104,000+
-- LinkedIn'de remote işaretli SAP sonuçları: 17,000+
-- Açık kaynak veri setinde maaş bilgisi olan ilan oranı: %20.4
-- Açık veri setinde en yoğun SAP alanları: S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, FI / CO / FICO
-- En yoğun açık veri rol ailesi: Technical / Development
-- Job description analizinde öne çıkan soft skill sinyalleri: consulting mindset, leadership, change management, analytical thinking, collaboration
-- Eğitim/bölüm sinyalleri: Computer Science / Informatics, Engineering, Finance / Accounting, Logistics / Supply Chain
+- LinkedIn Jobs market signal: `SAP` + Worldwide showed 371,000+ results on 2026-07-19.
+- LinkedIn collected pool: 1,055 deduplicated LinkedIn guest job links gathered across 52 keyword/location/filter partitions.
 
-Burada iki farklı katman var: LinkedIn sayısı tek tek yayınlanmış ilan havuzu değil, pazar büyüklüğü sinyali. 1.565 ilan ise kaynak linkleriyle doğrulanabilen, tekilleştirilmiş ve detaylı analiz edilen açık veri havuzu.
+The early findings:
 
-Bu ilk yayın bir baseline. Bundan sonra düzenli snapshot'larla şunları takip etmek istiyorum:
+- LinkedIn Jobs shows 104,000+ SAP results posted in the past week.
+- LinkedIn Jobs shows 17,000+ SAP results marked remote.
+- Only 20.4% of the open source-linked postings disclose salary information.
+- The most frequent SAP areas in the open pool are S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, and FI / CO / FICO.
+- The largest open-pool role family is Technical / Development.
+- The LinkedIn guest pool currently shows strong demand signals around S/4HANA, ABAP, SAP BTP, English, and SAP HANA.
+- Soft-skill signals in job descriptions include consulting mindset, communication, leadership, collaboration, and analytical thinking.
+- Education-field signals include computer science / informatics, engineering, finance / accounting, and logistics / supply chain.
 
-- Ülke ülke SAP talebi nasıl değişiyor?
-- Hangi SAP modülleri yükseliyor veya düşüyor?
-- Remote / hybrid / on-site dengesi nasıl değişiyor?
-- Maaş şeffaflığı hangi ülkelerde ve rollerlerde artıyor?
-- SAP profesyonelleri hangi rollerde daha mutlu, hangi rollerde daha yüksek risk/stres görüyor?
-- Mülakat süreçleri, şartlar ve beklentiler ülkeden ülkeye nasıl değişiyor?
+Important methodology note:
 
-Eğer SAP alanında çalışıyorsanız, işe alım yapıyorsanız veya yakın zamanda SAP rolü için mülakata girdiyseniz bana yazabilirsiniz. Maaş aralığı, mülakat süreci, çalışma şartları, iş riski, stres seviyesi, remote/hybrid gerçekliği ve işinizde sevdiğiniz/sevmediğiniz taraflarla ilgili deneyimleri anonim şekilde toplamaya devam edeceğim.
+The 371,000+ LinkedIn number is not a downloaded list of 371,000 jobs. It is LinkedIn's rounded search-result count, so I treat it as a market-size signal. The source-linked evidence layer is the downloadable job pool: 1,565 open-feed postings plus 1,055 LinkedIn guest job links collected so far.
 
-İsim veya şirket belirtmeden, anonim ve toplulaştırılmış şekilde bu araştırmayı geliştirmek istiyorum. Amaç SAP kariyeri düşünen, rol değiştirmek isteyen veya ekip kuran insanlar için daha şeffaf bir kaynak oluşturmak.
+The LinkedIn scraper uses public guest job pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private session data. The plan is to grow the pool over time by partitioning searches by SAP keyword, country, recency, and work model, then saving historical snapshots.
 
-Rapor linki:
+This is a baseline, not a final answer. I want this to become a living SAP market observatory tracking:
+
+- Which SAP modules are rising or falling
+- How demand changes by country
+- Remote / hybrid / on-site shifts
+- Salary transparency by role, module, seniority, and country
+- Interview processes and working conditions
+- Role risk, stress level, and career satisfaction
+
+If you work in SAP, hire SAP talent, or recently interviewed for an SAP role, feel free to message me. I am collecting anonymous input on salary ranges, interview processes, working conditions, job risk, stress level, remote/hybrid reality, and what people genuinely enjoy or dislike in SAP roles.
+
+I will only publish anonymous, aggregated insights unless someone explicitly gives permission to be named.
+
+Report:
 https://sarper1998.github.io/global-sap-job-market-report/
 
 ## Short Version
 
-SAP iş piyasası için yaşayan bir araştırma başlatıyorum.
+I am starting a living research project on the global SAP job market.
 
-İlk snapshot:
+First baseline snapshot:
 
-- Açık kaynaklardan 3.485 ham ilan
-- Filtreleme sonrası 1.565 tekilleştirilmiş SAP ilanı
-- LinkedIn Jobs'ta `SAP` + Worldwide: 371,000+ sonuç
-- Son 1 hafta LinkedIn SAP sinyali: 104,000+
-- Remote LinkedIn SAP sinyali: 17,000+
-- Açık ilanlarda maaş bilgisi oranı: %20.4
-- En yoğun alanlar: S/4HANA, BTP / Integration, ABAP, HANA, FI/CO
-- Yeni analizler: soft skill sinyalleri, eğitim/bölüm tercihleri, job description terimleri, tarihsel snapshot altyapısı
+- 3,485 raw open-source job records
+- 1,565 deduplicated SAP postings analyzed in detail
+- 371,000+ LinkedIn Jobs result-count signal for `SAP` worldwide
+- 1,055 collected LinkedIn guest job links so far
+- 104,000+ LinkedIn SAP results posted in the past week
+- 17,000+ LinkedIn SAP results marked remote
+- 20.4% salary disclosure in the open source-linked pool
+- Top areas: S/4HANA, BTP / Integration, ABAP, HANA, FI/CO
+- Added analysis for technical skills, soft skills, education fields, degree mentions, and historical snapshots
 
-Not: 371,000+ LinkedIn'in yuvarlatılmış pazar sinyali; 1.565 ise kaynak linkleriyle yayınlanabilen analiz havuzu.
+The 371,000+ number is the market-size signal. The downloadable evidence layer is the source-linked job pool, including the collected LinkedIn guest links.
 
-Bu raporu düzenli snapshot'larla yaşayan bir SAP market observatory haline getirmek istiyorum. Maaş, mülakat süreçleri, çalışma şartları, riskler, stres seviyesi ve insanların SAP rollerinde mutlu oldukları/olmadıkları şeyleri anonim şekilde toplamaya devam edeceğim.
+I will keep expanding this with salary data, interviews, working conditions, risk, stress, and satisfaction signals from anonymous community input.
 
-SAP alanında çalışıyorsanız veya yakın zamanda mülakata girdiyseniz bana yazabilirsiniz.
-
-Rapor:
+Report:
 https://sarper1998.github.io/global-sap-job-market-report/

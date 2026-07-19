@@ -37,6 +37,12 @@ def list_counts(items: List[Dict], label_key: str) -> Dict[str, int]:
     return {str(item[label_key]): int(item["count"]) for item in items if item.get(label_key) and item.get("count") is not None}
 
 
+def optional_json(path: Path, fallback):
+    if not path.exists():
+        return fallback
+    return load_json(path)
+
+
 def load_snapshots() -> List[Dict]:
     if not SNAPSHOT_INDEX.exists():
         return []
@@ -81,6 +87,11 @@ def chip_list(values: List[str], limit: int = 4) -> str:
     if len(values) > limit:
         chips += f"<span>+{len(values) - limit}</span>"
     return chips
+
+
+def top_count(summary: Dict, key: str) -> Tuple[str, int]:
+    items = top_items(summary.get(key, {}), 1)
+    return items[0] if items else ("N/A", 0)
 
 
 def format_salary(job: Dict) -> str:
@@ -140,19 +151,55 @@ def build_table_rows(jobs: List[Dict]) -> str:
     return "\n".join(rows)
 
 
+def build_linkedin_guest_rows(jobs: List[Dict], limit: int = 120) -> str:
+    rows = []
+    for job in jobs[:limit]:
+        modules = chip_list(job.get("modules", []), 3)
+        skills = chip_list(job.get("skills", []), 3)
+        title = html.escape(job.get("title", ""))
+        company = html.escape(job.get("company", ""))
+        location = html.escape(job.get("location", ""))
+        role = html.escape(job.get("role_family", ""))
+        seniority = html.escape(job.get("seniority", ""))
+        query = html.escape(job.get("query", ""))
+        query_location = html.escape(job.get("query_location", ""))
+        query_filter = html.escape(job.get("query_filter", ""))
+        url = html.escape(job.get("url") or "#")
+        rows.append(
+            f"""
+            <tr>
+              <td><a href="{url}" target="_blank" rel="noopener">{title}</a><small>{company}</small></td>
+              <td>{location}<small>{query} · {query_location} · {query_filter}</small></td>
+              <td>{role}<small>{seniority}</small></td>
+              <td><div class="chips">{modules}</div></td>
+              <td><div class="chips">{skills}</div></td>
+            </tr>
+            """
+        )
+    return "\n".join(rows)
+
+
 def main() -> None:
     jobs = load_json(DATA_DIR / "sap_jobs.json")
     summary = load_json(DATA_DIR / "summary.json")
     linkedin_path = DATA_DIR / "linkedin_signal.json"
     linkedin = load_json(linkedin_path) if linkedin_path.exists() else None
+    linkedin_guest_summary = optional_json(DATA_DIR / "linkedin_jobs_summary.json", {})
+    linkedin_guest_jobs = optional_json(DATA_DIR / "linkedin_jobs.json", [])
     snapshots = load_snapshots()
     total = len(jobs)
     total_text = fmt_int(total)
+    linkedin_guest_total = int(linkedin_guest_summary.get("jobs_collected") or len(linkedin_guest_jobs) or 0)
+    linkedin_guest_text = fmt_int(linkedin_guest_total)
     salary_disclosed = sum(1 for job in jobs if job.get("salary_status") != "Not disclosed")
     remote_count = sum(1 for job in jobs if job.get("remote"))
     unique_locations = len(summary.get("primary_locations", {}))
     top_module = top_items(summary.get("modules", {}), 1)[0][0] if total else "N/A"
     top_role = top_items(summary.get("role_families", {}), 1)[0][0] if total else "N/A"
+    linkedin_guest_top_role, linkedin_guest_top_role_count = top_count(linkedin_guest_summary, "role_families")
+    linkedin_guest_top_skill, linkedin_guest_top_skill_count = top_count(linkedin_guest_summary, "skills")
+    linkedin_guest_top_soft_skill, linkedin_guest_top_soft_skill_count = top_count(linkedin_guest_summary, "soft_skills")
+    linkedin_guest_top_location, linkedin_guest_top_location_count = top_count(linkedin_guest_summary, "query_locations")
     generated = summary.get("generated_at") or dt.datetime.now().isoformat(timespec="seconds")
     linkedin_global_text = linkedin.get("global_count", {}).get("count_text", "N/A") if linkedin else "N/A"
     linkedin_week_item = next((item for item in linkedin.get("recency_counts", []) if item.get("label") == "Past week"), {}) if linkedin else {}
@@ -174,10 +221,18 @@ def main() -> None:
         "salary": summary.get("salary_disclosure", {}),
         "historyJobs": {item.get("date", ""): item.get("sap_jobs_after_filter", 0) for item in snapshots},
         "historyLinkedIn": {item.get("date", ""): item.get("linkedin_global_count", 0) for item in snapshots},
+        "historyLinkedInGuest": {item.get("date", ""): item.get("linkedin_jobs_collected", 0) for item in snapshots},
         "linkedinKeywords": list_counts(linkedin.get("keyword_counts", []), "keyword") if linkedin else {},
         "linkedinLocations": list_counts(linkedin.get("location_counts", []), "location") if linkedin else {},
         "linkedinWorkModel": list_counts(linkedin.get("work_model_counts", []), "label") if linkedin else {},
         "linkedinRecency": list_counts(linkedin.get("recency_counts", []), "label") if linkedin else {},
+        "linkedinGuestQueries": dict(top_items(linkedin_guest_summary.get("queries", {}), 12)),
+        "linkedinGuestLocations": dict(top_items(linkedin_guest_summary.get("query_locations", {}), 12)),
+        "linkedinGuestRoles": dict(top_items(linkedin_guest_summary.get("role_families", {}), 10)),
+        "linkedinGuestModules": dict(top_items(linkedin_guest_summary.get("modules", {}), 16)),
+        "linkedinGuestSkills": dict(top_items(linkedin_guest_summary.get("skills", {}), 18)),
+        "linkedinGuestSoftSkills": dict(top_items(linkedin_guest_summary.get("soft_skills", {}), 14)),
+        "linkedinGuestDegreeFields": dict(top_items(linkedin_guest_summary.get("degree_fields", {}), 10)),
     }
 
     linkedin_section = ""
@@ -190,8 +245,8 @@ def main() -> None:
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Market Signal</div>
-        <h2>LinkedIn Shows The Market Scale; The Open Pool Shows The Evidence</h2>
-        <p>Using the logged-in LinkedIn Jobs UI on {html.escape(linkedin.get("observed_at", ""))}, a read-only search for <strong>SAP</strong> in <strong>Worldwide</strong> showed <strong>{html.escape(linkedin_global_text)}</strong> results. That number is LinkedIn's rounded search count, not a downloadable list of 371,000 individual jobs. The source-linked table in this report contains the {total_text} open postings that were collected, deduplicated, classified, and linked back to their original sources.</p>
+        <h2>LinkedIn Shows The Market Scale; The Scraper Pool Shows The Evidence We Can Link</h2>
+        <p>Using the logged-in LinkedIn Jobs UI on {html.escape(linkedin.get("observed_at", ""))}, a read-only search for <strong>SAP</strong> in <strong>Worldwide</strong> showed <strong>{html.escape(linkedin_global_text)}</strong> results. That number is LinkedIn's rounded search count, not a downloadable list of 371,000 individual jobs. The evidence layer now has two source-linked pools: {total_text} open-feed postings and {linkedin_guest_text} LinkedIn guest job links collected through partitioned public searches.</p>
       </div>
       <div class="kpis signal-kpis">
         <div class="kpi"><strong>{html.escape(linkedin_global_text)}</strong><span>LinkedIn Jobs rounded result count for SAP worldwide</span></div>
@@ -202,7 +257,7 @@ def main() -> None:
       </div>
       <div class="note linkedin-links">
         <h2>Live LinkedIn Validation Links</h2>
-        <p>These links reopen the same live LinkedIn Jobs searches used for the market-signal counts. They are validation links, not a bulk export of individual LinkedIn postings.</p>
+        <p>These links reopen the same live LinkedIn Jobs searches used for the market-signal counts. They validate the size signal; the collected LinkedIn guest pool below contains the individual source links gathered so far.</p>
         <div class="link-grid">
           {linkedin_search_links}
         </div>
@@ -232,6 +287,107 @@ def main() -> None:
       <div class="chart">
         <h2>LinkedIn Recency</h2>
         <canvas id="linkedinRecencyChart"></canvas>
+      </div>
+    </div>
+  </section>
+"""
+
+    linkedin_guest_section = ""
+    if linkedin_guest_total:
+        linkedin_guest_section = f"""
+  <section>
+    <div class="wrap">
+      <div class="note signal-note">
+        <div class="eyebrow">LinkedIn Collected Pool · Experimental</div>
+        <h2>{linkedin_guest_text} LinkedIn Job Links Collected So Far</h2>
+        <p>This is the actual LinkedIn-linked job pool collected for analysis. The scraper queries public LinkedIn guest job endpoints by keyword, country, recency, and work model, deduplicates by LinkedIn job id, enriches each posting with SAP module and description signals, and stores dated snapshots. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or the user's private LinkedIn session.</p>
+      </div>
+      <div class="kpis signal-kpis">
+        <div class="kpi"><strong>{linkedin_guest_text}</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
+        <div class="kpi"><strong>{fmt_int(int(linkedin_guest_summary.get("search_partitions_collected") or linkedin_guest_summary.get("searches_attempted", 0)))}</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
+        <div class="kpi"><strong>{html.escape(linkedin_guest_top_location)}</strong><span>Largest collected query location: {fmt_int(linkedin_guest_top_location_count)} links</span></div>
+        <div class="kpi"><strong>{html.escape(linkedin_guest_top_role)}</strong><span>Top collected role family: {fmt_int(linkedin_guest_top_role_count)} links</span></div>
+        <div class="kpi"><strong>{html.escape(linkedin_guest_top_skill)}</strong><span>Top extracted technical skill: {fmt_int(linkedin_guest_top_skill_count)} mentions</span></div>
+        <div class="kpi"><strong>{html.escape(linkedin_guest_top_soft_skill)}</strong><span>Top extracted soft skill: {fmt_int(linkedin_guest_top_soft_skill_count)} mentions</span></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="/data/linkedin_jobs.csv">Download LinkedIn CSV</a>
+        <a class="button" href="/data/linkedin_jobs.json">LinkedIn JSON</a>
+        <a class="button" href="/data/linkedin_jobs_summary.json">LinkedIn summary</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="chart">
+        <h2>Collected LinkedIn Queries</h2>
+        <canvas id="linkedinGuestQueriesChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Collected LinkedIn Locations</h2>
+        <canvas id="linkedinGuestLocationsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="chart">
+        <h2>Collected LinkedIn Roles</h2>
+        <canvas id="linkedinGuestRolesChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Collected LinkedIn Soft Skills</h2>
+        <canvas id="linkedinGuestSoftSkillsChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Collected LinkedIn Education Fields</h2>
+        <canvas id="linkedinGuestDegreeFieldsChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="note">
+        <h2>Collected LinkedIn SAP Areas</h2>
+        <div class="bars" id="linkedinGuestModuleBars"></div>
+      </div>
+      <div class="note">
+        <h2>Collected LinkedIn Technical Terms</h2>
+        <div class="bars" id="linkedinGuestSkillBars"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap table-panel">
+      <div class="table-intro">
+        <div>
+          <h2>LinkedIn Guest Job Link Sample</h2>
+          <p>The table shows the first {fmt_int(min(len(linkedin_guest_jobs), 120))} collected LinkedIn guest records. The full {linkedin_guest_text}-row link pool is available in CSV and JSON.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="/data/linkedin_jobs.csv">Full CSV</a>
+          <a class="button" href="/data/linkedin_jobs.json">Full JSON</a>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Job / Company</th>
+              <th>Collected Via</th>
+              <th>Role</th>
+              <th>SAP Areas</th>
+              <th>Technical Terms</th>
+            </tr>
+          </thead>
+          <tbody>
+            {build_linkedin_guest_rows(linkedin_guest_jobs)}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -282,7 +438,7 @@ def main() -> None:
     .meta {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }}
     .pill {{ border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; background: #fff; color: var(--muted); font-size: 13px; }}
     section {{ padding: 28px 0; }}
-    .kpis {{ display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }}
+    .kpis {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }}
     .kpi, .chart, .note, .table-panel {{
       background: var(--panel);
       border: 1px solid var(--line);
@@ -352,17 +508,19 @@ def main() -> None:
     <div class="wrap">
       <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
       <h1>Global SAP Job Market Report</h1>
-      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the open job pool contains the individual postings that can be linked, downloaded, and analyzed transparently.</p>
-      <div class="layer-note"><strong>Read the numbers as two layers:</strong> {html.escape(linkedin_global_text)} is the LinkedIn SAP worldwide market signal; {total_text} is the deduplicated source-linked job pool used for the detailed charts and table.</div>
+      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the open-feed and LinkedIn guest pools contain the individual postings that can be linked, downloaded, and analyzed transparently.</p>
+      <div class="layer-note"><strong>Read the numbers as three layers:</strong> {html.escape(linkedin_global_text)} is the LinkedIn SAP worldwide market signal; {linkedin_guest_text} is the collected LinkedIn guest link pool; {total_text} is the deduplicated open-feed job pool used for the broader source-linked analysis.</div>
       <div class="meta">
         <span class="pill">Generated at: {html.escape(generated)}</span>
         <span class="pill">Baseline: 2026-07-19</span>
         <span class="pill">LinkedIn signal: {html.escape(linkedin_global_text)}</span>
+        <span class="pill">LinkedIn links collected: {linkedin_guest_text}</span>
         <span class="pill">Source-linked jobs: {total_text}</span>
       </div>
       <div class="actions">
         <a class="button primary" href="#job-pool">Explore {total_text} linked jobs</a>
         <a class="button" href="/data/sap_jobs.csv">Download CSV</a>
+        <a class="button" href="/data/linkedin_jobs.csv">LinkedIn CSV</a>
         <a class="button" href="#methodology">How it was built</a>
         <a class="button" href="#community">Contribute anonymously</a>
       </div>
@@ -373,6 +531,7 @@ def main() -> None:
     <div class="wrap kpis">
       <div class="kpi"><strong>{html.escape(linkedin_global_text)}</strong><span>LinkedIn SAP worldwide market signal</span></div>
       <div class="kpi"><strong>{html.escape(linkedin_week_text)}</strong><span>LinkedIn SAP market signal from the past week</span></div>
+      <div class="kpi"><strong>{linkedin_guest_text}</strong><span>LinkedIn guest job links collected and analyzed</span></div>
       <div class="kpi"><strong>{total_text}</strong><span>Source-linked SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>{pct(remote_count, total)}</strong><span>Remote or remote-source job share</span></div>
       <div class="kpi"><strong>{pct(salary_disclosed, total)}</strong><span>Jobs with salary information</span></div>
@@ -381,12 +540,14 @@ def main() -> None:
 
   {linkedin_section}
 
+  {linkedin_guest_section}
+
   <section>
     <div class="wrap grid-2">
       <div class="note">
         <h2>What This Baseline Says</h2>
         <div class="callout-grid">
-          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's {html.escape(linkedin_global_text)} rounded worldwide count is the market-size signal. The {total_text} source-linked postings are the evidence layer used for detailed analysis.</p></div>
+          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's {html.escape(linkedin_global_text)} rounded worldwide count is the market-size signal. The {linkedin_guest_text} LinkedIn guest links and {total_text} open-feed postings are the current evidence layers used for detailed analysis.</p></div>
           <div class="callout"><strong>Technical roles dominate the open dataset.</strong><p>Technical / Development is the largest role family, followed by Data / Analytics, Basis / Security, Functional Consulting, and Architecture.</p></div>
           <div class="callout"><strong>Salary remains the biggest blind spot.</strong><p>Only {pct(salary_disclosed, total)} of deduplicated open postings include salary information. The next phase should focus on salary ranges by module, country, seniority, and work model.</p></div>
         </div>
@@ -504,8 +665,8 @@ def main() -> None:
           <li>Deduplication removes repeated or near-identical postings by comparing normalized title, company, location, and source URL signals, so the same job is less likely to be counted multiple times across feeds.</li>
           <li>SAP matching used strong keyword signals such as SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related terms.</li>
           <li>Salary was not estimated. A posting was marked as salary-disclosed only when the source provided salary fields or the description explicitly mentioned compensation.</li>
-          <li>Closed platforms such as LinkedIn and Indeed were not scraped into the job dataset; this report is not an official statistic for the entire market.</li>
-          <li>LinkedIn is included only as a separate market-signal layer: rounded search-result counts observed through the logged-in LinkedIn Jobs UI, without bulk extraction or republication of individual postings. The report provides live LinkedIn search links for validation instead of republishing LinkedIn's individual job-result pages.</li>
+          <li>LinkedIn has two separate layers: rounded search-result counts observed through the logged-in LinkedIn Jobs UI, and a collected public guest job-link pool gathered through partitioned searches.</li>
+          <li>The LinkedIn guest scraper does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private profile/session data. The 371,000+ figure is treated as market size; the collected guest pool is the source-linked subset available for analysis and download.</li>
         </ul>
       </div>
       <div class="note">
@@ -518,7 +679,8 @@ def main() -> None:
           <a href="https://remotive.com/" target="_blank" rel="noopener">Remotive</a>
           <a href="https://remoteok.com/" target="_blank" rel="noopener">Remote OK</a>
           <a href="https://www.arbeitnow.com/" target="_blank" rel="noopener">Arbeitnow</a>
-          <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener">LinkedIn Jobs signal</a>
+          <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener">LinkedIn Jobs signal and public job pages</a>
+          <a href="https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview" target="_blank" rel="noopener">Official LinkedIn Job Posting API docs</a>
         </div>
       </div>
     </div>
@@ -530,7 +692,7 @@ def main() -> None:
         <h2>How This Will Stay Alive</h2>
         <ul>
           <li>This first release is a baseline snapshot. Every future run writes a dated snapshot under <code>data/snapshots/YYYY-MM-DD</code> instead of replacing history.</li>
-          <li>Trend charts will compare snapshots across time: module demand, country mix, seniority, remote/hybrid/on-site, salary transparency, and LinkedIn signal shifts.</li>
+          <li>Trend charts will compare snapshots across time: module demand, country mix, seniority, remote/hybrid/on-site, salary transparency, LinkedIn signal shifts, and collected LinkedIn guest-pool growth.</li>
           <li>The public page can be mirrored to GitHub Pages or any static host, with the source and data snapshots versioned in Git for transparency.</li>
           <li>Community inputs will be anonymized and added as a separate qualitative layer, so market data and human experience remain distinguishable.</li>
         </ul>
@@ -538,6 +700,10 @@ def main() -> None:
       <div class="chart">
         <h2>Historical Snapshot Count</h2>
         <canvas id="historyJobsChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Historical LinkedIn Pool</h2>
+        <canvas id="historyLinkedInGuestChart"></canvas>
       </div>
     </div>
   </section>
@@ -565,15 +731,15 @@ def main() -> None:
       <div class="note">
         <h2>Next Data Expansion</h2>
         <ul>
+          <li>Expand the LinkedIn crawler grid by adding more SAP keywords, countries, recency windows, and work-model filters while preserving source links and dated snapshots.</li>
           <li>Add more source-linked job boards and direct employer career pages before increasing claims about the full market.</li>
-          <li>Track LinkedIn search counts historically through saved query snapshots and validation links.</li>
           <li>Store fuller job-description text where source terms allow it, so soft skill, degree, and keyword analysis becomes more reliable.</li>
           <li>Add anonymous community submissions for salary, interviews, stress, working conditions, and satisfaction.</li>
         </ul>
       </div>
       <div class="note">
         <h2>LinkedIn API Decision</h2>
-        <p>The GitHub <code>linkedin-api</code> topic mostly contains unofficial scraper and automation projects. This research keeps LinkedIn as a validation and market-signal layer unless official Talent Solutions access is granted. That protects the credibility of the report and avoids republishing logged-in LinkedIn job-result pages.</p>
+        <p>The GitHub <code>linkedin-api</code> topic mostly contains unofficial scraper and automation projects. This research uses public guest job pages for a source-linked pool and keeps official API access as a separate future option, because LinkedIn's official Talent Solutions job-posting APIs are restricted partner products and are not a general market-export API.</p>
       </div>
     </div>
   </section>
@@ -583,12 +749,13 @@ def main() -> None:
       <div class="table-intro">
         <div>
           <h2>Source-Linked Open Job Pool</h2>
-          <p>This table contains {total_text} deduplicated open-source postings with original source links. It is not the full LinkedIn market. LinkedIn is used only for rounded market-signal counts such as {html.escape(linkedin_global_text)} SAP results worldwide.</p>
+          <p>This table contains {total_text} deduplicated open-feed postings with original source links. The separate LinkedIn guest pool contains {linkedin_guest_text} collected LinkedIn job links. The full market-size signal remains LinkedIn's rounded {html.escape(linkedin_global_text)} SAP worldwide count.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="/data/sap_jobs.csv">CSV</a>
           <a class="button" href="/data/sap_jobs.json">JSON</a>
           <a class="button" href="/data/linkedin_signal.json">LinkedIn signal</a>
+          <a class="button" href="/data/linkedin_jobs.csv">LinkedIn links</a>
         </div>
       </div>
       <div class="toolbar">
@@ -688,6 +855,11 @@ def main() -> None:
     makeBarChart("linkedinLocationsChart", chartData.linkedinLocations, "LinkedIn result count", true);
     makeDoughnut("linkedinWorkModelChart", chartData.linkedinWorkModel);
     makeBarChart("linkedinRecencyChart", chartData.linkedinRecency, "LinkedIn result count", true);
+    makeBarChart("linkedinGuestQueriesChart", chartData.linkedinGuestQueries, "Collected job links", true);
+    makeBarChart("linkedinGuestLocationsChart", chartData.linkedinGuestLocations, "Collected job links", true);
+    makeBarChart("linkedinGuestRolesChart", chartData.linkedinGuestRoles, "Collected job links", true);
+    makeBarChart("linkedinGuestSoftSkillsChart", chartData.linkedinGuestSoftSkills, "Posting count", true);
+    makeBarChart("linkedinGuestDegreeFieldsChart", chartData.linkedinGuestDegreeFields, "Posting count", true);
     makeBarChart("rolesChart", chartData.roles, "Job count", true);
     makeBarChart("seniorityChart", chartData.seniority, "Job count", true);
     makeDoughnut("focusChart", chartData.focus);
@@ -696,8 +868,11 @@ def main() -> None:
     makeBarChart("degreeLevelsChart", chartData.degreeLevels, "Posting count", true);
     makeBarChart("historyJobsChart", chartData.historyJobs, "Source-linked jobs", false);
     makeBarChart("historyLinkedInChart", chartData.historyLinkedIn, "LinkedIn SAP signal", false);
+    makeBarChart("historyLinkedInGuestChart", chartData.historyLinkedInGuest, "Collected LinkedIn links", false);
     renderBars("moduleBars", chartData.modules);
     renderBars("skillBars", chartData.skills);
+    renderBars("linkedinGuestModuleBars", chartData.linkedinGuestModules);
+    renderBars("linkedinGuestSkillBars", chartData.linkedinGuestSkills);
     renderBars("descriptionTermBars", chartData.descriptionTerms);
 
     const searchInput = document.getElementById("jobSearch");
@@ -736,6 +911,7 @@ def main() -> None:
 </body>
 </html>
 """
+    report_html = "\n".join(line.rstrip() for line in report_html.splitlines()) + "\n"
 
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     report_path = REPORT_DIR / "index.html"

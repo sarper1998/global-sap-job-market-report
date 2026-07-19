@@ -1,25 +1,27 @@
 # Global SAP Job Market Report
 
-This project collects SAP-focused job postings from public job sources and analyzes them by module, technical requirement, role family, seniority, location, remote availability, and salary transparency. It also includes a separate LinkedIn Jobs market-signal layer based on read-only UI result counts.
+This project collects SAP-focused job postings from public job sources and analyzes them by module, technical requirement, role family, seniority, location, remote availability, and salary transparency. It also includes two LinkedIn layers: rounded LinkedIn Jobs UI result counts as a market-size signal, and a growing source-linked LinkedIn guest job pool collected through partitioned public searches.
 
 Public report: https://sarper1998.github.io/global-sap-job-market-report/
 
 ## Plan
 
-1. Define scope honestly: this is a current snapshot of accessible open job-posting sources, without scraping closed platforms.
+1. Define scope honestly: separate market-size signals from source-linked job records.
 2. Collect raw data from open job sources: Himalayas, Remote First Jobs, Jobicy, Remotive, Remote OK, and Arbeitnow.
 3. Normalize postings: title, company, location, remote status, salary fields, source, and original link.
 4. Deduplicate repeated or near-identical postings by normalized title, company, location, and URL signals.
 5. Apply SAP matching: SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related strong terms.
 6. Tag each posting by SAP module, technical skill, role family, seniority, and SAP focus level.
 7. Extract job-description signals for recurring terms, soft skills, education fields, and degree mentions.
-8. Save dated snapshots under `data/snapshots/YYYY-MM-DD` for historical tracking.
-9. Generate a publishable HTML report with KPIs, charts, a filterable job table, methodology, interpretation, and source attribution.
+8. Collect LinkedIn guest job links through public guest job endpoints, partitioned by keyword, location, recency, and work-model filters.
+9. Save dated snapshots under `data/snapshots/YYYY-MM-DD` for historical tracking.
+10. Generate a publishable HTML report with KPIs, charts, filterable tables, methodology, interpretation, and source attribution.
 
 ## Run
 
 ```bash
 python3 scripts/fetch_sap_jobs.py
+python3 scripts/fetch_linkedin_guest_jobs.py
 python3 scripts/build_report.py
 open report/index.html
 ```
@@ -33,6 +35,9 @@ The latest run on 2026-07-19 collected 3,485 raw records from open sources. Afte
 - Top role families: Technical / Development, Data / Analytics, Basis / Security, Functional Consulting.
 - Most frequent SAP areas: S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, FI / CO / FICO.
 - LinkedIn Jobs signal: SAP in Worldwide showed 371,000+ results in the logged-in LinkedIn UI on 2026-07-19.
+- LinkedIn guest pool: 1,055 deduplicated LinkedIn job links collected across 52 keyword/location/filter partitions.
+- Top collected LinkedIn guest skill signals: S/4HANA, ABAP, SAP BTP, English, SAP HANA.
+- Top collected LinkedIn guest soft-skill signals: consulting mindset, communication, leadership, collaboration, analytical thinking.
 - Description analysis now includes soft skill signals, education-field signals, degree-level mentions, and common job-description terms.
 
 Processed data files:
@@ -41,14 +46,18 @@ Processed data files:
 - `data/processed/sap_jobs.json`
 - `data/processed/summary.json`
 - `data/processed/linkedin_signal.json`
+- `data/processed/linkedin_jobs.csv`
+- `data/processed/linkedin_jobs.json`
+- `data/processed/linkedin_jobs_summary.json`
 - `data/snapshots/index.json`
-- Deployed data links: `/data/sap_jobs.csv`, `/data/sap_jobs.json`, `/data/summary.json`, `/data/linkedin_signal.json`, `/data/snapshots/index.json`
+- Deployed data links: `/data/sap_jobs.csv`, `/data/sap_jobs.json`, `/data/summary.json`, `/data/linkedin_signal.json`, `/data/linkedin_jobs.csv`, `/data/linkedin_jobs.json`, `/data/linkedin_jobs_summary.json`, `/data/snapshots/index.json`
 
 ## Scope Limits
 
-- Closed platforms such as LinkedIn and Indeed are not scraped into the job dataset.
-- LinkedIn is included only as a separate market-signal layer using rounded UI result counts and live LinkedIn search links; individual LinkedIn postings are not bulk extracted or republished.
-- Unofficial LinkedIn scraper projects are not used as primary data sources unless a future version can prove compliant access and stable data rights.
+- The 371,000+ LinkedIn number is a rounded UI result count and should be read as market-size signal, not as a complete downloadable dataset.
+- The LinkedIn guest job pool is collected from public guest job pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private LinkedIn session data.
+- LinkedIn public pagination is limited. The pool grows by partitioning searches across keywords, countries, recency windows, and work-model filters, then deduplicating by LinkedIn job id.
+- Unofficial LinkedIn API/scraper projects are not used as authoritative sources unless a future version can prove compliant access and stable data rights.
 - Salary is not estimated; only salary information explicitly available in source fields or posting text is marked.
 - Job-description keyword analysis currently uses the stored public excerpt field. Fuller description analysis is planned where source terms allow it.
 - Some sources provide city or region labels rather than normalized countries. These records are shown using the source-provided location when a reliable country mapping is not available.
@@ -56,7 +65,7 @@ Processed data files:
 
 ## Next Improvements
 
-- Save dated snapshots and add trend charts for country mix, module demand, seniority, remote/hybrid/on-site, salary transparency, and LinkedIn signal shifts.
+- Expand the LinkedIn crawler grid and save trend charts for country mix, module demand, seniority, remote/hybrid/on-site, salary transparency, LinkedIn signal shifts, and LinkedIn guest-pool growth.
 - Add broader source coverage such as Adzuna, TheirStack, and direct employer career pages.
 - Refine SAP module matching with manually reviewed examples.
 - Normalize salary-bearing postings by currency and compensation period.
