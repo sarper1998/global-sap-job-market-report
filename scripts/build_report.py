@@ -210,6 +210,7 @@ def main() -> None:
     linkedin_guest_top_skill, linkedin_guest_top_skill_count = top_count(linkedin_guest_summary, "skills")
     linkedin_guest_top_soft_skill, linkedin_guest_top_soft_skill_count = top_count(linkedin_guest_summary, "soft_skills")
     linkedin_guest_top_location, linkedin_guest_top_location_count = top_count(linkedin_guest_summary, "query_locations")
+    linkedin_guest_described = int(linkedin_guest_summary.get("description_enriched_jobs") or 0)
     generated = summary.get("generated_at") or dt.datetime.now().isoformat(timespec="seconds")
     linkedin_global_text = linkedin.get("global_count", {}).get("count_text", "N/A") if linkedin else "N/A"
     linkedin_week_item = next((item for item in linkedin.get("recency_counts", []) if item.get("label") == "Past week"), {}) if linkedin else {}
@@ -314,6 +315,7 @@ def main() -> None:
       </div>
       <div class="kpis signal-kpis">
         <div class="kpi"><strong>{linkedin_guest_text}</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
+        <div class="kpi"><strong>{fmt_int(linkedin_guest_described)}</strong><span>LinkedIn rows with fetched job-description detail</span></div>
         <div class="kpi"><strong>{fmt_int(int(linkedin_guest_summary.get("search_partitions_collected") or linkedin_guest_summary.get("searches_attempted", 0)))}</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
         <div class="kpi"><strong>{html.escape(linkedin_guest_top_location)}</strong><span>Largest collected query location: {fmt_int(linkedin_guest_top_location_count)} links</span></div>
         <div class="kpi"><strong>{html.escape(linkedin_guest_top_role)}</strong><span>Top collected role family: {fmt_int(linkedin_guest_top_role_count)} links</span></div>
@@ -437,7 +439,7 @@ def main() -> None:
       padding: 36px 28px 24px;
     }}
     .wrap {{ width: min(1180px, calc(100% - 32px)); margin: 0 auto; }}
-    .eyebrow {{ color: var(--teal); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }}
+    .eyebrow {{ color: var(--teal); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; line-height: 1.35; overflow-wrap: anywhere; }}
     h1 {{ margin: 10px 0 10px; font-size: clamp(32px, 4vw, 56px); line-height: 1.02; letter-spacing: 0; }}
     h2 {{ margin: 0 0 16px; font-size: 24px; letter-spacing: 0; }}
     h3 {{ margin: 0 0 8px; font-size: 17px; letter-spacing: 0; }}
@@ -460,11 +462,11 @@ def main() -> None:
     .kpi span {{ color: var(--muted); font-size: 13px; line-height: 1.4; }}
     .grid-2 {{ display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 16px; }}
     .grid-3 {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }}
-    .chart {{ --chart-h: 320px; padding: 18px; min-height: calc(var(--chart-h) + 70px); }}
+    .chart {{ --chart-h: 320px; padding: 18px; min-height: calc(var(--chart-h) + 70px); overflow: hidden; }}
     .chart.compact {{ --chart-h: 280px; }}
     .chart.tall {{ --chart-h: 410px; }}
     .chart.x-tall {{ --chart-h: 500px; }}
-    .chart canvas {{ width: 100% !important; height: var(--chart-h) !important; }}
+    .chart canvas {{ display: block; width: 100% !important; max-width: 100%; height: var(--chart-h) !important; }}
     .note {{ padding: 18px; }}
     .note ul {{ margin: 12px 0 0; padding-left: 20px; color: var(--muted); line-height: 1.55; }}
     .bars {{ display: grid; gap: 9px; margin-top: 14px; }}
@@ -521,6 +523,25 @@ def main() -> None:
       .chart.x-tall {{ --chart-h: 640px; }}
       .bar-row {{ grid-template-columns: minmax(96px, 140px) 1fr 38px; gap: 8px; font-size: 12px; }}
       .kpi {{ min-height: 112px; }}
+    }}
+    @media (max-width: 640px) {{
+      header {{ padding: 28px 12px 18px; }}
+      .wrap {{ width: calc(100% - 16px); }}
+      h1 {{ font-size: 34px; }}
+      h2 {{ font-size: 19px; }}
+      .intro {{ font-size: 15px; }}
+      .meta {{ gap: 8px; }}
+      .pill {{ max-width: 100%; line-height: 1.35; }}
+      .chart {{ --chart-h: 420px; padding: 12px; min-height: calc(var(--chart-h) + 58px); }}
+      .chart.compact {{ --chart-h: 380px; }}
+      .chart.tall {{ --chart-h: 600px; }}
+      .chart.x-tall {{ --chart-h: 760px; }}
+      .kpi strong {{ font-size: 26px; }}
+      .bar-row {{ grid-template-columns: minmax(0, 1fr) 42px; }}
+      .bar-label {{ white-space: normal; grid-column: 1 / -1; }}
+      .bar-track {{ grid-column: 1; }}
+      .actions {{ align-items: stretch; }}
+      .button {{ width: 100%; }}
     }}
   </style>
 </head>
@@ -806,9 +827,26 @@ def main() -> None:
   <script>
     const chartData = {json.dumps(chart_payload, ensure_ascii=False)};
     const palette = ["#2f6f73", "#3f6db5", "#d99b24", "#c84e3a", "#4f8a5b", "#725ca8", "#8a6a3b", "#64748b"];
+    const isMobile = window.matchMedia("(max-width: 700px)").matches;
 
     function entries(obj) {{
       return Object.entries(obj || {{}}).filter(([, value]) => value > 0);
+    }}
+
+    function chartLabel(label) {{
+      const text = String(label || "");
+      const limit = isMobile ? 17 : 24;
+      if (text.length <= limit) return text;
+      return text.slice(0, limit - 2) + "...";
+    }}
+
+    function compactNumber(value) {{
+      const number = Number(value);
+      if (!Number.isFinite(number)) return value;
+      if (!isMobile) return number.toLocaleString();
+      if (Math.abs(number) >= 1000000) return `${{Math.round(number / 1000000)}}M`;
+      if (Math.abs(number) >= 1000) return `${{Math.round(number / 1000)}}k`;
+      return number;
     }}
 
     function makeBarChart(id, data, label, horizontal = false) {{
@@ -825,10 +863,11 @@ def main() -> None:
           indexAxis: horizontal ? "y" : "x",
           responsive: true,
           maintainAspectRatio: false,
+          layout: {{ padding: isMobile ? {{ right: 12, bottom: 6, left: 0 }} : {{ right: 10 }} }},
           plugins: {{ legend: {{ display: false }} }},
           scales: {{
-            x: {{ ticks: {{ color: "#5f6b77" }}, grid: {{ color: "#edf1f3" }} }},
-            y: {{ ticks: {{ color: "#5f6b77" }}, grid: {{ color: "#edf1f3" }} }}
+            x: {{ ticks: {{ color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }}, maxTicksLimit: isMobile ? 4 : 8, maxRotation: isMobile && !horizontal ? 35 : 0, autoSkip: !isMobile || horizontal, callback: function(value) {{ return horizontal ? compactNumber(value) : chartLabel(this.getLabelForValue(value)); }} }}, grid: {{ color: "#edf1f3" }} }},
+            y: {{ ticks: {{ color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }}, autoSkip: false, callback: function(value) {{ return horizontal ? chartLabel(this.getLabelForValue(value)) : compactNumber(value); }} }}, grid: {{ color: "#edf1f3" }} }}
           }}
         }}
       }});
@@ -847,7 +886,8 @@ def main() -> None:
         options: {{
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {{ legend: {{ position: "bottom", labels: {{ boxWidth: 12, color: "#5f6b77" }} }} }}
+          radius: isMobile ? "82%" : "95%",
+          plugins: {{ legend: {{ position: "bottom", labels: {{ boxWidth: 12, color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }} }} }} }}
         }}
       }});
     }}

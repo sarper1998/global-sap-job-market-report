@@ -1,6 +1,6 @@
 # Global SAP Job Market Report
 
-This project collects SAP-focused job postings from public job sources and analyzes them by module, technical requirement, role family, seniority, location, remote availability, and salary transparency. It also includes two LinkedIn layers: rounded LinkedIn Jobs UI result counts as a market-size signal, and a growing source-linked LinkedIn guest job pool collected through partitioned public searches.
+This project collects SAP-focused job postings from public job sources and analyzes them by module, technical requirement, role family, seniority, location, remote availability, and salary transparency. It also includes two LinkedIn layers: rounded LinkedIn Jobs result counts as a market-size signal, and a growing source-linked LinkedIn guest job pool collected through partitioned public searches.
 
 Public report: https://sarper1998.github.io/global-sap-job-market-report/
 
@@ -26,6 +26,26 @@ python3 scripts/build_report.py
 open report/index.html
 ```
 
+Expanded LinkedIn crawl batches:
+
+```bash
+LINKEDIN_QUERY_FILE=data/config/linkedin_queries_expanded.txt \
+LINKEDIN_LOCATION_FILE=data/config/linkedin_locations_expanded.txt \
+LINKEDIN_FILTERS=past_24h,past_month,onsite,hybrid,past_week_remote,past_week_hybrid \
+LINKEDIN_MAX_PAGES_PER_SEARCH=8 \
+LINKEDIN_MAX_DETAILS=0 \
+LINKEDIN_MAX_PARTITIONS=720 \
+python3 scripts/fetch_linkedin_guest_jobs.py
+```
+
+Backfill missing LinkedIn descriptions after link collection:
+
+```bash
+LINKEDIN_BACKFILL_ONLY=1 \
+LINKEDIN_MAX_DETAILS=1000 \
+python3 scripts/fetch_linkedin_guest_jobs.py
+```
+
 ## Current Snapshot
 
 The latest run on 2026-07-19 collected 3,485 raw records from open sources. After SAP filtering and deduplication, 1,565 postings were included in the report.
@@ -35,8 +55,9 @@ The latest run on 2026-07-19 collected 3,485 raw records from open sources. Afte
 - Top role families: Technical / Development, Data / Analytics, Basis / Security, Functional Consulting.
 - Most frequent SAP areas: S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, FI / CO / FICO.
 - LinkedIn Jobs search signal: SAP in Worldwide showed 371,000+ rounded results on 2026-07-19.
-- LinkedIn guest pool: 1,055 deduplicated LinkedIn job links collected across 52 keyword/location/filter partitions.
-- Top collected LinkedIn guest skill signals: S/4HANA, ABAP, SAP BTP, English, SAP HANA.
+- LinkedIn guest pool: 21,085 deduplicated LinkedIn job links collected across 1,051 keyword/location/filter partitions.
+- LinkedIn description detail: 4,020 collected LinkedIn rows have fetched job-description detail.
+- Top collected LinkedIn guest skill signals: S/4HANA, FICO, ABAP, SAP SD, SAP BTP.
 - Top collected LinkedIn guest soft-skill signals: consulting mindset, communication, leadership, collaboration, analytical thinking.
 - Description analysis now includes soft skill signals, education-field signals, degree-level mentions, and common job-description terms.
 
@@ -54,10 +75,10 @@ Processed data files:
 
 ## Scope Limits
 
-- The 371,000+ LinkedIn number is a rounded UI result count and should be read as market-size signal, not as a complete downloadable dataset.
+- The 371,000+ LinkedIn number is a rounded LinkedIn Jobs result count and should be read as market-size signal, not as a complete downloadable dataset.
 - The LinkedIn guest job pool is collected from public LinkedIn guest job endpoints/search pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private LinkedIn session data.
 - LinkedIn public pagination is limited. The pool grows by partitioning searches across keywords, countries, recency windows, and work-model filters, then deduplicating by LinkedIn job id.
-- Unofficial LinkedIn API/scraper projects are not used as authoritative sources unless a future version can prove compliant access and stable data rights.
+- The expanded LinkedIn crawl uses `data/config/linkedin_queries_expanded.txt` and `data/config/linkedin_locations_expanded.txt`, with batch offsets so the full grid can be collected gradually instead of forcing one fragile run.
 - Salary is not estimated; only salary information explicitly available in source fields or posting text is marked.
 - Job-description keyword analysis currently uses the stored public excerpt field. Fuller description analysis is planned where source terms allow it.
 - Some sources provide city or region labels rather than normalized countries. These records are shown using the source-provided location when a reliable country mapping is not available.

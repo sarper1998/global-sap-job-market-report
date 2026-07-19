@@ -20,7 +20,8 @@ from typing import Any, Dict, Iterable, List, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = ROOT / "data" / "processed"
-SNAPSHOT_DIR = ROOT / "data" / "snapshots" / dt.date.today().isoformat()
+SNAPSHOT_DATE = os.environ.get("SNAPSHOT_DATE", dt.date.today().isoformat())
+SNAPSHOT_DIR = ROOT / "data" / "snapshots" / SNAPSHOT_DATE
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch_sap_jobs as sap_core  # noqa: E402
@@ -67,6 +68,23 @@ PAGE_STEP = int(os.environ.get("LINKEDIN_PAGE_STEP", "25"))
 MAX_DETAILS = int(os.environ.get("LINKEDIN_MAX_DETAILS", "250"))
 REQUEST_DELAY_SECONDS = float(os.environ.get("LINKEDIN_REQUEST_DELAY_SECONDS", "0.8"))
 REQUEST_TIMEOUT_SECONDS = float(os.environ.get("LINKEDIN_REQUEST_TIMEOUT_SECONDS", "12"))
+RATE_LIMIT_SLEEP_SECONDS = float(os.environ.get("LINKEDIN_RATE_LIMIT_SLEEP_SECONDS", "90"))
+RATE_LIMIT_RETRIES = int(os.environ.get("LINKEDIN_RATE_LIMIT_RETRIES", "2"))
+PARTITION_OFFSET = int(os.environ.get("LINKEDIN_PARTITION_OFFSET", "0"))
+MAX_PARTITIONS = int(os.environ.get("LINKEDIN_MAX_PARTITIONS", "0"))
+BACKFILL_ONLY = os.environ.get("LINKEDIN_BACKFILL_ONLY", "0") == "1"
+
+FILTER_DEFINITIONS: Dict[str, Dict[str, str]] = {
+    "all": {},
+    "past_24h": {"f_TPR": "r86400"},
+    "past_week": {"f_TPR": "r604800"},
+    "past_month": {"f_TPR": "r2592000"},
+    "onsite": {"f_WT": "1"},
+    "remote": {"f_WT": "2"},
+    "hybrid": {"f_WT": "3"},
+    "past_week_remote": {"f_TPR": "r604800", "f_WT": "2"},
+    "past_week_hybrid": {"f_TPR": "r604800", "f_WT": "3"},
+}
 
 
 def split_env(name: str, fallback: List[str]) -> List[str]:
@@ -74,6 +92,21 @@ def split_env(name: str, fallback: List[str]) -> List[str]:
     if not value:
         return fallback
     return [part.strip() for part in value.split(",") if part.strip()]
+
+
+def split_file_or_env(file_env: str, value_env: str, fallback: List[str]) -> List[str]:
+    file_value = os.environ.get(file_env)
+    if file_value:
+        path = Path(file_value)
+        if not path.is_absolute():
+            path = ROOT / path
+        values = []
+        for line in path.read_text(encoding="utf-8").splitlines():
+            item = line.strip()
+            if item and not item.startswith("#"):
+                values.append(item)
+        return values
+    return split_env(value_env, fallback)
 
 
 def normalize_space(value: Any) -> str:
@@ -105,6 +138,25 @@ def fetch_text(url: str, params: Optional[Dict[str, Any]] = None) -> str:
     )
     with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as resp:
         return resp.read().decode("utf-8", errors="replace")
+
+
+def fetch_text_with_backoff(url: str, params: Optional[Dict[str, Any]] = None, context: str = "") -> str:
+    for attempt in range(RATE_LIMIT_RETRIES + 1):
+        try:
+            return fetch_text(url, params)
+        except urllib.error.HTTPError as exc:
+            if exc.code != 429 or attempt >= RATE_LIMIT_RETRIES:
+                raise
+            sleep_for = RATE_LIMIT_SLEEP_SECONDS * (attempt + 1)
+            print(f"Rate limited at {context or url}; sleeping {sleep_for:.0f}s before retry", flush=True)
+            time.sleep(sleep_for)
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+            if attempt >= RATE_LIMIT_RETRIES:
+                raise
+            sleep_for = min(RATE_LIMIT_SLEEP_SECONDS, 30 * (attempt + 1))
+            print(f"Network error at {context or url}: {exc}; sleeping {sleep_for:.0f}s before retry", flush=True)
+            time.sleep(sleep_for)
+    return fetch_text(url, params)
 
 
 class CardParser(HTMLParser):
@@ -271,6 +323,34 @@ def enrich(row: Dict[str, Any]) -> Dict[str, Any]:
     return row
 
 
+def apply_detail(row: Dict[str, Any], errors: Dict[str, str]) -> bool:
+    job_id = row.get("linkedin_job_id")
+    if not job_id:
+        return False
+    try:
+        detail_body = fetch_text_with_backoff(DETAIL_URL.format(job_id=job_id), context=f"detail|{job_id}")
+        detail = parse_detail(detail_body)
+        for key, value in detail.items():
+            if not value:
+                continue
+            if key == "location" and row.get("location"):
+                continue
+            if key == "location":
+                value = clean_location(value)
+            if value:
+                row[key] = value
+        row["detail_fetched_at"] = dt.datetime.now().isoformat(timespec="seconds")
+        enrich(row)
+        return True
+    except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+        errors[f"detail|{job_id}"] = str(exc)
+        return False
+
+
+def needs_detail(row: Dict[str, Any]) -> bool:
+    return bool(row.get("linkedin_job_id")) and len(normalize_space(row.get("description", ""))) < 80
+
+
 def count_values(rows: List[Dict[str, Any]], field: str, multi: bool = False) -> Dict[str, int]:
     counts: Dict[str, int] = {}
     for row in rows:
@@ -313,13 +393,17 @@ def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
         "description_excerpt",
     ]
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             copy = row.copy()
             for key in ["modules", "skills", "soft_skills", "degree_levels", "degree_fields"]:
                 copy[key] = "; ".join(row.get(key, []))
-            writer.writerow({field: copy.get(field, "") for field in fields})
+            clean = {}
+            for field in fields:
+                value = copy.get(field, "")
+                clean[field] = value.strip() if isinstance(value, str) else value
+            writer.writerow(clean)
 
 
 def build_summary(rows: List[Dict[str, Any]], search_count: int, errors: Dict[str, str]) -> Dict[str, Any]:
@@ -328,13 +412,18 @@ def build_summary(rows: List[Dict[str, Any]], search_count: int, errors: Dict[st
         for row in rows
         if row.get("query") and row.get("query_location")
     }
+    description_enriched = sum(1 for row in rows if len(normalize_space(row.get("description", ""))) >= 80)
     return {
         "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
         "methodology": "LinkedIn public guest job search endpoints, without logged-in cookies, proxies, or anti-bot bypass. Result depth is limited by LinkedIn's public pagination behavior and should be treated as a collected link pool, not the full 371,000+ market.",
         "search_partitions_collected": len(partitions),
         "latest_run_searches_attempted": search_count,
+        "latest_run_partition_offset": PARTITION_OFFSET,
+        "latest_run_partition_limit": MAX_PARTITIONS or None,
         "searches_attempted": len(partitions),
         "jobs_collected": len(rows),
+        "description_enriched_jobs": description_enriched,
+        "description_enriched_share": round(description_enriched / len(rows), 4) if rows else 0,
         "locations": count_values(rows, "location"),
         "queries": count_values(rows, "query"),
         "query_locations": count_values(rows, "query_location"),
@@ -364,6 +453,21 @@ def save_outputs(rows: List[Dict[str, Any]], searches_attempted: int, errors: Di
     return summary
 
 
+def backfill_missing_details(rows: List[Dict[str, Any]], errors: Dict[str, str]) -> int:
+    filled = 0
+    for row in rows:
+        if filled >= MAX_DETAILS:
+            break
+        if not needs_detail(row):
+            continue
+        if apply_detail(row, errors):
+            filled += 1
+            if filled % 25 == 0:
+                save_outputs(rows, 0, errors)
+            time.sleep(REQUEST_DELAY_SECONDS)
+    return filled
+
+
 def refresh_snapshot_index() -> None:
     root = SNAPSHOT_DIR.parent
     entries = []
@@ -380,16 +484,19 @@ def refresh_snapshot_index() -> None:
 
 
 def main() -> None:
-    queries = split_env("LINKEDIN_QUERIES", DEFAULT_QUERIES)
-    locations = split_env("LINKEDIN_LOCATIONS", DEFAULT_LOCATIONS)
-    filters = [
-        ("all", {}),
-        ("past_week", {"f_TPR": "r604800"}),
-        ("remote", {"f_WT": "2"}),
-    ]
-    if os.environ.get("LINKEDIN_FILTERS"):
-        names = set(split_env("LINKEDIN_FILTERS", []))
-        filters = [(name, params) for name, params in filters if name in names]
+    queries = split_file_or_env("LINKEDIN_QUERY_FILE", "LINKEDIN_QUERIES", DEFAULT_QUERIES)
+    locations = split_file_or_env("LINKEDIN_LOCATION_FILE", "LINKEDIN_LOCATIONS", DEFAULT_LOCATIONS)
+    filter_names = split_env("LINKEDIN_FILTERS", ["all", "past_week", "remote"])
+    unknown_filters = [name for name in filter_names if name not in FILTER_DEFINITIONS]
+    if unknown_filters:
+        raise SystemExit(f"Unknown LINKEDIN_FILTERS values: {', '.join(unknown_filters)}")
+    filters = [(name, FILTER_DEFINITIONS[name]) for name in filter_names]
+    partitions = [(query, location, filter_name, extra) for query in queries for location in locations for filter_name, extra in filters]
+    total_partitions = len(partitions)
+    if PARTITION_OFFSET:
+        partitions = partitions[PARTITION_OFFSET:]
+    if MAX_PARTITIONS:
+        partitions = partitions[:MAX_PARTITIONS]
 
     rows = load_existing()
     seen_ids = {row.get("linkedin_job_id") for row in rows if row.get("linkedin_job_id")}
@@ -397,61 +504,59 @@ def main() -> None:
     searches_attempted = 0
     detail_fetches = 0
 
+    if BACKFILL_ONLY:
+        filled = backfill_missing_details(rows, errors)
+        summary = save_outputs(rows, searches_attempted, errors)
+        print(f"Backfilled details for {filled} LinkedIn rows, total {summary['jobs_collected']}", flush=True)
+        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        return
+
+    print(
+        f"Partition plan: running {len(partitions)} of {total_partitions} partitions "
+        f"(offset={PARTITION_OFFSET}, limit={MAX_PARTITIONS or 'all'})",
+        flush=True,
+    )
+
     try:
-        for query in queries:
-            for location in locations:
-                for filter_name, extra in filters:
-                    searches_attempted += 1
-                    before = len(rows)
-                    for page in range(MAX_PAGES_PER_SEARCH):
-                        start = page * PAGE_STEP
-                        params = {"keywords": query, "location": location, "start": start}
-                        params.update(extra)
-                        try:
-                            body = fetch_text(SEARCH_URL, params)
-                        except (urllib.error.URLError, TimeoutError) as exc:
-                            errors[f"{query}|{location}|{filter_name}|{start}"] = str(exc)
-                            break
-                        cards = parse_cards(body)
-                        if not cards:
-                            break
-                        for card in cards:
-                            job_id = card.get("linkedin_job_id")
-                            if job_id in seen_ids:
-                                continue
-                            seen_ids.add(job_id)
-                            card.update(
-                                {
-                                    "query": query,
-                                    "query_location": location,
-                                    "query_filter": filter_name,
-                                    "fetched_at": dt.datetime.now().isoformat(timespec="seconds"),
-                                }
-                            )
-                            if detail_fetches < MAX_DETAILS and job_id:
-                                try:
-                                    detail_body = fetch_text(DETAIL_URL.format(job_id=job_id))
-                                    detail = parse_detail(detail_body)
-                                    for key, value in detail.items():
-                                        if not value:
-                                            continue
-                                        if key == "location" and card.get("location"):
-                                            continue
-                                        if key == "location":
-                                            value = clean_location(value)
-                                        if value:
-                                            card[key] = value
-                                    detail_fetches += 1
-                                    time.sleep(REQUEST_DELAY_SECONDS)
-                                except (urllib.error.URLError, TimeoutError) as exc:
-                                    errors[f"detail|{job_id}"] = str(exc)
-                            rows.append(enrich(card))
-                        time.sleep(REQUEST_DELAY_SECONDS)
-                    summary = save_outputs(rows, searches_attempted, errors)
-                    print(
-                        f"{query} | {location} | {filter_name}: +{len(rows) - before} new, total {summary['jobs_collected']}",
-                        flush=True,
+        for query, location, filter_name, extra in partitions:
+            searches_attempted += 1
+            before = len(rows)
+            for page in range(MAX_PAGES_PER_SEARCH):
+                start = page * PAGE_STEP
+                params = {"keywords": query, "location": location, "start": start}
+                params.update(extra)
+                try:
+                    body = fetch_text_with_backoff(SEARCH_URL, params, f"{query}|{location}|{filter_name}|{start}")
+                except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+                    errors[f"{query}|{location}|{filter_name}|{start}"] = str(exc)
+                    break
+                cards = parse_cards(body)
+                if not cards:
+                    break
+                for card in cards:
+                    job_id = card.get("linkedin_job_id")
+                    if job_id in seen_ids:
+                        continue
+                    seen_ids.add(job_id)
+                    card.update(
+                        {
+                            "query": query,
+                            "query_location": location,
+                            "query_filter": filter_name,
+                            "fetched_at": dt.datetime.now().isoformat(timespec="seconds"),
+                        }
                     )
+                    if detail_fetches < MAX_DETAILS and job_id:
+                        if apply_detail(card, errors):
+                            detail_fetches += 1
+                            time.sleep(REQUEST_DELAY_SECONDS)
+                    rows.append(enrich(card))
+                time.sleep(REQUEST_DELAY_SECONDS)
+            summary = save_outputs(rows, searches_attempted, errors)
+            print(
+                f"{query} | {location} | {filter_name}: +{len(rows) - before} new, total {summary['jobs_collected']}",
+                flush=True,
+            )
     except KeyboardInterrupt:
         summary = save_outputs(rows, searches_attempted, errors)
         print(json.dumps(summary, ensure_ascii=False, indent=2))
