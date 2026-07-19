@@ -1,0 +1,9 @@
+{
+  "name": "global-sap-job-market-report",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build_site.mjs"
+  }
+}

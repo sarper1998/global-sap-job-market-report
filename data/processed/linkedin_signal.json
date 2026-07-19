@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-07-19T16:30:44+03:00",
+  "source": "LinkedIn Jobs UI through the user's logged-in Chrome session",
+  "methodology": "Limited read-only lookup of LinkedIn Jobs search result counts. Counts are LinkedIn UI-reported rounded values and should be interpreted as directional market signals, not as a deduplicated dataset. Individual LinkedIn postings were not scraped or republished.",
+  "global_count": {
+    "query": "SAP",
+    "location": "Worldwide",
+    "count_text": "371,000+",
+    "count": 371000,
+    "plus": true
+  },
+  "keyword_counts": [
+    {"keyword": "SAP", "count_text": "371,000+", "count": 371000, "plus": true},
+    {"keyword": "SAP SD", "count_text": "50,000+", "count": 50000, "plus": true},
+    {"keyword": "SAP SuccessFactors", "count_text": "36,000+", "count": 36000, "plus": true},
+    {"keyword": "SAP ABAP", "count_text": "30,000+", "count": 30000, "plus": true},
+    {"keyword": "SAP HANA", "count_text": "28,000+", "count": 28000, "plus": true},
+    {"keyword": "SAP S/4HANA", "count_text": "23,000+", "count": 23000, "plus": true},
+    {"keyword": "SAP FICO", "count_text": "18,000+", "count": 18000, "plus": true},
+    {"keyword": "SAP MM", "count_text": "15,000+", "count": 15000, "plus": true},
+    {"keyword": "SAP Consultant", "count_text": "12,000+", "count": 12000, "plus": true},
+    {"keyword": "SAP Fiori", "count_text": "9,000+", "count": 9000, "plus": true},
+    {"keyword": "SAP Basis", "count_text": "8,000+", "count": 8000, "plus": true},
+    {"keyword": "SAP BTP", "count_text": "5,000+", "count": 5000, "plus": true}
+  ],
+  "location_counts": [
+    {"location": "United States", "count_text": "108,000+", "count": 108000, "plus": true},
+    {"location": "Brazil", "count_text": "36,000+", "count": 36000, "plus": true},
+    {"location": "Germany", "count_text": "35,000+", "count": 35000, "plus": true},
+    {"location": "India", "count_text": "25,000+", "count": 25000, "plus": true},
+    {"location": "France", "count_text": "15,000+", "count": 15000, "plus": true},
+    {"location": "Netherlands", "count_text": "9,000+", "count": 9000, "plus": true},
+    {"location": "United Kingdom", "count_text": "8,000+", "count": 8000, "plus": true},
+    {"location": "Canada", "count_text": "7,000+", "count": 7000, "plus": true},
+    {"location": "Poland", "count_text": "6,000+", "count": 6000, "plus": true},
+    {"location": "Spain", "count_text": "5,000+", "count": 5000, "plus": true},
+    {"location": "Mexico", "count_text": "4,000+", "count": 4000, "plus": true},
+    {"location": "Australia", "count_text": "3,000+", "count": 3000, "plus": true},
+    {"location": "Turkey", "count_text": "2,000+", "count": 2000, "plus": true},
+    {"location": "Singapore", "count_text": "2,000+", "count": 2000, "plus": true}
+  ],
+  "work_model_counts": [
+    {"label": "On-site", "count_text": "289,000+", "count": 289000, "plus": true},
+    {"label": "Hybrid", "count_text": "56,000+", "count": 56000, "plus": true},
+    {"label": "Remote", "count_text": "17,000+", "count": 17000, "plus": true}
+  ],
+  "recency_counts": [
+    {"label": "Past month", "count_text": "245,000+", "count": 245000, "plus": true},
+    {"label": "Past week", "count_text": "104,000+", "count": 104000, "plus": true},
+    {"label": "Past 24 hours", "count_text": "8,000+", "count": 8000, "plus": true}
+  ]
+}
