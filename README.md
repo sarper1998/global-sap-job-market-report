@@ -46,6 +46,142 @@ LINKEDIN_MAX_DETAILS=1000 \
 python3 scripts/fetch_linkedin_guest_jobs.py
 ```
 
+## Local Long-Running LinkedIn Crawl
+
+The LinkedIn target should be collected locally, not through an LLM session. The local runner keeps its own state in `data/run_state/linkedin_local_crawl_state.json`, writes logs under `logs/`, and resumes from the next partition.
+
+Plan the full grid without crawling:
+
+```bash
+python3 scripts/run_linkedin_local_crawl.py --dry-run --target-jobs 371000
+```
+
+Current expanded grid:
+
+- 67 SAP queries
+- 60 locations
+- 9 recency/work-model filters
+- 36,180 search partitions
+- 7,236,000 theoretical card requests before LinkedIn pagination limits and deduplication
+
+Start a local background crawl:
+
+```bash
+scripts/start_linkedin_local_crawl.sh
+```
+
+By default this runs locally for up to 12 hours, targets 371,000 collected LinkedIn jobs, processes 720 partitions per batch, skips description backfill during the main collection pass, rebuilds the report, and then exits. It can be restarted any time; it resumes from the saved offset.
+
+Check status:
+
+```bash
+scripts/linkedin_local_crawl_status.sh
+```
+
+Stop the local crawl:
+
+```bash
+scripts/linkedin_local_crawl_status.sh stop
+```
+
+## Multi-PC LinkedIn Worker Mode
+
+For faster broad reconciliation runs, split the LinkedIn search grid across multiple always-on PCs. Do not let multiple PCs write to `data/processed/linkedin_jobs.json` directly. Each worker writes an isolated output folder under `data/worker_outputs/<worker-id>/`, and the main PC merges those outputs by LinkedIn job id.
+
+Print a fresh three-PC plan from the beginning of the grid:
+
+```bash
+scripts/print_linkedin_worker_commands.py --workers 3 --start-offset 0 --background
+```
+
+Example output:
+
+```bash
+./scripts/start_linkedin_worker_shard.sh --background pc-1 0 12060
+./scripts/start_linkedin_worker_shard.sh --background pc-2 12060 12060
+./scripts/start_linkedin_worker_shard.sh --background pc-3 24120 12060
+```
+
+If a single-machine crawl is already in progress, stop it first or start worker shards after a conservative future offset to avoid overlap. Overlap is not fatal because merge deduplicates by job id, but it wastes time.
+
+Check worker status on each PC:
+
+```bash
+scripts/linkedin_worker_status.sh
+```
+
+When workers finish, copy each `data/worker_outputs/<worker-id>/` folder back to the main PC under the same path, then merge:
+
+```bash
+scripts/merge_linkedin_worker_outputs.py
+python3 scripts/build_report.py
+npm run build
+```
+
+Run a longer local session:
+
+```bash
+LINKEDIN_MAX_RUNTIME_HOURS=72 \
+LINKEDIN_MAX_PARTITIONS=720 \
+LINKEDIN_BACKFILL_DETAILS=0 \
+scripts/start_linkedin_local_crawl.sh --cycle-when-complete
+```
+
+Install monthly local automation on macOS:
+
+```bash
+scripts/install_monthly_local_crawl.sh
+```
+
+This installs a LaunchAgent that starts the local crawl on the 1st day of every month at 02:30 local time. It does not require Codex or ChatGPT to stay open.
+
+macOS privacy note: if this repo lives under `~/Documents`, `~/Desktop`, or `~/Downloads`, LaunchAgent may fail with `Operation not permitted` unless Terminal/Python has Full Disk Access. For unattended monthly crawling, move the repo to a non-protected folder such as `~/Projects/global-sap-job-market-report`, or grant Full Disk Access. Manual Terminal runs from the current folder still work.
+
+## Parallel Company Career / ATS Crawl
+
+The company career crawler runs independently from LinkedIn and writes a separate source-linked pool:
+
+```bash
+scripts/start_company_career_crawl.sh
+scripts/company_career_crawl_status.sh
+```
+
+It collects public SAP postings from configured company career and ATS sources under `data/config/company_career_sources.json`, including jobs2web / SuccessFactors pages, SmartRecruiters, Greenhouse, and Workday CXS where public access works. Outputs are written to:
+
+```text
+data/processed/company_career_jobs.csv
+data/processed/company_career_jobs.json
+data/processed/company_career_jobs_summary.json
+```
+
+Install the monthly macOS LaunchAgent:
+
+```bash
+scripts/install_company_career_crawl.sh
+```
+
+This schedules the company career crawl on the 1st day of every month at 03:30 local time, after the LinkedIn monthly crawler starts.
+
+## Daily Delta Mode
+
+Daily delta mode keeps the report alive without re-running the full 371,000+ LinkedIn market crawl every day.
+
+```bash
+scripts/install_daily_delta.sh
+scripts/daily_delta_status.sh
+```
+
+The daily LaunchAgent runs every day at 06:15 local time. It:
+
+- skips LinkedIn delta if the full LinkedIn crawler is still running, to avoid concurrent writes
+- otherwise runs a lightweight LinkedIn `past_24h` crawl over the daily location set in `data/config/linkedin_locations_daily_delta.txt`
+- runs the company career / ATS crawler in merge mode, preserving `first_seen_*` and updating `last_seen_*`
+- skips jobs2web / SuccessFactors detail-page fetching during daily runs, preserving existing descriptions and leaving new description enrichment to broader reconciliation/backfill runs
+- rebuilds the report and static bundle
+- writes `data/processed/daily_delta_summary.json` and `data/snapshots/YYYY-MM-DD/daily_delta_summary.json`
+
+The daily LinkedIn delta intentionally uses fewer locations, one recency filter, and two pages per search. The broad/full crawler should be treated as occasional reconciliation, not the normal daily workflow.
+
 ## Current Snapshot
 
 The latest run on 2026-07-19 collected 3,485 raw records from open sources. After SAP filtering and deduplication, 1,565 postings were included in the report.
@@ -68,10 +204,10 @@ Processed data files:
 - `data/processed/summary.json`
 - `data/processed/linkedin_signal.json`
 - `data/processed/linkedin_jobs.csv`
-- `data/processed/linkedin_jobs.json`
+- `data/processed/linkedin_jobs.json.gz`
 - `data/processed/linkedin_jobs_summary.json`
 - `data/snapshots/index.json`
-- Deployed data links: `/data/sap_jobs.csv`, `/data/sap_jobs.json`, `/data/summary.json`, `/data/linkedin_signal.json`, `/data/linkedin_jobs.csv`, `/data/linkedin_jobs.json`, `/data/linkedin_jobs_summary.json`, `/data/snapshots/index.json`
+- Deployed data links: `data/sap_jobs.csv`, `data/sap_jobs.json`, `data/summary.json`, `data/linkedin_signal.json`, `data/linkedin_jobs.csv`, `data/linkedin_jobs.json.gz`, `data/linkedin_jobs_summary.json`, `data/snapshots/index.json`
 
 ## Scope Limits
 

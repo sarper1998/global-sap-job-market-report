@@ -3,11 +3,14 @@ from __future__ import annotations
 
 import csv
 import datetime as dt
+import gzip
 import hashlib
 import html
 import json
 import os
 import re
+import shutil
+import socket
 import sys
 import time
 import urllib.error
@@ -22,6 +25,15 @@ ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = ROOT / "data" / "processed"
 SNAPSHOT_DATE = os.environ.get("SNAPSHOT_DATE", dt.date.today().isoformat())
 SNAPSHOT_DIR = ROOT / "data" / "snapshots" / SNAPSHOT_DATE
+WORKER_ID = os.environ.get("LINKEDIN_WORKER_ID", "").strip()
+WORKER_OUTPUT_DIR_ENV = os.environ.get("LINKEDIN_WORKER_OUTPUT_DIR", "").strip()
+WORKER_OUTPUT_DIR = Path(WORKER_OUTPUT_DIR_ENV) if WORKER_OUTPUT_DIR_ENV else None
+if WORKER_OUTPUT_DIR is not None and not WORKER_OUTPUT_DIR.is_absolute():
+    WORKER_OUTPUT_DIR = ROOT / WORKER_OUTPUT_DIR
+if WORKER_ID and WORKER_OUTPUT_DIR is None:
+    WORKER_OUTPUT_DIR = ROOT / "data" / "worker_outputs" / WORKER_ID
+WORKER_MODE = WORKER_OUTPUT_DIR is not None
+OUTPUT_DIR = WORKER_OUTPUT_DIR if WORKER_MODE else PROCESSED_DIR
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch_sap_jobs as sap_core  # noqa: E402
@@ -73,6 +85,9 @@ RATE_LIMIT_RETRIES = int(os.environ.get("LINKEDIN_RATE_LIMIT_RETRIES", "2"))
 PARTITION_OFFSET = int(os.environ.get("LINKEDIN_PARTITION_OFFSET", "0"))
 MAX_PARTITIONS = int(os.environ.get("LINKEDIN_MAX_PARTITIONS", "0"))
 BACKFILL_ONLY = os.environ.get("LINKEDIN_BACKFILL_ONLY", "0") == "1"
+SAVE_EVERY_PARTITIONS = max(1, int(os.environ.get("LINKEDIN_SAVE_EVERY_PARTITIONS", "1")))
+PRINT_FULL_SUMMARY = os.environ.get("LINKEDIN_PRINT_FULL_SUMMARY", "1") == "1"
+WRITE_SNAPSHOT = os.environ.get("LINKEDIN_WRITE_SNAPSHOT", "1") == "1"
 
 FILTER_DEFINITIONS: Dict[str, Dict[str, str]] = {
     "all": {},
@@ -150,7 +165,7 @@ def fetch_text_with_backoff(url: str, params: Optional[Dict[str, Any]] = None, c
             sleep_for = RATE_LIMIT_SLEEP_SECONDS * (attempt + 1)
             print(f"Rate limited at {context or url}; sleeping {sleep_for:.0f}s before retry", flush=True)
             time.sleep(sleep_for)
-        except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+        except (urllib.error.URLError, TimeoutError, ConnectionError, socket.timeout, OSError) as exc:
             if attempt >= RATE_LIMIT_RETRIES:
                 raise
             sleep_for = min(RATE_LIMIT_SLEEP_SECONDS, 30 * (attempt + 1))
@@ -278,11 +293,38 @@ def parse_detail(body: str) -> Dict[str, str]:
     return parser.result()
 
 
+def gzip_path(path: Path) -> Path:
+    return path.with_name(f"{path.name}.gz")
+
+
+def json_text_for_path(path: Path, payload: Any) -> str:
+    if path.name in {"linkedin_jobs.json", "linkedin_jobs.json.gz"}:
+        return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    return json.dumps(payload, ensure_ascii=False, indent=2)
+
+
+def read_json(path: Path, fallback: Any) -> Any:
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    compressed = gzip_path(path)
+    if compressed.exists():
+        with gzip.open(compressed, "rt", encoding="utf-8") as handle:
+            return json.load(handle)
+    return fallback
+
+
 def load_existing() -> List[Dict[str, Any]]:
-    path = PROCESSED_DIR / "linkedin_jobs.json"
-    if not path.exists():
+    path = OUTPUT_DIR / "linkedin_jobs.json"
+    rows = read_json(path, [])
+    if not rows:
         return []
-    return json.loads(path.read_text(encoding="utf-8"))
+    for row in rows:
+        fetched_at = row.get("fetched_at") or row.get("detail_fetched_at") or ""
+        row.setdefault("first_seen_at", fetched_at)
+        row.setdefault("last_seen_at", fetched_at)
+        row.setdefault("first_seen_snapshot", "")
+        row.setdefault("last_seen_snapshot", "")
+    return rows
 
 
 def dedupe(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -323,6 +365,13 @@ def enrich(row: Dict[str, Any]) -> Dict[str, Any]:
     return row
 
 
+def mark_seen(row: Dict[str, Any], seen_at: str) -> None:
+    row.setdefault("first_seen_at", seen_at)
+    row.setdefault("first_seen_snapshot", SNAPSHOT_DATE)
+    row["last_seen_at"] = seen_at
+    row["last_seen_snapshot"] = SNAPSHOT_DATE
+
+
 def apply_detail(row: Dict[str, Any], errors: Dict[str, str]) -> bool:
     job_id = row.get("linkedin_job_id")
     if not job_id:
@@ -342,7 +391,7 @@ def apply_detail(row: Dict[str, Any], errors: Dict[str, str]) -> bool:
         row["detail_fetched_at"] = dt.datetime.now().isoformat(timespec="seconds")
         enrich(row)
         return True
-    except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+    except (urllib.error.URLError, TimeoutError, ConnectionError, socket.timeout, OSError) as exc:
         errors[f"detail|{job_id}"] = str(exc)
         return False
 
@@ -366,7 +415,39 @@ def count_values(rows: List[Dict[str, Any]], field: str, multi: bool = False) ->
 
 def write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    text = json_text_for_path(path, payload)
+    tmp_path = path.with_name(f"{path.name}.tmp")
+    try:
+        tmp_path.write_text(text, encoding="utf-8")
+        tmp_path.replace(path)
+    finally:
+        if tmp_path.exists():
+            tmp_path.unlink()
+
+
+def write_json_gzip(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    text = json_text_for_path(path, payload)
+    tmp_path = path.with_name(f"{path.name}.tmp")
+    try:
+        with gzip.open(tmp_path, "wt", encoding="utf-8", compresslevel=6) as handle:
+            handle.write(text)
+        tmp_path.replace(path)
+    finally:
+        if tmp_path.exists():
+            tmp_path.unlink()
+
+
+def write_gzip_copy(source: Path, target: Path) -> None:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = target.with_name(f"{target.name}.tmp")
+    try:
+        with source.open("rb") as src, gzip.open(tmp_path, "wb", compresslevel=6) as dst:
+            shutil.copyfileobj(src, dst)
+        tmp_path.replace(target)
+    finally:
+        if tmp_path.exists():
+            tmp_path.unlink()
 
 
 def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
@@ -382,6 +463,11 @@ def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
         "query",
         "query_location",
         "query_filter",
+        "first_seen_at",
+        "last_seen_at",
+        "first_seen_snapshot",
+        "last_seen_snapshot",
+        "detail_fetched_at",
         "sap_focus",
         "role_family",
         "seniority",
@@ -392,7 +478,8 @@ def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
         "degree_fields",
         "description_excerpt",
     ]
-    with path.open("w", newline="", encoding="utf-8") as handle:
+    tmp_path = path.with_name(f"{path.name}.tmp")
+    with tmp_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for row in rows:
@@ -404,6 +491,7 @@ def write_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
                 value = copy.get(field, "")
                 clean[field] = value.strip() if isinstance(value, str) else value
             writer.writerow(clean)
+    tmp_path.replace(path)
 
 
 def build_summary(rows: List[Dict[str, Any]], search_count: int, errors: Dict[str, str]) -> Dict[str, Any]:
@@ -413,7 +501,9 @@ def build_summary(rows: List[Dict[str, Any]], search_count: int, errors: Dict[st
         if row.get("query") and row.get("query_location")
     }
     description_enriched = sum(1 for row in rows if len(normalize_space(row.get("description", ""))) >= 80)
-    return {
+    active_seen = sum(1 for row in rows if row.get("last_seen_snapshot") == SNAPSHOT_DATE)
+    new_seen = sum(1 for row in rows if row.get("first_seen_snapshot") == SNAPSHOT_DATE)
+    summary = {
         "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
         "methodology": "LinkedIn public guest job search endpoints, without logged-in cookies, proxies, or anti-bot bypass. Result depth is limited by LinkedIn's public pagination behavior and should be treated as a collected link pool, not the full 371,000+ market.",
         "search_partitions_collected": len(partitions),
@@ -422,6 +512,8 @@ def build_summary(rows: List[Dict[str, Any]], search_count: int, errors: Dict[st
         "latest_run_partition_limit": MAX_PARTITIONS or None,
         "searches_attempted": len(partitions),
         "jobs_collected": len(rows),
+        "jobs_seen_in_snapshot": active_seen,
+        "new_jobs_in_snapshot": new_seen,
         "description_enriched_jobs": description_enriched,
         "description_enriched_share": round(description_enriched / len(rows), 4) if rows else 0,
         "locations": count_values(rows, "location"),
@@ -437,20 +529,57 @@ def build_summary(rows: List[Dict[str, Any]], search_count: int, errors: Dict[st
         "degree_fields": count_values(rows, "degree_fields", multi=True),
         "errors": errors,
     }
+    if WORKER_MODE:
+        summary.update(
+            {
+                "worker_mode": True,
+                "worker_id": WORKER_ID or OUTPUT_DIR.name,
+                "worker_output_dir": str(OUTPUT_DIR),
+                "snapshot_date": SNAPSHOT_DATE,
+            }
+        )
+    return summary
 
 
 def save_outputs(rows: List[Dict[str, Any]], searches_attempted: int, errors: Dict[str, str]) -> Dict[str, Any]:
     rows = sorted(dedupe(rows), key=lambda row: (row.get("query", ""), row.get("location", ""), row.get("company", ""), row.get("title", "")))
     summary = build_summary(rows, searches_attempted, errors)
 
-    write_json(PROCESSED_DIR / "linkedin_jobs.json", rows)
-    write_csv(PROCESSED_DIR / "linkedin_jobs.csv", rows)
-    write_json(PROCESSED_DIR / "linkedin_jobs_summary.json", summary)
-    write_json(SNAPSHOT_DIR / "linkedin_jobs.json", rows)
-    write_csv(SNAPSHOT_DIR / "linkedin_jobs.csv", rows)
-    write_json(SNAPSHOT_DIR / "linkedin_jobs_summary.json", summary)
-    refresh_snapshot_index()
+    write_json(OUTPUT_DIR / "linkedin_jobs.json", rows)
+    write_json_gzip(OUTPUT_DIR / "linkedin_jobs.json.gz", rows)
+    write_csv(OUTPUT_DIR / "linkedin_jobs.csv", rows)
+    write_gzip_copy(OUTPUT_DIR / "linkedin_jobs.csv", OUTPUT_DIR / "linkedin_jobs.csv.gz")
+    write_json(OUTPUT_DIR / "linkedin_jobs_summary.json", summary)
+    if WORKER_MODE:
+        return summary
+
+    if WRITE_SNAPSHOT:
+        write_json(SNAPSHOT_DIR / "linkedin_jobs.json", rows)
+        write_json_gzip(SNAPSHOT_DIR / "linkedin_jobs.json.gz", rows)
+        write_csv(SNAPSHOT_DIR / "linkedin_jobs.csv", rows)
+        write_gzip_copy(SNAPSHOT_DIR / "linkedin_jobs.csv", SNAPSHOT_DIR / "linkedin_jobs.csv.gz")
+        write_json(SNAPSHOT_DIR / "linkedin_jobs_summary.json", summary)
+        refresh_snapshot_index()
     return summary
+
+
+def print_summary(summary: Dict[str, Any]) -> None:
+    if PRINT_FULL_SUMMARY:
+        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        return
+    compact = {
+        "generated_at": summary.get("generated_at"),
+        "jobs_collected": summary.get("jobs_collected"),
+        "jobs_seen_in_snapshot": summary.get("jobs_seen_in_snapshot"),
+        "new_jobs_in_snapshot": summary.get("new_jobs_in_snapshot"),
+        "description_enriched_jobs": summary.get("description_enriched_jobs"),
+        "search_partitions_collected": summary.get("search_partitions_collected"),
+        "latest_run_searches_attempted": summary.get("latest_run_searches_attempted"),
+        "latest_run_partition_offset": summary.get("latest_run_partition_offset"),
+        "latest_run_partition_limit": summary.get("latest_run_partition_limit"),
+        "errors": len(summary.get("errors", {})),
+    }
+    print(json.dumps(compact, ensure_ascii=False, indent=2))
 
 
 def backfill_missing_details(rows: List[Dict[str, Any]], errors: Dict[str, str]) -> int:
@@ -499,7 +628,8 @@ def main() -> None:
         partitions = partitions[:MAX_PARTITIONS]
 
     rows = load_existing()
-    seen_ids = {row.get("linkedin_job_id") for row in rows if row.get("linkedin_job_id")}
+    rows_by_id = {row.get("linkedin_job_id"): row for row in rows if row.get("linkedin_job_id")}
+    seen_ids = set(rows_by_id)
     errors: Dict[str, str] = {}
     searches_attempted = 0
     detail_fetches = 0
@@ -508,7 +638,7 @@ def main() -> None:
         filled = backfill_missing_details(rows, errors)
         summary = save_outputs(rows, searches_attempted, errors)
         print(f"Backfilled details for {filled} LinkedIn rows, total {summary['jobs_collected']}", flush=True)
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        print_summary(summary)
         return
 
     print(
@@ -527,7 +657,7 @@ def main() -> None:
                 params.update(extra)
                 try:
                     body = fetch_text_with_backoff(SEARCH_URL, params, f"{query}|{location}|{filter_name}|{start}")
-                except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+                except (urllib.error.URLError, TimeoutError, ConnectionError, socket.timeout, OSError) as exc:
                     errors[f"{query}|{location}|{filter_name}|{start}"] = str(exc)
                     break
                 cards = parse_cards(body)
@@ -536,34 +666,45 @@ def main() -> None:
                 for card in cards:
                     job_id = card.get("linkedin_job_id")
                     if job_id in seen_ids:
+                        existing = rows_by_id.get(job_id)
+                        if existing:
+                            mark_seen(existing, dt.datetime.now().isoformat(timespec="seconds"))
                         continue
                     seen_ids.add(job_id)
+                    seen_at = dt.datetime.now().isoformat(timespec="seconds")
                     card.update(
                         {
                             "query": query,
                             "query_location": location,
                             "query_filter": filter_name,
-                            "fetched_at": dt.datetime.now().isoformat(timespec="seconds"),
+                            "fetched_at": seen_at,
                         }
                     )
+                    mark_seen(card, seen_at)
                     if detail_fetches < MAX_DETAILS and job_id:
                         if apply_detail(card, errors):
                             detail_fetches += 1
                             time.sleep(REQUEST_DELAY_SECONDS)
-                    rows.append(enrich(card))
+                    enriched = enrich(card)
+                    rows.append(enriched)
+                    rows_by_id[job_id] = enriched
                 time.sleep(REQUEST_DELAY_SECONDS)
-            summary = save_outputs(rows, searches_attempted, errors)
+            if searches_attempted % SAVE_EVERY_PARTITIONS == 0:
+                summary = save_outputs(rows, searches_attempted, errors)
+                total_jobs = summary["jobs_collected"]
+            else:
+                total_jobs = len(rows)
             print(
-                f"{query} | {location} | {filter_name}: +{len(rows) - before} new, total {summary['jobs_collected']}",
+                f"{query} | {location} | {filter_name}: +{len(rows) - before} new, total {total_jobs}",
                 flush=True,
             )
     except KeyboardInterrupt:
         summary = save_outputs(rows, searches_attempted, errors)
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        print_summary(summary)
         raise
 
     summary = save_outputs(rows, searches_attempted, errors)
-    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print_summary(summary)
 
 
 if __name__ == "__main__":

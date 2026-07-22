@@ -1,0 +1,132 @@
+{
+  "jobs2web": [
+    {
+      "key": "sap_careers",
+      "company": "SAP",
+      "source": "SAP Careers",
+      "base_url": "https://jobs.sap.com",
+      "queries": ["SAP"],
+      "max_pages": 40,
+      "fetch_details": true
+    },
+    {
+      "key": "atos_careers",
+      "company": "Atos",
+      "source": "Atos Careers",
+      "base_url": "https://jobs.atos.net",
+      "queries": ["SAP"],
+      "max_pages": 20,
+      "fetch_details": true
+    },
+    {
+      "key": "adesso_careers",
+      "company": "adesso",
+      "source": "adesso Careers",
+      "base_url": "https://jobs.adesso-group.com",
+      "queries": ["SAP"],
+      "max_pages": 20,
+      "fetch_details": true
+    },
+    {
+      "key": "capgemini_careers",
+      "company": "Capgemini",
+      "source": "Capgemini Careers",
+      "base_url": "https://jobs.capgemini.com",
+      "queries": ["SAP"],
+      "max_pages": 10,
+      "fetch_details": true
+    }
+  ],
+  "smartrecruiters": [
+    {
+      "key": "bosch_smartrecruiters",
+      "company": "Bosch",
+      "source": "Bosch SmartRecruiters",
+      "company_identifier": "BoschGroup",
+      "queries": ["sap", "abap", "s/4hana", "successfactors"],
+      "max_pages": 8
+    },
+    {
+      "key": "devoteam_smartrecruiters",
+      "company": "Devoteam",
+      "source": "Devoteam SmartRecruiters",
+      "company_identifier": "Devoteam",
+      "queries": ["sap", "abap", "s/4hana", "successfactors"],
+      "max_pages": 3
+    },
+    {
+      "key": "western_digital_smartrecruiters",
+      "company": "Western Digital",
+      "source": "Western Digital SmartRecruiters",
+      "company_identifier": "WesternDigital",
+      "queries": ["sap", "abap", "s/4hana", "successfactors"],
+      "max_pages": 2
+    }
+  ],
+  "greenhouse": [
+    {
+      "key": "celonis_greenhouse",
+      "company": "Celonis",
+      "source": "Celonis Greenhouse",
+      "board": "celonis"
+    },
+    {
+      "key": "workato_greenhouse",
+      "company": "Workato",
+      "source": "Workato Greenhouse",
+      "board": "workato"
+    },
+    {
+      "key": "databricks_greenhouse",
+      "company": "Databricks",
+      "source": "Databricks Greenhouse",
+      "board": "databricks"
+    },
+    {
+      "key": "mongodb_greenhouse",
+      "company": "MongoDB",
+      "source": "MongoDB Greenhouse",
+      "board": "mongodb"
+    },
+    {
+      "key": "datadog_greenhouse",
+      "company": "Datadog",
+      "source": "Datadog Greenhouse",
+      "board": "datadog"
+    },
+    {
+      "key": "ripple_greenhouse",
+      "company": "Ripple",
+      "source": "Ripple Greenhouse",
+      "board": "ripple"
+    },
+    {
+      "key": "stripe_greenhouse",
+      "company": "Stripe",
+      "source": "Stripe Greenhouse",
+      "board": "stripe"
+    }
+  ],
+  "workday": [
+    {
+      "key": "adobe_workday",
+      "company": "Adobe",
+      "source": "Adobe Workday",
+      "host": "https://adobe.wd5.myworkdayjobs.com",
+      "tenant": "adobe",
+      "site": "external_experienced",
+      "queries": ["SAP", "ABAP", "S/4HANA", "SuccessFactors"],
+      "max_pages": 4
+    },
+    {
+      "key": "salesforce_workday",
+      "company": "Salesforce",
+      "source": "Salesforce Workday",
+      "host": "https://salesforce.wd12.myworkdayjobs.com",
+      "tenant": "salesforce",
+      "site": "External_Career_Site",
+      "queries": ["SAP", "ABAP", "S/4HANA", "SuccessFactors"],
+      "max_pages": 4
+    }
+  ]
+}

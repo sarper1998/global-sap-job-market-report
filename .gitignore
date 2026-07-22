@@ -1,0 +1,8 @@
+node_modules/
+dist/
+data/raw/
+data/run_state/
+data/worker_outputs/
+data/processed/linkedin_jobs.json
+logs/
+.DS_Store

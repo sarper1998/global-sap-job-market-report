@@ -143,19 +143,21 @@
     <div class="wrap">
       <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
       <h1>Global SAP Job Market Report</h1>
-      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the open-feed and LinkedIn guest pools contain the individual postings that can be linked, downloaded, and analyzed transparently.</p>
-      <div class="layer-note"><strong>Read the numbers as three layers:</strong> 371,000+ is the LinkedIn SAP worldwide market signal; 21,085 is the collected LinkedIn guest link pool; 1,565 is the deduplicated open-feed job pool used for the broader source-linked analysis.</div>
+      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the LinkedIn guest, open-feed, and direct company career pools contain the individual postings that can be linked, downloaded, and analyzed transparently.</p>
+      <div class="layer-note"><strong>Read the numbers as four layers:</strong> 371,000+ is the LinkedIn SAP worldwide market signal; 101,093 is the collected LinkedIn guest link pool; 1,895 is the direct company career / ATS pool; 1,565 is the deduplicated open-feed job pool used for broader source-linked analysis.</div>
       <div class="meta">
-        <span class="pill">Generated at: 2026-07-19T18:56:48</span>
+        <span class="pill">Generated at: 2026-07-22T08:31:15</span>
         <span class="pill">Baseline: 2026-07-19</span>
         <span class="pill">LinkedIn signal: 371,000+</span>
-        <span class="pill">LinkedIn links collected: 21,085</span>
+        <span class="pill">LinkedIn links collected: 101,093</span>
+        <span class="pill">Company career jobs: 1,895</span>
         <span class="pill">Source-linked jobs: 1,565</span>
       </div>
       <div class="actions">
         <a class="button primary" href="#job-pool">Explore 1,565 linked jobs</a>
         <a class="button" href="data/sap_jobs.csv">Download CSV</a>
         <a class="button" href="data/linkedin_jobs.csv">LinkedIn CSV</a>
+        <a class="button" href="data/company_career_jobs.csv">Company Career CSV</a>
         <a class="button" href="#methodology">How it was built</a>
         <a class="button" href="#community">Contribute anonymously</a>
       </div>
@@ -166,7 +168,8 @@
     <div class="wrap kpis">
       <div class="kpi"><strong>371,000+</strong><span>LinkedIn SAP worldwide market signal</span></div>
       <div class="kpi"><strong>104,000+</strong><span>LinkedIn SAP market signal from the past week</span></div>
-      <div class="kpi"><strong>21,085</strong><span>LinkedIn guest job links collected and analyzed</span></div>
+      <div class="kpi"><strong>101,093</strong><span>LinkedIn guest job links collected and analyzed</span></div>
+      <div class="kpi"><strong>1,895</strong><span>Direct company career / ATS postings collected and analyzed</span></div>
       <div class="kpi"><strong>1,565</strong><span>Source-linked SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>57</strong><span>Open-feed locations represented</span></div>
       <div class="kpi"><strong>20.4%</strong><span>Jobs with salary information</span></div>
@@ -179,7 +182,7 @@
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Market Signal</div>
         <h2>LinkedIn Shows The Market Scale; The Collected Pool Shows The Links</h2>
-        <p>The LinkedIn layer combines rounded LinkedIn Jobs search-count signals with source-linked records collected from public LinkedIn guest job endpoints. On 2026-07-19T16:30:44+03:00, the <strong>SAP</strong> + <strong>Worldwide</strong> search showed <strong>371,000+</strong> rounded results. That number is a market-size signal, not a downloadable list of 371,000 individual jobs. The evidence layer now has two source-linked pools: 1,565 open-feed postings and 21,085 LinkedIn guest job links collected through partitioned public searches.</p>
+        <p>The LinkedIn layer combines rounded LinkedIn Jobs search-count signals with source-linked records collected from public LinkedIn guest job endpoints. On 2026-07-19T16:30:44+03:00, the <strong>SAP</strong> + <strong>Worldwide</strong> search showed <strong>371,000+</strong> rounded results. That number is a market-size signal, not a downloadable list of 371,000 individual jobs. The evidence layer now has three source-linked pools: 1,565 open-feed postings, 101,093 LinkedIn guest job links, and 1,895 direct company career / ATS postings.</p>
       </div>
       <div class="kpis signal-kpis">
         <div class="kpi"><strong>371,000+</strong><span>LinkedIn Jobs rounded result count for SAP worldwide</span></div>
@@ -240,21 +243,21 @@
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Collected Pool · Experimental</div>
-        <h2>21,085 LinkedIn Job Links Collected So Far</h2>
+        <h2>101,093 LinkedIn Job Links Collected So Far</h2>
         <p>This is the actual LinkedIn-linked job pool collected for analysis. The scraper queries public LinkedIn guest job endpoints by keyword, country, recency, and work model, deduplicates by LinkedIn job id, enriches each posting with SAP module and description signals, and stores dated snapshots. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or the user's private LinkedIn session.</p>
       </div>
       <div class="kpis signal-kpis">
-        <div class="kpi"><strong>21,085</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
-        <div class="kpi"><strong>4,020</strong><span>LinkedIn rows with fetched job-description detail</span></div>
-        <div class="kpi"><strong>1,051</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
-        <div class="kpi"><strong>India</strong><span>Largest collected query location: 1,540 links</span></div>
-        <div class="kpi"><strong>Other SAP-Related</strong><span>Top collected role family: 9,060 links</span></div>
-        <div class="kpi"><strong>S/4HANA</strong><span>Top extracted technical skill: 2,170 mentions</span></div>
-        <div class="kpi"><strong>Consulting mindset</strong><span>Top extracted soft skill: 6,151 mentions</span></div>
+        <div class="kpi"><strong>101,093</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
+        <div class="kpi"><strong>20,971</strong><span>LinkedIn rows with fetched job-description detail</span></div>
+        <div class="kpi"><strong>12,418</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
+        <div class="kpi"><strong>United States</strong><span>Largest collected query location: 7,682 links</span></div>
+        <div class="kpi"><strong>Other SAP-Related</strong><span>Top collected role family: 46,914 links</span></div>
+        <div class="kpi"><strong>English</strong><span>Top extracted technical skill: 6,122 mentions</span></div>
+        <div class="kpi"><strong>Consulting mindset</strong><span>Top extracted soft skill: 23,453 mentions</span></div>
       </div>
       <div class="actions">
         <a class="button primary" href="data/linkedin_jobs.csv">Download LinkedIn CSV</a>
-        <a class="button" href="data/linkedin_jobs.json">LinkedIn JSON</a>
+        <a class="button" href="data/linkedin_jobs.json.gz">LinkedIn JSON.gz</a>
         <a class="button" href="data/linkedin_jobs_summary.json">LinkedIn summary</a>
       </div>
     </div>
@@ -308,11 +311,11 @@
       <div class="table-intro">
         <div>
           <h2>LinkedIn Guest Job Link Sample</h2>
-          <p>The table shows the first 120 collected LinkedIn guest records. The full 21,085-row link pool is available in CSV and JSON.</p>
+          <p>The table shows the first 120 collected LinkedIn guest records. The full 101,093-row link pool is available in CSV and JSON.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="data/linkedin_jobs.csv">Full CSV</a>
-          <a class="button" href="data/linkedin_jobs.json">Full JSON</a>
+          <a class="button" href="data/linkedin_jobs.json.gz">Full JSON.gz</a>
         </div>
       </div>
       <div class="table-scroll">
@@ -1414,12 +1417,1417 @@
   </section>
 
 
+
+  <section>
+    <div class="wrap">
+      <div class="note signal-note">
+        <div class="eyebrow">Direct Company Career / ATS Pool</div>
+        <h2>1,895 SAP Jobs From Company Career Sources</h2>
+        <p>This layer runs in parallel with the LinkedIn crawler and reads public company career pages or ATS endpoints such as jobs2web / SuccessFactors, SmartRecruiters, Greenhouse, and Workday CXS. It does not use logged-in sessions, proxy rotation, CAPTCHA bypass, or private candidate data.</p>
+      </div>
+      <div class="kpis signal-kpis">
+        <div class="kpi"><strong>1,895</strong><span>Deduplicated SAP postings from direct company career sources</span></div>
+        <div class="kpi"><strong>jobs2web</strong><span>Largest ATS provider layer: 1,186 jobs</span></div>
+        <div class="kpi"><strong>SAP</strong><span>Largest direct company source: 882 jobs</span></div>
+        <div class="kpi"><strong>Technical / Development</strong><span>Top role family: 1,111 jobs</span></div>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="data/company_career_jobs.csv">Download Company Career CSV</a>
+        <a class="button" href="data/company_career_jobs.json">Company career JSON</a>
+        <a class="button" href="data/company_career_jobs_summary.json">Company career summary</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="note">
+        <h2>Company Career Sources</h2>
+        <div class="bars">
+            <div class="bar-row">
+              <div class="bar-label" title="SAP Careers">SAP Careers</div>
+              <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
+              <div>882</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Bosch SmartRecruiters">Bosch SmartRecruiters</div>
+              <div class="bar-track"><div class="bar-fill" style="width:55.0%"></div></div>
+              <div>485</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="adesso Careers">adesso Careers</div>
+              <div class="bar-track"><div class="bar-fill" style="width:18.8%"></div></div>
+              <div>166</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Atos Careers">Atos Careers</div>
+              <div class="bar-track"><div class="bar-fill" style="width:15.6%"></div></div>
+              <div>138</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Celonis Greenhouse">Celonis Greenhouse</div>
+              <div class="bar-track"><div class="bar-fill" style="width:9.6%"></div></div>
+              <div>85</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Devoteam SmartRecruiters">Devoteam SmartRecruiters</div>
+              <div class="bar-track"><div class="bar-fill" style="width:6.5%"></div></div>
+              <div>57</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Salesforce Workday">Salesforce Workday</div>
+              <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
+              <div>24</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Workato Greenhouse">Workato Greenhouse</div>
+              <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
+              <div>20</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Adobe Workday">Adobe Workday</div>
+              <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
+              <div>14</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Databricks Greenhouse">Databricks Greenhouse</div>
+              <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
+              <div>6</div>
+            </div>
+            </div>
+      </div>
+      <div class="note">
+        <h2>Company Career SAP Areas</h2>
+        <div class="bars">
+            <div class="bar-row">
+              <div class="bar-label" title="HCM / SuccessFactors">HCM / SuccessFactors</div>
+              <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
+              <div>890</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Unspecified SAP">Unspecified SAP</div>
+              <div class="bar-track"><div class="bar-fill" style="width:59.3%"></div></div>
+              <div>528</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="S/4HANA">S/4HANA</div>
+              <div class="bar-track"><div class="bar-fill" style="width:52.1%"></div></div>
+              <div>464</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="BTP / Integration">BTP / Integration</div>
+              <div class="bar-track"><div class="bar-fill" style="width:38.7%"></div></div>
+              <div>344</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="HANA / Data">HANA / Data</div>
+              <div class="bar-track"><div class="bar-fill" style="width:28.5%"></div></div>
+              <div>254</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="FI / CO / FICO">FI / CO / FICO</div>
+              <div class="bar-track"><div class="bar-fill" style="width:24.7%"></div></div>
+              <div>220</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="ABAP / Development">ABAP / Development</div>
+              <div class="bar-track"><div class="bar-fill" style="width:19.3%"></div></div>
+              <div>172</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Fiori / UI5">Fiori / UI5</div>
+              <div class="bar-track"><div class="bar-fill" style="width:15.4%"></div></div>
+              <div>137</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="Basis / Security">Basis / Security</div>
+              <div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div>
+              <div>111</div>
+            </div>
+
+
+            <div class="bar-row">
+              <div class="bar-label" title="TM / GTS / Supply Chain">TM / GTS / Supply Chain</div>
+              <div class="bar-track"><div class="bar-fill" style="width:10.2%"></div></div>
+              <div>91</div>
+            </div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap table-panel">
+      <div class="table-intro">
+        <div>
+          <h2>Company Career Job Sample</h2>
+          <p>The table shows the first 120 direct company career records. The full 1,895-row pool is available in CSV and JSON.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="data/company_career_jobs.csv">Full CSV</a>
+          <a class="button" href="data/company_career_jobs.json">Full JSON</a>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Job / Company</th>
+              <th>Location</th>
+              <th>Role</th>
+              <th>SAP Areas</th>
+              <th>Salary</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr data-role="Functional Consulting" data-source="Adobe Workday" data-search="corporate accounting analyst adobe san jose functional consulting">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Corporate-Accounting-Analyst_R168412" target="_blank" rel="noopener">Corporate Accounting Analyst</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Functional Consulting<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="dir, enterprise marketing finance adobe san jose data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Dir--Enterprise-Marketing-Finance_R168738" target="_blank" rel="noopener">Dir, Enterprise Marketing Finance</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="director, marketing finance adobe san jose data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Director--Marketing-Finance_R168649" target="_blank" rel="noopener">Director, Marketing Finance</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Project / Program" data-source="Adobe Workday" data-search="internal product delivery manager adobe lehi project / program">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Lehi/Internal-Product-Delivery-Manager_R164081" target="_blank" rel="noopener">Internal Product Delivery Manager</a><small>Adobe</small></td>
+              <td>Lehi</td>
+              <td>Project / Program<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>S/4HANA</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="principal product manager - order to cash platform (sap brim) adobe san jose data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Product-Manager---Order-to-Cash-Platform--SAP-BRIM-_R169992" target="_blank" rel="noopener">Principal Product Manager - Order to Cash Platform (SAP BRIM)</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Data / Analytics<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span><span>SD / Sales</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="procurement manager - demand intelligence &amp; strategic consumption adobe san jose data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Procurement-Manager---Demand-Intelligence---Strategic-Consumption_R168181" target="_blank" rel="noopener">Procurement Manager - Demand Intelligence &amp; Strategic Consumption</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>MM / Procurement</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Project / Program" data-source="Adobe Workday" data-search="program manager adobe san jose project / program">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Program-Manager_R170003-1" target="_blank" rel="noopener">Program Manager</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Project / Program<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="program mgr, revenue systems and reporting adobe lehi data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Lehi/Program-Mgr--Revenue-Systems-and-Reporting_R170369" target="_blank" rel="noopener">Program Mgr, Revenue Systems and Reporting</a><small>Adobe</small></td>
+              <td>Lehi</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="senior financial analyst, cloud fp&amp;a adobe san jose data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Financial-Analyst--Cloud-FP-A_R167006" target="_blank" rel="noopener">Senior Financial Analyst, Cloud FP&amp;A</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Data / Analytics<small>Senior · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Adobe Workday" data-search="senior international tax manager adobe san jose technical / development">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-International-Tax-Manager_R167060" target="_blank" rel="noopener">Senior International Tax Manager</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Technical / Development<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Adobe Workday" data-search="senior manager, external reporting and equity accounting adobe san jose functional consulting">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Manager--External-Reporting-and-Equity-Accounting_R170371-1" target="_blank" rel="noopener">Senior Manager, External Reporting and Equity Accounting</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Functional Consulting<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Basis / Security" data-source="Adobe Workday" data-search="senior product manager, chief accounting office adobe san jose basis / security">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Product-Manager---Chief-Accounting-Office_R168909-1" target="_blank" rel="noopener">Senior Product Manager, Chief Accounting Office</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Basis / Security<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>Basis / Security</span><span>+4</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Project / Program" data-source="Adobe Workday" data-search="senior program manager, transformation delivery adobe san jose project / program">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Senior-Program-Manager--Transformation-Delivery_R168450-1" target="_blank" rel="noopener">Senior Program Manager, Transformation Delivery</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Project / Program<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>FI / CO / FICO</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="supply chain operations lead adobe san jose data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Supply-Chain-Operations-Lead_R170190-1" target="_blank" rel="noopener">Supply Chain Operations Lead</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>S/4HANA</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="associate consultant atos pune technical / development">
+              <td><a href="https://jobs.atos.net/job/Pune-ASSOCIATE-CONSULTANT/1412589633/" target="_blank" rel="noopener">ASSOCIATE CONSULTANT</a><small>Atos</small></td>
+              <td>Pune</td>
+              <td>Technical / Development<small>Junior · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>BTP / Integration</span><span>SD / Sales</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="associate consultant atos pune technical / development">
+              <td><a href="https://jobs.atos.net/job/Pune-ASSOCIATE-CONSULTANT/1412949033/" target="_blank" rel="noopener">ASSOCIATE CONSULTANT</a><small>Atos</small></td>
+              <td>Pune</td>
+              <td>Technical / Development<small>Junior · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>Fiori / UI5</span><span>MM / Procurement</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="application engineer (c# .net) with german atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-Application-Engineer-%28C-_NET%29-with-German/1262216601/" target="_blank" rel="noopener">Application Engineer (C# .NET) with German</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="architecte sap btp (f/h) atos bezons technical / development">
+              <td><a href="https://jobs.atos.net/job/Bezons-Architecte-SAP-BTP-%28FH%29/1290323501/" target="_blank" rel="noopener">Architecte SAP BTP (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+2</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="business process lead atos amstelveen data / analytics">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-Business-Process-Lead/1383659033/" target="_blank" rel="noopener">Business Process Lead</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>TM / GTS / Supply Chain</span><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Support / Operations" data-source="Atos Careers" data-search="buyer category expert - it atos bydgoszcz support / operations">
+              <td><a href="https://jobs.atos.net/job/Bydgoszcz-Buyer-Category-Expert-IT/1414220333/" target="_blank" rel="noopener">Buyer Category Expert - IT</a><small>Atos</small></td>
+              <td>Bydgoszcz</td>
+              <td>Support / Operations<small>Senior · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>MM / Procurement</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Support / Operations" data-source="Atos Careers" data-search="buyer category expert - services atos bydgoszcz support / operations">
+              <td><a href="https://jobs.atos.net/job/Bydgoszcz-Buyer-Category-Expert-Services/1409255233/" target="_blank" rel="noopener">Buyer Category Expert - Services</a><small>Atos</small></td>
+              <td>Bydgoszcz</td>
+              <td>Support / Operations<small>Senior · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>MM / Procurement</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="consultant atos pune technical / development">
+              <td><a href="https://jobs.atos.net/job/Pune-CONSULTANT/1409819133/" target="_blank" rel="noopener">CONSULTANT</a><small>Atos</small></td>
+              <td>Pune</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>HANA / Data</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="crm product manager servicenow atos glasgow functional consulting">
+              <td><a href="https://jobs.atos.net/job/Glasgow-CRM-Product-Manager-ServiceNow/1403877233/" target="_blank" rel="noopener">CRM Product Manager ServiceNow</a><small>Atos</small></td>
+              <td>Glasgow</td>
+              <td>Functional Consulting<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>CRM / CX / Commerce</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Other SAP-Related" data-source="Atos Careers" data-search="chef de projet sap (f/h) atos bezons other sap-related">
+              <td><a href="https://jobs.atos.net/job/Bezons-Chef-de-Projet-SAP-%28FH%29/1411994333/" target="_blank" rel="noopener">Chef de Projet SAP (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Other SAP-Related<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="consultant (multiple positions available) atos irving technical / development">
+              <td><a href="https://jobs.atos.net/job/Irving-Consultant-%28multiple-positions-available%29-SD/1409162633/" target="_blank" rel="noopener">Consultant (multiple positions available)</a><small>Atos</small></td>
+              <td>Irving</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>HANA / Data</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="consultant sap bw ( f/h ) atos bezons data / analytics">
+              <td><a href="https://jobs.atos.net/job/Bezons-Consultant-SAP-BW-%28-FH-%29/1282820401/" target="_blank" rel="noopener">Consultant SAP BW ( F/H )</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Data / Analytics<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>HANA / Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="consultant sap co industriel (h/f) atos bezons technical / development">
+              <td><a href="https://jobs.atos.net/job/Bezons-Consultant-SAP-CO-Industriel-%28HF%29/1388671433/" target="_blank" rel="noopener">Consultant SAP CO Industriel (H/F)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>HANA / Data</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="consultant sap fiori (f/h) atos pessac technical / development">
+              <td><a href="https://jobs.atos.net/job/Pessac-Consultant-SAP-FIORI-%28FH%29/1290337901/" target="_blank" rel="noopener">Consultant SAP FIORI (F/H)</a><small>Atos</small></td>
+              <td>Pessac</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="consultant sap fiori expert (f/h) atos bezons technical / development">
+              <td><a href="https://jobs.atos.net/job/Bezons-Consultant-SAP-FIORI-EXPERT-%28FH%29/1290097601/" target="_blank" rel="noopener">Consultant SAP FIORI EXPERT (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Technical / Development<small>Senior · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="consultant sap sd senior (f/h) atos bezons functional consulting">
+              <td><a href="https://jobs.atos.net/job/Bezons-Consultant-SAP-SD-Senior-%28FH%29/1290090201/" target="_blank" rel="noopener">Consultant SAP SD Senior (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Functional Consulting<small>Senior · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>SD / Sales</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="consultor/a funcional sap s/4 isu- cm atos madrid technical / development">
+              <td><a href="https://jobs.atos.net/job/Madrid-Consultora-Funcional-SAP-S4-ISU-CM/1405877333/" target="_blank" rel="noopener">Consultor/a Funcional SAP S/4 ISU- CM</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>CRM / CX / Commerce</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Basis / Security" data-source="Atos Careers" data-search="consultor/a sap basis atos madrid basis / security">
+              <td><a href="https://jobs.atos.net/job/Madrid-Consultora-SAP-BASIS/1379402833/" target="_blank" rel="noopener">Consultor/a SAP BASIS</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Basis / Security<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>Basis / Security</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="consultor/a sap fi-co atos madrid data / analytics">
+              <td><a href="https://jobs.atos.net/job/Madrid-Consultora-SAP-FI-CO/1412009433/" target="_blank" rel="noopener">Consultor/a SAP FI-CO</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Support / Operations" data-source="Atos Careers" data-search="consultor/a sap is-u junior atos madrid support / operations">
+              <td><a href="https://jobs.atos.net/job/Madrid-Consultora-SAP-IS-U-Junior/1405884133/" target="_blank" rel="noopener">Consultor/a SAP IS-U Junior</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Support / Operations<small>Junior · SAP-titled role</small></td>
+              <td><div class="chips"><span>CRM / CX / Commerce</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="consultor/a sap mm senior - s/4hana atos madrid technical / development">
+              <td><a href="https://jobs.atos.net/job/Madrid-Consultora-SAP-MM-Senior-S4HANA/1413853133/" target="_blank" rel="noopener">Consultor/a SAP MM Senior - S/4HANA</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Technical / Development<small>Senior · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>FI / CO / FICO</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="directeur de projet sap (f/h) atos bezons data / analytics">
+              <td><a href="https://jobs.atos.net/job/Bezons-Directeur-de-projet-SAP-%28FH%29/1285802901/" target="_blank" rel="noopener">Directeur de projet SAP (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>MM / Procurement</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="e-learning expert with german atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-E-Learning-Expert-with-German/1411219133/" target="_blank" rel="noopener">E-Learning Expert with German</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Senior · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="education counsellor atos mumbai data / analytics">
+              <td><a href="https://jobs.atos.net/job/Mumbai-EDUCATION-COUNSELLOR/1416598133/" target="_blank" rel="noopener">EDUCATION COUNSELLOR</a><small>Atos</small></td>
+              <td>Mumbai</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="expert sap dématérialisation (h/f) atos bezons technical / development">
+              <td><a href="https://jobs.atos.net/job/Bezons-Expert-SAP-D%C3%A9mat%C3%A9rialisation-%28HF%29/1277075401/" target="_blank" rel="noopener">Expert SAP Dématérialisation (H/F)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Technical / Development<small>Senior · SAP-titled role</small></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>BTP / Integration</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Support / Operations" data-source="Atos Careers" data-search="expert sap ewm (f/h) atos bezons support / operations">
+              <td><a href="https://jobs.atos.net/job/Bezons-Expert-SAP-EWM-%28FH%29/1277928801/" target="_blank" rel="noopener">Expert SAP EWM (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Support / Operations<small>Senior · SAP-titled role</small></td>
+              <td><div class="chips"><span>EWM / WM / Logistics</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Other SAP-Related" data-source="Atos Careers" data-search="expert sap fi &amp; fm (f/h) atos bezons other sap-related">
+              <td><a href="https://jobs.atos.net/job/Bezons-Expert-SAP-FI-&amp;-FM-%28FH%29/1408034933/" target="_blank" rel="noopener">Expert SAP FI &amp; FM (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Other SAP-Related<small>Senior · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span><span>MM / Procurement</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Basis / Security" data-source="Atos Careers" data-search="expert sap grc &amp; autorisations (f/h) atos bezons basis / security">
+              <td><a href="https://jobs.atos.net/job/Bezons-Expert-SAP-GRC-&amp;-Autorisations-%28FH%29/1283804501/" target="_blank" rel="noopener">Expert SAP GRC &amp; Autorisations (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Basis / Security<small>Senior · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>Basis / Security</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="finance operations accountant atos eindhoven data / analytics">
+              <td><a href="https://jobs.atos.net/job/Eindhoven-Finance-Operations-Accountant/1402816833/" target="_blank" rel="noopener">Finance Operations Accountant</a><small>Atos</small></td>
+              <td>Eindhoven</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="hr administration &amp; payroll specialist atos madrid data / analytics">
+              <td><a href="https://jobs.atos.net/job/Madrid-HR-Administration-&amp;-Payroll-Specialist/1417189833/" target="_blank" rel="noopener">HR Administration &amp; Payroll Specialist</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="head of accounting (m/w/d) atos frankfurt data / analytics">
+              <td><a href="https://jobs.atos.net/job/Frankfurt-Head-of-Accounting-%28mwd%29/1413646233/" target="_blank" rel="noopener">Head of Accounting (m/w/d)</a><small>Atos</small></td>
+              <td>Frankfurt</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Support / Operations" data-source="Atos Careers" data-search="ifrs expert atos sofia support / operations">
+              <td><a href="https://jobs.atos.net/job/Sofia-IFRS-Expert/1403839333/" target="_blank" rel="noopener">IFRS Expert</a><small>Atos</small></td>
+              <td>Sofia</td>
+              <td>Support / Operations<small>Senior · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Support / Operations" data-source="Atos Careers" data-search="industrial technical lead atos madrid support / operations">
+              <td><a href="https://jobs.atos.net/job/Madrid-Industrial-Technical-Lead/1415646133/" target="_blank" rel="noopener">Industrial Technical Lead</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Support / Operations<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="ingénieur cao mécanique h/f atos aix en provence technical / development">
+              <td><a href="https://jobs.atos.net/job/Aix-en-Provence-Ing%C3%A9nieur-CAO-m%C3%A9canique-HF/1193400001/" target="_blank" rel="noopener">Ingénieur CAO mécanique H/F</a><small>Atos</small></td>
+              <td>Aix en Provence</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="lead consultant atos thane technical / development">
+              <td><a href="https://jobs.atos.net/job/Thane-LEAD-CONSULTANT/1412599333/" target="_blank" rel="noopener">LEAD CONSULTANT</a><small>Atos</small></td>
+              <td>Thane</td>
+              <td>Technical / Development<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="lead sap btp consultant atos amstelveen technical / development">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-Lead-SAP-BTP-consultant/1401882933/" target="_blank" rel="noopener">Lead SAP BTP consultant</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Technical / Development<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="lead sap developer atos amstelveen technical / development">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-Lead-SAP-Developer/1367271733/" target="_blank" rel="noopener">Lead SAP Developer</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Technical / Development<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+2</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="lead sap finance consultant atos amstelveen data / analytics">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-Lead-SAP-Finance-Consultant/1234649801/" target="_blank" rel="noopener">Lead SAP Finance Consultant</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Data / Analytics<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="mainframe ims specialist (ims db/dc administrator &amp; support engineer) atos warszawa technical / development">
+              <td><a href="https://jobs.atos.net/job/Warszawa-Mainframe-IMS-Specialist-%28IMS-DBDC-Administrator-&amp;-Support-Engineer%29/1411693533/" target="_blank" rel="noopener">Mainframe IMS Specialist (IMS DB/DC Administrator &amp; Support Engineer)</a><small>Atos</small></td>
+              <td>Warszawa</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="organisational change consultant atos remote home functional consulting">
+              <td><a href="https://jobs.atos.net/job/Remote-Home-Organisational-Change-Consultant/1391385733/" target="_blank" rel="noopener">Organisational Change Consultant</a><small>Atos</small></td>
+              <td>Remote Home</td>
+              <td>Functional Consulting<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="principal hardware server architect h/f atos les clayes-sous-bois architecture">
+              <td><a href="https://jobs.atos.net/job/Les-Clayes-sous-Bois-Principal-Hardware-Server-Architect-HF/1228019201/" target="_blank" rel="noopener">Principal Hardware Server Architect H/F</a><small>Atos</small></td>
+              <td>Les Clayes-sous-Bois</td>
+              <td>Architecture<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>HANA / Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="principal sap hcm/ successfactors (m/w/d) atos de technical / development">
+              <td><a href="https://jobs.atos.net/job/Principal-SAP-HCM-SuccessFactors-%28mwd%29/1018845901/" target="_blank" rel="noopener">Principal SAP HCM/ SuccessFactors (m/w/d)</a><small>Atos</small></td>
+              <td>DE</td>
+              <td>Technical / Development<small>Lead / Manager · SAP-titled role</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="principal sap strategy consultant - healthcare (m/w/d) atos de technical / development">
+              <td><a href="https://jobs.atos.net/job/Principal-SAP-Strategy-Consultant-Healthcare-%28mwd%29/1270382901/" target="_blank" rel="noopener">Principal SAP Strategy Consultant - Healthcare (m/w/d)</a><small>Atos</small></td>
+              <td>DE</td>
+              <td>Technical / Development<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="procurement specialist atos sofia data / analytics">
+              <td><a href="https://jobs.atos.net/job/Sofia-Procurement-Specialist/1408869133/" target="_blank" rel="noopener">Procurement Specialist</a><small>Atos</small></td>
+              <td>Sofia</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>FI / CO / FICO</span><span>MM / Procurement</span><span>EWM / WM / Logistics</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="procurement specialist with french atos sofia data / analytics">
+              <td><a href="https://jobs.atos.net/job/Sofia-Procurement-Specialist-with-French/1408857133/" target="_blank" rel="noopener">Procurement Specialist with French</a><small>Atos</small></td>
+              <td>Sofia</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>FI / CO / FICO</span><span>MM / Procurement</span><span>EWM / WM / Logistics</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Project / Program" data-source="Atos Careers" data-search="project manager - sap s/4hana cloud, public edition (m/w/d) atos de project / program">
+              <td><a href="https://jobs.atos.net/job/Project-Manager-SAP-S4HANA-Cloud%2C-Public-Edition-%28mwd%29/1085455901/" target="_blank" rel="noopener">Project Manager - SAP S/4HANA Cloud, Public Edition (m/w/d)</a><small>Atos</small></td>
+              <td>DE</td>
+              <td>Project / Program<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>HANA / Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="project performance and business analytics administrator atos zagreb data / analytics">
+              <td><a href="https://jobs.atos.net/job/Zagreb-Project-Performance-and-Business-Analytics-Administrator/1403879733/" target="_blank" rel="noopener">Project Performance and Business Analytics Administrator</a><small>Atos</small></td>
+              <td>Zagreb</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="purchasing &amp; real estate analyst atos timisoara data / analytics">
+              <td><a href="https://jobs.atos.net/job/Timisoara-Purchasing-&amp;-Real-Estate-Analyst/1407936933/" target="_blank" rel="noopener">Purchasing &amp; Real Estate Analyst</a><small>Atos</small></td>
+              <td>Timisoara</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>MM / Procurement</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="regional sales (m/w/d) - it | mittelstand atos de technical / development">
+              <td><a href="https://jobs.atos.net/job/Regional-Sales-%28mwd%29-IT-Mittelstand/1287050701/" target="_blank" rel="noopener">Regional Sales (m/w/d) - IT | Mittelstand</a><small>Atos</small></td>
+              <td>DE</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="resource manager atos warszawa data / analytics">
+              <td><a href="https://jobs.atos.net/job/Warszawa-Resource-Manager/1413790333/" target="_blank" rel="noopener">Resource Manager</a><small>Atos</small></td>
+              <td>Warszawa</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Basis / Security" data-source="Atos Careers" data-search="sap abap developer atos beograd basis / security">
+              <td><a href="https://jobs.atos.net/job/Beograd-SAP-ABAP-Developer/1414314633/" target="_blank" rel="noopener">SAP ABAP Developer</a><small>Atos</small></td>
+              <td>Beograd</td>
+              <td>Basis / Security<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+3</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap abap developer atos praha technical / development">
+              <td><a href="https://jobs.atos.net/job/Praha-SAP-ABAP-Developer/1391375533/" target="_blank" rel="noopener">SAP ABAP Developer</a><small>Atos</small></td>
+              <td>Praha</td>
+              <td>Technical / Development<small>Senior · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap abap developer atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-ABAP-Developer/1371024333/" target="_blank" rel="noopener">SAP ABAP Developer</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap abap developer with german atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-ABAP-Developer-with-German/1384072333/" target="_blank" rel="noopener">SAP ABAP Developer with German</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap ams consultant with german atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-AMS-Consultant-with-German/1412534233/" target="_blank" rel="noopener">SAP AMS Consultant with German</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>BTP / Integration</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap analytics &amp; data architect atos amstelveen architecture">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-SAP-Analytics-&amp;-Data-Architect/1248530901/" target="_blank" rel="noopener">SAP Analytics &amp; Data Architect</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>HANA / Data</span><span>HCM / SuccessFactors</span><span>MDG / Master Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap analytics cloud (sac) azure data consultant atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-Analytics-Cloud-%28SAC%29-Azure-Data-Consultant/1415361633/" target="_blank" rel="noopener">SAP Analytics Cloud (SAC) Azure Data Consultant</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>HANA / Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="sap analytics consultant atos amstelveen data / analytics">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-SAP-Analytics-consultant/1260252801/" target="_blank" rel="noopener">SAP Analytics consultant</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Data / Analytics<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>HANA / Data</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="sap applications portfolio lead atos bezons functional consulting">
+              <td><a href="https://jobs.atos.net/job/Bezons-SAP-Applications-Portfolio-Lead/1411874333/" target="_blank" rel="noopener">SAP Applications Portfolio Lead</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Functional Consulting<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap btp ai lead consultant atos amstelveen technical / development">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-SAP-BTP-AI-lead-consultant/1394995033/" target="_blank" rel="noopener">SAP BTP AI lead consultant</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Technical / Development<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap btp architect atos navi mumbai architecture">
+              <td><a href="https://jobs.atos.net/job/Navi-Mumbai-SAP-BTP-Architect/1372921733/" target="_blank" rel="noopener">SAP BTP Architect</a><small>Atos</small></td>
+              <td>Navi Mumbai</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap btp architect atos plano architecture">
+              <td><a href="https://jobs.atos.net/job/Plano-SAP-BTP-Architect-SD/1412221833/" target="_blank" rel="noopener">SAP BTP Architect</a><small>Atos</small></td>
+              <td>Plano</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>BTP / Integration</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap btp architect lead atos plano architecture">
+              <td><a href="https://jobs.atos.net/job/Plano-SAP-BTP-Architect-Lead-SD/1412248133/" target="_blank" rel="noopener">SAP BTP Architect Lead</a><small>Atos</small></td>
+              <td>Plano</td>
+              <td>Architecture<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>BTP / Integration</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap btp consultant atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-BTP-Consultant/1378447233/" target="_blank" rel="noopener">SAP BTP Consultant</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>BTP / Integration</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="sap business transformation management portfolio lead atos bezons functional consulting">
+              <td><a href="https://jobs.atos.net/job/Bezons-SAP-Business-Transformation-Management-Portfolio-Lead/1411896133/" target="_blank" rel="noopener">SAP Business Transformation Management Portfolio Lead</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Functional Consulting<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Basis / Security" data-source="Atos Careers" data-search="sap consultant atos charlotte basis / security">
+              <td><a href="https://jobs.atos.net/job/Charlotte-SAP-CONSULTANT-IL/1415990333/" target="_blank" rel="noopener">SAP CONSULTANT</a><small>Atos</small></td>
+              <td>Charlotte</td>
+              <td>Basis / Security<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>Basis / Security</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap consultant atos bangkapi technical / development">
+              <td><a href="https://jobs.atos.net/job/Bangkapi%2C-Huaykwang%2C-Bangkok-SAP-CONSULTANT/1415457333/" target="_blank" rel="noopener">SAP CONSULTANT</a><small>Atos</small></td>
+              <td>Bangkapi</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>HANA / Data</span><span>+2</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap cs consultant atos navi mumbai technical / development">
+              <td><a href="https://jobs.atos.net/job/Navi-Mumbai-SAP-CS-Consultant/1400003033/" target="_blank" rel="noopener">SAP CS Consultant</a><small>Atos</small></td>
+              <td>Navi Mumbai</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+2</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap cx manager atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-CX-Manager/1383213033/" target="_blank" rel="noopener">SAP CX Manager</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>CRM / CX / Commerce</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap consultant hcm (m/f/d) atos wien technical / development">
+              <td><a href="https://jobs.atos.net/job/Wien-SAP-Consultant-HCM-%28mfd%29/1405506733/" target="_blank" rel="noopener">SAP Consultant HCM (m/f/d)</a><small>Atos</small></td>
+              <td>Wien</td>
+              <td>Technical / Development<small>Senior · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="sap data &amp; analytics portfolio lead atos bezons data / analytics">
+              <td><a href="https://jobs.atos.net/job/Bezons-SAP-Data-&amp;-Analytics-Portfolio-Lead/1411878433/" target="_blank" rel="noopener">SAP Data &amp; Analytics Portfolio Lead</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Data / Analytics<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>HANA / Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap data migration consultant specialising in fi/co atos warszawa technical / development">
+              <td><a href="https://jobs.atos.net/job/Warszawa-SAP-Data-Migration-Consultant-specialising-in-FICO/1372406333/" target="_blank" rel="noopener">SAP Data Migration Consultant specialising in FI/CO</a><small>Atos</small></td>
+              <td>Warszawa</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap ehs senior consultant atos pune technical / development">
+              <td><a href="https://jobs.atos.net/job/Pune-SAP-EHS-Senior-Consultant/1383894933/" target="_blank" rel="noopener">SAP EHS Senior Consultant</a><small>Atos</small></td>
+              <td>Pune</td>
+              <td>Technical / Development<small>Senior · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>BTP / Integration</span><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap ewm consultant atos sofia technical / development">
+              <td><a href="https://jobs.atos.net/job/Sofia-SAP-EWM-CONSULTANT/1385413033/" target="_blank" rel="noopener">SAP EWM CONSULTANT</a><small>Atos</small></td>
+              <td>Sofia</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>EWM / WM / Logistics</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="sap evangelist atos remote home data / analytics">
+              <td><a href="https://jobs.atos.net/job/Remote-Home-SAP-Evangelist/1391817333/" target="_blank" rel="noopener">SAP Evangelist</a><small>Atos</small></td>
+              <td>Remote Home</td>
+              <td>Data / Analytics<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap fi/co consultant atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-FICO-Consultant/1401089333/" target="_blank" rel="noopener">SAP FI/CO Consultant</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>Fiori / UI5</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap fi/co consultant atos bydgoszcz technical / development">
+              <td><a href="https://jobs.atos.net/job/Bydgoszcz-SAP-FICO-Consultant/1278472301/" target="_blank" rel="noopener">SAP FI/CO Consultant</a><small>Atos</small></td>
+              <td>Bydgoszcz</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Basis / Security" data-source="Atos Careers" data-search="sap fiori consultant atos wroclaw basis / security">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-FIORI-CONSULTANT/1370997733/" target="_blank" rel="noopener">SAP FIORI CONSULTANT</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Basis / Security<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>Fiori / UI5</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap finance consultant atos amstelveen technical / development">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-SAP-Finance-Consultant/1249150101/" target="_blank" rel="noopener">SAP Finance Consultant</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap finance solution architect atos pune architecture">
+              <td><a href="https://jobs.atos.net/job/Pune-SAP-Finance-Solution-Architect/1383895733/" target="_blank" rel="noopener">SAP Finance Solution Architect</a><small>Atos</small></td>
+              <td>Pune</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="sap hcm consultant atos warszawa functional consulting">
+              <td><a href="https://jobs.atos.net/job/Warszawa-SAP-HCM-Consultant/1409778133/" target="_blank" rel="noopener">SAP HCM Consultant</a><small>Atos</small></td>
+              <td>Warszawa</td>
+              <td>Functional Consulting<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="sap hcm consultant with german atos timisoara functional consulting">
+              <td><a href="https://jobs.atos.net/job/Timisoara-SAP-HCM-Consultant-with-German/1409307933/" target="_blank" rel="noopener">SAP HCM Consultant with German</a><small>Atos</small></td>
+              <td>Timisoara</td>
+              <td>Functional Consulting<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap hcm consultant with german atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-HCM-Consultant-with-German/1370075333/" target="_blank" rel="noopener">SAP HCM Consultant with German</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap mdg architect with german atos timisoara architecture">
+              <td><a href="https://jobs.atos.net/job/Timisoara-SAP-MDG-Architect-with-German/1409293033/" target="_blank" rel="noopener">SAP MDG Architect with German</a><small>Atos</small></td>
+              <td>Timisoara</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>PP / QM / Manufacturing</span><span>+2</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap mdg consultant atos wroclaw technical / development">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-MDG-Consultant/1387760533/" target="_blank" rel="noopener">SAP MDG Consultant</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>Fiori / UI5</span><span>MM / Procurement</span><span>MDG / Master Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap mm consultant atos beograd technical / development">
+              <td><a href="https://jobs.atos.net/job/Beograd-SAP-MM-Consultant/1414303033/" target="_blank" rel="noopener">SAP MM Consultant</a><small>Atos</small></td>
+              <td>Beograd</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>Fiori / UI5</span><span>MM / Procurement</span><span>EWM / WM / Logistics</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap o2c consultant atos warszawa technical / development">
+              <td><a href="https://jobs.atos.net/job/Warszawa-SAP-O2C-Consultant/1371589533/" target="_blank" rel="noopener">SAP O2C Consultant</a><small>Atos</small></td>
+              <td>Warszawa</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap p2p consultant atos warszawa technical / development">
+              <td><a href="https://jobs.atos.net/job/Warszawa-SAP-P2P-Consultant/1371012833/" target="_blank" rel="noopener">SAP P2P Consultant</a><small>Atos</small></td>
+              <td>Warszawa</td>
+              <td>Technical / Development<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Functional Consulting" data-source="Atos Careers" data-search="sap pp consultant atos praha functional consulting">
+              <td><a href="https://jobs.atos.net/job/Praha-SAP-PP-CONSULTANT/1391361133/" target="_blank" rel="noopener">SAP PP CONSULTANT</a><small>Atos</small></td>
+              <td>Praha</td>
+              <td>Functional Consulting<small>Junior · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>PP / QM / Manufacturing</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap pp/ds berater (w/m/d) atos de technical / development">
+              <td><a href="https://jobs.atos.net/job/SAP-PPDS-Berater-%28wmd%29/1402253733/" target="_blank" rel="noopener">SAP PP/DS Berater (w/m/d)</a><small>Atos</small></td>
+              <td>DE</td>
+              <td>Technical / Development<small>Mid / Unspecified · SAP-titled role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>PP / QM / Manufacturing</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap platforms architect atos amstelveen architecture">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-SAP-Platforms-Architect/1182972301/" target="_blank" rel="noopener">SAP Platforms Architect</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Other SAP-Related" data-source="Atos Careers" data-search="sap program director finance (f/h) atos bezons other sap-related">
+              <td><a href="https://jobs.atos.net/job/Bezons-SAP-Program-Director-Finance-%28FH%29/1384568633/" target="_blank" rel="noopener">SAP Program Director Finance (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Other SAP-Related<small>Lead / Manager · SAP-titled role</small></td>
+              <td><div class="chips"><span>FI / CO / FICO</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Project / Program" data-source="Atos Careers" data-search="sap project manager atos madrid project / program">
+              <td><a href="https://jobs.atos.net/job/Madrid-SAP-Project-Manager/1408567933/" target="_blank" rel="noopener">SAP Project Manager</a><small>Atos</small></td>
+              <td>Madrid</td>
+              <td>Project / Program<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Project / Program" data-source="Atos Careers" data-search="sap project manager / sdm atos wroclaw project / program">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-Project-Manager-SDM/1408230333/" target="_blank" rel="noopener">SAP Project Manager / SDM</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Project / Program<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap s/4hana enterprise architect atos wroclaw architecture">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SAP-S4HANA-Enterprise-Architect/1374545133/" target="_blank" rel="noopener">SAP S/4HANA Enterprise Architect</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>Fiori / UI5</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap sd consultant atos beograd technical / development">
+              <td><a href="https://jobs.atos.net/job/Beograd-SAP-SD-Consultant/1414216033/" target="_blank" rel="noopener">SAP SD Consultant</a><small>Atos</small></td>
+              <td>Beograd</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>Fiori / UI5</span><span>SD / Sales</span><span>EWM / WM / Logistics</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap solution architect atos amstelveen architecture">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-SAP-Solution-Architect/1176423201/" target="_blank" rel="noopener">SAP Solution Architect</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sap success factors consultant with german atos timisoara technical / development">
+              <td><a href="https://jobs.atos.net/job/Timisoara-SAP-Success-Factors-Consultant-with-German/1409301733/" target="_blank" rel="noopener">SAP Success Factors Consultant with German</a><small>Atos</small></td>
+              <td>Timisoara</td>
+              <td>Technical / Development<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Architecture" data-source="Atos Careers" data-search="sap technical architect atos amstelveen architecture">
+              <td><a href="https://jobs.atos.net/job/Amstelveen-SAP-Technical-Architect/1222725001/" target="_blank" rel="noopener">SAP Technical Architect</a><small>Atos</small></td>
+              <td>Amstelveen</td>
+              <td>Architecture<small>Mid / Unspecified · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="sap-solution manager atos kadıköy data / analytics">
+              <td><a href="https://jobs.atos.net/job/Kad%C4%B1k%C3%B6y-Istanbul-SAP-Solution-Manager/1390829333/" target="_blank" rel="noopener">SAP-Solution Manager</a><small>Atos</small></td>
+              <td>Kadıköy</td>
+              <td>Data / Analytics<small>Lead / Manager · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>EWM / WM / Logistics</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="senior consultant atos navi mumbai technical / development">
+              <td><a href="https://jobs.atos.net/job/Navi-Mumbai-SENIOR-CONSULTANT/1389778633/" target="_blank" rel="noopener">SENIOR CONSULTANT</a><small>Atos</small></td>
+              <td>Navi Mumbai</td>
+              <td>Technical / Development<small>Senior · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>Fiori / UI5</span><span>+1</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="senior consultant atos chennai technical / development">
+              <td><a href="https://jobs.atos.net/job/Chennai-SENIOR-CONSULTANT/1414665233/" target="_blank" rel="noopener">SENIOR CONSULTANT</a><small>Atos</small></td>
+              <td>Chennai</td>
+              <td>Technical / Development<small>Senior · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>FI / CO / FICO</span><span>MM / Procurement</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="senior consultant atos navi mumbai data / analytics">
+              <td><a href="https://jobs.atos.net/job/Navi-Mumbai-SENIOR-CONSULTANT/1414658633/" target="_blank" rel="noopener">SENIOR CONSULTANT</a><small>Atos</small></td>
+              <td>Navi Mumbai</td>
+              <td>Data / Analytics<small>Senior · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>BTP / Integration</span><span>HANA / Data</span><span>MDG / Master Data</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Project / Program" data-source="Atos Careers" data-search="senior project manager with german atos wroclaw project / program">
+              <td><a href="https://jobs.atos.net/job/Wroclaw-SENIOR-PROJECT-MANAGER-WITH-GERMAN/1388745833/" target="_blank" rel="noopener">SENIOR PROJECT MANAGER WITH GERMAN</a><small>Atos</small></td>
+              <td>Wroclaw</td>
+              <td>Project / Program<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sales manager (m/w/d) atos münchen technical / development">
+              <td><a href="https://jobs.atos.net/job/M%C3%BCnchen-Sales-Manager-%28mwd%29/1383443533/" target="_blank" rel="noopener">Sales Manager (m/w/d)</a><small>Atos</small></td>
+              <td>München</td>
+              <td>Technical / Development<small>Lead / Manager · SAP module/technical requirement</small></td>
+              <td><div class="chips"><span>S/4HANA</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="sales specialist senior sap (f/h) atos bezons data / analytics">
+              <td><a href="https://jobs.atos.net/job/Bezons-Sales-Specialist-Senior-SAP-%28FH%29/1384003533/" target="_blank" rel="noopener">Sales Specialist Senior SAP (F/H)</a><small>Atos</small></td>
+              <td>Bezons</td>
+              <td>Data / Analytics<small>Senior · Core SAP delivery role</small></td>
+              <td><div class="chips"><span>S/4HANA</span></div></td>
+              <td>Not disclosed</td>
+              <td>Atos Careers</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
   <section>
     <div class="wrap grid-2">
       <div class="note">
         <h2>What This Baseline Says</h2>
         <div class="callout-grid">
-          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's 371,000+ rounded worldwide count is the market-size signal. The 21,085 LinkedIn guest links and 1,565 open-feed postings are the current evidence layers used for detailed analysis.</p></div>
+          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's 371,000+ rounded worldwide count is the market-size signal. The 101,093 LinkedIn guest links, 1,895 direct company career postings, and 1,565 open-feed postings are the current evidence layers used for detailed analysis.</p></div>
           <div class="callout"><strong>Technical roles dominate the open dataset.</strong><p>Technical / Development is the largest role family, followed by Data / Analytics, Basis / Security, Functional Consulting, and Architecture.</p></div>
           <div class="callout"><strong>Salary remains the biggest blind spot.</strong><p>Only 20.4% of deduplicated open postings include salary information. The next phase should focus on salary ranges by module, country, seniority, and work model.</p></div>
         </div>
@@ -1538,6 +2946,7 @@
           <li>SAP matching used strong keyword signals such as SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related terms.</li>
           <li>Salary was not estimated. A posting was marked as salary-disclosed only when the source provided salary fields or the description explicitly mentioned compensation.</li>
           <li>LinkedIn has two separate layers: rounded LinkedIn Jobs search-result counts, and a collected public guest job-link pool gathered through partitioned searches.</li>
+          <li>Company career data is collected from public career pages and ATS endpoints such as jobs2web / SuccessFactors, SmartRecruiters, Greenhouse, and Workday CXS. These runs are parallel to the LinkedIn crawler and stored as a separate source-linked layer.</li>
           <li>The LinkedIn guest scraper does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private profile/session data. The 371,000+ figure is treated as market size; the collected guest pool is the source-linked subset available for analysis and download.</li>
         </ul>
       </div>
@@ -1552,6 +2961,12 @@
           <a href="https://remoteok.com/" target="_blank" rel="noopener">Remote OK</a>
           <a href="https://www.arbeitnow.com/" target="_blank" rel="noopener">Arbeitnow</a>
           <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener">LinkedIn Jobs signal and public job pages</a>
+          <a href="https://jobs.sap.com/" target="_blank" rel="noopener">SAP Careers</a>
+          <a href="https://jobs.atos.net/" target="_blank" rel="noopener">Atos Careers</a>
+          <a href="https://jobs.adesso-group.com/" target="_blank" rel="noopener">adesso Careers</a>
+          <a href="https://api.smartrecruiters.com/" target="_blank" rel="noopener">SmartRecruiters public postings</a>
+          <a href="https://boards.greenhouse.io/" target="_blank" rel="noopener">Greenhouse public boards</a>
+          <a href="https://www.myworkday.com/" target="_blank" rel="noopener">Workday public career sites</a>
         </div>
       </div>
     </div>
@@ -1563,6 +2978,8 @@
         <h2>How This Will Stay Alive</h2>
         <ul>
           <li>This first release is a baseline snapshot. Every future run writes a dated snapshot under <code>data/snapshots/YYYY-MM-DD</code> instead of replacing history.</li>
+          <li>A daily delta LaunchAgent runs at 06:15 local time. It uses a lightweight LinkedIn <code>past_24h</code> pass and a merge-mode company career / ATS pass instead of re-running the full market crawl every day.</li>
+          <li>Latest daily delta run: <code>2026-07-22T06:22:31</code>. LinkedIn status: <code>skipped_full_running</code>, net new links: <code>0</code>. Company career status: <code>completed</code>, net new jobs: <code>12</code>.</li>
           <li>Trend charts will compare snapshots across time: module demand, country mix, seniority, remote/hybrid/on-site, salary transparency, LinkedIn signal shifts, and collected LinkedIn guest-pool growth.</li>
           <li>The public page can be mirrored to GitHub Pages or any static host, with the source and data snapshots versioned in Git for transparency.</li>
           <li>Community inputs will be anonymized and added as a separate qualitative layer, so market data and human experience remain distinguishable.</li>
@@ -1616,7 +3033,7 @@
       <div class="table-intro">
         <div>
           <h2>Source-Linked Open Job Pool</h2>
-          <p>This table contains 1,565 deduplicated open-feed postings with original source links. The separate LinkedIn guest pool contains 21,085 collected LinkedIn job links. The full market-size signal remains LinkedIn's rounded 371,000+ SAP worldwide count.</p>
+          <p>This table contains 1,565 deduplicated open-feed postings with original source links. Separate pools contain 101,093 LinkedIn guest job links and 1,895 direct company career postings. The full market-size signal remains LinkedIn's rounded 371,000+ SAP worldwide count.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="data/sap_jobs.csv">CSV</a>
@@ -17304,7 +18721,7 @@
   </footer>
 
   <script>
-    const chartData = {"sources": {"himalayas": 951, "remotefirst": 542, "arbeitnow": 49, "jobicy": 22, "remoteok": 1}, "focus": {"Core SAP delivery role": 837, "SAP mentioned": 346, "SAP module/technical requirement": 202, "SAP-titled role": 180}, "locations": {"United States": 585, "Germany": 248, "India": 135, "Canada": 50, "Worldwide / Not specified": 48, "United Kingdom": 46, "Poland": 42, "Spain": 39, "Romania": 34, "Mexico": 30, "Philippines": 25, "Brazil": 24, "Hungary": 21, "Austria": 18}, "roles": {"Technical / Development": 754, "Data / Analytics": 288, "Basis / Security": 163, "Functional Consulting": 139, "Architecture": 121, "Other SAP-Related": 54, "Project / Program": 29, "Support / Operations": 17}, "seniority": {"Lead / Manager": 542, "Mid / Unspecified": 503, "Senior": 462, "Junior": 41, "Entry / Intern": 17}, "modules": {"S/4HANA": 687, "Unspecified SAP": 396, "BTP / Integration": 341, "ABAP / Development": 331, "HANA / Data": 327, "FI / CO / FICO": 256, "Fiori / UI5": 219, "HCM / SuccessFactors": 187, "Basis / Security": 174, "MM / Procurement": 131, "EWM / WM / Logistics": 109, "TM / GTS / Supply Chain": 84, "SD / Sales": 77, "PP / QM / Manufacturing": 64, "CRM / CX / Commerce": 29, "PM / Asset Management": 23}, "skills": {"S/4HANA": 687, "English": 451, "ABAP": 289, "SAP HANA": 270, "German": 249, "SAP BTP": 225, "Agile / Scrum": 209, "FICO": 209, "SAP Fiori": 201, "SuccessFactors": 140, "GRC / Security": 131, "OData": 121, "CPI / Integration Suite": 119, "SAPUI5 / UI5": 94, "IDoc": 93, "CDS Views": 83, "RAP / CAP": 74, "SAP Analytics Cloud": 73}, "softSkills": {"Consulting mindset": 664, "Leadership": 234, "Change management": 214, "Analytical thinking": 71, "Collaboration": 48, "Training": 44, "Ownership": 29, "Project management": 26, "Communication": 11, "Stakeholder management": 10, "Documentation": 9, "Presentation": 8, "Problem solving": 6, "Customer orientation": 4}, "degreeLevels": {"Master": 19, "Bachelor": 4}, "degreeFields": {"Computer Science / Informatics": 335, "Engineering": 203, "Finance / Accounting": 150, "Logistics / Supply Chain": 114, "Information Systems": 6, "Business / Economics": 1}, "descriptionTerms": {"consultant": 531, "business": 455, "solutions": 401, "global": 394, "team": 394, "senior": 391, "support": 272, "work": 258, "technology": 253, "data": 248, "management": 243, "experience": 226, "consulting": 221, "lead": 217, "s/4hana": 215, "cloud": 181, "enterprise": 177, "expertise": 175, "transformation": 172, "manager": 163}, "salary": {"Not disclosed": 1246, "Disclosed": 317, "Mentioned in text": 2}, "historyJobs": {"2026-07-19": 1565}, "historyLinkedIn": {"2026-07-19": 371000}, "historyLinkedInGuest": {"2026-07-19": 21085}, "linkedinKeywords": {"SD": 50000, "SuccessFactors": 36000, "ABAP": 30000, "HANA": 28000, "S/4HANA": 23000, "FICO": 18000, "MM": 15000, "Consultant": 12000, "Fiori": 9000, "Basis": 8000, "BTP": 5000}, "linkedinLocations": {"United States": 108000, "Brazil": 36000, "Germany": 35000, "India": 25000, "France": 15000, "Netherlands": 9000, "United Kingdom": 8000, "Canada": 7000, "Poland": 6000, "Spain": 5000, "Mexico": 4000, "Australia": 3000, "Turkey": 2000, "Singapore": 2000}, "linkedinWorkModel": {"On-site": 289000, "Hybrid": 56000, "Remote": 17000}, "linkedinRecency": {"Past month": 245000, "Past week": 104000, "Past 24 hours": 8000}, "linkedinGuestQueries": {"SAP": 9879, "SAP S/4HANA": 3356, "SAP SD": 1284, "SAP ABAP": 1103, "SAP SuccessFactors": 1023, "SAP HANA": 987, "SAP FICO": 714, "SAP MM": 700, "SAP BTP": 554, "SAP Basis": 533, "SAP Consultant": 532, "SAP Fiori": 420}, "linkedinGuestLocations": {"India": 1540, "United States": 1489, "Germany": 1461, "Worldwide": 1166, "Poland": 935, "Spain": 920, "Brazil": 901, "France": 855, "Canada": 823, "Mexico": 802, "United Kingdom": 781, "Netherlands": 659}, "linkedinGuestRoles": {"Other SAP-Related": 9060, "Functional Consulting": 4121, "Technical / Development": 3291, "Data / Analytics": 1952, "Architecture": 921, "Support / Operations": 661, "Basis / Security": 634, "Project / Program": 445}, "linkedinGuestModules": {"Unspecified SAP": 13314, "S/4HANA": 2170, "FI / CO / FICO": 1769, "ABAP / Development": 1093, "BTP / Integration": 919, "MM / Procurement": 851, "HANA / Data": 845, "HCM / SuccessFactors": 755, "SD / Sales": 744, "Basis / Security": 685, "EWM / WM / Logistics": 511, "Fiori / UI5": 486, "TM / GTS / Supply Chain": 440, "PP / QM / Manufacturing": 302, "PM / Asset Management": 132, "MDG / Master Data": 116}, "linkedinGuestSkills": {"S/4HANA": 2170, "FICO": 1345, "ABAP": 972, "English": 888, "SAP SD": 692, "SAP BTP": 682, "SAP HANA": 625, "SAP MM": 574, "SuccessFactors": 494, "SAP Fiori": 449, "German": 418, "Agile / Scrum": 383, "GRC / Security": 252, "CPI / Integration Suite": 226, "SAP EWM": 204, "SAP PP": 202, "Ariba": 162, "IDoc": 162}, "linkedinGuestSoftSkills": {"Consulting mindset": 6151, "Leadership": 2421, "Communication": 1838, "Change management": 1622, "Analytical thinking": 1596, "Collaboration": 1445, "Training": 1211, "Problem solving": 861, "Documentation": 859, "Ownership": 790, "Project management": 760, "Stakeholder management": 646, "Presentation": 383, "Customer orientation": 96}, "linkedinGuestDegreeFields": {"Computer Science / Informatics": 3325, "Finance / Accounting": 2249, "Logistics / Supply Chain": 2005, "Engineering": 1830, "Business / Economics": 360, "Information Systems": 257, "Mathematics / Statistics": 44}};
+    const chartData = {"sources": {"himalayas": 951, "remotefirst": 542, "arbeitnow": 49, "jobicy": 22, "remoteok": 1}, "focus": {"Core SAP delivery role": 837, "SAP mentioned": 346, "SAP module/technical requirement": 202, "SAP-titled role": 180}, "locations": {"United States": 585, "Germany": 248, "India": 135, "Canada": 50, "Worldwide / Not specified": 48, "United Kingdom": 46, "Poland": 42, "Spain": 39, "Romania": 34, "Mexico": 30, "Philippines": 25, "Brazil": 24, "Hungary": 21, "Austria": 18}, "roles": {"Technical / Development": 754, "Data / Analytics": 288, "Basis / Security": 163, "Functional Consulting": 139, "Architecture": 121, "Other SAP-Related": 54, "Project / Program": 29, "Support / Operations": 17}, "seniority": {"Lead / Manager": 542, "Mid / Unspecified": 503, "Senior": 462, "Junior": 41, "Entry / Intern": 17}, "modules": {"S/4HANA": 687, "Unspecified SAP": 396, "BTP / Integration": 341, "ABAP / Development": 331, "HANA / Data": 327, "FI / CO / FICO": 256, "Fiori / UI5": 219, "HCM / SuccessFactors": 187, "Basis / Security": 174, "MM / Procurement": 131, "EWM / WM / Logistics": 109, "TM / GTS / Supply Chain": 84, "SD / Sales": 77, "PP / QM / Manufacturing": 64, "CRM / CX / Commerce": 29, "PM / Asset Management": 23}, "skills": {"S/4HANA": 687, "English": 451, "ABAP": 289, "SAP HANA": 270, "German": 249, "SAP BTP": 225, "Agile / Scrum": 209, "FICO": 209, "SAP Fiori": 201, "SuccessFactors": 140, "GRC / Security": 131, "OData": 121, "CPI / Integration Suite": 119, "SAPUI5 / UI5": 94, "IDoc": 93, "CDS Views": 83, "RAP / CAP": 74, "SAP Analytics Cloud": 73}, "softSkills": {"Consulting mindset": 664, "Leadership": 234, "Change management": 214, "Analytical thinking": 71, "Collaboration": 48, "Training": 44, "Ownership": 29, "Project management": 26, "Communication": 11, "Stakeholder management": 10, "Documentation": 9, "Presentation": 8, "Problem solving": 6, "Customer orientation": 4}, "degreeLevels": {"Master": 19, "Bachelor": 4}, "degreeFields": {"Computer Science / Informatics": 335, "Engineering": 203, "Finance / Accounting": 150, "Logistics / Supply Chain": 114, "Information Systems": 6, "Business / Economics": 1}, "descriptionTerms": {"consultant": 531, "business": 455, "solutions": 401, "global": 394, "team": 394, "senior": 391, "support": 272, "work": 258, "technology": 253, "data": 248, "management": 243, "experience": 226, "consulting": 221, "lead": 217, "s/4hana": 215, "cloud": 181, "enterprise": 177, "expertise": 175, "transformation": 172, "manager": 163}, "salary": {"Not disclosed": 1246, "Disclosed": 317, "Mentioned in text": 2}, "historyJobs": {"2026-07-19": 1565}, "historyLinkedIn": {"2026-07-19": 371000}, "historyLinkedInGuest": {"2026-07-19": 21085}, "linkedinKeywords": {"SD": 50000, "SuccessFactors": 36000, "ABAP": 30000, "HANA": 28000, "S/4HANA": 23000, "FICO": 18000, "MM": 15000, "Consultant": 12000, "Fiori": 9000, "Basis": 8000, "BTP": 5000}, "linkedinLocations": {"United States": 108000, "Brazil": 36000, "Germany": 35000, "India": 25000, "France": 15000, "Netherlands": 9000, "United Kingdom": 8000, "Canada": 7000, "Poland": 6000, "Spain": 5000, "Mexico": 4000, "Australia": 3000, "Turkey": 2000, "Singapore": 2000}, "linkedinWorkModel": {"On-site": 289000, "Hybrid": 56000, "Remote": 17000}, "linkedinRecency": {"Past month": 245000, "Past week": 104000, "Past 24 hours": 8000}, "linkedinGuestQueries": {"SAP": 17143, "SAP Solution Manager": 6751, "SAP GTS": 6662, "SAP S/4HANA": 4949, "SAP Procurement": 3712, "SAP Project Manager": 3579, "SAP SuccessFactors": 3010, "SAP PM": 2851, "SAP SD": 2685, "SAP CRM": 2669, "SAP ABAP": 2579, "SAP FI": 2470}, "linkedinGuestLocations": {"United States": 7682, "Germany": 6837, "India": 6180, "Worldwide": 5587, "United Kingdom": 3242, "Canada": 3081, "France": 2955, "Brazil": 2827, "Poland": 2722, "Spain": 2700, "Netherlands": 2438, "China": 2310}, "linkedinGuestRoles": {"Other SAP-Related": 46914, "Functional Consulting": 16722, "Technical / Development": 14503, "Data / Analytics": 9310, "Project / Program": 4253, "Support / Operations": 3954, "Architecture": 3464, "Basis / Security": 1973}, "linkedinGuestModules": {"Unspecified SAP": 78332, "S/4HANA": 5859, "FI / CO / FICO": 4848, "ABAP / Development": 3444, "BTP / Integration": 3240, "HANA / Data": 3070, "HCM / SuccessFactors": 2482, "MM / Procurement": 2230, "Basis / Security": 2175, "EWM / WM / Logistics": 1994, "TM / GTS / Supply Chain": 1747, "Fiori / UI5": 1663, "SD / Sales": 1560, "PP / QM / Manufacturing": 1124, "CRM / CX / Commerce": 460, "PM / Asset Management": 441}, "linkedinGuestSkills": {"English": 6122, "S/4HANA": 5859, "FICO": 3565, "ABAP": 3128, "SAP HANA": 2328, "German": 2035, "SAP BTP": 2019, "Agile / Scrum": 2005, "SAP Fiori": 1521, "SuccessFactors": 1517, "SAP SD": 1422, "GRC / Security": 1296, "SAP MM": 1170, "SAP EWM": 1001, "CPI / Integration Suite": 875, "OData": 839, "SAP PP": 762, "IDoc": 761}, "linkedinGuestSoftSkills": {"Consulting mindset": 23453, "Leadership": 10806, "Communication": 9288, "Analytical thinking": 7602, "Collaboration": 6977, "Change management": 6847, "Project management": 5603, "Training": 5554, "Problem solving": 4463, "Documentation": 4228, "Ownership": 4075, "Stakeholder management": 2858, "Presentation": 1867, "Customer orientation": 383}, "linkedinGuestDegreeFields": {"Computer Science / Informatics": 15486, "Engineering": 11545, "Finance / Accounting": 9372, "Logistics / Supply Chain": 8747, "Business / Economics": 1906, "Information Systems": 1097, "Mathematics / Statistics": 312}};
     const palette = ["#2f6f73", "#3f6db5", "#d99b24", "#c84e3a", "#4f8a5b", "#725ca8", "#8a6a3b", "#64748b"];
     const isMobile = window.matchMedia("(max-width: 700px)").matches;
 
