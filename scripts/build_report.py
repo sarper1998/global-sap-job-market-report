@@ -549,51 +549,128 @@ def main() -> None:
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
   <style>
     :root {{
-      --ink: #19212a;
-      --muted: #5f6b77;
-      --line: #d9e0e6;
+      --ink: #172026;
+      --muted: #66717d;
+      --line: #d7dee6;
       --panel: #ffffff;
-      --soft: #f4f7f8;
-      --teal: #2f6f73;
+      --soft: #f5f7fa;
+      --paper: #fbfcfd;
+      --hero: #102426;
+      --hero-2: #193236;
+      --teal: #257a75;
+      --teal-soft: #dff3ef;
       --blue: #3f6db5;
-      --amber: #d99b24;
+      --amber: #b97822;
       --red: #c84e3a;
       --green: #4f8a5b;
       --violet: #725ca8;
+      --shadow: 0 16px 40px rgba(23, 32, 38, .09);
+      color-scheme: light;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background: var(--soft);
     }}
     * {{ box-sizing: border-box; }}
-    body {{ margin: 0; }}
+    img, svg, canvas {{ max-width: 100%; }}
+    html {{ scroll-behavior: smooth; }}
+    body {{
+      margin: 0;
+      background:
+        linear-gradient(180deg, #eef5f4 0, #f7f9fb 460px, #f7f9fb 100%);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }}
     a {{ color: var(--teal); text-decoration: none; }}
     a:hover {{ text-decoration: underline; }}
     header {{
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-      padding: 36px 28px 24px;
+      position: relative;
+      overflow: hidden;
+      max-width: 100vw;
+      background:
+        radial-gradient(circle at 85% 8%, rgba(75, 137, 174, .36), transparent 28%),
+        radial-gradient(circle at 12% 14%, rgba(217, 155, 36, .18), transparent 30%),
+        linear-gradient(135deg, var(--hero), var(--hero-2));
+      color: #f5fbfb;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+    }}
+    header::after {{
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(111, 213, 199, .55), transparent);
     }}
     .wrap {{ width: min(1180px, calc(100% - 32px)); margin: 0 auto; }}
+    .hero-shell {{ position: relative; z-index: 1; padding: 22px 0 28px; }}
+    .topline {{ display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 30px; }}
+    .brand {{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #dff8f5;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }}
+    .brand-mark {{ width: 10px; height: 10px; border-radius: 999px; background: #67d5c9; box-shadow: 0 0 0 5px rgba(103, 213, 201, .14); }}
+    .report-tag {{ color: rgba(245, 251, 251, .72); font-size: 13px; white-space: nowrap; }}
+    .hero-grid {{ display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: 22px; align-items: end; }}
+    .hero-grid > *, .grid-2 > *, .grid-3 > * {{ min-width: 0; }}
+    .hero-copy {{ width: 100%; max-width: 720px; min-width: 0; }}
     .eyebrow {{ color: var(--teal); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; line-height: 1.35; overflow-wrap: anywhere; }}
-    h1 {{ margin: 10px 0 10px; font-size: clamp(32px, 4vw, 56px); line-height: 1.02; letter-spacing: 0; }}
+    header .eyebrow {{ color: #8be1d8; margin-bottom: 10px; }}
+    h1 {{ margin: 10px 0 10px; font-size: clamp(36px, 5vw, 66px); line-height: .98; letter-spacing: 0; overflow-wrap: break-word; }}
+    header h1 {{ color: #f8fbff; max-width: 680px; }}
     h2 {{ margin: 0 0 16px; font-size: 24px; letter-spacing: 0; }}
     h3 {{ margin: 0 0 8px; font-size: 17px; letter-spacing: 0; }}
     p {{ color: var(--muted); line-height: 1.6; margin: 0; }}
-    .intro {{ max-width: 860px; font-size: 17px; }}
-    .layer-note {{ max-width: 920px; margin-top: 18px; padding: 14px 16px; border: 1px solid #c9dada; border-radius: 8px; background: #f3fbfa; color: var(--ink); line-height: 1.55; }}
+    .intro {{ max-width: 760px; font-size: 17px; }}
+    header .intro {{ color: rgba(245, 251, 251, .78); font-size: 18px; }}
+    .hero-card {{
+      border: 1px solid rgba(174, 220, 216, .24);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .08);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .18);
+      backdrop-filter: blur(16px);
+      padding: 16px;
+      min-width: 0;
+    }}
+    .hero-card-label {{ color: #8be1d8; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }}
+    .hero-metrics {{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }}
+    .hero-metric {{
+      min-height: 128px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .08);
+      padding: 14px;
+      min-width: 0;
+    }}
+    .hero-metric.primary {{ background: rgba(103, 213, 201, .14); border-color: rgba(103, 213, 201, .32); }}
+    .hero-metric span {{ display: block; color: rgba(245, 251, 251, .7); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }}
+    .hero-metric strong {{ display: block; margin: 8px 0 5px; color: #fff; font-size: 34px; line-height: 1; }}
+    .hero-metric small {{ color: rgba(245, 251, 251, .7); line-height: 1.35; }}
+    .hero-metric small {{ display: block; overflow-wrap: anywhere; }}
+    .layer-note {{ max-width: 920px; margin-top: 18px; padding: 14px 16px; border: 1px solid #c9dada; border-radius: 10px; background: #f3fbfa; color: var(--ink); line-height: 1.55; }}
+    .hero-card .layer-note {{ max-width: none; margin-top: 12px; border-color: rgba(103, 213, 201, .28); background: rgba(9, 30, 31, .45); color: rgba(245, 251, 251, .82); }}
     .layer-note strong {{ color: var(--teal); }}
+    .hero-card .layer-note strong {{ color: #8be1d8; }}
     .meta {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }}
     .pill {{ border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; background: #fff; color: var(--muted); font-size: 13px; }}
+    header .meta {{ margin-top: 18px; gap: 8px; }}
+    header .pill {{ border-color: rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .08); color: rgba(245, 251, 251, .72); }}
     section {{ padding: 28px 0; }}
     .kpis {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }}
+    .overview-kpis {{ margin-top: -18px; position: relative; z-index: 2; }}
     .kpi, .chart, .note, .table-panel {{
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 0 1px 2px rgba(25, 33, 42, .04);
     }}
-    .kpi {{ padding: 18px; min-height: 132px; }}
-    .kpi strong {{ display: block; font-size: 30px; margin-bottom: 6px; }}
+    .kpi {{ padding: 18px; min-height: 126px; box-shadow: var(--shadow); }}
+    .kpi strong {{ display: block; font-size: 30px; margin-bottom: 7px; letter-spacing: 0; }}
     .kpi span {{ color: var(--muted); font-size: 13px; line-height: 1.4; }}
     .grid-2 {{ display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 16px; }}
     .grid-3 {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }}
@@ -634,9 +711,11 @@ def main() -> None:
     .link-grid a {{ border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; background: #fbfcfd; color: var(--ink); }}
     .link-grid span {{ display: block; color: var(--muted); font-size: 12px; line-height: 1.35; }}
     .link-grid strong {{ display: block; margin-top: 4px; color: var(--teal); font-size: 16px; }}
-    .actions {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }}
-    .button {{ display: inline-flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 13px; background: #fff; color: var(--ink); font-weight: 700; font-size: 13px; }}
+    .actions {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; width: 100%; min-width: 0; }}
+    .button {{ display: inline-flex; align-items: center; justify-content: center; min-height: 42px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; background: #fff; color: var(--ink); font-weight: 800; font-size: 13px; min-width: 0; text-align: center; white-space: normal; overflow-wrap: anywhere; }}
     .button.primary {{ background: var(--teal); border-color: var(--teal); color: #fff; }}
+    header .button {{ border-color: rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .09); color: #f7fbfb; }}
+    header .button.primary {{ background: #67d5c9; border-color: #67d5c9; color: #0f2425; }}
     .callout-grid {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }}
     .callout {{ border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: #fbfcfd; }}
     .callout strong {{ display: block; margin-bottom: 6px; }}
@@ -646,10 +725,12 @@ def main() -> None:
     .signal-kpis {{ margin-top: 12px; }}
     footer {{ border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 13px; }}
     @media (max-width: 900px) {{
-      .kpis, .grid-2, .grid-3, .source-list, .callout-grid, .link-grid {{ grid-template-columns: 1fr; }}
+      .hero-grid, .grid-2, .grid-3, .source-list, .callout-grid, .link-grid {{ grid-template-columns: 1fr; }}
       .table-intro {{ display: block; }}
-      header {{ padding-inline: 16px; }}
       .wrap {{ width: min(100% - 20px, 1180px); }}
+      .hero-shell {{ padding: 20px 0 24px; }}
+      .topline {{ margin-bottom: 24px; }}
+      .hero-card {{ max-width: 680px; }}
       section {{ padding: 18px 0; }}
       h2 {{ font-size: 20px; line-height: 1.2; }}
       .chart {{ --chart-h: 360px; padding: 14px; min-height: calc(var(--chart-h) + 62px); }}
@@ -660,54 +741,87 @@ def main() -> None:
       .kpi {{ min-height: 112px; }}
     }}
     @media (max-width: 640px) {{
-      header {{ padding: 28px 12px 18px; }}
       .wrap {{ width: calc(100% - 16px); }}
-      h1 {{ font-size: 34px; }}
+      .hero-shell {{ padding: 18px 0 18px; }}
+      .topline {{ margin-bottom: 18px; }}
+      .brand {{ font-size: 11px; letter-spacing: .1em; }}
+      .report-tag {{ display: none; }}
+      h1 {{ font-size: 34px; line-height: 1.03; }}
       h2 {{ font-size: 19px; }}
-      .intro {{ font-size: 15px; }}
+      .intro, header .intro {{ font-size: 15px; line-height: 1.55; }}
       .meta {{ gap: 8px; }}
       .pill {{ max-width: 100%; line-height: 1.35; }}
+      .hero-grid {{ gap: 16px; }}
+      .hero-card {{ border-radius: 12px; padding: 12px; }}
+      .hero-metrics {{ grid-template-columns: 1fr; gap: 8px; }}
+      .hero-metric {{ min-height: 0; padding: 12px; }}
+      .hero-metric strong {{ font-size: 28px; }}
+      .hero-metric span {{ font-size: 10px; }}
+      .hero-metric small {{ font-size: 12px; }}
+      .hero-card .layer-note {{ font-size: 13px; padding: 12px; }}
+      .kpis {{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }}
+      .overview-kpis {{ margin-top: -6px; }}
       .chart {{ --chart-h: 420px; padding: 12px; min-height: calc(var(--chart-h) + 58px); }}
       .chart.compact {{ --chart-h: 380px; }}
       .chart.tall {{ --chart-h: 600px; }}
       .chart.x-tall {{ --chart-h: 760px; }}
-      .kpi strong {{ font-size: 26px; }}
+      .kpi {{ min-height: 106px; padding: 14px; }}
+      .kpi strong {{ font-size: 24px; }}
+      .kpi span {{ font-size: 12px; }}
       .bar-row {{ grid-template-columns: minmax(0, 1fr) 42px; }}
       .bar-label {{ white-space: normal; grid-column: 1 / -1; }}
       .bar-track {{ grid-column: 1; }}
-      .actions {{ align-items: stretch; }}
-      .button {{ width: 100%; }}
+      .actions {{ display: grid; grid-template-columns: 1fr; align-items: stretch; }}
+      .hero-actions .button.primary {{ grid-column: auto; }}
+      .button {{ width: auto; min-height: 44px; padding-inline: 10px; }}
     }}
   </style>
 </head>
 <body>
   <header>
-    <div class="wrap">
-      <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
-      <h1>Global SAP Job Market Report</h1>
-      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the collected LinkedIn, open-feed, and direct company career pools contain individual postings that can be linked, downloaded, and analyzed transparently.</p>
-      <div class="layer-note"><strong>Read this first:</strong> {html.escape(linkedin_global_text)} is LinkedIn's rounded live market-size estimate. {linkedin_guest_text} is not a drop from that number; it is the deduplicated LinkedIn posting links we actually collected and can provide as evidence. The other evidence pools are {company_career_text} company career / ATS postings and {total_text} open-feed SAP postings.</div>
-      <div class="meta">
-        <span class="pill">Generated at: {html.escape(generated)}</span>
-        <span class="pill">Baseline: 2026-07-19</span>
-        <span class="pill">LinkedIn signal: {html.escape(linkedin_global_text)}</span>
-        <span class="pill">LinkedIn links collected: {linkedin_guest_text}</span>
-        <span class="pill">Company career jobs: {company_career_text}</span>
-        <span class="pill">Source-linked jobs: {total_text}</span>
+    <div class="wrap hero-shell">
+      <div class="topline">
+        <div class="brand"><span class="brand-mark"></span><span>SAP Market Observatory</span></div>
+        <div class="report-tag">Baseline snapshot · Updated {html.escape(generated[:10])}</div>
       </div>
-      <div class="actions">
-        <a class="button primary" href="#job-pool">Explore {total_text} linked jobs</a>
-        <a class="button" href="{html.escape(SAP_JOBS_CSV_URL)}">Download CSV</a>
-        <a class="button" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">LinkedIn CSV.gz</a>
-        <a class="button" href="{html.escape(COMPANY_CAREER_CSV_URL)}">Company Career CSV</a>
-        <a class="button" href="#methodology">How it was built</a>
-        <a class="button" href="#community">Contribute anonymously</a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Global SAP labor market research</div>
+          <h1>Global SAP Job Market Report</h1>
+          <p class="intro">A public, chart-driven snapshot separating LinkedIn market scale from source-linked evidence across LinkedIn, company career pages, ATS sources, and open job feeds.</p>
+          <div class="meta">
+            <span class="pill">Baseline: 2026-07-19</span>
+            <span class="pill">Salary disclosed: {pct(salary_disclosed, total)}</span>
+            <span class="pill">Downloadable evidence pool</span>
+          </div>
+          <div class="actions hero-actions">
+            <a class="button primary" href="#job-pool">Explore the report</a>
+            <a class="button" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">Download LinkedIn pool</a>
+            <a class="button" href="#methodology">Methodology</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-label">Read the headline correctly</div>
+          <div class="hero-metrics">
+            <div class="hero-metric primary">
+              <span>Market signal</span>
+              <strong>{html.escape(linkedin_global_text)}</strong>
+              <small>LinkedIn rounded live estimate for SAP worldwide.</small>
+            </div>
+            <div class="hero-metric">
+              <span>Evidence pool</span>
+              <strong>{linkedin_guest_text}</strong>
+              <small>Deduplicated LinkedIn posting links collected and downloadable.</small>
+            </div>
+          </div>
+          <div class="layer-note"><strong>Not a drop:</strong> these are different metrics. LinkedIn results overlap across keyword, location, work-model, and recency searches before deduplication.</div>
+        </div>
       </div>
     </div>
   </header>
 
   <section>
-    <div class="wrap kpis">
+    <div class="wrap kpis overview-kpis">
       <div class="kpi"><strong>{html.escape(linkedin_global_text)}</strong><span>LinkedIn SAP worldwide market signal</span></div>
       <div class="kpi"><strong>{html.escape(linkedin_week_text)}</strong><span>LinkedIn SAP market signal from the past week</span></div>
       <div class="kpi"><strong>{linkedin_guest_text}</strong><span>Collected, deduplicated LinkedIn posting links</span></div>
