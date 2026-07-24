@@ -729,7 +729,7 @@ def main() -> None:
       min-width: 0;
     }}
     .hero-card-label {{ color: #8be1d8; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }}
-    .hero-metrics {{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }}
+    .hero-metrics {{ display: grid; grid-template-columns: 1fr; gap: 10px; }}
     .hero-metric {{
       min-height: 128px;
       border: 1px solid rgba(255, 255, 255, .14);
@@ -884,7 +884,6 @@ def main() -> None:
           <div class="meta">
             <span class="pill">Baseline: 2026-07-19</span>
             <span class="pill">Salary disclosed: {pct(salary_disclosed, total)}</span>
-            <span class="pill">Downloadable evidence pool</span>
           </div>
           <div class="actions hero-actions">
             <a class="button primary" href="#job-pool">Explore the report</a>
@@ -899,11 +898,6 @@ def main() -> None:
               <span>Market signal</span>
               <strong>{html.escape(linkedin_global_text)}</strong>
               <small>LinkedIn rounded live estimate for SAP worldwide.</small>
-            </div>
-            <div class="hero-metric">
-              <span>Evidence pool</span>
-              <strong>{linkedin_guest_text}</strong>
-              <small>Deduplicated LinkedIn posting links collected and downloadable.</small>
             </div>
           </div>
           <div class="layer-note"><strong>Not a drop:</strong> these are different metrics. LinkedIn results overlap across keyword, location, work-model, and recency searches before deduplication.</div>
