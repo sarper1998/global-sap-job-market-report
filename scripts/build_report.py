@@ -206,6 +206,23 @@ def top_count(summary: Dict, key: str) -> Tuple[str, int]:
     return items[0] if items else ("N/A", 0)
 
 
+def filtered_top_counts(summary: Dict, key: str, total: int, n: int = 3, exclude: set[str] | None = None) -> List[Tuple[str, int, str]]:
+    excluded = exclude or set()
+    values = {label: count for label, count in summary.get(key, {}).items() if label not in excluded}
+    return [(label, count, pct(count, total)) for label, count in top_items(values, n)]
+
+
+def filtered_top_count(summary: Dict, key: str, total: int, exclude: set[str] | None = None) -> Tuple[str, int, str]:
+    items = filtered_top_counts(summary, key, total, 1, exclude)
+    return items[0] if items else ("N/A", 0, "0%")
+
+
+def metric_phrase(items: List[Tuple[str, int, str]]) -> str:
+    if not items:
+        return "not enough current signal"
+    return ", ".join(f"{html.escape(label)} {fmt_int(count)} ({share})" for label, count, share in items)
+
+
 def format_salary(job: Dict) -> str:
     status = job.get("salary_status", "Not disclosed")
     salary_min = job.get("salary_min")
@@ -330,14 +347,92 @@ def main() -> None:
     unique_locations = len(summary.get("primary_locations", {}))
     top_module = top_items(summary.get("modules", {}), 1)[0][0] if total else "N/A"
     top_role = top_items(summary.get("role_families", {}), 1)[0][0] if total else "N/A"
+    open_top_role, open_top_role_count, open_top_role_share = filtered_top_count(summary, "role_families", total)
+    open_top_modules = filtered_top_counts(summary, "modules", total, 4, {"Unspecified SAP"})
+    open_top_skills = filtered_top_counts(summary, "skills", total, 4, {"English", "German"})
+    open_top_soft_skills = filtered_top_counts(summary, "soft_skills", total, 4)
+    open_top_degree_fields = filtered_top_counts(summary, "degree_fields", total, 4)
     linkedin_guest_top_role, linkedin_guest_top_role_count = top_count(linkedin_guest_summary, "role_families")
     linkedin_guest_top_skill, linkedin_guest_top_skill_count = top_count(linkedin_guest_summary, "skills")
     linkedin_guest_top_soft_skill, linkedin_guest_top_soft_skill_count = top_count(linkedin_guest_summary, "soft_skills")
     linkedin_guest_top_location, linkedin_guest_top_location_count = top_count(linkedin_guest_summary, "query_locations")
     linkedin_guest_described = int(linkedin_guest_summary.get("description_enriched_jobs") or 0)
+    linkedin_specific_role, linkedin_specific_role_count, linkedin_specific_role_share = filtered_top_count(linkedin_guest_summary, "role_families", linkedin_guest_total, {"Other SAP-Related"})
+    linkedin_identified_modules = filtered_top_counts(linkedin_guest_summary, "modules", linkedin_guest_total, 4, {"Unspecified SAP"})
+    linkedin_top_skills = filtered_top_counts(linkedin_guest_summary, "skills", linkedin_guest_total, 4, {"English", "German"})
+    linkedin_top_soft_skills = filtered_top_counts(linkedin_guest_summary, "soft_skills", linkedin_guest_total, 4)
+    linkedin_top_degree_fields = filtered_top_counts(linkedin_guest_summary, "degree_fields", linkedin_guest_total, 4)
     company_career_top_company, company_career_top_company_count = top_count(company_career_summary, "companies")
     company_career_top_provider, company_career_top_provider_count = top_count(company_career_summary, "providers")
     company_career_top_role, company_career_top_role_count = top_count(company_career_summary, "role_families")
+    company_top_role, company_top_role_count, company_top_role_share = filtered_top_count(company_career_summary, "role_families", company_career_total)
+    company_top_modules = filtered_top_counts(company_career_summary, "modules", company_career_total, 4, {"Unspecified SAP"})
+    company_top_skills = filtered_top_counts(company_career_summary, "skills", company_career_total, 4, {"English", "German"})
+    company_top_soft_skills = filtered_top_counts(company_career_summary, "soft_skills", company_career_total, 4)
+    company_top_degree_fields = filtered_top_counts(company_career_summary, "degree_fields", company_career_total, 4)
+    open_top_module_label, open_top_module_count, open_top_module_share = open_top_modules[0] if open_top_modules else ("N/A", 0, "0%")
+    company_top_module_label, company_top_module_count, company_top_module_share = company_top_modules[0] if company_top_modules else ("N/A", 0, "0%")
+    linkedin_top_module_label, linkedin_top_module_count, linkedin_top_module_share = linkedin_identified_modules[0] if linkedin_identified_modules else ("N/A", 0, "0%")
+    salary_visibility = salary_disclosed / total if total else 0
+    linkedin_description_visibility = linkedin_guest_described / linkedin_guest_total if linkedin_guest_total else 0
+    candidate_headline_note = (
+        f"At this snapshot, the strongest candidate read is that {html.escape(open_top_role)} leads the detailed open-feed evidence "
+        f"with {fmt_int(open_top_role_count)} of {total_text} postings ({open_top_role_share}), {html.escape(company_top_role)} leads direct employer pages "
+        f"with {fmt_int(company_top_role_count)} of {company_career_text} jobs ({company_top_role_share}), and {html.escape(open_top_module_label)} is the clearest open-feed module anchor."
+    )
+    if open_top_role == company_top_role and open_top_role != "N/A":
+        role_alignment_note = (
+            f"Both detailed evidence layers point to {html.escape(open_top_role)} as the leading role family: "
+            f"{fmt_int(open_top_role_count)} of {total_text} open-feed postings ({open_top_role_share}) and "
+            f"{fmt_int(company_top_role_count)} of {company_career_text} direct employer jobs ({company_top_role_share}). "
+            f"In the LinkedIn collected pool, the largest classified role after broad \"Other SAP-Related\" is {html.escape(linkedin_specific_role)} "
+            f"with {fmt_int(linkedin_specific_role_count)} links ({linkedin_specific_role_share})."
+        )
+    else:
+        role_alignment_note = (
+            f"The deeper evidence pools are not identical: open-feed postings currently lean {html.escape(open_top_role)} "
+            f"({fmt_int(open_top_role_count)} of {total_text}, {open_top_role_share}), while direct employer pages lean {html.escape(company_top_role)} "
+            f"({fmt_int(company_top_role_count)} of {company_career_text}, {company_top_role_share}). In the LinkedIn collected pool, the largest classified role after broad "
+            f"\"Other SAP-Related\" is {html.escape(linkedin_specific_role)} with {fmt_int(linkedin_specific_role_count)} links ({linkedin_specific_role_share})."
+        )
+    open_module_labels = [label for label, _count, _share in open_top_modules[:3]]
+    company_module_labels = [label for label, _count, _share in company_top_modules[:3]]
+    shared_module_labels = [label for label in open_module_labels if label in company_module_labels]
+    if shared_module_labels:
+        module_alignment_note = (
+            f"The clearest cross-source overlap is {', '.join(html.escape(label) for label in shared_module_labels)}. "
+            "That makes those areas stronger candidate bets than a source-specific spike alone."
+        )
+    else:
+        module_alignment_note = (
+            f"Module demand differs by source: open-feed roles are led by {html.escape(open_top_module_label)}, "
+            f"while direct employer pages are led by {html.escape(company_top_module_label)}. Treat that split as a reason to choose a lane deliberately."
+        )
+    if salary_visibility < 0.25:
+        salary_visibility_note = (
+            f"Salary visibility is still low: only {pct(salary_disclosed, total)} of the open-feed sample includes pay information "
+            f"({fmt_int(salary_disclosed)} of {total_text} postings). Compensation conclusions should stay clearly separated from role-demand conclusions until more salary data is collected."
+        )
+    elif salary_visibility < 0.5:
+        salary_visibility_note = (
+            f"Salary visibility is partial: {pct(salary_disclosed, total)} of the open-feed sample includes pay information "
+            f"({fmt_int(salary_disclosed)} of {total_text} postings). Salary cuts by module and country are useful, but still need caveats."
+        )
+    else:
+        salary_visibility_note = (
+            f"Salary visibility is comparatively strong in this snapshot: {pct(salary_disclosed, total)} of the open-feed sample includes pay information "
+            f"({fmt_int(salary_disclosed)} of {total_text} postings). The next build can support more confident salary cuts by module, country, seniority, and work model."
+        )
+    if linkedin_description_visibility < 0.2:
+        linkedin_description_note = (
+            f"The LinkedIn pool is link-rich but still description-light: {fmt_int(linkedin_guest_described)} rows have fetched description detail "
+            f"({pct(linkedin_guest_described, linkedin_guest_total)} of the collected LinkedIn pool). Skill and soft-skill signals from LinkedIn should be read as early directional evidence."
+        )
+    else:
+        linkedin_description_note = (
+            f"The LinkedIn pool already has {fmt_int(linkedin_guest_described)} rows with fetched description detail "
+            f"({pct(linkedin_guest_described, linkedin_guest_total)} of collected links), so description-heavy skill signals are becoming more useful for candidate planning."
+        )
     generated_candidates = [
         value
         for value in [
@@ -429,7 +524,7 @@ def main() -> None:
   </section>
 
   <section>
-    <div class="wrap grid-2">
+    <div class="wrap grid-2 candidate-notes">
       <div class="chart tall">
         <h2>LinkedIn Specialist Keyword Signal</h2>
         <p class="chart-note">Rounded LinkedIn UI estimate. Treat these values directionally, not as exact job counts.</p>
@@ -570,6 +665,52 @@ def main() -> None:
 
 """
 
+    candidate_interpretation_section = f"""
+  <section id="candidate-interpretation">
+    <div class="wrap">
+      <div class="note signal-note">
+        <div class="eyebrow">Candidate Interpretation · Generated From Current Counts</div>
+        <h2>What This Means For SAP Candidates</h2>
+        <p>{candidate_headline_note} This section is generated from the latest role, module, skill, degree, salary, LinkedIn, and company-career summaries at build time, so the interpretation changes with the daily delta instead of staying as fixed career advice.</p>
+      </div>
+      <div class="kpis signal-kpis candidate-kpis">
+        <div class="kpi"><strong>{html.escape(open_top_role)}</strong><span>Largest open-feed role family: {fmt_int(open_top_role_count)} postings ({open_top_role_share})</span></div>
+        <div class="kpi"><strong>{html.escape(company_top_role)}</strong><span>Largest direct employer role family: {fmt_int(company_top_role_count)} jobs ({company_top_role_share})</span></div>
+        <div class="kpi"><strong>{html.escape(linkedin_specific_role)}</strong><span>Largest classified LinkedIn role family after excluding broad "Other": {fmt_int(linkedin_specific_role_count)} links ({linkedin_specific_role_share})</span></div>
+        <div class="kpi"><strong>{html.escape(open_top_module_label)}</strong><span>Top open-feed SAP area: {fmt_int(open_top_module_count)} postings ({open_top_module_share})</span></div>
+        <div class="kpi"><strong>{html.escape(company_top_module_label)}</strong><span>Top direct employer SAP area: {fmt_int(company_top_module_count)} jobs ({company_top_module_share})</span></div>
+        <div class="kpi"><strong>{pct(salary_disclosed, total)}</strong><span>Open-feed salary visibility: {fmt_int(salary_disclosed)} of {total_text} postings</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2 candidate-notes">
+      <div class="note">
+        <h2>Candidate Interpretation</h2>
+        <div class="callout-grid">
+          <div class="callout"><strong>Prioritize the role family that appears across evidence layers.</strong><p>{role_alignment_note}</p></div>
+          <div class="callout"><strong>Pick a module lane instead of staying generic.</strong><p>Open-feed module mentions are led by {metric_phrase(open_top_modules)}. Direct employer postings currently skew toward {metric_phrase(company_top_modules)}. In LinkedIn records where an identifiable SAP area is present, the leading signals are {metric_phrase(linkedin_identified_modules)}. {module_alignment_note}</p></div>
+          <div class="callout"><strong>Build a portfolio around current technical terms.</strong><p>The strongest open-feed technical mentions are {metric_phrase(open_top_skills)}. Direct employer postings emphasize {metric_phrase(company_top_skills)}, while the LinkedIn collected pool shows {metric_phrase(linkedin_top_skills)}. A practical candidate portfolio should show one core module plus integration, data, migration, or implementation evidence.</p></div>
+          <div class="callout"><strong>Soft skills are a market signal, not decoration.</strong><p>Open-feed descriptions mention {metric_phrase(open_top_soft_skills)}. Direct employer pages add {metric_phrase(company_top_soft_skills)}, and the LinkedIn pool surfaces {metric_phrase(linkedin_top_soft_skills)}. For SAP roles, stakeholder work, rollout/change experience, documentation, training, and cross-functional communication should be visible in CVs and interviews.</p></div>
+          <div class="callout"><strong>Degrees point to useful entry routes, but skills drive the screen.</strong><p>Open-feed education-field signals are {metric_phrase(open_top_degree_fields)}. Direct employer pages show {metric_phrase(company_top_degree_fields)}, and LinkedIn collected records show {metric_phrase(linkedin_top_degree_fields)}. The pattern favors computer science/informatics, engineering, finance/accounting, and logistics/supply-chain routes, depending on the SAP module path.</p></div>
+          <div class="callout"><strong>Salary research needs a separate phase.</strong><p>{salary_visibility_note}</p></div>
+        </div>
+      </div>
+      <div class="note">
+        <h2>Early-Career Direction</h2>
+        <p>The current data suggests choosing one of several concrete entry lanes rather than trying to be "an SAP person" in general.</p>
+        <ul>
+          <li><strong>Technical path:</strong> start with {html.escape(open_top_module_label)}, ABAP, BTP, HANA/data, or Fiori/UI5 if your background is computer science, informatics, or engineering.</li>
+          <li><strong>Functional path:</strong> use finance/accounting, logistics/supply-chain, HR, procurement, sales, or manufacturing knowledge to enter FI/CO, MM, SD, EWM, PP/QM, or SuccessFactors roles.</li>
+          <li><strong>Consulting path:</strong> combine a module with stakeholder workshops, documentation, testing, migration, training, and change-management examples.</li>
+          <li><strong>Signal gap:</strong> {linkedin_description_note}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+"""
+
     report_html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -700,9 +841,12 @@ def main() -> None:
       box-shadow: 0 1px 2px rgba(25, 33, 42, .04);
     }}
     .kpi {{ padding: 18px; min-height: 126px; box-shadow: var(--shadow); }}
-    .kpi strong {{ display: block; font-size: 30px; margin-bottom: 7px; letter-spacing: 0; }}
+    .kpi strong {{ display: block; font-size: 30px; line-height: 1.05; margin-bottom: 7px; letter-spacing: 0; overflow-wrap: anywhere; }}
     .kpi span {{ color: var(--muted); font-size: 13px; line-height: 1.4; }}
     .grid-2 {{ display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 16px; }}
+    .candidate-notes {{ grid-template-columns: minmax(0, 1.45fr) minmax(300px, .55fr); }}
+    .candidate-notes .callout-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+    .candidate-kpis {{ grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }}
     .grid-3 {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }}
     .chart {{ --chart-h: 320px; padding: 18px; min-height: calc(var(--chart-h) + 70px); overflow: hidden; }}
     .chart-note {{ margin: -6px 0 12px; font-size: 13px; line-height: 1.45; color: #71808d; }}
@@ -757,6 +901,7 @@ def main() -> None:
     footer {{ border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 13px; }}
     @media (max-width: 900px) {{
       .hero-grid, .grid-2, .grid-3, .source-list, .callout-grid, .link-grid {{ grid-template-columns: 1fr; }}
+      .candidate-notes, .candidate-notes .callout-grid {{ grid-template-columns: 1fr; }}
       .table-intro {{ display: block; }}
       .wrap {{ width: min(100% - 20px, 1180px); }}
       .hero-shell {{ padding: 20px 0 24px; }}
@@ -791,6 +936,7 @@ def main() -> None:
       .hero-metric small {{ font-size: 12px; }}
       .hero-card .layer-note {{ font-size: 13px; padding: 12px; }}
       .kpis {{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }}
+      .candidate-kpis {{ grid-template-columns: 1fr; }}
       .overview-kpis {{ margin-top: -6px; }}
       .chart {{ --chart-h: 420px; padding: 12px; min-height: calc(var(--chart-h) + 58px); }}
       .chart.compact {{ --chart-h: 380px; }}
@@ -825,8 +971,8 @@ def main() -> None:
             <span class="pill">Salary disclosed: {pct(salary_disclosed, total)}</span>
           </div>
           <div class="actions hero-actions">
-            <a class="button primary" href="#job-pool">Explore the report</a>
-            <a class="button" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">Download LinkedIn pool</a>
+            <a class="button primary" href="#candidate-interpretation">Read interpretation</a>
+            <a class="button" href="#job-pool">Explore job table</a>
             <a class="button" href="#methodology">Methodology</a>
           </div>
         </div>
@@ -857,6 +1003,8 @@ def main() -> None:
     </div>
   </section>
 
+  {candidate_interpretation_section}
+
   {linkedin_section}
 
   {linkedin_guest_section}
@@ -869,7 +1017,7 @@ def main() -> None:
         <h2>What This Baseline Says</h2>
         <div class="callout-grid">
           <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's {html.escape(linkedin_global_text)} rounded worldwide count is the market-size signal. The {linkedin_guest_text} LinkedIn guest links, {company_career_text} direct company career postings, and {total_text} open-feed postings are the current evidence layers used for detailed analysis.</p></div>
-          <div class="callout"><strong>Technical roles dominate the open dataset.</strong><p>Technical / Development is the largest role family, followed by Data / Analytics, Basis / Security, Functional Consulting, and Architecture.</p></div>
+          <div class="callout"><strong>{html.escape(open_top_role)} leads the open dataset.</strong><p>{html.escape(open_top_role)} is the largest open-feed role family with {fmt_int(open_top_role_count)} of {total_text} postings ({open_top_role_share}). Direct employer postings are currently led by {html.escape(company_top_role)} with {fmt_int(company_top_role_count)} of {company_career_text} jobs ({company_top_role_share}).</p></div>
           <div class="callout"><strong>Salary remains the biggest blind spot.</strong><p>Only {pct(salary_disclosed, total)} of deduplicated open postings include salary information. The next phase should focus on salary ranges by module, country, seniority, and work model.</p></div>
         </div>
       </div>
@@ -951,28 +1099,6 @@ def main() -> None:
         <h2>Common Job Description Terms</h2>
         <p>Terms are counted by posting, using the available job-description excerpts. This favors recurring market language rather than one-off wording.</p>
         <div class="bars" id="descriptionTermBars"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap grid-2">
-      <div class="note">
-        <h2>Candidate Interpretation</h2>
-        <div class="callout-grid">
-          <div class="callout"><strong>Build a T-shaped SAP profile.</strong><p>The strongest signal is still module depth: S/4HANA, BTP / Integration, ABAP, HANA / Data, and FI / CO / FICO appear repeatedly. Pair one core module with implementation, integration, and business-process evidence.</p></div>
-          <div class="callout"><strong>Soft skills are not optional.</strong><p>Consulting, leadership, change management, analytical thinking, collaboration, and training appear as explicit job-description signals. SAP work is usually cross-functional, not isolated development.</p></div>
-          <div class="callout"><strong>Degrees help, but roles are skills-led.</strong><p>Computer science, engineering, finance/accounting, and logistics/supply chain show up as education-field signals. Explicit degree-level mentions are much rarer than domain and tool requirements.</p></div>
-        </div>
-      </div>
-      <div class="note">
-        <h2>University & Early-Career Direction</h2>
-        <p>For students choosing a path into SAP, the data points to four practical routes rather than one perfect degree: computer science or informatics for ABAP/BTP/Fiori work, information systems or business informatics for consulting, finance/accounting for FI/CO, and logistics/supply chain or industrial engineering for MM, SD, EWM, PP, and planning roles.</p>
-        <ul>
-          <li>Best early portfolio signal: one SAP module plus one integration/data project.</li>
-          <li>Best business signal: process knowledge in finance, procurement, sales, manufacturing, HR, or supply chain.</li>
-          <li>Best communication signal: documented stakeholder work, training, migration, rollout, or change-management experience.</li>
-        </ul>
       </div>
     </div>
   </section>

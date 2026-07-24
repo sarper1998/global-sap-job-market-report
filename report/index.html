@@ -128,9 +128,12 @@
       box-shadow: 0 1px 2px rgba(25, 33, 42, .04);
     }
     .kpi { padding: 18px; min-height: 126px; box-shadow: var(--shadow); }
-    .kpi strong { display: block; font-size: 30px; margin-bottom: 7px; letter-spacing: 0; }
+    .kpi strong { display: block; font-size: 30px; line-height: 1.05; margin-bottom: 7px; letter-spacing: 0; overflow-wrap: anywhere; }
     .kpi span { color: var(--muted); font-size: 13px; line-height: 1.4; }
     .grid-2 { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 16px; }
+    .candidate-notes { grid-template-columns: minmax(0, 1.45fr) minmax(300px, .55fr); }
+    .candidate-notes .callout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .candidate-kpis { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
     .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .chart { --chart-h: 320px; padding: 18px; min-height: calc(var(--chart-h) + 70px); overflow: hidden; }
     .chart-note { margin: -6px 0 12px; font-size: 13px; line-height: 1.45; color: #71808d; }
@@ -185,6 +188,7 @@
     footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 13px; }
     @media (max-width: 900px) {
       .hero-grid, .grid-2, .grid-3, .source-list, .callout-grid, .link-grid { grid-template-columns: 1fr; }
+      .candidate-notes, .candidate-notes .callout-grid { grid-template-columns: 1fr; }
       .table-intro { display: block; }
       .wrap { width: min(100% - 20px, 1180px); }
       .hero-shell { padding: 20px 0 24px; }
@@ -219,6 +223,7 @@
       .hero-metric small { font-size: 12px; }
       .hero-card .layer-note { font-size: 13px; padding: 12px; }
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .candidate-kpis { grid-template-columns: 1fr; }
       .overview-kpis { margin-top: -6px; }
       .chart { --chart-h: 420px; padding: 12px; min-height: calc(var(--chart-h) + 58px); }
       .chart.compact { --chart-h: 380px; }
@@ -253,8 +258,8 @@
             <span class="pill">Salary disclosed: 20.4%</span>
           </div>
           <div class="actions hero-actions">
-            <a class="button primary" href="#job-pool">Explore the report</a>
-            <a class="button" href="https://sarper1998.github.io/global-sap-job-market-report/data/linkedin_jobs.csv.gz">Download LinkedIn pool</a>
+            <a class="button primary" href="#candidate-interpretation">Read interpretation</a>
+            <a class="button" href="#job-pool">Explore job table</a>
             <a class="button" href="#methodology">Methodology</a>
           </div>
         </div>
@@ -284,6 +289,52 @@
       <div class="kpi"><strong>20.4%</strong><span>Jobs with salary information</span></div>
     </div>
   </section>
+
+
+  <section id="candidate-interpretation">
+    <div class="wrap">
+      <div class="note signal-note">
+        <div class="eyebrow">Candidate Interpretation · Generated From Current Counts</div>
+        <h2>What This Means For SAP Candidates</h2>
+        <p>At this snapshot, the strongest candidate read is that Technical / Development leads the detailed open-feed evidence with 754 of 1,565 postings (48.2%), Technical / Development leads direct employer pages with 1,141 of 1,976 jobs (57.7%), and S/4HANA is the clearest open-feed module anchor. This section is generated from the latest role, module, skill, degree, salary, LinkedIn, and company-career summaries at build time, so the interpretation changes with the daily delta instead of staying as fixed career advice.</p>
+      </div>
+      <div class="kpis signal-kpis candidate-kpis">
+        <div class="kpi"><strong>Technical / Development</strong><span>Largest open-feed role family: 754 postings (48.2%)</span></div>
+        <div class="kpi"><strong>Technical / Development</strong><span>Largest direct employer role family: 1,141 jobs (57.7%)</span></div>
+        <div class="kpi"><strong>Functional Consulting</strong><span>Largest classified LinkedIn role family after excluding broad "Other": 31,184 links (16.2%)</span></div>
+        <div class="kpi"><strong>S/4HANA</strong><span>Top open-feed SAP area: 687 postings (43.9%)</span></div>
+        <div class="kpi"><strong>HCM / SuccessFactors</strong><span>Top direct employer SAP area: 891 jobs (45.1%)</span></div>
+        <div class="kpi"><strong>20.4%</strong><span>Open-feed salary visibility: 319 of 1,565 postings</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2 candidate-notes">
+      <div class="note">
+        <h2>Candidate Interpretation</h2>
+        <div class="callout-grid">
+          <div class="callout"><strong>Prioritize the role family that appears across evidence layers.</strong><p>Both detailed evidence layers point to Technical / Development as the leading role family: 754 of 1,565 open-feed postings (48.2%) and 1,141 of 1,976 direct employer jobs (57.7%). In the LinkedIn collected pool, the largest classified role after broad "Other SAP-Related" is Functional Consulting with 31,184 links (16.2%).</p></div>
+          <div class="callout"><strong>Pick a module lane instead of staying generic.</strong><p>Open-feed module mentions are led by S/4HANA 687 (43.9%), BTP / Integration 341 (21.8%), ABAP / Development 331 (21.2%), HANA / Data 327 (20.9%). Direct employer postings currently skew toward HCM / SuccessFactors 891 (45.1%), S/4HANA 470 (23.8%), BTP / Integration 345 (17.5%), HANA / Data 258 (13.1%). In LinkedIn records where an identifiable SAP area is present, the leading signals are S/4HANA 6,675 (3.5%), FI / CO / FICO 6,150 (3.2%), ABAP / Development 3,940 (2.1%), BTP / Integration 3,528 (1.8%). The clearest cross-source overlap is S/4HANA, BTP / Integration. That makes those areas stronger candidate bets than a source-specific spike alone.</p></div>
+          <div class="callout"><strong>Build a portfolio around current technical terms.</strong><p>The strongest open-feed technical mentions are S/4HANA 687 (43.9%), ABAP 289 (18.5%), SAP HANA 270 (17.3%), SAP BTP 225 (14.4%). Direct employer postings emphasize SuccessFactors 865 (43.8%), S/4HANA 470 (23.8%), SAP BTP 289 (14.6%), Agile / Scrum 282 (14.3%), while the LinkedIn collected pool shows S/4HANA 6,675 (3.5%), FICO 4,169 (2.2%), ABAP 3,590 (1.9%), SAP HANA 2,660 (1.4%). A practical candidate portfolio should show one core module plus integration, data, migration, or implementation evidence.</p></div>
+          <div class="callout"><strong>Soft skills are a market signal, not decoration.</strong><p>Open-feed descriptions mention Consulting mindset 664 (42.4%), Leadership 234 (15.0%), Change management 214 (13.7%), Analytical thinking 71 (4.5%). Direct employer pages add Consulting mindset 324 (16.4%), Change management 209 (10.6%), Leadership 101 (5.1%), Analytical thinking 45 (2.3%), and the LinkedIn pool surfaces Consulting mindset 41,052 (21.4%), Leadership 14,240 (7.4%), Communication 9,329 (4.9%), Analytical thinking 8,193 (4.3%). For SAP roles, stakeholder work, rollout/change experience, documentation, training, and cross-functional communication should be visible in CVs and interviews.</p></div>
+          <div class="callout"><strong>Degrees point to useful entry routes, but skills drive the screen.</strong><p>Open-feed education-field signals are Computer Science / Informatics 335 (21.4%), Engineering 203 (13.0%), Finance / Accounting 150 (9.6%), Logistics / Supply Chain 114 (7.3%). Direct employer pages show Computer Science / Informatics 966 (48.9%), Engineering 349 (17.7%), Finance / Accounting 95 (4.8%), Logistics / Supply Chain 78 (3.9%), and LinkedIn collected records show Engineering 19,098 (9.9%), Computer Science / Informatics 17,691 (9.2%), Finance / Accounting 13,272 (6.9%), Logistics / Supply Chain 12,312 (6.4%). The pattern favors computer science/informatics, engineering, finance/accounting, and logistics/supply-chain routes, depending on the SAP module path.</p></div>
+          <div class="callout"><strong>Salary research needs a separate phase.</strong><p>Salary visibility is still low: only 20.4% of the open-feed sample includes pay information (319 of 1,565 postings). Compensation conclusions should stay clearly separated from role-demand conclusions until more salary data is collected.</p></div>
+        </div>
+      </div>
+      <div class="note">
+        <h2>Early-Career Direction</h2>
+        <p>The current data suggests choosing one of several concrete entry lanes rather than trying to be "an SAP person" in general.</p>
+        <ul>
+          <li><strong>Technical path:</strong> start with S/4HANA, ABAP, BTP, HANA/data, or Fiori/UI5 if your background is computer science, informatics, or engineering.</li>
+          <li><strong>Functional path:</strong> use finance/accounting, logistics/supply-chain, HR, procurement, sales, or manufacturing knowledge to enter FI/CO, MM, SD, EWM, PP/QM, or SuccessFactors roles.</li>
+          <li><strong>Consulting path:</strong> combine a module with stakeholder workshops, documentation, testing, migration, training, and change-management examples.</li>
+          <li><strong>Signal gap:</strong> The LinkedIn pool is link-rich but still description-light: 20,971 rows have fetched description detail (10.9% of the collected LinkedIn pool). Skill and soft-skill signals from LinkedIn should be read as early directional evidence.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
 
 
   <section>
@@ -332,7 +383,7 @@
   </section>
 
   <section>
-    <div class="wrap grid-2">
+    <div class="wrap grid-2 candidate-notes">
       <div class="chart tall">
         <h2>LinkedIn Specialist Keyword Signal</h2>
         <p class="chart-note">Rounded LinkedIn UI estimate. Treat these values directionally, not as exact job counts.</p>
@@ -613,7 +664,7 @@
         <h2>What This Baseline Says</h2>
         <div class="callout-grid">
           <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's 371,000+ rounded worldwide count is the market-size signal. The 192,017 LinkedIn guest links, 1,976 direct company career postings, and 1,565 open-feed postings are the current evidence layers used for detailed analysis.</p></div>
-          <div class="callout"><strong>Technical roles dominate the open dataset.</strong><p>Technical / Development is the largest role family, followed by Data / Analytics, Basis / Security, Functional Consulting, and Architecture.</p></div>
+          <div class="callout"><strong>Technical / Development leads the open dataset.</strong><p>Technical / Development is the largest open-feed role family with 754 of 1,565 postings (48.2%). Direct employer postings are currently led by Technical / Development with 1,141 of 1,976 jobs (57.7%).</p></div>
           <div class="callout"><strong>Salary remains the biggest blind spot.</strong><p>Only 20.4% of deduplicated open postings include salary information. The next phase should focus on salary ranges by module, country, seniority, and work model.</p></div>
         </div>
       </div>
@@ -695,28 +746,6 @@
         <h2>Common Job Description Terms</h2>
         <p>Terms are counted by posting, using the available job-description excerpts. This favors recurring market language rather than one-off wording.</p>
         <div class="bars" id="descriptionTermBars"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap grid-2">
-      <div class="note">
-        <h2>Candidate Interpretation</h2>
-        <div class="callout-grid">
-          <div class="callout"><strong>Build a T-shaped SAP profile.</strong><p>The strongest signal is still module depth: S/4HANA, BTP / Integration, ABAP, HANA / Data, and FI / CO / FICO appear repeatedly. Pair one core module with implementation, integration, and business-process evidence.</p></div>
-          <div class="callout"><strong>Soft skills are not optional.</strong><p>Consulting, leadership, change management, analytical thinking, collaboration, and training appear as explicit job-description signals. SAP work is usually cross-functional, not isolated development.</p></div>
-          <div class="callout"><strong>Degrees help, but roles are skills-led.</strong><p>Computer science, engineering, finance/accounting, and logistics/supply chain show up as education-field signals. Explicit degree-level mentions are much rarer than domain and tool requirements.</p></div>
-        </div>
-      </div>
-      <div class="note">
-        <h2>University & Early-Career Direction</h2>
-        <p>For students choosing a path into SAP, the data points to four practical routes rather than one perfect degree: computer science or informatics for ABAP/BTP/Fiori work, information systems or business informatics for consulting, finance/accounting for FI/CO, and logistics/supply chain or industrial engineering for MM, SD, EWM, PP, and planning roles.</p>
-        <ul>
-          <li>Best early portfolio signal: one SAP module plus one integration/data project.</li>
-          <li>Best business signal: process knowledge in finance, procurement, sales, manufacturing, HR, or supply chain.</li>
-          <li>Best communication signal: documented stakeholder work, training, migration, rollout, or change-management experience.</li>
-        </ul>
       </div>
     </div>
   </section>
