@@ -311,7 +311,7 @@ def main() -> None:
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Market Signal</div>
         <h2>LinkedIn Shows The Market Scale; The Collected Pool Shows The Links</h2>
-        <p>The LinkedIn layer combines rounded LinkedIn Jobs search-count signals with source-linked records collected from public LinkedIn guest job endpoints. On {html.escape(linkedin.get("observed_at", ""))}, the <strong>SAP</strong> + <strong>Worldwide</strong> search showed <strong>{html.escape(linkedin_global_text)}</strong> rounded results. That number is a market-size signal, not a downloadable list of 371,000 individual jobs. The evidence layer now has three source-linked pools: {total_text} open-feed postings, {linkedin_guest_text} LinkedIn guest job links, and {company_career_text} direct company career / ATS postings.</p>
+        <p>The LinkedIn layer separates two different metrics. <strong>{html.escape(linkedin_global_text)}</strong> is LinkedIn's rounded live search-count estimate for <strong>SAP</strong> + <strong>Worldwide</strong>; it is not a downloadable list of unique jobs. <strong>{linkedin_guest_text}</strong> is the deduplicated set of LinkedIn posting links we actually collected, can cite, and can download. The gap is expected because LinkedIn counts are rounded, search results overlap across filters, and not every result is retrievable as a stable guest link.</p>
       </div>
       <div class="kpis signal-kpis">
         <div class="kpi"><strong>{html.escape(linkedin_global_text)}</strong><span>LinkedIn Jobs rounded result count for SAP worldwide</span></div>
@@ -322,7 +322,7 @@ def main() -> None:
       </div>
       <div class="note linkedin-links">
         <h2>Live LinkedIn Validation Links</h2>
-        <p>These links reopen the same live LinkedIn Jobs searches used for the market-signal counts. They validate the size signal; the collected LinkedIn guest pool below contains the individual source links gathered so far.</p>
+        <p>These links reopen the same live LinkedIn Jobs searches used for the market-size signal. The collected pool below is the evidence layer: individual LinkedIn posting links gathered so far.</p>
         <div class="link-grid">
           {linkedin_search_links}
         </div>
@@ -364,11 +364,11 @@ def main() -> None:
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Collected Pool · Experimental</div>
-        <h2>{linkedin_guest_text} LinkedIn Job Links Collected So Far</h2>
-        <p>This is the actual LinkedIn-linked job pool collected for analysis. The scraper queries public LinkedIn guest job endpoints by keyword, country, recency, and work model, deduplicates by LinkedIn job id, enriches each posting with SAP module and description signals, and stores dated snapshots. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or the user's private LinkedIn session.</p>
+        <h2>{linkedin_guest_text} Deduplicated LinkedIn Links Collected So Far</h2>
+        <p>This is not the same number as LinkedIn's {html.escape(linkedin_global_text)} market-size estimate. It is the actual LinkedIn-linked evidence pool collected for analysis: public guest records queried by keyword, country, recency, and work model, deduplicated mainly by LinkedIn job id, enriched with SAP module and description signals, and stored as dated snapshots. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or the user's private LinkedIn session.</p>
       </div>
       <div class="kpis signal-kpis">
-        <div class="kpi"><strong>{linkedin_guest_text}</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
+        <div class="kpi"><strong>{linkedin_guest_text}</strong><span>Collected, deduplicated LinkedIn posting links</span></div>
         <div class="kpi"><strong>{fmt_int(linkedin_guest_described)}</strong><span>LinkedIn rows with fetched job-description detail</span></div>
         <div class="kpi"><strong>{fmt_int(int(linkedin_guest_summary.get("search_partitions_collected") or linkedin_guest_summary.get("searches_attempted", 0)))}</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
         <div class="kpi"><strong>{html.escape(linkedin_guest_top_location)}</strong><span>Largest collected query location: {fmt_int(linkedin_guest_top_location_count)} links</span></div>
@@ -674,8 +674,8 @@ def main() -> None:
     <div class="wrap">
       <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
       <h1>Global SAP Job Market Report</h1>
-      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the LinkedIn guest, open-feed, and direct company career pools contain the individual postings that can be linked, downloaded, and analyzed transparently.</p>
-      <div class="layer-note"><strong>Read the numbers as four layers:</strong> {html.escape(linkedin_global_text)} is the LinkedIn SAP worldwide market signal; {linkedin_guest_text} is the collected LinkedIn guest link pool; {company_career_text} is the direct company career / ATS pool; {total_text} is the deduplicated open-feed job pool used for broader source-linked analysis.</div>
+      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the collected LinkedIn, open-feed, and direct company career pools contain individual postings that can be linked, downloaded, and analyzed transparently.</p>
+      <div class="layer-note"><strong>Read this first:</strong> {html.escape(linkedin_global_text)} is LinkedIn's rounded live market-size estimate. {linkedin_guest_text} is not a drop from that number; it is the deduplicated LinkedIn posting links we actually collected and can provide as evidence. The other evidence pools are {company_career_text} company career / ATS postings and {total_text} open-feed SAP postings.</div>
       <div class="meta">
         <span class="pill">Generated at: {html.escape(generated)}</span>
         <span class="pill">Baseline: 2026-07-19</span>
@@ -699,7 +699,7 @@ def main() -> None:
     <div class="wrap kpis">
       <div class="kpi"><strong>{html.escape(linkedin_global_text)}</strong><span>LinkedIn SAP worldwide market signal</span></div>
       <div class="kpi"><strong>{html.escape(linkedin_week_text)}</strong><span>LinkedIn SAP market signal from the past week</span></div>
-      <div class="kpi"><strong>{linkedin_guest_text}</strong><span>LinkedIn guest job links collected and analyzed</span></div>
+      <div class="kpi"><strong>{linkedin_guest_text}</strong><span>Collected, deduplicated LinkedIn posting links</span></div>
       <div class="kpi"><strong>{company_career_text}</strong><span>Direct company career / ATS postings collected and analyzed</span></div>
       <div class="kpi"><strong>{total_text}</strong><span>Source-linked SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>{fmt_int(unique_locations)}</strong><span>Open-feed locations represented</span></div>
@@ -924,7 +924,7 @@ def main() -> None:
       <div class="table-intro">
         <div>
           <h2>Source-Linked Open Job Pool</h2>
-          <p>This table contains {total_text} deduplicated open-feed postings with original source links. Separate pools contain {linkedin_guest_text} LinkedIn guest job links and {company_career_text} direct company career postings. The full market-size signal remains LinkedIn's rounded {html.escape(linkedin_global_text)} SAP worldwide count.</p>
+          <p>This table contains {total_text} deduplicated open-feed postings with original source links. Separate evidence pools contain {linkedin_guest_text} collected LinkedIn posting links and {company_career_text} direct company career postings. The full market-size signal remains LinkedIn's rounded {html.escape(linkedin_global_text)} SAP worldwide count.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="{html.escape(SAP_JOBS_CSV_URL)}">CSV</a>

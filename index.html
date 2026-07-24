@@ -143,8 +143,8 @@
     <div class="wrap">
       <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
       <h1>Global SAP Job Market Report</h1>
-      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the LinkedIn guest, open-feed, and direct company career pools contain the individual postings that can be linked, downloaded, and analyzed transparently.</p>
-      <div class="layer-note"><strong>Read the numbers as four layers:</strong> 371,000+ is the LinkedIn SAP worldwide market signal; 192,017 is the collected LinkedIn guest link pool; 1,976 is the direct company career / ATS pool; 1,565 is the deduplicated open-feed job pool used for broader source-linked analysis.</div>
+      <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the collected LinkedIn, open-feed, and direct company career pools contain individual postings that can be linked, downloaded, and analyzed transparently.</p>
+      <div class="layer-note"><strong>Read this first:</strong> 371,000+ is LinkedIn's rounded live market-size estimate. 192,017 is not a drop from that number; it is the deduplicated LinkedIn posting links we actually collected and can provide as evidence. The other evidence pools are 1,976 company career / ATS postings and 1,565 open-feed SAP postings.</div>
       <div class="meta">
         <span class="pill">Generated at: 2026-07-24T12:20:39</span>
         <span class="pill">Baseline: 2026-07-19</span>
@@ -168,7 +168,7 @@
     <div class="wrap kpis">
       <div class="kpi"><strong>371,000+</strong><span>LinkedIn SAP worldwide market signal</span></div>
       <div class="kpi"><strong>104,000+</strong><span>LinkedIn SAP market signal from the past week</span></div>
-      <div class="kpi"><strong>192,017</strong><span>LinkedIn guest job links collected and analyzed</span></div>
+      <div class="kpi"><strong>192,017</strong><span>Collected, deduplicated LinkedIn posting links</span></div>
       <div class="kpi"><strong>1,976</strong><span>Direct company career / ATS postings collected and analyzed</span></div>
       <div class="kpi"><strong>1,565</strong><span>Source-linked SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>57</strong><span>Open-feed locations represented</span></div>
@@ -182,7 +182,7 @@
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Market Signal</div>
         <h2>LinkedIn Shows The Market Scale; The Collected Pool Shows The Links</h2>
-        <p>The LinkedIn layer combines rounded LinkedIn Jobs search-count signals with source-linked records collected from public LinkedIn guest job endpoints. On 2026-07-19T16:30:44+03:00, the <strong>SAP</strong> + <strong>Worldwide</strong> search showed <strong>371,000+</strong> rounded results. That number is a market-size signal, not a downloadable list of 371,000 individual jobs. The evidence layer now has three source-linked pools: 1,565 open-feed postings, 192,017 LinkedIn guest job links, and 1,976 direct company career / ATS postings.</p>
+        <p>The LinkedIn layer separates two different metrics. <strong>371,000+</strong> is LinkedIn's rounded live search-count estimate for <strong>SAP</strong> + <strong>Worldwide</strong>; it is not a downloadable list of unique jobs. <strong>192,017</strong> is the deduplicated set of LinkedIn posting links we actually collected, can cite, and can download. The gap is expected because LinkedIn counts are rounded, search results overlap across filters, and not every result is retrievable as a stable guest link.</p>
       </div>
       <div class="kpis signal-kpis">
         <div class="kpi"><strong>371,000+</strong><span>LinkedIn Jobs rounded result count for SAP worldwide</span></div>
@@ -193,7 +193,7 @@
       </div>
       <div class="note linkedin-links">
         <h2>Live LinkedIn Validation Links</h2>
-        <p>These links reopen the same live LinkedIn Jobs searches used for the market-signal counts. They validate the size signal; the collected LinkedIn guest pool below contains the individual source links gathered so far.</p>
+        <p>These links reopen the same live LinkedIn Jobs searches used for the market-size signal. The collected pool below is the evidence layer: individual LinkedIn posting links gathered so far.</p>
         <div class="link-grid">
           <a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=Worldwide" target="_blank" rel="noopener"><span>SAP worldwide</span><strong>371,000+</strong></a>
 <a href="https://www.linkedin.com/jobs/search/?keywords=SAP&amp;location=Worldwide&amp;f_TPR=r604800" target="_blank" rel="noopener"><span>SAP posted past week</span><strong>104,000+</strong></a>
@@ -243,11 +243,11 @@
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Collected Pool · Experimental</div>
-        <h2>192,017 LinkedIn Job Links Collected So Far</h2>
-        <p>This is the actual LinkedIn-linked job pool collected for analysis. The scraper queries public LinkedIn guest job endpoints by keyword, country, recency, and work model, deduplicates by LinkedIn job id, enriches each posting with SAP module and description signals, and stores dated snapshots. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or the user's private LinkedIn session.</p>
+        <h2>192,017 Deduplicated LinkedIn Links Collected So Far</h2>
+        <p>This is not the same number as LinkedIn's 371,000+ market-size estimate. It is the actual LinkedIn-linked evidence pool collected for analysis: public guest records queried by keyword, country, recency, and work model, deduplicated mainly by LinkedIn job id, enriched with SAP module and description signals, and stored as dated snapshots. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or the user's private LinkedIn session.</p>
       </div>
       <div class="kpis signal-kpis">
-        <div class="kpi"><strong>192,017</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
+        <div class="kpi"><strong>192,017</strong><span>Collected, deduplicated LinkedIn posting links</span></div>
         <div class="kpi"><strong>20,971</strong><span>LinkedIn rows with fetched job-description detail</span></div>
         <div class="kpi"><strong>32,568</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
         <div class="kpi"><strong>United States</strong><span>Largest collected query location: 8,055 links</span></div>
@@ -3033,7 +3033,7 @@
       <div class="table-intro">
         <div>
           <h2>Source-Linked Open Job Pool</h2>
-          <p>This table contains 1,565 deduplicated open-feed postings with original source links. Separate pools contain 192,017 LinkedIn guest job links and 1,976 direct company career postings. The full market-size signal remains LinkedIn's rounded 371,000+ SAP worldwide count.</p>
+          <p>This table contains 1,565 deduplicated open-feed postings with original source links. Separate evidence pools contain 192,017 collected LinkedIn posting links and 1,976 direct company career postings. The full market-size signal remains LinkedIn's rounded 371,000+ SAP worldwide count.</p>
         </div>
         <div class="actions">
           <a class="button primary" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/sap_jobs.csv">CSV</a>
