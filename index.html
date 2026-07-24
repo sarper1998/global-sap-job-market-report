@@ -208,6 +208,17 @@
 <a href="https://www.linkedin.com/jobs/search/?keywords=SAP+HANA&amp;location=Worldwide" target="_blank" rel="noopener"><span>SAP HANA</span><strong>28,000+</strong></a>
         </div>
       </div>
+      <div class="note">
+        <h2>Why LinkedIn Has Overlap</h2>
+        <p>LinkedIn search results are not a clean one-row-per-job database. The same posting can appear under several searches before deduplication, and some near-duplicate postings are genuinely separate location or employer variants.</p>
+        <ul>
+          <li>The same posting can appear across multiple keywords such as SAP, SAP SD, S/4HANA, FICO, ABAP, and BTP.</li>
+          <li>The same posting can appear across location searches when a role is advertised for multiple cities, countries, or regions.</li>
+          <li>The same posting can appear across filters such as all jobs, remote, hybrid, past week, and past month.</li>
+          <li>Some companies publish one role as many location-specific postings; some staffing and aggregator listings describe the same underlying opening more than once.</li>
+          <li>For analysis, the report deduplicates mainly by LinkedIn job id and treats the remaining 192,017 records as the evidence pool, while 371,000+ remains only the market-size signal.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -2946,6 +2957,7 @@
           <li>SAP matching used strong keyword signals such as SAP, S/4HANA, ABAP, SuccessFactors, Ariba, Fiori, UI5, BTP, HANA, BW/4HANA, and related terms.</li>
           <li>Salary was not estimated. A posting was marked as salary-disclosed only when the source provided salary fields or the description explicitly mentioned compensation.</li>
           <li>LinkedIn has two separate layers: rounded LinkedIn Jobs search-result counts, and a collected public guest job-link pool gathered through partitioned searches.</li>
+          <li>LinkedIn result overlap is expected. The same posting may appear across multiple keyword, location, work-model, and recency searches; deduplication mainly uses LinkedIn job id to avoid counting those repeated appearances as separate evidence records.</li>
           <li>Company career data is collected from public career pages and ATS endpoints such as jobs2web / SuccessFactors, SmartRecruiters, Greenhouse, and Workday CXS. These runs are parallel to the LinkedIn crawler and stored as a separate source-linked layer.</li>
           <li>The LinkedIn guest scraper does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private profile/session data. The 371,000+ figure is treated as market size; the collected guest pool is the source-linked subset available for analysis and download.</li>
         </ul>
