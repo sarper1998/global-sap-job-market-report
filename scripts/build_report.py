@@ -5,6 +5,7 @@ import datetime as dt
 import gzip
 import html
 import json
+import os
 from pathlib import Path
 from typing import Dict, List, Tuple
 from urllib.parse import urlencode
@@ -14,16 +15,19 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "processed"
 REPORT_DIR = ROOT / "report"
 SNAPSHOT_INDEX = ROOT / "data" / "snapshots" / "index.json"
-DATA_RELEASE_BASE = "https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot"
-SAP_JOBS_CSV_URL = f"{DATA_RELEASE_BASE}/sap_jobs.csv"
-SAP_JOBS_JSON_URL = f"{DATA_RELEASE_BASE}/sap_jobs.json"
-LINKEDIN_SIGNAL_URL = f"{DATA_RELEASE_BASE}/linkedin_signal.json"
-LINKEDIN_JOBS_CSV_URL = f"{DATA_RELEASE_BASE}/linkedin_jobs.csv.gz"
-LINKEDIN_JOBS_JSON_URL = f"{DATA_RELEASE_BASE}/linkedin_jobs.json.gz"
-LINKEDIN_JOBS_SUMMARY_URL = f"{DATA_RELEASE_BASE}/linkedin_jobs_summary.json"
-COMPANY_CAREER_CSV_URL = f"{DATA_RELEASE_BASE}/company_career_jobs.csv"
-COMPANY_CAREER_JSON_URL = f"{DATA_RELEASE_BASE}/company_career_jobs.json"
-COMPANY_CAREER_SUMMARY_URL = f"{DATA_RELEASE_BASE}/company_career_jobs_summary.json"
+DATA_URL_BASE = os.environ.get(
+    "REPORT_DATA_URL_BASE",
+    "https://sarper1998.github.io/global-sap-job-market-report/data",
+).rstrip("/")
+SAP_JOBS_CSV_URL = f"{DATA_URL_BASE}/sap_jobs.csv"
+SAP_JOBS_JSON_URL = f"{DATA_URL_BASE}/sap_jobs.json"
+LINKEDIN_SIGNAL_URL = f"{DATA_URL_BASE}/linkedin_signal.json"
+LINKEDIN_JOBS_CSV_URL = f"{DATA_URL_BASE}/linkedin_jobs.csv.gz"
+LINKEDIN_JOBS_JSON_URL = f"{DATA_URL_BASE}/linkedin_jobs.json.gz"
+LINKEDIN_JOBS_SUMMARY_URL = f"{DATA_URL_BASE}/linkedin_jobs_summary.json"
+COMPANY_CAREER_CSV_URL = f"{DATA_URL_BASE}/company_career_jobs.csv"
+COMPANY_CAREER_JSON_URL = f"{DATA_URL_BASE}/company_career_jobs.json"
+COMPANY_CAREER_SUMMARY_URL = f"{DATA_URL_BASE}/company_career_jobs_summary.json"
 
 
 def load_json(path: Path):
