@@ -913,7 +913,7 @@ def main() -> None:
       <div class="kpi"><strong>{html.escape(linkedin_week_text)}</strong><span>LinkedIn SAP market signal from the past week</span></div>
       <div class="kpi"><strong>{linkedin_guest_text}</strong><span>Collected, deduplicated LinkedIn posting links</span></div>
       <div class="kpi"><strong>{company_career_text}</strong><span>Direct company career / ATS postings collected and analyzed</span></div>
-      <div class="kpi"><strong>{total_text}</strong><span>Source-linked SAP postings analyzed in detail</span></div>
+      <div class="kpi"><strong>{total_text}</strong><span>Open-feed SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>{fmt_int(unique_locations)}</strong><span>Open-feed locations represented</span></div>
       <div class="kpi"><strong>{pct(salary_disclosed, total)}</strong><span>Jobs with salary information</span></div>
     </div>
@@ -1273,7 +1273,7 @@ def main() -> None:
     makeBarChart("softSkillsChart", chartData.softSkills, "Posting count", true);
     makeBarChart("degreeFieldsChart", chartData.degreeFields, "Posting count", true);
     makeBarChart("degreeLevelsChart", chartData.degreeLevels, "Posting count", true);
-    makeBarChart("historyJobsChart", chartData.historyJobs, "Source-linked jobs", false);
+    makeBarChart("historyJobsChart", chartData.historyJobs, "Open-feed jobs", false);
     makeBarChart("historyLinkedInChart", chartData.historyLinkedIn, "LinkedIn SAP signal", false);
     makeBarChart("historyLinkedInGuestChart", chartData.historyLinkedInGuest, "Collected LinkedIn links", false);
     renderBars("moduleBars", chartData.modules);
