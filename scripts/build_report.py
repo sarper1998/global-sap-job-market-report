@@ -431,11 +431,13 @@ def main() -> None:
   <section>
     <div class="wrap grid-2">
       <div class="chart tall">
-        <h2>LinkedIn Specialist Keyword Demand</h2>
+        <h2>LinkedIn Specialist Keyword Signal</h2>
+        <p class="chart-note">Rounded LinkedIn UI estimate. Treat these values directionally, not as exact job counts.</p>
         <canvas id="linkedinKeywordsChart"></canvas>
       </div>
       <div class="chart x-tall">
         <h2>LinkedIn Country Signal</h2>
+        <p class="chart-note">Rounded LinkedIn UI estimate. The exact evidence layer is the collected posting-link pool below.</p>
         <canvas id="linkedinLocationsChart"></canvas>
       </div>
     </div>
@@ -445,10 +447,12 @@ def main() -> None:
     <div class="wrap grid-2">
       <div class="chart compact">
         <h2>LinkedIn Work Model</h2>
+        <p class="chart-note">Rounded LinkedIn UI estimate.</p>
         <canvas id="linkedinWorkModelChart"></canvas>
       </div>
       <div class="chart compact">
         <h2>LinkedIn Recency</h2>
+        <p class="chart-note">Rounded LinkedIn UI estimate.</p>
         <canvas id="linkedinRecencyChart"></canvas>
       </div>
     </div>
@@ -762,6 +766,7 @@ def main() -> None:
     .grid-2 {{ display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 16px; }}
     .grid-3 {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }}
     .chart {{ --chart-h: 320px; padding: 18px; min-height: calc(var(--chart-h) + 70px); overflow: hidden; }}
+    .chart-note {{ margin: -6px 0 12px; font-size: 13px; line-height: 1.45; color: #71808d; }}
     .chart.compact {{ --chart-h: 280px; }}
     .chart.tall {{ --chart-h: 410px; }}
     .chart.x-tall {{ --chart-h: 500px; }}
@@ -1200,7 +1205,19 @@ def main() -> None:
       return number;
     }}
 
-    function makeBarChart(id, data, label, horizontal = false) {{
+    function roundedEstimate(value) {{
+      const number = Number(value);
+      if (!Number.isFinite(number)) return value;
+      if (Math.abs(number) >= 1000000) return `~${{Math.round(number / 1000000)}}M+`;
+      if (Math.abs(number) >= 1000) return `~${{Math.round(number / 1000)}}k+`;
+      return `~${{number.toLocaleString()}}+`;
+    }}
+
+    function formatChartValue(value, mode) {{
+      return mode === "roundedEstimate" ? roundedEstimate(value) : compactNumber(value);
+    }}
+
+    function makeBarChart(id, data, label, horizontal = false, valueMode = "count") {{
       const ctx = document.getElementById(id);
       if (!ctx) return;
       const rows = entries(data);
@@ -1215,16 +1232,19 @@ def main() -> None:
           responsive: true,
           maintainAspectRatio: false,
           layout: {{ padding: isMobile ? {{ right: 12, bottom: 6, left: 0 }} : {{ right: 10 }} }},
-          plugins: {{ legend: {{ display: false }} }},
+          plugins: {{
+            legend: {{ display: false }},
+            tooltip: {{ callbacks: {{ label: function(context) {{ return `${{label}}: ${{formatChartValue(context.parsed[horizontal ? "x" : "y"], valueMode)}}`; }} }} }}
+          }},
           scales: {{
-            x: {{ ticks: {{ color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }}, maxTicksLimit: isMobile ? 4 : 8, maxRotation: isMobile && !horizontal ? 35 : 0, autoSkip: !isMobile || horizontal, callback: function(value) {{ return horizontal ? compactNumber(value) : chartLabel(this.getLabelForValue(value)); }} }}, grid: {{ color: "#edf1f3" }} }},
-            y: {{ ticks: {{ color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }}, autoSkip: false, callback: function(value) {{ return horizontal ? chartLabel(this.getLabelForValue(value)) : compactNumber(value); }} }}, grid: {{ color: "#edf1f3" }} }}
+            x: {{ ticks: {{ color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }}, maxTicksLimit: isMobile ? 4 : 8, maxRotation: isMobile && !horizontal ? 35 : 0, autoSkip: !isMobile || horizontal, callback: function(value) {{ return horizontal ? formatChartValue(value, valueMode) : chartLabel(this.getLabelForValue(value)); }} }}, grid: {{ color: "#edf1f3" }} }},
+            y: {{ ticks: {{ color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }}, autoSkip: false, callback: function(value) {{ return horizontal ? chartLabel(this.getLabelForValue(value)) : formatChartValue(value, valueMode); }} }}, grid: {{ color: "#edf1f3" }} }}
           }}
         }}
       }});
     }}
 
-    function makeDoughnut(id, data) {{
+    function makeDoughnut(id, data, valueMode = "count") {{
       const ctx = document.getElementById(id);
       if (!ctx) return;
       const rows = entries(data);
@@ -1238,7 +1258,10 @@ def main() -> None:
           responsive: true,
           maintainAspectRatio: false,
           radius: isMobile ? "82%" : "95%",
-          plugins: {{ legend: {{ position: "bottom", labels: {{ boxWidth: 12, color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }} }} }} }}
+          plugins: {{
+            legend: {{ position: "bottom", labels: {{ boxWidth: 12, color: "#5f6b77", font: {{ size: isMobile ? 10 : 12 }} }} }},
+            tooltip: {{ callbacks: {{ label: function(context) {{ return `${{context.label}}: ${{formatChartValue(context.parsed, valueMode)}}`; }} }} }}
+          }}
         }}
       }});
     }}
@@ -1258,10 +1281,10 @@ def main() -> None:
 
     makeBarChart("locationsChart", chartData.locations, "Job count", true);
     makeDoughnut("salaryChart", chartData.salary);
-    makeBarChart("linkedinKeywordsChart", chartData.linkedinKeywords, "LinkedIn result count", true);
-    makeBarChart("linkedinLocationsChart", chartData.linkedinLocations, "LinkedIn result count", true);
-    makeDoughnut("linkedinWorkModelChart", chartData.linkedinWorkModel);
-    makeBarChart("linkedinRecencyChart", chartData.linkedinRecency, "LinkedIn result count", true);
+    makeBarChart("linkedinKeywordsChart", chartData.linkedinKeywords, "Rounded LinkedIn estimate", true, "roundedEstimate");
+    makeBarChart("linkedinLocationsChart", chartData.linkedinLocations, "Rounded LinkedIn estimate", true, "roundedEstimate");
+    makeDoughnut("linkedinWorkModelChart", chartData.linkedinWorkModel, "roundedEstimate");
+    makeBarChart("linkedinRecencyChart", chartData.linkedinRecency, "Rounded LinkedIn estimate", true, "roundedEstimate");
     makeBarChart("linkedinGuestQueriesChart", chartData.linkedinGuestQueries, "Collected job links", true);
     makeBarChart("linkedinGuestLocationsChart", chartData.linkedinGuestLocations, "Collected job links", true);
     makeBarChart("linkedinGuestRolesChart", chartData.linkedinGuestRoles, "Collected job links", true);
