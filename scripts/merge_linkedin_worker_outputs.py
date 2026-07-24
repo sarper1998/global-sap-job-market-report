@@ -20,6 +20,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input", dest="inputs", action="append", type=Path, help="Worker linkedin_jobs.json file. Can be repeated.")
     parser.add_argument("--snapshot-date", default=dt.date.today().isoformat())
     parser.add_argument("--write-snapshot", action="store_true", help="Also write the full merged LinkedIn pool under data/snapshots/YYYY-MM-DD.")
+    parser.add_argument("--state-file", type=Path, default=DEFAULT_STATE_FILE)
+    parser.add_argument("--update-state", action="store_true", help="Advance the supplied state file to the merged worker high watermark.")
     return parser.parse_args()
 
 
@@ -128,12 +130,13 @@ def worker_coverage(summary: Dict[str, Any]) -> Dict[str, Any]:
     start = int_or_zero(summary.get("latest_run_partition_offset"))
     limit = int_or_zero(summary.get("latest_run_partition_limit"))
     attempted = int_or_zero(summary.get("latest_run_searches_attempted"))
-    covered = limit or attempted
+    covered = attempted
     return {
         "partition_offset": start,
         "partition_limit": limit or None,
         "searches_attempted": attempted,
         "covered_until": start + covered,
+        "complete": bool(limit and attempted >= limit),
     }
 
 
@@ -152,6 +155,7 @@ def update_state_high_watermark(state: Dict[str, Any], high_watermark: int, merg
 
 def main() -> None:
     args = parse_args()
+    args.state_file = args.state_file if args.state_file.is_absolute() else ROOT / args.state_file
     os.environ["SNAPSHOT_DATE"] = args.snapshot_date
     os.environ["LINKEDIN_WRITE_SNAPSHOT"] = "1" if args.write_snapshot else "0"
     os.environ.pop("LINKEDIN_WORKER_ID", None)
@@ -168,7 +172,7 @@ def main() -> None:
         for item in previous_merge.get("worker_inputs", [])
         if isinstance(item, dict) and item.get("path")
     }
-    local_state = load_json_or_empty(DEFAULT_STATE_FILE)
+    local_state = load_json_or_empty(args.state_file) if args.update_state else {}
     rows_by_key: Dict[str, Dict[str, Any]] = {}
     main_rows = li.load_existing()
     main_before = len(main_rows)
@@ -210,7 +214,7 @@ def main() -> None:
     )
     local_high_watermark = int_or_zero(local_state.get("next_offset"))
     combined_high_watermark = max(local_high_watermark, worker_high_watermark)
-    if combined_high_watermark:
+    if args.update_state and combined_high_watermark:
         summary["latest_run_partition_offset"] = combined_high_watermark
         summary["latest_run_searches_attempted"] = 0
         summary["latest_run_partition_limit"] = None
@@ -232,9 +236,9 @@ def main() -> None:
     }
     li.write_json(li.PROCESSED_DIR / "linkedin_jobs_summary.json", summary)
     li.write_json(li.SNAPSHOT_DIR / "linkedin_jobs_summary.json", summary)
-    updated_state = update_state_high_watermark(local_state, combined_high_watermark, merged_at)
+    updated_state = update_state_high_watermark(local_state, combined_high_watermark, merged_at) if args.update_state else {}
     if updated_state:
-        li.write_json(DEFAULT_STATE_FILE, updated_state)
+        li.write_json(args.state_file, updated_state)
 
     print(json.dumps(summary["merge"], ensure_ascii=False, indent=2))
 

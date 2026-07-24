@@ -1,7 +1,11 @@
 param(
   [Parameter(Mandatory = $true)][string]$WorkerId,
   [Parameter(Mandatory = $true)][int]$PartitionOffset,
-  [Parameter(Mandatory = $true)][int]$PartitionLimit
+  [Parameter(Mandatory = $true)][int]$PartitionLimit,
+  [string]$QueryFile = "data/config/linkedin_queries_expanded.txt",
+  [string]$LocationFile = "data/config/linkedin_locations_expanded.txt",
+  [string]$Filters = "all,past_24h,past_week,past_month,onsite,remote,hybrid,past_week_remote,past_week_hybrid",
+  [int]$SaveEvery = 25
 )
 
 $ErrorActionPreference = "Stop"
@@ -40,6 +44,8 @@ $rootBash = ConvertTo-GitBashPath $Root
 $outputBash = ConvertTo-GitBashPath $OutputDir
 $logBash = ConvertTo-GitBashPath $LogFile
 $runnerBash = ConvertTo-GitBashPath $RunnerFile
+$queryBash = ConvertTo-GitBashPath (Join-Path $Root $QueryFile)
+$locationBash = ConvertTo-GitBashPath (Join-Path $Root $LocationFile)
 
 $runner = @"
 #!/usr/bin/env bash
@@ -50,9 +56,9 @@ echo "Worker $WorkerId started at `$(date -Is 2>/dev/null || date)"
 SNAPSHOT_DATE='$(Get-Date -Format yyyy-MM-dd)' \
 LINKEDIN_WORKER_ID='$WorkerId' \
 LINKEDIN_WORKER_OUTPUT_DIR='$outputBash' \
-LINKEDIN_QUERY_FILE='$rootBash/data/config/linkedin_queries_expanded.txt' \
-LINKEDIN_LOCATION_FILE='$rootBash/data/config/linkedin_locations_expanded.txt' \
-LINKEDIN_FILTERS='all,past_24h,past_week,past_month,onsite,remote,hybrid,past_week_remote,past_week_hybrid' \
+LINKEDIN_QUERY_FILE='$queryBash' \
+LINKEDIN_LOCATION_FILE='$locationBash' \
+LINKEDIN_FILTERS='$Filters' \
 LINKEDIN_PARTITION_OFFSET='$PartitionOffset' \
 LINKEDIN_MAX_PARTITIONS='$PartitionLimit' \
 LINKEDIN_MAX_PAGES_PER_SEARCH='8' \
@@ -61,7 +67,7 @@ LINKEDIN_REQUEST_DELAY_SECONDS='0.6' \
 LINKEDIN_REQUEST_TIMEOUT_SECONDS='15' \
 LINKEDIN_RATE_LIMIT_SLEEP_SECONDS='120' \
 LINKEDIN_RATE_LIMIT_RETRIES='0' \
-LINKEDIN_SAVE_EVERY_PARTITIONS='25' \
+LINKEDIN_SAVE_EVERY_PARTITIONS='$SaveEvery' \
 LINKEDIN_PRINT_FULL_SUMMARY='0' \
 python scripts/fetch_linkedin_guest_jobs.py
 "@

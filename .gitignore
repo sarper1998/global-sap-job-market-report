@@ -6,3 +6,12 @@ data/worker_outputs/
 data/processed/linkedin_jobs.json
 logs/
 .DS_Store
+
+# Large generated LinkedIn pool outputs
+data/processed/linkedin_jobs.csv
+data/processed/linkedin_jobs.csv.gz
+data/processed/linkedin_jobs.json.gz
+data/snapshots/*/linkedin_jobs.csv
+data/snapshots/*/linkedin_jobs.json
+data/snapshots/*/linkedin_jobs.csv.gz
+data/snapshots/*/linkedin_jobs.json.gz

@@ -1,0 +1,72 @@
+ABAP
+ABAP Developer
+ABAP Consultant
+ABAP Engineer
+ABAP CDS
+CDS Views
+S/4HANA
+S4HANA
+S/4 HANA
+SAP S4
+SAP S4 HANA
+HANA Consultant
+HANA Developer
+HANA SQL
+Fiori Developer
+Fiori Consultant
+UI5 Developer
+SAPUI5
+BTP Consultant
+BTP Developer
+Business Technology Platform
+CAP Developer
+RAP Developer
+SAP OData
+OData SAP
+SAP CPI Developer
+CPI SAP
+PI PO Consultant
+SAP Integration Developer
+Integration Suite Consultant
+SuccessFactors Consultant
+SuccessFactors Employee Central
+Employee Central Consultant
+SuccessFactors Recruiting
+SuccessFactors LMS
+Ariba Consultant
+SAP Ariba Consultant
+Ariba Procurement
+Fieldglass
+Concur Consultant
+SAP Concur Consultant
+EWM Consultant
+SAP EWM Consultant
+TM Consultant
+SAP TM Consultant
+IBP Consultant
+SAP IBP Consultant
+BW Consultant
+BW4HANA
+BW/4HANA Consultant
+SAC Consultant
+SAP Analytics Cloud Consultant
+Datasphere Consultant
+SAP Datasphere Consultant
+MDG Consultant
+SAP MDG Consultant
+GRC Consultant
+SAP GRC Consultant
+Basis Administrator
+SAP Basis Administrator
+FICO Consultant
+FI CO Consultant
+FI/CO Consultant
+MM Consultant
+SD Consultant
+PP Consultant
+QM Consultant
+PM Consultant
+HCM Consultant
+SAP Payroll Consultant
+SAP Key User
+SAP Inhouse Consultant

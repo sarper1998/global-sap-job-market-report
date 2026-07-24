@@ -204,6 +204,7 @@ def main() -> None:
     parser.add_argument("--save-every", type=int, default=25)
     parser.add_argument("--build-report", action="store_true")
     parser.add_argument("--reset-offset", action="store_true")
+    parser.add_argument("--no-summary-recovery", action="store_true", help="Do not infer next offset from the global LinkedIn summary.")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -218,7 +219,8 @@ def main() -> None:
     total_partitions = len(queries) * len(locations) * len(filters)
     theoretical_cards = total_partitions * args.pages_per_search * 25
     state = reset_state_if_needed(load_json(args.state_file, {}), args, args.snapshot_date, total_partitions, filters)
-    state = recover_offset_from_summary(state, total_partitions)
+    if not args.no_summary_recovery:
+        state = recover_offset_from_summary(state, total_partitions)
 
     print(
         json.dumps(

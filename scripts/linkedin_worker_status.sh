@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -eo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PYTHON_BIN="${PYTHON:-python3}"
 
 echo "Worker processes:"
 shopt -s nullglob
+declare -a pid_files
+declare -a win_pid_files
 pid_files=("$ROOT"/data/run_state/linkedin_worker_*.pid)
 win_pid_files=("$ROOT"/data/run_state/linkedin_worker_*.winpid)
 if [ "${#pid_files[@]}" -eq 0 ] && [ "${#win_pid_files[@]}" -eq 0 ]; then

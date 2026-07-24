@@ -1,0 +1,255 @@
+New York, United States
+New Jersey, United States
+Washington DC, United States
+Boston, United States
+Philadelphia, United States
+Pittsburgh, United States
+Atlanta, United States
+Charlotte, United States
+Raleigh-Durham, United States
+Miami, United States
+Orlando, United States
+Tampa, United States
+Dallas, United States
+Houston, United States
+Austin, United States
+San Antonio, United States
+Chicago, United States
+Detroit, United States
+Columbus, United States
+Cincinnati, United States
+Cleveland, United States
+Minneapolis, United States
+St. Louis, United States
+Kansas City, United States
+Denver, United States
+Phoenix, United States
+Salt Lake City, United States
+Las Vegas, United States
+Los Angeles, United States
+Orange County, United States
+San Diego, United States
+San Francisco Bay Area, United States
+San Jose, California, United States
+Seattle, United States
+Portland, Oregon, United States
+Nashville, United States
+Indianapolis, United States
+Milwaukee, United States
+Sacramento, United States
+Connecticut, United States
+Maryland, United States
+Virginia, United States
+North Carolina, United States
+South Carolina, United States
+Georgia, United States
+Texas, United States
+California, United States
+Florida, United States
+Illinois, United States
+Toronto, Canada
+Vancouver, Canada
+Montreal, Canada
+Calgary, Canada
+Ottawa, Canada
+Edmonton, Canada
+Waterloo, Canada
+Mississauga, Canada
+London, United Kingdom
+Manchester, United Kingdom
+Birmingham, United Kingdom
+Leeds, United Kingdom
+Glasgow, United Kingdom
+Edinburgh, United Kingdom
+Bristol, United Kingdom
+Belfast, United Kingdom
+Berlin, Germany
+Munich, Germany
+Hamburg, Germany
+Frankfurt, Germany
+Stuttgart, Germany
+Cologne, Germany
+Dusseldorf, Germany
+Walldorf, Germany
+Mannheim, Germany
+Heidelberg, Germany
+Dortmund, Germany
+Leipzig, Germany
+Nuremberg, Germany
+Hanover, Germany
+Dresden, Germany
+Essen, Germany
+Bremen, Germany
+Paris, France
+Lyon, France
+Toulouse, France
+Lille, France
+Marseille, France
+Nantes, France
+Strasbourg, France
+Grenoble, France
+Bordeaux, France
+Amsterdam, Netherlands
+Rotterdam, Netherlands
+Utrecht, Netherlands
+Eindhoven, Netherlands
+The Hague, Netherlands
+Brussels, Belgium
+Antwerp, Belgium
+Ghent, Belgium
+Zurich, Switzerland
+Geneva, Switzerland
+Basel, Switzerland
+Lausanne, Switzerland
+Bern, Switzerland
+Vienna, Austria
+Graz, Austria
+Linz, Austria
+Milan, Italy
+Rome, Italy
+Turin, Italy
+Bologna, Italy
+Florence, Italy
+Naples, Italy
+Madrid, Spain
+Barcelona, Spain
+Valencia, Spain
+Seville, Spain
+Bilbao, Spain
+Malaga, Spain
+Lisbon, Portugal
+Porto, Portugal
+Dublin, Ireland
+Cork, Ireland
+Stockholm, Sweden
+Gothenburg, Sweden
+Malmo, Sweden
+Copenhagen, Denmark
+Aarhus, Denmark
+Oslo, Norway
+Bergen, Norway
+Helsinki, Finland
+Espoo, Finland
+Tampere, Finland
+Warsaw, Poland
+Krakow, Poland
+Wroclaw, Poland
+Poznan, Poland
+Gdansk, Poland
+Prague, Czech Republic
+Brno, Czech Republic
+Ostrava, Czech Republic
+Bratislava, Slovakia
+Kosice, Slovakia
+Budapest, Hungary
+Debrecen, Hungary
+Bucharest, Romania
+Cluj-Napoca, Romania
+Timisoara, Romania
+Sofia, Bulgaria
+Plovdiv, Bulgaria
+Zagreb, Croatia
+Ljubljana, Slovenia
+Belgrade, Serbia
+Vilnius, Lithuania
+Riga, Latvia
+Tallinn, Estonia
+Athens, Greece
+Thessaloniki, Greece
+Istanbul, Turkey
+Ankara, Turkey
+Izmir, Turkey
+Bursa, Turkey
+Kocaeli, Turkey
+Dubai, United Arab Emirates
+Abu Dhabi, United Arab Emirates
+Riyadh, Saudi Arabia
+Jeddah, Saudi Arabia
+Doha, Qatar
+Tel Aviv, Israel
+Jerusalem, Israel
+Cairo, Egypt
+Casablanca, Morocco
+Johannesburg, South Africa
+Cape Town, South Africa
+Durban, South Africa
+Nairobi, Kenya
+Lagos, Nigeria
+Accra, Ghana
+Bengaluru, India
+Hyderabad, India
+Pune, India
+Mumbai, India
+Chennai, India
+Delhi, India
+Noida, India
+Gurugram, India
+Kolkata, India
+Ahmedabad, India
+Coimbatore, India
+Kochi, India
+Jaipur, India
+Indore, India
+Chandigarh, India
+Singapore
+Kuala Lumpur, Malaysia
+Penang, Malaysia
+Bangkok, Thailand
+Jakarta, Indonesia
+Manila, Philippines
+Makati, Philippines
+Ho Chi Minh City, Vietnam
+Hanoi, Vietnam
+Tokyo, Japan
+Osaka, Japan
+Nagoya, Japan
+Yokohama, Japan
+Seoul, South Korea
+Busan, South Korea
+Taipei, Taiwan
+Hsinchu, Taiwan
+Hong Kong
+Shenzhen, China
+Shanghai, China
+Beijing, China
+Guangzhou, China
+Chengdu, China
+Suzhou, China
+Hangzhou, China
+Nanjing, China
+Dalian, China
+Wuhan, China
+Xi'an, China
+Qingdao, China
+Tianjin, China
+Chongqing, China
+Sydney, Australia
+Melbourne, Australia
+Brisbane, Australia
+Perth, Australia
+Adelaide, Australia
+Auckland, New Zealand
+Wellington, New Zealand
+Christchurch, New Zealand
+Sao Paulo, Brazil
+Rio de Janeiro, Brazil
+Curitiba, Brazil
+Campinas, Brazil
+Porto Alegre, Brazil
+Belo Horizonte, Brazil
+Brasilia, Brazil
+Mexico City, Mexico
+Monterrey, Mexico
+Guadalajara, Mexico
+Queretaro, Mexico
+Buenos Aires, Argentina
+Cordoba, Argentina
+Santiago, Chile
+Bogota, Colombia
+Medellin, Colombia
+Lima, Peru
+Montevideo, Uruguay
+San Jose, Costa Rica
+Panama City, Panama
+Quito, Ecuador
+Guayaquil, Ecuador

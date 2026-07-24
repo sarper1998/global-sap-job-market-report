@@ -144,20 +144,20 @@
       <div class="eyebrow">SAP market observatory · Baseline snapshot</div>
       <h1>Global SAP Job Market Report</h1>
       <p class="intro">This report separates market scale from source-linked evidence. LinkedIn Jobs shows the size of SAP demand through rounded search-result counts, while the LinkedIn guest, open-feed, and direct company career pools contain the individual postings that can be linked, downloaded, and analyzed transparently.</p>
-      <div class="layer-note"><strong>Read the numbers as four layers:</strong> 371,000+ is the LinkedIn SAP worldwide market signal; 101,093 is the collected LinkedIn guest link pool; 1,895 is the direct company career / ATS pool; 1,565 is the deduplicated open-feed job pool used for broader source-linked analysis.</div>
+      <div class="layer-note"><strong>Read the numbers as four layers:</strong> 371,000+ is the LinkedIn SAP worldwide market signal; 192,017 is the collected LinkedIn guest link pool; 1,976 is the direct company career / ATS pool; 1,565 is the deduplicated open-feed job pool used for broader source-linked analysis.</div>
       <div class="meta">
-        <span class="pill">Generated at: 2026-07-22T08:31:15</span>
+        <span class="pill">Generated at: 2026-07-24T12:20:39</span>
         <span class="pill">Baseline: 2026-07-19</span>
         <span class="pill">LinkedIn signal: 371,000+</span>
-        <span class="pill">LinkedIn links collected: 101,093</span>
-        <span class="pill">Company career jobs: 1,895</span>
+        <span class="pill">LinkedIn links collected: 192,017</span>
+        <span class="pill">Company career jobs: 1,976</span>
         <span class="pill">Source-linked jobs: 1,565</span>
       </div>
       <div class="actions">
         <a class="button primary" href="#job-pool">Explore 1,565 linked jobs</a>
-        <a class="button" href="data/sap_jobs.csv">Download CSV</a>
-        <a class="button" href="data/linkedin_jobs.csv">LinkedIn CSV</a>
-        <a class="button" href="data/company_career_jobs.csv">Company Career CSV</a>
+        <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/sap_jobs.csv">Download CSV</a>
+        <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_jobs.csv.gz">LinkedIn CSV.gz</a>
+        <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/company_career_jobs.csv">Company Career CSV</a>
         <a class="button" href="#methodology">How it was built</a>
         <a class="button" href="#community">Contribute anonymously</a>
       </div>
@@ -168,8 +168,8 @@
     <div class="wrap kpis">
       <div class="kpi"><strong>371,000+</strong><span>LinkedIn SAP worldwide market signal</span></div>
       <div class="kpi"><strong>104,000+</strong><span>LinkedIn SAP market signal from the past week</span></div>
-      <div class="kpi"><strong>101,093</strong><span>LinkedIn guest job links collected and analyzed</span></div>
-      <div class="kpi"><strong>1,895</strong><span>Direct company career / ATS postings collected and analyzed</span></div>
+      <div class="kpi"><strong>192,017</strong><span>LinkedIn guest job links collected and analyzed</span></div>
+      <div class="kpi"><strong>1,976</strong><span>Direct company career / ATS postings collected and analyzed</span></div>
       <div class="kpi"><strong>1,565</strong><span>Source-linked SAP postings analyzed in detail</span></div>
       <div class="kpi"><strong>57</strong><span>Open-feed locations represented</span></div>
       <div class="kpi"><strong>20.4%</strong><span>Jobs with salary information</span></div>
@@ -182,7 +182,7 @@
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Market Signal</div>
         <h2>LinkedIn Shows The Market Scale; The Collected Pool Shows The Links</h2>
-        <p>The LinkedIn layer combines rounded LinkedIn Jobs search-count signals with source-linked records collected from public LinkedIn guest job endpoints. On 2026-07-19T16:30:44+03:00, the <strong>SAP</strong> + <strong>Worldwide</strong> search showed <strong>371,000+</strong> rounded results. That number is a market-size signal, not a downloadable list of 371,000 individual jobs. The evidence layer now has three source-linked pools: 1,565 open-feed postings, 101,093 LinkedIn guest job links, and 1,895 direct company career / ATS postings.</p>
+        <p>The LinkedIn layer combines rounded LinkedIn Jobs search-count signals with source-linked records collected from public LinkedIn guest job endpoints. On 2026-07-19T16:30:44+03:00, the <strong>SAP</strong> + <strong>Worldwide</strong> search showed <strong>371,000+</strong> rounded results. That number is a market-size signal, not a downloadable list of 371,000 individual jobs. The evidence layer now has three source-linked pools: 1,565 open-feed postings, 192,017 LinkedIn guest job links, and 1,976 direct company career / ATS postings.</p>
       </div>
       <div class="kpis signal-kpis">
         <div class="kpi"><strong>371,000+</strong><span>LinkedIn Jobs rounded result count for SAP worldwide</span></div>
@@ -243,22 +243,22 @@
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">LinkedIn Collected Pool · Experimental</div>
-        <h2>101,093 LinkedIn Job Links Collected So Far</h2>
+        <h2>192,017 LinkedIn Job Links Collected So Far</h2>
         <p>This is the actual LinkedIn-linked job pool collected for analysis. The scraper queries public LinkedIn guest job endpoints by keyword, country, recency, and work model, deduplicates by LinkedIn job id, enriches each posting with SAP module and description signals, and stores dated snapshots. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or the user's private LinkedIn session.</p>
       </div>
       <div class="kpis signal-kpis">
-        <div class="kpi"><strong>101,093</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
+        <div class="kpi"><strong>192,017</strong><span>Deduplicated LinkedIn guest job links collected</span></div>
         <div class="kpi"><strong>20,971</strong><span>LinkedIn rows with fetched job-description detail</span></div>
-        <div class="kpi"><strong>12,418</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
-        <div class="kpi"><strong>United States</strong><span>Largest collected query location: 7,682 links</span></div>
-        <div class="kpi"><strong>Other SAP-Related</strong><span>Top collected role family: 46,914 links</span></div>
-        <div class="kpi"><strong>English</strong><span>Top extracted technical skill: 6,122 mentions</span></div>
-        <div class="kpi"><strong>Consulting mindset</strong><span>Top extracted soft skill: 23,453 mentions</span></div>
+        <div class="kpi"><strong>32,568</strong><span>Keyword/location/filter partitions represented in the collected pool</span></div>
+        <div class="kpi"><strong>United States</strong><span>Largest collected query location: 8,055 links</span></div>
+        <div class="kpi"><strong>Other SAP-Related</strong><span>Top collected role family: 102,708 links</span></div>
+        <div class="kpi"><strong>S/4HANA</strong><span>Top extracted technical skill: 6,675 mentions</span></div>
+        <div class="kpi"><strong>Consulting mindset</strong><span>Top extracted soft skill: 41,052 mentions</span></div>
       </div>
       <div class="actions">
-        <a class="button primary" href="data/linkedin_jobs.csv">Download LinkedIn CSV</a>
-        <a class="button" href="data/linkedin_jobs.json.gz">LinkedIn JSON.gz</a>
-        <a class="button" href="data/linkedin_jobs_summary.json">LinkedIn summary</a>
+        <a class="button primary" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_jobs.csv.gz">Download LinkedIn CSV.gz</a>
+        <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_jobs.json.gz">LinkedIn JSON.gz</a>
+        <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_jobs_summary.json">LinkedIn summary</a>
       </div>
     </div>
   </section>
@@ -311,11 +311,11 @@
       <div class="table-intro">
         <div>
           <h2>LinkedIn Guest Job Link Sample</h2>
-          <p>The table shows the first 120 collected LinkedIn guest records. The full 101,093-row link pool is available in CSV and JSON.</p>
+          <p>The table shows the first 120 collected LinkedIn guest records. The full 192,017-row link pool is available as compressed CSV and JSON downloads.</p>
         </div>
         <div class="actions">
-          <a class="button primary" href="data/linkedin_jobs.csv">Full CSV</a>
-          <a class="button" href="data/linkedin_jobs.json.gz">Full JSON.gz</a>
+          <a class="button primary" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_jobs.csv.gz">Full CSV.gz</a>
+          <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_jobs.json.gz">Full JSON.gz</a>
         </div>
       </div>
       <div class="table-scroll">
@@ -332,602 +332,8 @@
           <tbody>
 
             <tr>
-              <td><a href="https://nl.linkedin.com/jobs/view/planner-planning-advies-at-docentenmarktplaats-nl-4441138968" target="_blank" rel="noopener">Planner Planning&amp;Advies</a><small>Docentenmarktplaats.nl</small></td>
-              <td>&#x27;s-Gravenmoer, North Brabant, Netherlands<small>SAP · Netherlands · past_week_hybrid</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://nl.linkedin.com/jobs/view/traineeship-sap-consultant-at-erasmustalent-4441955588" target="_blank" rel="noopener">Traineeship SAP consultant</a><small>ErasmusTalent</small></td>
-              <td>&#x27;s-Hertogenbosch, North Brabant, Netherlands<small>SAP · Netherlands · past_week</small></td>
-              <td>Data / Analytics<small>Junior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://nl.linkedin.com/jobs/view/sap-traineeship-at-itrainee-4438472882" target="_blank" rel="noopener">SAP Traineeship</a><small>ITrainee</small></td>
-              <td>&#x27;s-Hertogenbosch, North Brabant, Netherlands<small>SAP · Netherlands · all</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>Agile / Scrum</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://nl.linkedin.com/jobs/view/sap-production-consultant-at-ntt-data-business-solutions-4431478828" target="_blank" rel="noopener">SAP Production Consultant</a><small>NTT DATA Business Solutions</small></td>
-              <td>&#x27;s-Hertogenbosch, North Brabant, Netherlands<small>SAP · Netherlands · hybrid</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>PP / QM / Manufacturing</span><span>EWM / WM / Logistics</span><span>TM / GTS / Supply Chain</span></div></td>
-              <td><div class="chips"><span>SAP PP</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://eg.linkedin.com/jobs/view/logistics-team-leader-at-noon-4433322687" target="_blank" rel="noopener">Logistics Team Leader</a><small>noon</small></td>
-              <td>10th of Ramadan, Sharkia, Egypt<small>SAP · Egypt · past_month</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://eg.linkedin.com/jobs/view/master-data-management-specialist-at-mac-for-mobility-manufacturing-4437242566" target="_blank" rel="noopener">Master Data Management Specialist</a><small>MAC for Mobility Manufacturing</small></td>
-              <td>6th of October, Al Jizah, Egypt<small>SAP · Egypt · past_month</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>FI / CO / FICO</span><span>PP / QM / Manufacturing</span></div></td>
-              <td><div class="chips"><span>FICO</span><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://es.linkedin.com/jobs/view/t%C3%A9cnico-a-de-compras-at-arce-clima-4438095241" target="_blank" rel="noopener">TÉCNICO/A DE COMPRAS</a><small>Arce Clima</small></td>
-              <td>A Coruña, Galicia, Spain<small>SAP · Spain · onsite</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://es.linkedin.com/jobs/view/consultor-a-senior-sap-log%C3%ADstica-at-heyclue-4432594427" target="_blank" rel="noopener">Consultor/a Senior SAP Logística</a><small>HeyClue</small></td>
-              <td>A Coruña, Galicia, Spain<small>SAP · Spain · all</small></td>
-              <td>Other SAP-Related<small>Senior</small></td>
-              <td><div class="chips"><span>HCM / SuccessFactors</span></div></td>
-              <td><div class="chips"><span>SuccessFactors</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://de.linkedin.com/jobs/view/sap-full-stack-development-experte-m-w-d-100%25-home-office-bzw-remote-t%C3%A4tigkeit-m%C3%B6glich-at-thomas-biber-deutschland-gmbh-4433235362" target="_blank" rel="noopener">SAP Full Stack Development Experte (m/w/d) - 100% Home Office bzw. Remote Tätigkeit möglich</a><small>Thomas Biber Deutschland GmbH</small></td>
-              <td>Aachen, North Rhine-Westphalia, Germany<small>SAP · Germany · all</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+4</span></div></td>
-              <td><div class="chips"><span>ABAP</span><span>S/4HANA</span><span>SAP HANA</span><span>+5</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ch.linkedin.com/jobs/view/fachperson-finanzen-controlling-at-keypartners-4439988574" target="_blank" rel="noopener">Fachperson Finanzen &amp; Controlling</a><small>KeyPartners</small></td>
-              <td>Aargau, Switzerland<small>SAP · Switzerland · hybrid</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>FI / CO / FICO</span></div></td>
-              <td><div class="chips"><span>FICO</span><span>German</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/accounts-payable-manager-atea-danmark-at-basico-4432205394" target="_blank" rel="noopener">Accounts Payable Manager - Atea Danmark</a><small>Basico</small></td>
-              <td>Aarhus Municipality, Central Denmark Region, Denmark<small>SAP · Denmark · onsite</small></td>
-              <td>Support / Operations<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/erp-arkitekt-at-kredsl%C3%B8b-4436729417" target="_blank" rel="noopener">ERP - Arkitekt</a><small>Kredsløb</small></td>
-              <td>Aarhus Municipality, Central Denmark Region, Denmark<small>SAP · Denmark · onsite</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/erp-domain-architects-%E2%80%93-finance-procurement-sourcing-trading-at-aak-4431859893" target="_blank" rel="noopener">ERP Domain Architects – Finance | Procurement, Sourcing &amp; Trading</a><small>AAK</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · past_month</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span><span>MM / Procurement</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>FICO</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/sap-deployment-manager-at-aak-4431867739" target="_blank" rel="noopener">SAP Deployment Manager</a><small>AAK</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · past_week_remote</small></td>
-              <td>Functional Consulting<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/customer-care-specialist-afi-arla-foods-ingredients-arla-viby-at-arla-foods-4432389495" target="_blank" rel="noopener">Customer Care Specialist, AFI (Arla Foods Ingredients) Arla - Viby</a><small>Arla Foods</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · past_month</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/service-transformation-manager-at-hcltech-4430224593" target="_blank" rel="noopener">Service Transformation Manager</a><small>HCLTech</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · onsite</small></td>
-              <td>Data / Analytics<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>S/4HANA</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/customer-service-representative-at-iff-4434493458" target="_blank" rel="noopener">Customer Service Representative</a><small>IFF</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · hybrid</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/manager-at-randstad-danmark-4440019188" target="_blank" rel="noopener">Manager</a><small>Randstad Danmark</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · past_month</small></td>
-              <td>Technical / Development<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>Agile / Scrum</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/solution-consultant-salling-group-tech-finance-at-salling-group-4435445722" target="_blank" rel="noopener">Solution Consultant Salling Group Tech Finance</a><small>Salling Group</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · past_month</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Fiori / UI5</span></div></td>
-              <td><div class="chips"><span>SAP Fiori</span><span>Agile / Scrum</span><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/sap-developer-at-trifork-4433911961" target="_blank" rel="noopener">SAP Developer</a><small>Trifork</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · onsite</small></td>
-              <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+2</span></div></td>
-              <td><div class="chips"><span>ABAP</span><span>S/4HANA</span><span>SAP HANA</span><span>+6</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/senior-sap-developer-at-trifork-4435515972" target="_blank" rel="noopener">Senior SAP Developer</a><small>Trifork</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · onsite</small></td>
-              <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>ABAP / Development</span><span>BTP / Integration</span><span>Fiori / UI5</span><span>+1</span></div></td>
-              <td><div class="chips"><span>ABAP</span><span>SAP HANA</span><span>SAP BTP</span><span>+5</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/sap-sd-mm-solution-architect-at-westernacher-consulting-4413291963" target="_blank" rel="noopener">SAP SD/MM Solution Architect</a><small>Westernacher Consulting</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · hybrid</small></td>
-              <td>Architecture<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>SD / Sales</span></div></td>
-              <td><div class="chips"><span>SAP SD</span><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/sap-tm-solution-architect-at-westernacher-consulting-4436313228" target="_blank" rel="noopener">SAP TM Solution Architect</a><small>Westernacher Consulting</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · hybrid</small></td>
-              <td>Architecture<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>EWM / WM / Logistics</span><span>TM / GTS / Supply Chain</span></div></td>
-              <td><div class="chips"><span>SAP TM</span><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/senior-sap-ewm-consultant-at-westernacher-consulting-4411950191" target="_blank" rel="noopener">Senior SAP EWM Consultant</a><small>Westernacher Consulting</small></td>
-              <td>Aarhus, Central Denmark Region, Denmark<small>SAP · Denmark · hybrid</small></td>
-              <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>EWM / WM / Logistics</span></div></td>
-              <td><div class="chips"><span>SAP EWM</span><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://be.linkedin.com/jobs/view/senior-procurement-specialist-at-jeco-energies-4433864247" target="_blank" rel="noopener">Senior Procurement Specialist</a><small>Jeco Energies</small></td>
-              <td>Aartselaar, Flemish Region, Belgium<small>SAP · Belgium · hybrid</small></td>
-              <td>Other SAP-Related<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://be.linkedin.com/jobs/view/quality-coordinator-at-taos-talents-4437096560" target="_blank" rel="noopener">Quality Coordinator</a><small>Taos Talents</small></td>
-              <td>Aartselaar, Flemish Region, Belgium<small>SAP · Belgium · onsite</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ca.linkedin.com/jobs/view/maintenance-technician-i-at-bd-diesel-4440858337" target="_blank" rel="noopener">Maintenance Technician I</a><small>BD Diesel</small></td>
-              <td>Abbotsford, British Columbia, Canada<small>SAP · Canada · past_month</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://in.linkedin.com/jobs/view/sap-abap-cloud-developer-at-24-7-international-corporation-4439511186" target="_blank" rel="noopener">SAP ABAP Cloud Developer</a><small>24/7 International Corporation</small></td>
-              <td>Abdasa, Gujarat, India<small>SAP · India · remote</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+2</span></div></td>
-              <td><div class="chips"><span>ABAP</span><span>S/4HANA</span><span>SAP HANA</span><span>+7</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://uk.linkedin.com/jobs/view/embroidery-decorative-operative-at-arco-experts-in-safety-4438669761" target="_blank" rel="noopener">Embroidery Decorative Operative</a><small>Arco: Experts In Safety</small></td>
-              <td>Aberdeen, Scotland, United Kingdom<small>SAP · United Kingdom · past_week_remote</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://uk.linkedin.com/jobs/view/materials-planner-at-hmh-4432826154" target="_blank" rel="noopener">Materials Planner</a><small>HMH</small></td>
-              <td>Aberdeen, Scotland, United Kingdom<small>SAP · United Kingdom · past_month</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>MM / Procurement</span><span>TM / GTS / Supply Chain</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://uk.linkedin.com/jobs/view/procurement-specialist-at-us-tech-solutions-4434838359" target="_blank" rel="noopener">Procurement Specialist</a><small>US Tech Solutions</small></td>
-              <td>Aberdeen, Scotland, United Kingdom<small>SAP · United Kingdom · onsite</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>MM / Procurement</span></div></td>
-              <td><div class="chips"><span>Ariba</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/planning-engineer-at-anix-global-4441943424" target="_blank" rel="noopener">Planning Engineer</a><small>Anix Global</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · Worldwide · onsite</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/senior-project-manager-at-coforge-4439991070" target="_blank" rel="noopener">Senior Project Manager</a><small>Coforge</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · onsite</small></td>
-              <td>Project / Program<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>BTP / Integration</span><span>HCM / SuccessFactors</span></div></td>
-              <td><div class="chips"><span>SAP BTP</span><span>CPI / Integration Suite</span><span>SuccessFactors</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/procurement-officer-at-confidential-4432611372" target="_blank" rel="noopener">Procurement Officer</a><small>Confidential</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/maintenance-manager-at-etihad-rail-operating-companies-4440002023" target="_blank" rel="noopener">Maintenance Manager</a><small>Etihad Rail Operating Companies</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Data / Analytics<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/sap-dfps-consultant-at-jca-associates-4439665440" target="_blank" rel="noopener">SAP DFPS Consultant</a><small>JCA Associates</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_24h</small></td>
-              <td>Basis / Security<small>Senior</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>Basis / Security</span><span>+1</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>SAP BTP</span><span>OData</span><span>+2</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/sap-is-oil-consultant-at-jca-associates-4439216697" target="_blank" rel="noopener">SAP IS-Oil Consultant</a><small>JCA Associates</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Technical / Development<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>FICO</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/associate-fm-engineer-arabic-speaker-at-modon-4435510349" target="_blank" rel="noopener">Associate FM Engineer - Arabic Speaker</a><small>Modon</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · onsite</small></td>
-              <td>Technical / Development<small>Junior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/senior-sap-systems-engineer-at-quantum-talent-group-4435517032" target="_blank" rel="noopener">Senior SAP Systems Engineer</a><small>Quantum Talent Group</small></td>
-              <td>Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+3</span></div></td>
-              <td><div class="chips"><span>ABAP</span><span>S/4HANA</span><span>SAP HANA</span><span>+8</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/coordinator-projects-at-adnoc-group-4441920891" target="_blank" rel="noopener">Coordinator, Projects</a><small>ADNOC Group</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · Remote · onsite</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/senior-officer-billing-support-at-confidential-4439204004" target="_blank" rel="noopener">Senior Officer Billing Support</a><small>Confidential</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · onsite</small></td>
-              <td>Data / Analytics<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/budget-specialist-at-department-of-finance-abu-dhabi-4440521533" target="_blank" rel="noopener">Budget Specialist</a><small>Department of Finance - Abu Dhabi</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · onsite</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/planning-engineer-at-hill-international-inc-4436527093" target="_blank" rel="noopener">Planning Engineer</a><small>Hill International, Inc.</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/specialist-planning-engineer-construction-at-kbr-inc-4418574042" target="_blank" rel="noopener">Specialist Planning Engineer (Construction)</a><small>KBR, Inc.</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · hybrid</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/planning-manager-at-mace-4405869922" target="_blank" rel="noopener">Planning Manager</a><small>Mace</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_24h</small></td>
-              <td>Technical / Development<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/purchaser-at-nova-international-general-contracting-l-l-c-4430224077" target="_blank" rel="noopener">Purchaser</a><small>Nova International General Contracting L.L.C</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/sap-mm-s-4hana-consultant-at-olik-global-4436175712" target="_blank" rel="noopener">SAP MM S/4HANA Consultant</a><small>Olik Global</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Technical / Development<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>ABAP / Development</span><span>BTP / Integration</span><span>+6</span></div></td>
-              <td><div class="chips"><span>ABAP</span><span>S/4HANA</span><span>SAP Fiori</span><span>+7</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/manufacturing-assistant-at-powertech-4426802945" target="_blank" rel="noopener">Manufacturing Assistant</a><small>POWERTECH</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/supervisor-construction-operation-at-penspen-4432963746" target="_blank" rel="noopener">Supervisor- Construction-Operation</a><small>Penspen</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Other SAP-Related<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/planning-engineer-at-reportage-properties-llc-4435516241" target="_blank" rel="noopener">Planning Engineer</a><small>Reportage Properties LLC</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/accountant-assistant-at-sundus-4436729415" target="_blank" rel="noopener">Accountant Assistant</a><small>Sundus</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · onsite</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/general-ledger-finance-operation-at-sundus-4437744565" target="_blank" rel="noopener">GENERAL LEDGER / FINANCE OPERATION</a><small>Sundus</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Data / Analytics<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/maintenance-technician-at-sundus-4437735720" target="_blank" rel="noopener">Maintenance Technician</a><small>Sundus</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/payroll-specialist-at-sundus-4439789496" target="_blank" rel="noopener">Payroll Specialist</a><small>Sundus</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · past_month</small></td>
-              <td>Other SAP-Related<small>Junior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/planning-assistant-at-sundus-4437752084" target="_blank" rel="noopener">Planning Assistant</a><small>Sundus</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · onsite</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/payroll-team-lead-at-terracotta-outsourcing-4441443845" target="_blank" rel="noopener">Payroll Team Lead</a><small>Terracotta Outsourcing</small></td>
-              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>SAP · Remote · past_month</small></td>
-              <td>Functional Consulting<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://eg.linkedin.com/jobs/view/packaging-section-head-at-linah-farms-4413285995" target="_blank" rel="noopener">Packaging Section Head</a><small>Linah Farms</small></td>
-              <td>Ad-Duqqi, Al Jizah, Egypt<small>SAP · Egypt · onsite</small></td>
-              <td>Functional Consulting<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://eg.linkedin.com/jobs/view/senior-accounts-payable-at-linah-farms-4399481002" target="_blank" rel="noopener">Senior Accounts Payable</a><small>Linah Farms</small></td>
-              <td>Ad-Duqqi, Al Jizah, Egypt<small>SAP · Egypt · onsite</small></td>
-              <td>Functional Consulting<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://tr.linkedin.com/jobs/view/s%C3%BCre%C3%A7-ve-i%CC%87%C5%9F-geli%C5%9Ftirme-y%C3%B6netmeni-adana-lojistik-merkezi-at-gratis-4439206963" target="_blank" rel="noopener">Süreç ve İş Geliştirme Yönetmeni(Adana Lojistik Merkezi)</a><small>Gratis</small></td>
-              <td>Adana, Türkiye<small>SAP · Turkey · all</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://uk.linkedin.com/jobs/view/mechanical-engineer-conveyors-at-dematic-4411509399" target="_blank" rel="noopener">Mechanical Engineer - Conveyors</a><small>Dematic</small></td>
-              <td>Adderbury, England, United Kingdom<small>SAP · United Kingdom · past_week_hybrid</small></td>
-              <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://au.linkedin.com/jobs/view/accountant-at-hunter-careers-4436486567" target="_blank" rel="noopener">Accountant</a><small>Hunter Careers</small></td>
-              <td>Adelaide Hills, South Australia, Australia<small>SAP · Australia · past_month</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://au.linkedin.com/jobs/view/asset-management-system-administrator-at-artc-4439840520" target="_blank" rel="noopener">Asset Management System Administrator</a><small>ARTC</small></td>
-              <td>Adelaide, South Australia, Australia<small>SAP · Australia · past_week_remote</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>PM / Asset Management</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://au.linkedin.com/jobs/view/project-officer-finance-abc-international-development-at-australian-broadcasting-corporation-abc-4437740279" target="_blank" rel="noopener">Project Officer (Finance) - ABC International Development</a><small>Australian Broadcasting Corporation (ABC)</small></td>
-              <td>Adelaide, South Australia, Australia<small>SAP · Australia · past_week_hybrid</small></td>
-              <td>Data / Analytics<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://au.linkedin.com/jobs/view/product-specialist-at-driv-4441941338" target="_blank" rel="noopener">Product Specialist</a><small>DRiV</small></td>
-              <td>Adelaide, South Australia, Australia<small>SAP · Australia · hybrid</small></td>
-              <td>Data / Analytics<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://au.linkedin.com/jobs/view/systems-accountant-at-electranet-pty-ltd-4434422807" target="_blank" rel="noopener">Systems Accountant</a><small>ElectraNet Pty Ltd</small></td>
-              <td>Adelaide, South Australia, Australia<small>SAP · Australia · all</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://au.linkedin.com/jobs/view/senior-implementation-consultant-ii-at-flywire-4422966623" target="_blank" rel="noopener">Senior Implementation Consultant II</a><small>Flywire</small></td>
-              <td>Adelaide, South Australia, Australia<small>SAP · Australia · past_week_hybrid</small></td>
-              <td>Data / Analytics<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://ro.linkedin.com/jobs/view/manager-achizi%C8%9Bii-opera%C8%9Bionale-at-undelucram-ro-4436871849" target="_blank" rel="noopener">Manager achiziții operaționale</a><small>Undelucram.ro</small></td>
-              <td>Adjud, Vrancea, Romania<small>SAP · Romania · onsite</small></td>
+              <td><a href="https://eg.linkedin.com/jobs/view/business-application-lead-at-americana-foods-4431042336" target="_blank" rel="noopener">Business Application lead</a><small>Americana Foods</small></td>
+              <td>10th of Ramadan, Sharkia, Egypt<small>ABAP · Cairo, Egypt · all</small></td>
               <td>Other SAP-Related<small>Lead / Manager</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
@@ -935,125 +341,71 @@
 
 
             <tr>
-              <td><a href="https://il.linkedin.com/jobs/view/forklift-driver-%D7%91%D7%A7%D7%A8-%D7%99%D7%AA-%D7%A7%D7%91%D7%9C%D7%94-%D7%90%D7%AA%D7%A8-%D7%92%D7%9C%D7%91%D7%95%D7%A2-at-arbex-4437819511" target="_blank" rel="noopener">Forklift Driver - בקר.ית קבלה אתר גלבוע</a><small>Arbex</small></td>
-              <td>Afula, North District, Israel<small>SAP · Israel · hybrid</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><a href="https://dk.linkedin.com/jobs/view/director-business-systems-at-stibo-4437193480" target="_blank" rel="noopener">Director, Business Systems</a><small>Stibo</small></td>
+              <td>Aarhus, Central Denmark Region, Denmark<small>ABAP · Aarhus, Denmark · hybrid</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://dk.linkedin.com/jobs/view/database-administrator-at-hyve-solutions-4414669100" target="_blank" rel="noopener">Database Administrator</a><small>Hyve Solutions</small></td>
-              <td>Agerbæk, Region of Southern Denmark, Denmark<small>SAP · Denmark · onsite</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
+              <td><a href="https://ae.linkedin.com/jobs/view/ai-applications-engineer-at-euro-mechanical-4441507917" target="_blank" rel="noopener">AI Applications Engineer</a><small>Euro Mechanical</small></td>
+              <td>Abu Dhabi Emirate, United Arab Emirates<small>ABAP · Abu Dhabi, United Arab Emirates · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://gr.linkedin.com/jobs/view/country-logistics-assistant-at-hellenic-duty-free-shops-4436703293" target="_blank" rel="noopener">Country Logistics Assistant</a><small>Hellenic Duty Free Shops</small></td>
-              <td>Agios Stefanos, Attiki, Greece<small>SAP · Greece · past_month</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
+              <td><a href="https://ae.linkedin.com/jobs/view/software-development-lead-%E2%80%93-digital-applications-at-etihad-4435631980" target="_blank" rel="noopener">Software Development Lead – Digital Applications</a><small>Etihad</small></td>
+              <td>Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates<small>ABAP · Abu Dhabi, United Arab Emirates · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://mx.linkedin.com/jobs/view/jr-sap-at-capgemini-4409428513" target="_blank" rel="noopener">JR SAP</a><small>Capgemini</small></td>
-              <td>Aguascalientes, Aguascalientes, Mexico<small>SAP · Mexico · onsite</small></td>
+              <td><a href="https://gh.linkedin.com/jobs/view/applications-development-manager-at-university-of-ghana-3633518767" target="_blank" rel="noopener">Applications Development Manager</a><small>University of Ghana</small></td>
+              <td>Accra, Greater Accra Region, Ghana<small>ABAP · Accra, Ghana · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://au.linkedin.com/jobs/view/senior-software-engineer-at-qantas-4440632826" target="_blank" rel="noopener">Senior Software Engineer</a><small>Qantas</small></td>
+              <td>Adelaide, South Australia, Australia<small>ABAP · Adelaide, Australia · onsite</small></td>
               <td>Technical / Development<small>Senior</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://mx.linkedin.com/jobs/view/material-requirements-planner-mrp-at-capgemini-4377563641" target="_blank" rel="noopener">Material Requirements Planner (MRP)</a><small>Capgemini</small></td>
-              <td>Aguascalientes, Aguascalientes, Mexico<small>SAP · Mexico · hybrid</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://mx.linkedin.com/jobs/view/analista-de-calidad-at-danone-4426561766" target="_blank" rel="noopener">Analista de Calidad</a><small>Danone</small></td>
-              <td>Aguascalientes, Aguascalientes, Mexico<small>SAP · Mexico · past_month</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://br.linkedin.com/jobs/view/comprador-at-filtroamb-4431002688" target="_blank" rel="noopener">Comprador</a><small>Filtroamb</small></td>
-              <td>Agudos, São Paulo, Brazil<small>SAP · Brazil · remote</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://br.linkedin.com/jobs/view/faturista-at-forte-%E2%80%8B-incorporated-4436671685" target="_blank" rel="noopener">Faturista</a><small>Forte&#x27; Incorporated</small></td>
-              <td>Agudos, São Paulo, Brazil<small>SAP · Brazil · remote</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://br.linkedin.com/jobs/view/consultor-sap-at-tecmaster-inform%C3%A1tica-consultoria-4439244315" target="_blank" rel="noopener">Consultor SAP</a><small>Tecmaster Informática - Consultoria</small></td>
-              <td>Agudos, São Paulo, Brazil<small>SAP · Latin America · past_month</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>FI / CO / FICO</span></div></td>
-              <td><div class="chips"><span>FICO</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://br.linkedin.com/jobs/view/desenvolvedor-at-tecmaster-inform%C3%A1tica-consultoria-4430689764" target="_blank" rel="noopener">Desenvolvedor</a><small>Tecmaster Informática - Consultoria</small></td>
-              <td>Agudos, São Paulo, Brazil<small>SAP · Brazil · remote</small></td>
+              <td><a href="https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4427112871" target="_blank" rel="noopener">Custom Software Engineer</a><small>Accenture in India</small></td>
+              <td>Ahmedabad, Gujarat, India<small>ABAP · Ahmedabad, India · all</small></td>
               <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>ABAP / Development</span><span>BTP / Integration</span><span>Fiori / UI5</span></div></td>
-              <td><div class="chips"><span>SAP BTP</span><span>SAP Fiori</span><span>SAPUI5 / UI5</span><span>+2</span></div></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://in.linkedin.com/jobs/view/manager-%E2%80%93-application-management-sap-at-adani-enterprises-limited-4431203409" target="_blank" rel="noopener">Manager – Application Management (SAP)</a><small>Adani Enterprises Limited</small></td>
-              <td>Ahmedabad, Gujarat, India<small>SAP · India · all</small></td>
-              <td>Basis / Security<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>Basis / Security</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>GRC / Security</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://in.linkedin.com/jobs/view/specialist-sap-master-data-at-e-l-f-beauty-4442167737" target="_blank" rel="noopener">Specialist, SAP Master Data</a><small>E.L.F. BEAUTY</small></td>
-              <td>Ahmedabad, Gujarat, India<small>SAP · India · past_week</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>TM / GTS / Supply Chain</span><span>MDG / Master Data</span></div></td>
-              <td><div class="chips"><span>MDG</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://in.linkedin.com/jobs/view/agm-sap-s-4hana-implementation-at-group-bayport-4418811911" target="_blank" rel="noopener">AGM - SAP S/4HANA Implementation</a><small>Group Bayport</small></td>
-              <td>Ahmedabad, Gujarat, India<small>SAP · India · remote</small></td>
+              <td><a href="https://in.linkedin.com/jobs/view/full-stack-engineer-at-accenture-in-india-4444705185" target="_blank" rel="noopener">Full Stack Engineer</a><small>Accenture in India</small></td>
+              <td>Ahmedabad, Gujarat, India<small>ABAP · Ahmedabad, India · all</small></td>
               <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>FI / CO / FICO</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>FICO</span></div></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://in.linkedin.com/jobs/view/analyst-ii-%E2%80%93-logistics-exports-eu-at-kraft-heinz-4441773185" target="_blank" rel="noopener">Analyst II – Logistics, Exports EU</a><small>Kraft Heinz</small></td>
-              <td>Ahmedabad, Gujarat, India<small>SAP · India · past_24h</small></td>
+              <td><a href="https://in.linkedin.com/jobs/view/hrms-functional-consultant-at-zipbooks-software-solutions-pvt-ltd-4416236051" target="_blank" rel="noopener">HRMS Functional Consultant</a><small>ZipBooks Software Solutions Pvt. Ltd</small></td>
+              <td>Ahmedabad, Gujarat, India<small>ABAP · Ahmedabad, India · all</small></td>
               <td>Functional Consulting<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
@@ -1061,125 +413,476 @@
 
 
             <tr>
-              <td><a href="https://eg.linkedin.com/jobs/view/head-of-finance-at-elsewedy-electric-4440973193" target="_blank" rel="noopener">Head of Finance</a><small>ELSEWEDY ELECTRIC</small></td>
-              <td>Ain Sokhna, As Suways, Egypt<small>SAP · Egypt · past_month</small></td>
-              <td>Data / Analytics<small>Lead / Manager</small></td>
+              <td><a href="https://nz.linkedin.com/jobs/view/principal-developer-at-datacom-4426591264" target="_blank" rel="noopener">Principal Developer</a><small>Datacom</small></td>
+              <td>Auckland, Auckland, New Zealand<small>ABAP · Auckland, New Zealand · all</small></td>
+              <td>Technical / Development<small>Lead / Manager</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://eg.linkedin.com/jobs/view/senior-accountant-at-elsewedy-electric-4440971520" target="_blank" rel="noopener">Senior Accountant</a><small>ELSEWEDY ELECTRIC</small></td>
-              <td>Ain Sokhna, As Suways, Egypt<small>SAP · Egypt · onsite</small></td>
+              <td><a href="https://www.linkedin.com/jobs/view/full-stack-engineer-at-charles-schwab-4434557279" target="_blank" rel="noopener">Full Stack Engineer</a><small>Charles Schwab</small></td>
+              <td>Austin, TX<small>ABAP · Austin, United States · hybrid</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/mms-applications-engineer-at-ercot-4288805398" target="_blank" rel="noopener">MMS Applications Engineer</a><small>ERCOT</small></td>
+              <td>Austin, TX<small>ABAP · Austin, United States · hybrid</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/sap-vertex-consultant-at-techclub-inc-4444448207" target="_blank" rel="noopener">SAP Vertex Consultant</a><small>TechClub Inc</small></td>
+              <td>Austin, TX<small>ABAP · Austin, United States · onsite</small></td>
+              <td>Functional Consulting<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://th.linkedin.com/jobs/view/system-analyst-at-exxonmobil-4442120548" target="_blank" rel="noopener">System Analyst</a><small>ExxonMobil</small></td>
+              <td>Bangkok, Bangkok City, Thailand<small>ABAP · Bangkok, Thailand · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://my.linkedin.com/jobs/view/senior-software-engineer-it-at-emerson-4436304793" target="_blank" rel="noopener">Senior Software Engineer (IT)</a><small>Emerson</small></td>
+              <td>Bayan Lepas, Penang, Malaysia<small>ABAP · Penang, Malaysia · hybrid</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://rs.linkedin.com/jobs/view/junior-anaplan-developer-at-deloitte-4430625446" target="_blank" rel="noopener">Junior Anaplan Developer</a><small>Deloitte</small></td>
+              <td>Belgrade, Serbia<small>ABAP · Belgrade, Serbia · hybrid</small></td>
+              <td>Technical / Development<small>Junior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4343290015" target="_blank" rel="noopener">Custom Software Engineer</a><small>Accenture in India</small></td>
+              <td>Bengaluru, Karnataka, India<small>ABAP · Bengaluru, India · onsite</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/application-developer-sap-abap-hana-at-ibm-4423659743" target="_blank" rel="noopener">Application Developer-SAP ABAP HANA</a><small>IBM</small></td>
+              <td>Bengaluru, Karnataka, India<small>ABAP · Bengaluru, India · onsite</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>HANA / Data</span></div></td>
+              <td><div class="chips"><span>ABAP</span><span>SAP HANA</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/sap-abap-product-support-specialist-at-sap-fioneer-4412759100" target="_blank" rel="noopener">SAP ABAP Product Support Specialist</a><small>SAP Fioneer</small></td>
+              <td>Bengaluru, Karnataka, India<small>ABAP · Bengaluru, India · remote</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>ABAP / Development</span></div></td>
+              <td><div class="chips"><span>ABAP</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://it.linkedin.com/jobs/view/it-development-team-leader-at-ab-professional-search-sagl-4441432666" target="_blank" rel="noopener">IT DEVELOPMENT TEAM LEADER</a><small>AB PROFESSIONAL SEARCH SAGL</small></td>
+              <td>Bentivoglio, Emilia-Romagna, Italy<small>ABAP · Bologna, Italy · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://no.linkedin.com/jobs/view/teamleder-klp-teknologi-at-klp-4432371270" target="_blank" rel="noopener">Teamleder KLP Teknologi</a><small>KLP</small></td>
+              <td>Bergen, Vestland, Norway<small>ABAP · Bergen, Norway · onsite</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://no.linkedin.com/jobs/view/senior-software-engineer-bergen-norway-at-vizrt-4424704874" target="_blank" rel="noopener">Senior Software Engineer - Bergen, Norway</a><small>Vizrt</small></td>
+              <td>Bergen, Vestland, Norway<small>ABAP · Bergen, Norway · onsite</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://de.linkedin.com/jobs/view/senior-sap-abap-developer-architect-%E2%80%93-technical-migration-m-w-d-at-natuvion-4382506853" target="_blank" rel="noopener">(Senior) SAP ABAP Developer/ Architect – Technical Migration (m/w/d)</a><small>Natuvion</small></td>
+              <td>Berlin, Berlin, Germany<small>ABAP · Berlin, Germany · remote</small></td>
+              <td>Architecture<small>Senior</small></td>
+              <td><div class="chips"><span>ABAP / Development</span></div></td>
+              <td><div class="chips"><span>ABAP</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://es.linkedin.com/jobs/view/power-platform-application-analyst-m-w-d-at-deutsche-telekom-4442744729" target="_blank" rel="noopener">Power Platform Application Analyst (m/w/d)</a><small>Deutsche Telekom</small></td>
+              <td>Bilbao, Basque Country, Spain<small>ABAP · Bilbao, Spain · onsite</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://es.linkedin.com/jobs/view/cobol-developer-at-ayesa-digital-4438494338" target="_blank" rel="noopener">COBOL Developer</a><small>Ayesa Digital</small></td>
+              <td>Bizkaia, Basque Country, Spain<small>ABAP · Bilbao, Spain · onsite</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://it.linkedin.com/jobs/view/software-developer-%E2%80%93-microsoft-365-at-mc-engineering-4366739271" target="_blank" rel="noopener">Software Developer – Microsoft 365</a><small>MC Engineering</small></td>
+              <td>Bologna, Emilia-Romagna, Italy<small>ABAP · Bologna, Italy · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/workday-hcm-functional-consultant-top-secret-cleared-at-deloitte-4429996411" target="_blank" rel="noopener">Workday HCM Functional Consultant - Top Secret Cleared</a><small>Deloitte</small></td>
+              <td>Boston, MA<small>ABAP · Boston, United States · hybrid</small></td>
+              <td>Functional Consulting<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://kr.linkedin.com/jobs/view/senior-manager-apac-it-at-clarios-4427053311" target="_blank" rel="noopener">Senior Manager, APAC IT</a><small>Clarios</small></td>
+              <td>Busan Metropolitan Area<small>ABAP · Busan, South Korea · onsite</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://eg.linkedin.com/jobs/view/servicenow-spm-functional-consultant-at-m%C3%BCller-s-solutions-4408765392" target="_blank" rel="noopener">ServiceNow SPM Functional Consultant</a><small>Müller&#x27;s Solutions</small></td>
+              <td>Cairo, Cairo, Egypt<small>ABAP · Cairo, Egypt · hybrid</small></td>
+              <td>Functional Consulting<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://eg.linkedin.com/jobs/view/temenos-core-banking-functional-consultant-aa-at-qnbeyond-plus-4437210621" target="_blank" rel="noopener">TEMENOS Core Banking Functional Consultant (AA)</a><small>QNBeyond Plus</small></td>
+              <td>Cairo, Egypt<small>ABAP · Cairo, Egypt · hybrid</small></td>
+              <td>Functional Consulting<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/sr-software-engineer-at-subaru-of-america-4439558419" target="_blank" rel="noopener">Sr. Software Engineer</a><small>Subaru of America</small></td>
+              <td>Camden, NJ<small>ABAP · Philadelphia, United States · all</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://za.linkedin.com/jobs/view/senior-application-support-at-apex-group-ltd-4169605968" target="_blank" rel="noopener">Senior Application Support</a><small>Apex Group Ltd</small></td>
+              <td>Cape Town, Western Cape, South Africa<small>ABAP · Cape Town, South Africa · all</small></td>
               <td>Support / Operations<small>Senior</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://ca.linkedin.com/jobs/view/facilities-projects-supervisor-at-fortisalberta-4440256150" target="_blank" rel="noopener">Facilities Projects Supervisor</a><small>FortisAlberta</small></td>
-              <td>Airdrie, Alberta, Canada<small>SAP · Canada · past_week_hybrid</small></td>
-              <td>Support / Operations<small>Lead / Manager</small></td>
+              <td><a href="https://www.linkedin.com/jobs/view/assistant-vice-president-at-deutsche-bank-4428393069" target="_blank" rel="noopener">Assistant Vice President</a><small>Deutsche Bank</small></td>
+              <td>Cary, NC<small>ABAP · Raleigh-Durham, United States · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://uk.linkedin.com/jobs/view/production-operator-4-day-week-friday-saturday-sunday-monday-at-albert-bartlett-4436312005" target="_blank" rel="noopener">Production Operator - 4 day week- Friday, Saturday, Sunday, Monday</a><small>ALBERT BARTLETT</small></td>
-              <td>Airdrie, Scotland, United Kingdom<small>SAP · United Kingdom · onsite</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://fr.linkedin.com/jobs/view/consultant-ifs-cloud-finance-h-f-at-citech-4417051442" target="_blank" rel="noopener">Consultant IFS Cloud Finance (H/F)</a><small>CITECH</small></td>
-              <td>Aix-en-Provence, Provence-Alpes-Côte d&#x27;Azur, France<small>SAP · France · all</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://fr.linkedin.com/jobs/view/capgemini-engineering-data-engineer-reporting-stage-aix-en-provence-at-capgemini-engineering-4441220453" target="_blank" rel="noopener">Capgemini Engineering_Data Engineer &amp; Reporting_Stage_Aix-en-Provence</a><small>Capgemini Engineering</small></td>
-              <td>Aix-en-Provence, Provence-Alpes-Côte d&#x27;Azur, France<small>SAP · France · remote</small></td>
+              <td><a href="https://www.linkedin.com/jobs/view/software-engineer-erp-at-hazelden-betty-ford-foundation-4399430686" target="_blank" rel="noopener">Software Engineer - ERP</a><small>Hazelden Betty Ford Foundation</small></td>
+              <td>Center City, MN<small>ABAP · Minneapolis, United States · onsite</small></td>
               <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>TM / GTS / Supply Chain</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://fr.linkedin.com/jobs/view/sp%C3%A9cialiste-paie-at-strada-4412731668" target="_blank" rel="noopener">Spécialiste Paie</a><small>Strada</small></td>
-              <td>Aix-en-Provence, Provence-Alpes-Côte d&#x27;Azur, France<small>SAP · France · past_week_remote</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://fr.linkedin.com/jobs/view/consultant-senior-sap-finance-f-h-at-viseo-4441313787" target="_blank" rel="noopener">Consultant Senior SAP Finance F/H</a><small>VISEO</small></td>
-              <td>Aix-en-Provence, Provence-Alpes-Côte d&#x27;Azur, France<small>SAP · France · past_week_hybrid</small></td>
+              <td><a href="https://il.linkedin.com/jobs/view/backend-manager-at-deloitte-4444415799" target="_blank" rel="noopener">Backend manager</a><small>Deloitte</small></td>
+              <td>Center District, Israel<small>ABAP · Jerusalem, Israel · remote</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/it%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B%E5%B8%88-at-%E6%88%90%E9%83%BD%E9%87%91%E5%A0%82%E6%81%92%E5%A4%A7%E9%85%92%E5%BA%97%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4423748500" target="_blank" rel="noopener">it系统工程师</a><small>成都金堂恒大酒店有限公司</small></td>
+              <td>Chengdu, Sichuan, China<small>ABAP · Chengdu, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81%E5%B2%97%EF%BC%88%E5%9B%BD%E7%AA%96%EF%BC%9A%E6%88%90%E9%83%BD%EF%BC%89-j13120-at-%E6%B3%B8%E5%B7%9E%E8%80%81%E7%AA%96%E5%9B%BD%E7%AA%96%E9%85%92%E7%B1%BB%E9%94%80%E5%94%AE%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421078220" target="_blank" rel="noopener">软件技术支持岗（国窖：成都）(J13120)</a><small>泸州老窖国窖酒类销售股份有限公司</small></td>
+              <td>Chengdu, Sichuan, China<small>ABAP · Chengdu, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E8%B5%84%E6%B7%B1%E7%8C%8E%E5%A4%B4%E9%A1%BE%E9%97%AE-at-%E9%94%90%E4%BB%95%E6%96%B9%E8%BE%BE%E4%BA%BA%E6%89%8D%E7%A7%91%E6%8A%80%E9%9B%86%E5%9B%A2%E5%8D%97%E4%BA%AC%E6%B1%9F%E5%8C%97%E5%88%86%E5%85%AC%E5%8F%B8-4424070873" target="_blank" rel="noopener">资深猎头顾问</a><small>锐仕方达人才科技集团南京江北分公司</small></td>
+              <td>Chengdu, Sichuan, China<small>ABAP · Chengdu, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E9%AB%98%E7%BA%A7%E7%8C%8E%E5%A4%B4%E9%A1%BE%E9%97%AE-at-%E9%94%90%E4%BB%95%E6%96%B9%E8%BE%BE%E4%BA%BA%E6%89%8D%E7%A7%91%E6%8A%80%E9%9B%86%E5%9B%A2%E5%8D%97%E4%BA%AC%E6%B1%9F%E5%8C%97%E5%88%86%E5%85%AC%E5%8F%B8-4424087546" target="_blank" rel="noopener">高级猎头顾问</a><small>锐仕方达人才科技集团南京江北分公司</small></td>
+              <td>Chengdu, Sichuan, China<small>ABAP · Chengdu, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://bg.linkedin.com/jobs/view/software-developer-m-f-d-at-amer-sports-4409797836" target="_blank" rel="noopener">Software Developer (m\f\d)</a><small>Amer Sports</small></td>
+              <td>Chepelare, Smolyan, Bulgaria<small>ABAP · Plovdiv, Bulgaria · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/manager-ai%E6%9E%B6%E6%9E%84-tax-management-cto-chongqing-gdc-106582-at-deloitte-4440928035" target="_blank" rel="noopener">Manager (AI架构) - Tax Management CTO-Chongqing-GDC(106582)</a><small>Deloitte</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E6%8A%80%E6%9C%AF%E7%BB%8F%E7%90%86-at-eci-4421490716" target="_blank" rel="noopener">技术经理</a><small>ECI</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E5%88%B6%E9%80%A0%E4%B8%9Ait%E6%8A%80%E6%9C%AF%E5%B7%A5%E7%A8%8B%E5%B8%88-at-gut-great-wall-motor-4420572352" target="_blank" rel="noopener">制造业IT技术工程师</a><small>GUT- Great Wall Motor</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/application-engr-ii-at-honeywell-technologies-4418948338" target="_blank" rel="noopener">Application Engr II</a><small>Honeywell Technologies</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/2027-campus-system-and-application-engineer-at-nxp-semiconductors-4439083549" target="_blank" rel="noopener">2027 Campus - System and Application engineer</a><small>NXP Semiconductors</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E7%B3%BB%E7%BB%9F%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88j10298%EF%BC%89-at-%E4%B8%AD%E4%BF%A1%E5%BB%BA%E6%8A%95%E6%9C%9F%E8%B4%A7%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4423827121" target="_blank" rel="noopener">系统数据应用工程师（J10298）</a><small>中信建投期货有限公司</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4%E5%B2%97-at-%E5%8D%8E%E5%B3%B0%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4419793359" target="_blank" rel="noopener">系统运维岗</a><small>华峰集团有限公司</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/it%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88-at-%E5%8D%8E%E6%B6%A6%E5%BE%AE%E7%94%B5%E5%AD%90-4421446641" target="_blank" rel="noopener">IT开发工程师</a><small>华润微电子</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E8%B4%A8%E9%87%8F%E9%83%A8%E9%83%A8%E9%95%BF-at-%E5%B9%BF%E4%B8%9C%E5%B9%BF%E8%88%AA%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4423856971" target="_blank" rel="noopener">项目技术质量部部长</a><small>广东广航科技有限公司</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · onsite</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/%E6%8A%80%E6%9C%AF%E8%B4%A8%E9%87%8F%E9%83%A8%E9%95%BF%EF%BC%88%E5%B7%A5%E4%BD%9C%E5%9C%B0%E7%82%B9%EF%BC%9A%E6%B6%AA%E9%99%B5%EF%BC%89-at-%E7%A6%8F%E5%B7%9E%E9%91%AB%E8%B1%AA%E7%BF%94%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421023858" target="_blank" rel="noopener">技术质量部长（工作地点：涪陵）</a><small>福州鑫豪翔电子有限公司</small></td>
+              <td>Chongqing, Chongqing, China<small>ABAP · Chongqing, China · onsite</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://nz.linkedin.com/jobs/view/senior-ai-engineer-at-air-new-zealand-4437743072" target="_blank" rel="noopener">Senior AI Engineer</a><small>Air New Zealand</small></td>
+              <td>Christchurch, Canterbury, New Zealand<small>ABAP · Christchurch, New Zealand · remote</small></td>
               <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>BTP / Integration</span><span>Fiori / UI5</span><span>+2</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>SAP HANA</span><span>SAP BTP</span><span>+3</span></div></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://fr.linkedin.com/jobs/view/contr%C3%B4leur-qualit%C3%A9-produits-h-f-at-corse-composites-aeronautiques-4433156506" target="_blank" rel="noopener">Contrôleur qualité produits H/F</a><small>Corse Composites Aeronautiques</small></td>
-              <td>Ajaccio, Corsica, France<small>SAP · France · onsite</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>ABAP / Development</span></div></td>
-              <td><div class="chips"><span>RAP / CAP</span></div></td>
+              <td><a href="https://nz.linkedin.com/jobs/view/back-end-software-engineer-senior-at-xe-com-4439752527" target="_blank" rel="noopener">Back End Software Engineer (Senior)</a><small>Xe.com</small></td>
+              <td>Christchurch, Canterbury, New Zealand<small>ABAP · Christchurch, New Zealand · remote</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://ca.linkedin.com/jobs/view/logistics-specialist-at-miniso-canada-4438894595" target="_blank" rel="noopener">Logistics Specialist</a><small>MINISO Canada</small></td>
-              <td>Ajax, Ontario, Canada<small>SAP · Canada · past_month</small></td>
-              <td>Basis / Security<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Basis / Security</span></div></td>
-              <td><div class="chips"><span>GRC / Security</span><span>English</span></div></td>
+              <td><a href="https://nz.linkedin.com/jobs/view/back-end-software-engineer-senior-at-xe-com-4439757219" target="_blank" rel="noopener">Back End Software Engineer (Senior)</a><small>Xe.com</small></td>
+              <td>Christchurch, Canterbury, New Zealand<small>ABAP · Christchurch, New Zealand · remote</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://jp.linkedin.com/jobs/view/procurement-senior-manager-at-gsk-4428909844" target="_blank" rel="noopener">Procurement Senior Manager</a><small>GSK</small></td>
-              <td>Akasaka, Tokyo, Japan<small>SAP · Japan · past_month</small></td>
-              <td>Basis / Security<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>Basis / Security</span></div></td>
-              <td><div class="chips"><span>GRC / Security</span><span>Agile / Scrum</span><span>English</span></div></td>
+              <td><a href="https://nz.linkedin.com/jobs/view/back-end-software-engineer-senior-at-xe-com-4439757220" target="_blank" rel="noopener">Back End Software Engineer (Senior)</a><small>Xe.com</small></td>
+              <td>Christchurch, Canterbury, New Zealand<small>ABAP · Christchurch, New Zealand · remote</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://za.linkedin.com/jobs/view/sap-ewm-support-specialist-at-pepkor-lifestyle-4441311274" target="_blank" rel="noopener">SAP EWM Support Specialist</a><small>Pepkor Lifestyle</small></td>
-              <td>Akasia, Gauteng, South Africa<small>SAP · South Africa · past_month</small></td>
+              <td><a href="https://www.linkedin.com/jobs/view/oracle-ebs-functional-consultant-at-whitehall-resources-4441555643" target="_blank" rel="noopener">Oracle EBS Functional Consultant</a><small>Whitehall Resources</small></td>
+              <td>Cincinnati, OH<small>ABAP · Cincinnati, United States · all</small></td>
+              <td>Functional Consulting<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ro.linkedin.com/jobs/view/ibm-internship-sap-hana-at-ibm-4441533357" target="_blank" rel="noopener">IBM Internship SAP HANA</a><small>IBM</small></td>
+              <td>Cluj-Napoca, Cluj, Romania<small>ABAP · Cluj-Napoca, Romania · all</small></td>
+              <td>Data / Analytics<small>Entry / Intern</small></td>
+              <td><div class="chips"><span>HANA / Data</span></div></td>
+              <td><div class="chips"><span>SAP HANA</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ro.linkedin.com/jobs/view/servicenow-technical-integration-consultant-at-ntt-data-europe-latam-4434537227" target="_blank" rel="noopener">ServiceNow Technical Integration Consultant</a><small>NTT DATA Europe &amp; Latam</small></td>
+              <td>Cluj-Napoca, Cluj, Romania<small>ABAP · Cluj-Napoca, Romania · all</small></td>
               <td>Technical / Development<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>EWM / WM / Logistics</span></div></td>
-              <td><div class="chips"><span>SAP EWM</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://gr.linkedin.com/jobs/view/accountant-tax-financial-reporting-at-kariera-gr-4437670754" target="_blank" rel="noopener">Accountant - Tax &amp; Financial Reporting</a><small>kariera.gr</small></td>
-              <td>Akharnaí, Attiki, Greece<small>SAP · Greece · past_month</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://no.linkedin.com/jobs/view/administrativ-konsulent-at-tysv%C3%A6r-kommune-4436608078" target="_blank" rel="noopener">Administrativ konsulent</a><small>Tysvær kommune</small></td>
-              <td>Aksdal, Rogaland, Norway<small>SAP · Norway · onsite</small></td>
+              <td><a href="https://dk.linkedin.com/jobs/view/expert-manager-software-engineering-at-bain-company-4432181769" target="_blank" rel="noopener">Expert Manager, Software Engineering</a><small>Bain &amp; Company</small></td>
+              <td>Copenhagen, Capital Region of Denmark, Denmark<small>ABAP · Copenhagen, Denmark · remote</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://dk.linkedin.com/jobs/view/lead-software-engineer-at-simcorp-4428880322" target="_blank" rel="noopener">Lead Software Engineer</a><small>SimCorp</small></td>
+              <td>Copenhagen, Capital Region of Denmark, Denmark<small>ABAP · Copenhagen, Denmark · remote</small></td>
+              <td>Technical / Development<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ie.linkedin.com/jobs/view/sr-cloud-applications-engineer-at-opentext-4427835524" target="_blank" rel="noopener">Sr. Cloud Applications Engineer</a><small>OpenText</small></td>
+              <td>Cork, County Cork, Ireland<small>ABAP · Cork, Ireland · all</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ie.linkedin.com/jobs/view/software-engineer-staff-oseng-cork-ireland-at-qualcomm-4400758581" target="_blank" rel="noopener">Software Engineer, Staff (OSEng) - Cork, Ireland</a><small>Qualcomm</small></td>
+              <td>Cork, County Cork, Ireland<small>ABAP · Cork, Ireland · all</small></td>
+              <td>Technical / Development<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/abap%E5%BC%80%E5%8F%91-at-%E5%A4%A7%E8%BF%9E%E5%88%9B%E5%8D%87%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4420078128" target="_blank" rel="noopener">abap开发</a><small>大连创升科技有限公司</small></td>
+              <td>Dalian, Liaoning, China<small>ABAP · Dalian, China · onsite</small></td>
               <td>Other SAP-Related<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
@@ -1187,8 +890,8 @@
 
 
             <tr>
-              <td><a href="https://tr.linkedin.com/jobs/view/logistics-specialist-ankara-at-getir-4442115827" target="_blank" rel="noopener">Logistics Specialist, Ankara</a><small>Getir</small></td>
-              <td>Akyurt, Ankara, Türkiye<small>SAP · Turkey · onsite</small></td>
+              <td><a href="https://hu.linkedin.com/jobs/view/entwickler-m-w-d-m365-ref4618s-at-deutsche-telekom-4442739903" target="_blank" rel="noopener">Entwickler (m/w/d) M365 (REF4618S)</a><small>Deutsche Telekom</small></td>
+              <td>Debrecen, Hajdú-Bihar, Hungary<small>ABAP · Debrecen, Hungary · onsite</small></td>
               <td>Other SAP-Related<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
@@ -1196,170 +899,377 @@
 
 
             <tr>
-              <td><a href="https://ae.linkedin.com/jobs/view/senior-procurement-officer-at-sundus-4427150871" target="_blank" rel="noopener">Senior Procurement Officer</a><small>Sundus</small></td>
-              <td>Al Falah, Abu Dhabi Emirate, United Arab Emirates<small>SAP · United Arab Emirates · onsite</small></td>
+              <td><a href="https://hu.linkedin.com/jobs/view/talent-pool-hungary-at-rdi-software-brazil-4331230434" target="_blank" rel="noopener">Talent Pool - Hungary</a><small>RDI Software Brazil</small></td>
+              <td>Debrecen, Hajdú-Bihar, Hungary<small>ABAP · Debrecen, Hungary · onsite</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/workday-migration-integration-consultant-workday-solution-architect-at-teknikoz-4443837459" target="_blank" rel="noopener">Workday Migration &amp; Integration Consultant / Workday Solution Architect</a><small>TEKNIKOZ</small></td>
+              <td>Delhi, India<small>ABAP · Delhi, India · remote</small></td>
+              <td>Architecture<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/oracle-bi-publisher-apex-developer-at-little-caesars-pizza-4434709386" target="_blank" rel="noopener">Oracle BI Publisher &amp; APEX Developer</a><small>Little Caesars Pizza</small></td>
+              <td>Detroit, MI<small>ABAP · Detroit, United States · hybrid</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://cn.linkedin.com/jobs/view/aps%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88-at-%E5%B9%BF%E4%B8%9C%E5%8D%9A%E8%BE%BE%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-4421759124" target="_blank" rel="noopener">aps软件工程师</a><small>广东博达科技有限公司</small></td>
+              <td>Dongguan, Guangdong, China<small>ABAP · Shenzhen, China · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ie.linkedin.com/jobs/view/site-reliability-engineer-dublin-at-apple-4414164436" target="_blank" rel="noopener">Site Reliability Engineer, Dublin</a><small>Apple</small></td>
+              <td>Dublin, County Dublin, Ireland<small>ABAP · Dublin, Ireland · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ie.linkedin.com/jobs/view/application-development-integration-specialist-at-ayvens-4411523396" target="_blank" rel="noopener">Application Development &amp; Integration Specialist</a><small>Ayvens</small></td>
+              <td>Dublin, County Dublin, Ireland<small>ABAP · Dublin, Ireland · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ie.linkedin.com/jobs/view/software-development-lead-at-citi-4416331308" target="_blank" rel="noopener">Software Development Lead</a><small>Citi</small></td>
+              <td>Dublin, County Dublin, Ireland<small>ABAP · Dublin, Ireland · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ie.linkedin.com/jobs/view/development-technology-lead-assistant-vice-president-at-state-street-4436370678" target="_blank" rel="noopener">Development Technology Lead, Assistant Vice President</a><small>State Street</small></td>
+              <td>Dublin, County Dublin, Ireland<small>ABAP · Dublin, Ireland · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ie.linkedin.com/jobs/view/database-software-engineer-at-ebay-4423674015" target="_blank" rel="noopener">Database Software Engineer</a><small>eBay</small></td>
+              <td>Dublin, County Dublin, Ireland<small>ABAP · Dublin, Ireland · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/sap-abap-lead-consultant-at-rayven-it-solutions-4444445253" target="_blank" rel="noopener">SAP ABAP Lead Consultant</a><small>RAYVEN IT SOLUTIONS</small></td>
+              <td>Edison, NJ<small>ABAP · New Jersey, United States · onsite</small></td>
+              <td>Technical / Development<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>ABAP / Development</span></div></td>
+              <td><div class="chips"><span>ABAP</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://fi.linkedin.com/jobs/view/application-owner-at-metso-4433819898" target="_blank" rel="noopener">Application Owner</a><small>Metso</small></td>
+              <td>Espoo, Uusimaa, Finland<small>ABAP · Helsinki, Finland · hybrid</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://it.linkedin.com/jobs/view/erp-specialist-at-ginori-1735-4430990263" target="_blank" rel="noopener">ERP Specialist</a><small>Ginori 1735</small></td>
+              <td>Florence, Tuscany, Italy<small>ABAP · Bologna, Italy · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/sap-abap-workflow-consultant-at-the-aes-group-4443889129" target="_blank" rel="noopener">SAP ABAP Workflow Consultant</a><small>The AES Group</small></td>
+              <td>Gandhinagar, Gujarat, India<small>ABAP · Ahmedabad, India · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>ABAP / Development</span></div></td>
+              <td><div class="chips"><span>ABAP</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://pl.linkedin.com/jobs/view/finapps-invoice-and-cash-technical-analyst-at-dnv-4428284161" target="_blank" rel="noopener">FinApps Invoice and Cash Technical Analyst</a><small>DNV</small></td>
+              <td>Gdynia, Pomorskie, Poland<small>ABAP · Gdansk, Poland · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ch.linkedin.com/jobs/view/senior-anaplan-engineer-h-f-at-van-cleef-arpels-4441185570" target="_blank" rel="noopener">Senior Anaplan Engineer (H/F)</a><small>Van Cleef &amp; Arpels</small></td>
+              <td>Geneva, Geneva, Switzerland<small>ABAP · Geneva, Switzerland · hybrid</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://se.linkedin.com/jobs/view/developer-platform-engineer-at-volvo-group-4438194427" target="_blank" rel="noopener">Developer Platform Engineer</a><small>Volvo Group</small></td>
+              <td>Gothenburg, Västra Götaland County, Sweden<small>ABAP · Gothenburg, Sweden · hybrid</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/in-senior-associate-sap-fiori-sap-advisory-hyderabad-at-pwc-india-4433377430" target="_blank" rel="noopener">IN_Senior Associate_SAP Fiori_SAP_Advisory_Hyderabad</a><small>PwC India</small></td>
+              <td>Greater Hyderabad Area<small>ABAP · Hyderabad, India · hybrid</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4419230149" target="_blank" rel="noopener">Custom Software Engineer</a><small>Accenture in India</small></td>
+              <td>Greater Kolkata Area<small>ABAP · Kolkata, India · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/manager-sap-bods-gdc-at-pwc-india-4291070020" target="_blank" rel="noopener">Manager - SAP BODS - GDC</a><small>PwC India</small></td>
+              <td>Greater Kolkata Area<small>ABAP · Kolkata, India · onsite</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/sap-integration-architect-at-saarthee-4431227752" target="_blank" rel="noopener">SAP Integration Architect</a><small>Saarthee</small></td>
+              <td>Greater Kolkata Area<small>ABAP · Kolkata, India · onsite</small></td>
+              <td>Architecture<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/techno-functional-consultant-microsoft-dynamics-365-business-central-at-tech-ecs-limited-4395342410" target="_blank" rel="noopener">Techno Functional Consultant - Microsoft Dynamics 365 Business Central</a><small>Tech ECS Limited</small></td>
+              <td>Greater Kolkata Area<small>ABAP · Kolkata, India · onsite</small></td>
+              <td>Functional Consulting<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://au.linkedin.com/jobs/view/application-deployment-support-engineer-at-verse-4432320721" target="_blank" rel="noopener">Application Deployment &amp; Support Engineer</a><small>Verse</small></td>
+              <td>Greater Perth Area<small>ABAP · Perth, Australia · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://br.linkedin.com/jobs/view/analista-de-sistemas-s%C3%AAnior-sap-mm-sd-at-slc-agr%C3%ADcola-4444013579" target="_blank" rel="noopener">Analista de Sistemas Sênior | SAP MM/SD</a><small>SLC Agrícola</small></td>
+              <td>Greater Porto Alegre<small>ABAP · Curitiba, Brazil · hybrid</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>MM / Procurement</span></div></td>
+              <td><div class="chips"><span>SAP MM</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://br.linkedin.com/jobs/view/consulting-senior-associate-consultor-senior-associado-at-erm-4433986392" target="_blank" rel="noopener">Consulting Senior Associate - Consultor Senior Associado</a><small>ERM</small></td>
+              <td>Greater Rio de Janeiro<small>ABAP · Rio de Janeiro, Brazil · all</small></td>
+              <td>Other SAP-Related<small>Junior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://it.linkedin.com/jobs/view/application-management-specialist-at-aubay-italia-4431585618" target="_blank" rel="noopener">Application Management Specialist</a><small>Aubay Italia</small></td>
+              <td>Greater Rome Metropolitan Area<small>ABAP · Rome, Italy · hybrid</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://vn.linkedin.com/jobs/view/nh%C3%A2n-vi%C3%AAn-ph%C3%A1t-tri%E1%BB%83n-ph%E1%BA%A7n-m%E1%BB%81m-at-sunhouse-kitchen-appliance-4410463834" target="_blank" rel="noopener">NHÂN VIÊN PHÁT TRIỂN PHẦN MỀM</a><small>SUNHOUSE KITCHEN APPLIANCE</small></td>
+              <td>Hanoi, Hanoi, Vietnam<small>ABAP · Hanoi, Vietnam · all</small></td>
+              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://vn.linkedin.com/jobs/view/technical-lead-at-vpbank-securities-ch%E1%BB%A9ng-kho%C3%A1n-vpbank-vpbanks-4443812141" target="_blank" rel="noopener">Technical Lead</a><small>VPBank Securities - Chứng khoán VPBank (VPBankS)</small></td>
+              <td>Hanoi, Hanoi, Vietnam<small>ABAP · Hanoi, Vietnam · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://fi.linkedin.com/jobs/view/ai-software-engineer-at-siemens-healthineers-4437083443" target="_blank" rel="noopener">AI /Software Engineer</a><small>Siemens Healthineers</small></td>
+              <td>Helsinki, Uusimaa, Finland<small>ABAP · Helsinki, Finland · hybrid</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://il.linkedin.com/jobs/view/senior-software-applications-engineer-at-apple-4421037774" target="_blank" rel="noopener">Senior Software Applications Engineer</a><small>Apple</small></td>
+              <td>Herzliya, Tel Aviv District, Israel<small>ABAP · Tel Aviv, Israel · all</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://vn.linkedin.com/jobs/view/senior-digital-application-developer-at-pepperl%2Bfuchs-group-4424029570" target="_blank" rel="noopener">Senior Digital Application Developer</a><small>Pepperl+Fuchs Group</small></td>
+              <td>Ho Chi Minh City, Vietnam<small>ABAP · Ho Chi Minh City, Vietnam · onsite</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/tax-technology-and-transformation-indirect-tax-drc-digital-tax-administration-senior-at-ey-4439270269" target="_blank" rel="noopener">Tax Technology and Transformation - Indirect Tax/DRC - Digital Tax Administration - Senior</a><small>EY</small></td>
+              <td>Hoboken, NJ<small>ABAP · New Jersey, United States · all</small></td>
               <td>Other SAP-Related<small>Senior</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://sa.linkedin.com/jobs/view/planning-engineer-mechanical-primavera-oil-gas-industry-at-abdullah-a-al-barrak-son-co-4407442359" target="_blank" rel="noopener">Planning Engineer - Mechanical - PRIMAVERA - Oil &amp; Gas Industry</a><small>Abdullah A. Al-Barrak &amp; Son Co.</small></td>
-              <td>Al Jubayl, Saudi Arabia<small>SAP · Saudi Arabia · onsite</small></td>
+              <td><a href="https://hk.linkedin.com/jobs/view/it-application-delivery-support-%E2%80%93-vp-avp-at-huatai-international-financial-holdings-company-limited-4424140245" target="_blank" rel="noopener">IT - Application Delivery &amp; Support – VP/AVP</a><small>Huatai International Financial Holdings Company Limited</small></td>
+              <td>Hong Kong SAR<small>ABAP · Hong Kong · all</small></td>
+              <td>Support / Operations<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://hk.linkedin.com/jobs/view/senior-application-development-manager-at-bank-of-china-hong-kong-4438580782" target="_blank" rel="noopener">(Senior) Application Development Manager</a><small>Bank of China (Hong Kong)</small></td>
+              <td>Hong Kong, Hong Kong SAR<small>ABAP · Hong Kong · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://hk.linkedin.com/jobs/view/system-development-manager-%E2%80%93-avp-%E2%80%93-post-trade-systems-it-at-hong-kong-exchanges-and-clearing-limited-hkex-4432252038" target="_blank" rel="noopener">System Development Manager – AVP – Post-Trade Systems - IT</a><small>Hong Kong Exchanges and Clearing Limited (HKEX)</small></td>
+              <td>Hong Kong, Hong Kong SAR<small>ABAP · Hong Kong · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://in.linkedin.com/jobs/view/abap-%2B-btp-senior-tax-technology-services-at-deloitte-4429385467" target="_blank" rel="noopener">ABAP + BTP - Senior, Tax Technology Services</a><small>Deloitte</small></td>
+              <td>Hyderabad, Telangana, India<small>ABAP · Hyderabad, India · all</small></td>
               <td>Technical / Development<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
+              <td><div class="chips"><span>ABAP / Development</span><span>BTP / Integration</span></div></td>
+              <td><div class="chips"><span>ABAP</span><span>SAP BTP</span></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://sa.linkedin.com/jobs/view/document-controller-at-al-qadsiah-saudi-club-%D9%86%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%B3%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-4431249504" target="_blank" rel="noopener">Document Controller</a><small>Al-Qadsiah Saudi Club نادي القادسية السعودي</small></td>
-              <td>Al Khobar, Eastern, Saudi Arabia<small>SAP · Saudi Arabia · past_month</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><a href="https://in.linkedin.com/jobs/view/sap-business-ai-joule-and-basic-abap-senior-tax-technology-services-at-deloitte-4429319629" target="_blank" rel="noopener">SAP Business AI (Joule and Basic ABAP) - Senior, Tax Technology Services</a><small>Deloitte</small></td>
+              <td>Hyderabad, Telangana, India<small>ABAP · Hyderabad, India · all</small></td>
+              <td>Technical / Development<small>Senior</small></td>
+              <td><div class="chips"><span>ABAP / Development</span></div></td>
+              <td><div class="chips"><span>ABAP</span></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://sa.linkedin.com/jobs/view/finance-specialist-at-castrol-ksa-4421592360" target="_blank" rel="noopener">Finance Specialist</a><small>Castrol KSA</small></td>
-              <td>Al Khobar, Eastern, Saudi Arabia<small>SAP · Saudi Arabia · onsite</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><a href="https://in.linkedin.com/jobs/view/sap-abap-consultant-at-gspann-technologies-inc-4437760544" target="_blank" rel="noopener">SAP ABAP Consultant</a><small>GSPANN Technologies, Inc</small></td>
+              <td>Hyderabad, Telangana, India<small>ABAP · Hyderabad, India · all</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>ABAP / Development</span></div></td>
+              <td><div class="chips"><span>ABAP</span></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://sa.linkedin.com/jobs/view/senior-sap-consultant-at-penta-consulting-4437774220" target="_blank" rel="noopener">Senior SAP Consultant</a><small>Penta Consulting</small></td>
-              <td>Al Khobar, Eastern, Saudi Arabia<small>SAP · Saudi Arabia · past_month</small></td>
-              <td>Basis / Security<small>Lead / Manager</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>Fiori / UI5</span><span>Basis / Security</span><span>+2</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>SAP HANA</span><span>SAP Fiori</span><span>+1</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://sa.linkedin.com/jobs/view/customer-service-team-leader-al-madinah-al-munawwarah-at-2p-perfect-presentation-4418387289" target="_blank" rel="noopener">Customer Service Team Leader (Al Madinah Al Munawwarah)</a><small>2P Perfect Presentation</small></td>
-              <td>Al Madinah, Saudi Arabia<small>SAP · Saudi Arabia · past_month</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://sa.linkedin.com/jobs/view/warehouse-supervisor-at-abyat-4432290123" target="_blank" rel="noopener">Warehouse Supervisor</a><small>ABYAT</small></td>
-              <td>Al Madinah, Saudi Arabia<small>SAP · Saudi Arabia · onsite</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>EWM / WM / Logistics</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://qa.linkedin.com/jobs/view/procurement-officer-at-suez-4416717304" target="_blank" rel="noopener">Procurement Officer</a><small>SUEZ</small></td>
-              <td>Al Rayyan, Al Rayyan, Qatar<small>SAP · Qatar · onsite</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://sa.linkedin.com/jobs/view/mechanical-technician-alula-at-confidential-4442541083" target="_blank" rel="noopener">Mechanical Technician | AlUla</a><small>Confidential</small></td>
-              <td>Al Ula, Al Madinah, Saudi Arabia<small>SAP · Saudi Arabia · past_week_remote</small></td>
-              <td>Support / Operations<small>Senior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/quality-engineer-iii-at-abbott-4438511879" target="_blank" rel="noopener">Quality Engineer III</a><small>Abbott</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · onsite</small></td>
+              <td><a href="https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4433372383" target="_blank" rel="noopener">Custom Software Engineer</a><small>Accenture in India</small></td>
+              <td>Jaipur, Rajasthan, India<small>ABAP · Jaipur, India · onsite</small></td>
               <td>Technical / Development<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
+              <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/associate-cost-manager-at-cardinal-health-4421198428" target="_blank" rel="noopener">Associate Cost Manager</a><small>Cardinal Health</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · past_24h</small></td>
-              <td>Data / Analytics<small>Junior</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/operador-de-manufactura-dl-at-coopervision-4431735926" target="_blank" rel="noopener">Operador de Manufactura (Dl)</a><small>CooperVision</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · onsite</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
+              <td><a href="https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4343139289" target="_blank" rel="noopener">Custom Software Engineer</a><small>Accenture in India</small></td>
+              <td>Jaipur, Rajasthan, India<small>ABAP · Jaipur, India · onsite</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/encargado-de-inventarios-at-dhl-global-forwarding-4436964932" target="_blank" rel="noopener">Encargado de inventarios</a><small>DHL Global Forwarding</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · past_month</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><a href="https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4343198967" target="_blank" rel="noopener">Custom Software Engineer</a><small>Accenture in India</small></td>
+              <td>Jaipur, Rajasthan, India<small>ABAP · Jaipur, India · onsite</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/operario-de-servicio-nova-cinemas-alajuela-2026-at-evaluar-4394654007" target="_blank" rel="noopener">OPERARIO DE SERVICIO NOVA CINEMAS ALAJUELA 2026</a><small>Evaluar</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · onsite</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><a href="https://in.linkedin.com/jobs/view/custom-software-engineer-at-accenture-in-india-4343169319" target="_blank" rel="noopener">Custom Software Engineer</a><small>Accenture in India</small></td>
+              <td>Jaipur, Rajasthan, India<small>ABAP · Jaipur, India · onsite</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
 
 
             <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/molding-process-technician-i-at-philips-4440251474" target="_blank" rel="noopener">Molding Process Technician I</a><small>Philips</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · onsite</small></td>
-              <td>Functional Consulting<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>English</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/especialista-en-licitaciones-at-sondel-sa-4412033903" target="_blank" rel="noopener">Especialista en Licitaciones</a><small>Sondel SA</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · onsite</small></td>
-              <td>Other SAP-Related<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/servicio-t%C3%A9cnico-sondel-service-at-sondel-sa-4418793556" target="_blank" rel="noopener">Servicio Técnico (Sondel Service)</a><small>Sondel SA</small></td>
-              <td>Alajuela, Alajuela, Costa Rica<small>SAP · Costa Rica · onsite</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"><span>SAP Analytics Cloud</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/jefe-de-producci%C3%B3n-y-mantenimiento-at-corporaci%C3%B3n-multi-inversiones-4435620887" target="_blank" rel="noopener">Jefe de Producción y Mantenimiento</a><small>Corporación Multi Inversiones</small></td>
-              <td>Alajuela, Costa Rica<small>SAP · Costa Rica · past_month</small></td>
-              <td>Data / Analytics<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/material-handler-at-freudenberg-medical-4424942480" target="_blank" rel="noopener">Material Handler</a><small>Freudenberg Medical</small></td>
-              <td>Alajuela, Costa Rica<small>SAP · Costa Rica · past_24h</small></td>
+              <td><a href="https://id.linkedin.com/jobs/view/functional-consultant-workday-hris-at-pt-metrodata-electronics-tbk-4415115511" target="_blank" rel="noopener">Functional Consultant (Workday HRIS)</a><small>PT. Metrodata Electronics Tbk.</small></td>
+              <td>Jakarta, Jakarta, Indonesia<small>ABAP · Jakarta, Indonesia · all</small></td>
               <td>Functional Consulting<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
@@ -1367,8 +1277,17 @@
 
 
             <tr>
-              <td><a href="https://cr.linkedin.com/jobs/view/ingeniero-a-de-proyectos-alajuela-at-holcim-costa-rica-4384575292" target="_blank" rel="noopener">Ingeniero/a de Proyectos - Alajuela</a><small>Holcim Costa Rica</small></td>
-              <td>Alajuela, Costa Rica<small>SAP · Costa Rica · past_24h</small></td>
+              <td><a href="https://sa.linkedin.com/jobs/view/erp-director-at-business-umbrella-recruitment-training-consulting-licensing-healthcare-education-real-estate-4444477601" target="_blank" rel="noopener">ERP Director</a><small>Business Umbrella - Recruitment, Training, Consulting, Licensing Healthcare Education Real estate</small></td>
+              <td>Jeddah, Makkah, Saudi Arabia<small>ABAP · Jeddah, Saudi Arabia · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://jp.linkedin.com/jobs/view/%E6%A5%AD%E5%8B%99%E7%B3%BB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%80%90%E6%84%9B%E7%9F%A5%E3%80%91-at-mecer-consulting-limited-4426979380" target="_blank" rel="noopener">業務系システムエンジニア【愛知】</a><small>Mecer Consulting Limited</small></td>
+              <td>Kariya, Aichi, Japan<small>ABAP · Nagoya, Japan · all</small></td>
               <td>Other SAP-Related<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
@@ -1376,26 +1295,8 @@
 
 
             <tr>
-              <td><a href="https://www.linkedin.com/jobs/view/supply-chain-specialist-at-akkodis-4440252781" target="_blank" rel="noopener">Supply Chain Specialist</a><small>Akkodis</small></td>
-              <td>Alameda, CA<small>SAP · United States · past_week</small></td>
-              <td>Support / Operations<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>Unspecified SAP</span></div></td>
-              <td><div class="chips"></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://es.linkedin.com/jobs/view/%23core-digital-campus-sap-authorization-analyst-audit-support-f-m-d-at-airbus-helicopters-4372445740" target="_blank" rel="noopener">#CORE DIGITAL CAMPUS - SAP Authorization analyst &amp; Audit support (f/m/d)</a><small>Airbus Helicopters</small></td>
-              <td>Albacete, Castile-La Mancha, Spain<small>SAP · Spain · past_24h</small></td>
-              <td>Basis / Security<small>Mid / Unspecified</small></td>
-              <td><div class="chips"><span>S/4HANA</span><span>Basis / Security</span><span>HANA / Data</span></div></td>
-              <td><div class="chips"><span>S/4HANA</span><span>SAP HANA</span><span>GRC / Security</span><span>+1</span></div></td>
-            </tr>
-
-
-            <tr>
-              <td><a href="https://it.linkedin.com/jobs/view/supervisore-operativo-arrivi-milano-albairate-at-brt-corriere-espresso-4439320296" target="_blank" rel="noopener">Supervisore Operativo Arrivi - MILANO ALBAIRATE</a><small>BRT Corriere Espresso</small></td>
-              <td>Albairate, Lombardy, Italy<small>SAP · European Union · onsite</small></td>
+              <td><a href="https://jp.linkedin.com/jobs/view/%E6%A5%AD%E5%8B%99%E7%B3%BB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%80%90%E5%85%B5%E5%BA%AB%E3%80%91-at-mecer-consulting-limited-4426962468" target="_blank" rel="noopener">業務系システムエンジニア【兵庫】</a><small>Mecer Consulting Limited</small></td>
+              <td>Kobe, Hyogo, Japan<small>ABAP · Osaka, Japan · all</small></td>
               <td>Other SAP-Related<small>Mid / Unspecified</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
@@ -1403,9 +1304,108 @@
 
 
             <tr>
-              <td><a href="https://es.linkedin.com/jobs/view/%C2%BFno-encuentras-una-oferta-que-encaje-contigo%3F-at-wild-balance-4379830136" target="_blank" rel="noopener">¿No encuentras una oferta que encaje contigo?</a><small>Wild Balance</small></td>
-              <td>Albal, Valencian Community, Spain<small>SAP · Spain · onsite</small></td>
+              <td><a href="https://www.linkedin.com/jobs/view/application-developer-iii-at-old-national-bank-4444713715" target="_blank" rel="noopener">Application Developer III</a><small>Old National Bank</small></td>
+              <td>Lake Elmo, MN<small>ABAP · Minneapolis, United States · onsite</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/vice-president-full-stack-engineer-at-bny-4432133255" target="_blank" rel="noopener">Vice President, Full-Stack Engineer</a><small>BNY</small></td>
+              <td>Lake Mary, FL<small>ABAP · Orlando, United States · hybrid</small></td>
+              <td>Technical / Development<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/lead-software-engineer-accounting-automation-ai-at-publix-super-markets-4432960719" target="_blank" rel="noopener">Lead Software Engineer - Accounting Automation &amp; AI</a><small>Publix Super Markets</small></td>
+              <td>Lakeland, FL<small>ABAP · Orlando, United States · hybrid</small></td>
+              <td>Technical / Development<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/lead-software-engineer-hr-self-service-at-publix-super-markets-4417492310" target="_blank" rel="noopener">Lead Software Engineer - HR Self-Service</a><small>Publix Super Markets</small></td>
+              <td>Lakeland, FL<small>ABAP · Orlando, United States · hybrid</small></td>
+              <td>Technical / Development<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://ch.linkedin.com/jobs/view/expert-data-base-at-audemars-piguet-4440766043" target="_blank" rel="noopener">Expert Data Base</a><small>Audemars Piguet</small></td>
+              <td>Le Brassus, Vaud, Switzerland<small>ABAP · Geneva, Switzerland · hybrid</small></td>
+              <td>Data / Analytics<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://it.linkedin.com/jobs/view/analista-funzionale-senior-sap-pp-sd-interior-design-cliente-finale-at-hays-4291789719" target="_blank" rel="noopener">Analista Funzionale Senior SAP PP - SD | Interior Design (Cliente finale)</a><small>Hays</small></td>
+              <td>Lissone, Lombardy, Italy<small>ABAP · Milan, Italy · all</small></td>
+              <td>Other SAP-Related<small>Senior</small></td>
+              <td><div class="chips"><span>PP / QM / Manufacturing</span></div></td>
+              <td><div class="chips"><span>SAP PP</span></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://si.linkedin.com/jobs/view/tech-lead-at-greentube-gmbh-4437747569" target="_blank" rel="noopener">Tech Lead</a><small>Greentube GmbH</small></td>
+              <td>Ljubljana, Ljubljana, Slovenia<small>ABAP · Ljubljana, Slovenia · all</small></td>
+              <td>Other SAP-Related<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://si.linkedin.com/jobs/view/staff-database-engineer-m-f-d-at-sportradar-4438180346" target="_blank" rel="noopener">Staff Database Engineer [m/f/d]</a><small>Sportradar</small></td>
+              <td>Ljubljana, Ljubljana, Slovenia<small>ABAP · Ljubljana, Slovenia · all</small></td>
+              <td>Technical / Development<small>Lead / Manager</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/functional-consultant-technology-at-tata-consultancy-services-4418860603" target="_blank" rel="noopener">Functional Consultant -Technology</a><small>Tata Consultancy Services</small></td>
+              <td>Medfield, MA<small>ABAP · Boston, United States · all</small></td>
+              <td>Functional Consulting<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://www.linkedin.com/jobs/view/fachberater-in-f%C3%BCr-msd-m%C3%A4rkte-in-teilzeit-at-flzr-gmbh-4439951291" target="_blank" rel="noopener">Fachberater:in für MSD-Märkte in Teilzeit</a><small>FLZR GmbH</small></td>
+              <td>Media, PA<small>ABAP · Philadelphia, United States · onsite</small></td>
               <td>Other SAP-Related<small>Mid / Unspecified</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://au.linkedin.com/jobs/view/senior-application-specialist-at-fujitsu-4442566848" target="_blank" rel="noopener">Senior Application Specialist</a><small>Fujitsu</small></td>
+              <td>Melbourne, Victoria, Australia<small>ABAP · Melbourne, Australia · all</small></td>
+              <td>Other SAP-Related<small>Senior</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td><div class="chips"></div></td>
+            </tr>
+
+
+            <tr>
+              <td><a href="https://au.linkedin.com/jobs/view/senior-developer-at-xpt-software-4432627885" target="_blank" rel="noopener">Senior Developer</a><small>XPT Software</small></td>
+              <td>Melbourne, Victoria, Australia<small>ABAP · Melbourne, Australia · all</small></td>
+              <td>Technical / Development<small>Senior</small></td>
               <td><div class="chips"><span>Unspecified SAP</span></div></td>
               <td><div class="chips"></div></td>
             </tr>
@@ -1422,19 +1422,19 @@
     <div class="wrap">
       <div class="note signal-note">
         <div class="eyebrow">Direct Company Career / ATS Pool</div>
-        <h2>1,895 SAP Jobs From Company Career Sources</h2>
+        <h2>1,976 SAP Jobs From Company Career Sources</h2>
         <p>This layer runs in parallel with the LinkedIn crawler and reads public company career pages or ATS endpoints such as jobs2web / SuccessFactors, SmartRecruiters, Greenhouse, and Workday CXS. It does not use logged-in sessions, proxy rotation, CAPTCHA bypass, or private candidate data.</p>
       </div>
       <div class="kpis signal-kpis">
-        <div class="kpi"><strong>1,895</strong><span>Deduplicated SAP postings from direct company career sources</span></div>
-        <div class="kpi"><strong>jobs2web</strong><span>Largest ATS provider layer: 1,186 jobs</span></div>
-        <div class="kpi"><strong>SAP</strong><span>Largest direct company source: 882 jobs</span></div>
-        <div class="kpi"><strong>Technical / Development</strong><span>Top role family: 1,111 jobs</span></div>
+        <div class="kpi"><strong>1,976</strong><span>Deduplicated SAP postings from direct company career sources</span></div>
+        <div class="kpi"><strong>jobs2web</strong><span>Largest ATS provider layer: 1,231 jobs</span></div>
+        <div class="kpi"><strong>SAP</strong><span>Largest direct company source: 925 jobs</span></div>
+        <div class="kpi"><strong>Technical / Development</strong><span>Top role family: 1,141 jobs</span></div>
       </div>
       <div class="actions">
-        <a class="button primary" href="data/company_career_jobs.csv">Download Company Career CSV</a>
-        <a class="button" href="data/company_career_jobs.json">Company career JSON</a>
-        <a class="button" href="data/company_career_jobs_summary.json">Company career summary</a>
+        <a class="button primary" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/company_career_jobs.csv">Download Company Career CSV</a>
+        <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/company_career_jobs.json">Company career JSON</a>
+        <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/company_career_jobs_summary.json">Company career summary</a>
       </div>
     </div>
   </section>
@@ -1447,41 +1447,41 @@
             <div class="bar-row">
               <div class="bar-label" title="SAP Careers">SAP Careers</div>
               <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
-              <div>882</div>
+              <div>925</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Bosch SmartRecruiters">Bosch SmartRecruiters</div>
-              <div class="bar-track"><div class="bar-fill" style="width:55.0%"></div></div>
-              <div>485</div>
+              <div class="bar-track"><div class="bar-fill" style="width:55.2%"></div></div>
+              <div>511</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="adesso Careers">adesso Careers</div>
-              <div class="bar-track"><div class="bar-fill" style="width:18.8%"></div></div>
-              <div>166</div>
+              <div class="bar-track"><div class="bar-fill" style="width:18.1%"></div></div>
+              <div>167</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Atos Careers">Atos Careers</div>
-              <div class="bar-track"><div class="bar-fill" style="width:15.6%"></div></div>
-              <div>138</div>
+              <div class="bar-track"><div class="bar-fill" style="width:15.0%"></div></div>
+              <div>139</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Celonis Greenhouse">Celonis Greenhouse</div>
-              <div class="bar-track"><div class="bar-fill" style="width:9.6%"></div></div>
-              <div>85</div>
+              <div class="bar-track"><div class="bar-fill" style="width:9.5%"></div></div>
+              <div>88</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Devoteam SmartRecruiters">Devoteam SmartRecruiters</div>
-              <div class="bar-track"><div class="bar-fill" style="width:6.5%"></div></div>
+              <div class="bar-track"><div class="bar-fill" style="width:6.2%"></div></div>
               <div>57</div>
             </div>
 
@@ -1489,28 +1489,28 @@
             <div class="bar-row">
               <div class="bar-label" title="Salesforce Workday">Salesforce Workday</div>
               <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
-              <div>24</div>
+              <div>26</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Workato Greenhouse">Workato Greenhouse</div>
               <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
-              <div>20</div>
+              <div>21</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Adobe Workday">Adobe Workday</div>
               <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
-              <div>14</div>
+              <div>16</div>
             </div>
 
 
             <div class="bar-row">
-              <div class="bar-label" title="Databricks Greenhouse">Databricks Greenhouse</div>
+              <div class="bar-label" title="Ripple Greenhouse">Ripple Greenhouse</div>
               <div class="bar-track"><div class="bar-fill" style="width:4.0%"></div></div>
-              <div>6</div>
+              <div>7</div>
             </div>
             </div>
       </div>
@@ -1520,56 +1520,56 @@
             <div class="bar-row">
               <div class="bar-label" title="HCM / SuccessFactors">HCM / SuccessFactors</div>
               <div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div>
-              <div>890</div>
+              <div>891</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Unspecified SAP">Unspecified SAP</div>
-              <div class="bar-track"><div class="bar-fill" style="width:59.3%"></div></div>
-              <div>528</div>
+              <div class="bar-track"><div class="bar-fill" style="width:66.7%"></div></div>
+              <div>594</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="S/4HANA">S/4HANA</div>
-              <div class="bar-track"><div class="bar-fill" style="width:52.1%"></div></div>
-              <div>464</div>
+              <div class="bar-track"><div class="bar-fill" style="width:52.7%"></div></div>
+              <div>470</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="BTP / Integration">BTP / Integration</div>
               <div class="bar-track"><div class="bar-fill" style="width:38.7%"></div></div>
-              <div>344</div>
+              <div>345</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="HANA / Data">HANA / Data</div>
-              <div class="bar-track"><div class="bar-fill" style="width:28.5%"></div></div>
-              <div>254</div>
+              <div class="bar-track"><div class="bar-fill" style="width:29.0%"></div></div>
+              <div>258</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="FI / CO / FICO">FI / CO / FICO</div>
-              <div class="bar-track"><div class="bar-fill" style="width:24.7%"></div></div>
-              <div>220</div>
+              <div class="bar-track"><div class="bar-fill" style="width:25.0%"></div></div>
+              <div>223</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="ABAP / Development">ABAP / Development</div>
-              <div class="bar-track"><div class="bar-fill" style="width:19.3%"></div></div>
-              <div>172</div>
+              <div class="bar-track"><div class="bar-fill" style="width:19.4%"></div></div>
+              <div>173</div>
             </div>
 
 
             <div class="bar-row">
               <div class="bar-label" title="Fiori / UI5">Fiori / UI5</div>
-              <div class="bar-track"><div class="bar-fill" style="width:15.4%"></div></div>
-              <div>137</div>
+              <div class="bar-track"><div class="bar-fill" style="width:15.5%"></div></div>
+              <div>138</div>
             </div>
 
 
@@ -1582,8 +1582,8 @@
 
             <div class="bar-row">
               <div class="bar-label" title="TM / GTS / Supply Chain">TM / GTS / Supply Chain</div>
-              <div class="bar-track"><div class="bar-fill" style="width:10.2%"></div></div>
-              <div>91</div>
+              <div class="bar-track"><div class="bar-fill" style="width:10.3%"></div></div>
+              <div>92</div>
             </div>
             </div>
       </div>
@@ -1595,11 +1595,11 @@
       <div class="table-intro">
         <div>
           <h2>Company Career Job Sample</h2>
-          <p>The table shows the first 120 direct company career records. The full 1,895-row pool is available in CSV and JSON.</p>
+          <p>The table shows the first 120 direct company career records. The full 1,976-row pool is available in CSV and JSON.</p>
         </div>
         <div class="actions">
-          <a class="button primary" href="data/company_career_jobs.csv">Full CSV</a>
-          <a class="button" href="data/company_career_jobs.json">Full JSON</a>
+          <a class="button primary" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/company_career_jobs.csv">Full CSV</a>
+          <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/company_career_jobs.json">Full JSON</a>
         </div>
       </div>
       <div class="table-scroll">
@@ -1615,6 +1615,16 @@
             </tr>
           </thead>
           <tbody>
+
+            <tr data-role="Functional Consulting" data-source="Adobe Workday" data-search="cash manager adobe san jose functional consulting">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Cash-Manager_R170684" target="_blank" rel="noopener">Cash Manager</a><small>Adobe</small></td>
+              <td>San Jose</td>
+              <td>Functional Consulting<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
 
             <tr data-role="Functional Consulting" data-source="Adobe Workday" data-search="corporate accounting analyst adobe san jose functional consulting">
               <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/Corporate-Accounting-Analyst_R168412" target="_blank" rel="noopener">Corporate Accounting Analyst</a><small>Adobe</small></td>
@@ -1742,6 +1752,16 @@
               <td>Project / Program<small>Lead / Manager · SAP module/technical requirement</small></td>
               <td><div class="chips"><span>FI / CO / FICO</span></div></td>
               <td>Mentioned in text</td>
+              <td>Adobe Workday</td>
+            </tr>
+
+
+            <tr data-role="Data / Analytics" data-source="Adobe Workday" data-search="sr. financial analyst adobe bangalore data / analytics">
+              <td><a href="https://adobe.wd5.myworkdayjobs.com/external_experienced/job/Bangalore/Financial-Analyst-3_R168661" target="_blank" rel="noopener">Sr. Financial Analyst</a><small>Adobe</small></td>
+              <td>Bangalore</td>
+              <td>Data / Analytics<small>Lead / Manager · SAP mentioned</small></td>
+              <td><div class="chips"><span>Unspecified SAP</span></div></td>
+              <td>Not disclosed</td>
               <td>Adobe Workday</td>
             </tr>
 
@@ -2795,26 +2815,6 @@
               <td>Atos Careers</td>
             </tr>
 
-
-            <tr data-role="Technical / Development" data-source="Atos Careers" data-search="sales manager (m/w/d) atos münchen technical / development">
-              <td><a href="https://jobs.atos.net/job/M%C3%BCnchen-Sales-Manager-%28mwd%29/1383443533/" target="_blank" rel="noopener">Sales Manager (m/w/d)</a><small>Atos</small></td>
-              <td>München</td>
-              <td>Technical / Development<small>Lead / Manager · SAP module/technical requirement</small></td>
-              <td><div class="chips"><span>S/4HANA</span></div></td>
-              <td>Not disclosed</td>
-              <td>Atos Careers</td>
-            </tr>
-
-
-            <tr data-role="Data / Analytics" data-source="Atos Careers" data-search="sales specialist senior sap (f/h) atos bezons data / analytics">
-              <td><a href="https://jobs.atos.net/job/Bezons-Sales-Specialist-Senior-SAP-%28FH%29/1384003533/" target="_blank" rel="noopener">Sales Specialist Senior SAP (F/H)</a><small>Atos</small></td>
-              <td>Bezons</td>
-              <td>Data / Analytics<small>Senior · Core SAP delivery role</small></td>
-              <td><div class="chips"><span>S/4HANA</span></div></td>
-              <td>Not disclosed</td>
-              <td>Atos Careers</td>
-            </tr>
-
           </tbody>
         </table>
       </div>
@@ -2827,7 +2827,7 @@
       <div class="note">
         <h2>What This Baseline Says</h2>
         <div class="callout-grid">
-          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's 371,000+ rounded worldwide count is the market-size signal. The 101,093 LinkedIn guest links, 1,895 direct company career postings, and 1,565 open-feed postings are the current evidence layers used for detailed analysis.</p></div>
+          <div class="callout"><strong>SAP demand is broad, not niche.</strong><p>LinkedIn's 371,000+ rounded worldwide count is the market-size signal. The 192,017 LinkedIn guest links, 1,976 direct company career postings, and 1,565 open-feed postings are the current evidence layers used for detailed analysis.</p></div>
           <div class="callout"><strong>Technical roles dominate the open dataset.</strong><p>Technical / Development is the largest role family, followed by Data / Analytics, Basis / Security, Functional Consulting, and Architecture.</p></div>
           <div class="callout"><strong>Salary remains the biggest blind spot.</strong><p>Only 20.4% of deduplicated open postings include salary information. The next phase should focus on salary ranges by module, country, seniority, and work model.</p></div>
         </div>
@@ -2979,7 +2979,7 @@
         <ul>
           <li>This first release is a baseline snapshot. Every future run writes a dated snapshot under <code>data/snapshots/YYYY-MM-DD</code> instead of replacing history.</li>
           <li>A daily delta LaunchAgent runs at 06:15 local time. It uses a lightweight LinkedIn <code>past_24h</code> pass and a merge-mode company career / ATS pass instead of re-running the full market crawl every day.</li>
-          <li>Latest daily delta run: <code>2026-07-22T06:22:31</code>. LinkedIn status: <code>skipped_full_running</code>, net new links: <code>0</code>. Company career status: <code>completed</code>, net new jobs: <code>12</code>.</li>
+          <li>Latest daily delta run: <code>2026-07-24T07:16:36</code>. LinkedIn status: <code>completed</code>, net new links: <code>4,214</code>. Company career status: <code>completed</code>, net new jobs: <code>36</code>.</li>
           <li>Trend charts will compare snapshots across time: module demand, country mix, seniority, remote/hybrid/on-site, salary transparency, LinkedIn signal shifts, and collected LinkedIn guest-pool growth.</li>
           <li>The public page can be mirrored to GitHub Pages or any static host, with the source and data snapshots versioned in Git for transparency.</li>
           <li>Community inputs will be anonymized and added as a separate qualitative layer, so market data and human experience remain distinguishable.</li>
@@ -3033,13 +3033,13 @@
       <div class="table-intro">
         <div>
           <h2>Source-Linked Open Job Pool</h2>
-          <p>This table contains 1,565 deduplicated open-feed postings with original source links. Separate pools contain 101,093 LinkedIn guest job links and 1,895 direct company career postings. The full market-size signal remains LinkedIn's rounded 371,000+ SAP worldwide count.</p>
+          <p>This table contains 1,565 deduplicated open-feed postings with original source links. Separate pools contain 192,017 LinkedIn guest job links and 1,976 direct company career postings. The full market-size signal remains LinkedIn's rounded 371,000+ SAP worldwide count.</p>
         </div>
         <div class="actions">
-          <a class="button primary" href="data/sap_jobs.csv">CSV</a>
-          <a class="button" href="data/sap_jobs.json">JSON</a>
-          <a class="button" href="data/linkedin_signal.json">LinkedIn signal</a>
-          <a class="button" href="data/linkedin_jobs.csv">LinkedIn links</a>
+          <a class="button primary" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/sap_jobs.csv">CSV</a>
+          <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/sap_jobs.json">JSON</a>
+          <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_signal.json">LinkedIn signal</a>
+          <a class="button" href="https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot/linkedin_jobs.csv.gz">LinkedIn links</a>
         </div>
       </div>
       <div class="toolbar">
@@ -18721,7 +18721,7 @@
   </footer>
 
   <script>
-    const chartData = {"sources": {"himalayas": 951, "remotefirst": 542, "arbeitnow": 49, "jobicy": 22, "remoteok": 1}, "focus": {"Core SAP delivery role": 837, "SAP mentioned": 346, "SAP module/technical requirement": 202, "SAP-titled role": 180}, "locations": {"United States": 585, "Germany": 248, "India": 135, "Canada": 50, "Worldwide / Not specified": 48, "United Kingdom": 46, "Poland": 42, "Spain": 39, "Romania": 34, "Mexico": 30, "Philippines": 25, "Brazil": 24, "Hungary": 21, "Austria": 18}, "roles": {"Technical / Development": 754, "Data / Analytics": 288, "Basis / Security": 163, "Functional Consulting": 139, "Architecture": 121, "Other SAP-Related": 54, "Project / Program": 29, "Support / Operations": 17}, "seniority": {"Lead / Manager": 542, "Mid / Unspecified": 503, "Senior": 462, "Junior": 41, "Entry / Intern": 17}, "modules": {"S/4HANA": 687, "Unspecified SAP": 396, "BTP / Integration": 341, "ABAP / Development": 331, "HANA / Data": 327, "FI / CO / FICO": 256, "Fiori / UI5": 219, "HCM / SuccessFactors": 187, "Basis / Security": 174, "MM / Procurement": 131, "EWM / WM / Logistics": 109, "TM / GTS / Supply Chain": 84, "SD / Sales": 77, "PP / QM / Manufacturing": 64, "CRM / CX / Commerce": 29, "PM / Asset Management": 23}, "skills": {"S/4HANA": 687, "English": 451, "ABAP": 289, "SAP HANA": 270, "German": 249, "SAP BTP": 225, "Agile / Scrum": 209, "FICO": 209, "SAP Fiori": 201, "SuccessFactors": 140, "GRC / Security": 131, "OData": 121, "CPI / Integration Suite": 119, "SAPUI5 / UI5": 94, "IDoc": 93, "CDS Views": 83, "RAP / CAP": 74, "SAP Analytics Cloud": 73}, "softSkills": {"Consulting mindset": 664, "Leadership": 234, "Change management": 214, "Analytical thinking": 71, "Collaboration": 48, "Training": 44, "Ownership": 29, "Project management": 26, "Communication": 11, "Stakeholder management": 10, "Documentation": 9, "Presentation": 8, "Problem solving": 6, "Customer orientation": 4}, "degreeLevels": {"Master": 19, "Bachelor": 4}, "degreeFields": {"Computer Science / Informatics": 335, "Engineering": 203, "Finance / Accounting": 150, "Logistics / Supply Chain": 114, "Information Systems": 6, "Business / Economics": 1}, "descriptionTerms": {"consultant": 531, "business": 455, "solutions": 401, "global": 394, "team": 394, "senior": 391, "support": 272, "work": 258, "technology": 253, "data": 248, "management": 243, "experience": 226, "consulting": 221, "lead": 217, "s/4hana": 215, "cloud": 181, "enterprise": 177, "expertise": 175, "transformation": 172, "manager": 163}, "salary": {"Not disclosed": 1246, "Disclosed": 317, "Mentioned in text": 2}, "historyJobs": {"2026-07-19": 1565}, "historyLinkedIn": {"2026-07-19": 371000}, "historyLinkedInGuest": {"2026-07-19": 21085}, "linkedinKeywords": {"SD": 50000, "SuccessFactors": 36000, "ABAP": 30000, "HANA": 28000, "S/4HANA": 23000, "FICO": 18000, "MM": 15000, "Consultant": 12000, "Fiori": 9000, "Basis": 8000, "BTP": 5000}, "linkedinLocations": {"United States": 108000, "Brazil": 36000, "Germany": 35000, "India": 25000, "France": 15000, "Netherlands": 9000, "United Kingdom": 8000, "Canada": 7000, "Poland": 6000, "Spain": 5000, "Mexico": 4000, "Australia": 3000, "Turkey": 2000, "Singapore": 2000}, "linkedinWorkModel": {"On-site": 289000, "Hybrid": 56000, "Remote": 17000}, "linkedinRecency": {"Past month": 245000, "Past week": 104000, "Past 24 hours": 8000}, "linkedinGuestQueries": {"SAP": 17143, "SAP Solution Manager": 6751, "SAP GTS": 6662, "SAP S/4HANA": 4949, "SAP Procurement": 3712, "SAP Project Manager": 3579, "SAP SuccessFactors": 3010, "SAP PM": 2851, "SAP SD": 2685, "SAP CRM": 2669, "SAP ABAP": 2579, "SAP FI": 2470}, "linkedinGuestLocations": {"United States": 7682, "Germany": 6837, "India": 6180, "Worldwide": 5587, "United Kingdom": 3242, "Canada": 3081, "France": 2955, "Brazil": 2827, "Poland": 2722, "Spain": 2700, "Netherlands": 2438, "China": 2310}, "linkedinGuestRoles": {"Other SAP-Related": 46914, "Functional Consulting": 16722, "Technical / Development": 14503, "Data / Analytics": 9310, "Project / Program": 4253, "Support / Operations": 3954, "Architecture": 3464, "Basis / Security": 1973}, "linkedinGuestModules": {"Unspecified SAP": 78332, "S/4HANA": 5859, "FI / CO / FICO": 4848, "ABAP / Development": 3444, "BTP / Integration": 3240, "HANA / Data": 3070, "HCM / SuccessFactors": 2482, "MM / Procurement": 2230, "Basis / Security": 2175, "EWM / WM / Logistics": 1994, "TM / GTS / Supply Chain": 1747, "Fiori / UI5": 1663, "SD / Sales": 1560, "PP / QM / Manufacturing": 1124, "CRM / CX / Commerce": 460, "PM / Asset Management": 441}, "linkedinGuestSkills": {"English": 6122, "S/4HANA": 5859, "FICO": 3565, "ABAP": 3128, "SAP HANA": 2328, "German": 2035, "SAP BTP": 2019, "Agile / Scrum": 2005, "SAP Fiori": 1521, "SuccessFactors": 1517, "SAP SD": 1422, "GRC / Security": 1296, "SAP MM": 1170, "SAP EWM": 1001, "CPI / Integration Suite": 875, "OData": 839, "SAP PP": 762, "IDoc": 761}, "linkedinGuestSoftSkills": {"Consulting mindset": 23453, "Leadership": 10806, "Communication": 9288, "Analytical thinking": 7602, "Collaboration": 6977, "Change management": 6847, "Project management": 5603, "Training": 5554, "Problem solving": 4463, "Documentation": 4228, "Ownership": 4075, "Stakeholder management": 2858, "Presentation": 1867, "Customer orientation": 383}, "linkedinGuestDegreeFields": {"Computer Science / Informatics": 15486, "Engineering": 11545, "Finance / Accounting": 9372, "Logistics / Supply Chain": 8747, "Business / Economics": 1906, "Information Systems": 1097, "Mathematics / Statistics": 312}};
+    const chartData = {"sources": {"himalayas": 951, "remotefirst": 542, "arbeitnow": 49, "jobicy": 22, "remoteok": 1}, "focus": {"Core SAP delivery role": 837, "SAP mentioned": 346, "SAP module/technical requirement": 202, "SAP-titled role": 180}, "locations": {"United States": 585, "Germany": 248, "India": 135, "Canada": 50, "Worldwide / Not specified": 48, "United Kingdom": 46, "Poland": 42, "Spain": 39, "Romania": 34, "Mexico": 30, "Philippines": 25, "Brazil": 24, "Hungary": 21, "Austria": 18}, "roles": {"Technical / Development": 754, "Data / Analytics": 288, "Basis / Security": 163, "Functional Consulting": 139, "Architecture": 121, "Other SAP-Related": 54, "Project / Program": 29, "Support / Operations": 17}, "seniority": {"Lead / Manager": 542, "Mid / Unspecified": 503, "Senior": 462, "Junior": 41, "Entry / Intern": 17}, "modules": {"S/4HANA": 687, "Unspecified SAP": 396, "BTP / Integration": 341, "ABAP / Development": 331, "HANA / Data": 327, "FI / CO / FICO": 256, "Fiori / UI5": 219, "HCM / SuccessFactors": 187, "Basis / Security": 174, "MM / Procurement": 131, "EWM / WM / Logistics": 109, "TM / GTS / Supply Chain": 84, "SD / Sales": 77, "PP / QM / Manufacturing": 64, "CRM / CX / Commerce": 29, "PM / Asset Management": 23}, "skills": {"S/4HANA": 687, "English": 451, "ABAP": 289, "SAP HANA": 270, "German": 249, "SAP BTP": 225, "Agile / Scrum": 209, "FICO": 209, "SAP Fiori": 201, "SuccessFactors": 140, "GRC / Security": 131, "OData": 121, "CPI / Integration Suite": 119, "SAPUI5 / UI5": 94, "IDoc": 93, "CDS Views": 83, "RAP / CAP": 74, "SAP Analytics Cloud": 73}, "softSkills": {"Consulting mindset": 664, "Leadership": 234, "Change management": 214, "Analytical thinking": 71, "Collaboration": 48, "Training": 44, "Ownership": 29, "Project management": 26, "Communication": 11, "Stakeholder management": 10, "Documentation": 9, "Presentation": 8, "Problem solving": 6, "Customer orientation": 4}, "degreeLevels": {"Master": 19, "Bachelor": 4}, "degreeFields": {"Computer Science / Informatics": 335, "Engineering": 203, "Finance / Accounting": 150, "Logistics / Supply Chain": 114, "Information Systems": 6, "Business / Economics": 1}, "descriptionTerms": {"consultant": 531, "business": 455, "solutions": 401, "global": 394, "team": 394, "senior": 391, "support": 272, "work": 258, "technology": 253, "data": 248, "management": 243, "experience": 226, "consulting": 221, "lead": 217, "s/4hana": 215, "cloud": 181, "enterprise": 177, "expertise": 175, "transformation": 172, "manager": 163}, "salary": {"Not disclosed": 1246, "Disclosed": 317, "Mentioned in text": 2}, "historyJobs": {"2026-07-19": 1565}, "historyLinkedIn": {"2026-07-19": 371000}, "historyLinkedInGuest": {"2026-07-19": 21085}, "linkedinKeywords": {"SD": 50000, "SuccessFactors": 36000, "ABAP": 30000, "HANA": 28000, "S/4HANA": 23000, "FICO": 18000, "MM": 15000, "Consultant": 12000, "Fiori": 9000, "Basis": 8000, "BTP": 5000}, "linkedinLocations": {"United States": 108000, "Brazil": 36000, "Germany": 35000, "India": 25000, "France": 15000, "Netherlands": 9000, "United Kingdom": 8000, "Canada": 7000, "Poland": 6000, "Spain": 5000, "Mexico": 4000, "Australia": 3000, "Turkey": 2000, "Singapore": 2000}, "linkedinWorkModel": {"On-site": 289000, "Hybrid": 56000, "Remote": 17000}, "linkedinRecency": {"Past month": 245000, "Past week": 104000, "Past 24 hours": 8000}, "linkedinGuestQueries": {"SAP": 32194, "SAP GTS": 11426, "SAP Procurement": 7768, "SAP SD": 7518, "SAP Solution Manager": 7280, "SAP S/4HANA": 6928, "SAP SuccessFactors": 6575, "SAP QM": 4951, "SAP Payroll": 4805, "Ariba Consultant": 4768, "SAP FI": 4720, "SAP PM": 4659}, "linkedinGuestLocations": {"United States": 8055, "Germany": 7096, "India": 6503, "Worldwide": 5898, "United Kingdom": 3477, "Canada": 3284, "France": 3177, "Brazil": 3035, "Poland": 2874, "Spain": 2871, "Netherlands": 2611, "Mexico": 2416}, "linkedinGuestRoles": {"Other SAP-Related": 102708, "Functional Consulting": 31184, "Technical / Development": 23892, "Data / Analytics": 12041, "Support / Operations": 7835, "Project / Program": 6041, "Architecture": 5934, "Basis / Security": 2382}, "linkedinGuestModules": {"Unspecified SAP": 163511, "S/4HANA": 6675, "FI / CO / FICO": 6150, "ABAP / Development": 3940, "BTP / Integration": 3528, "HANA / Data": 3485, "HCM / SuccessFactors": 2958, "Basis / Security": 2621, "MM / Procurement": 2442, "EWM / WM / Logistics": 2338, "TM / GTS / Supply Chain": 2067, "SD / Sales": 1926, "PP / QM / Manufacturing": 1841, "Fiori / UI5": 1720, "PM / Asset Management": 522, "CRM / CX / Commerce": 494}, "linkedinGuestSkills": {"S/4HANA": 6675, "English": 6294, "FICO": 4169, "ABAP": 3590, "SAP HANA": 2660, "German": 2284, "SAP BTP": 2241, "Agile / Scrum": 2059, "SuccessFactors": 1798, "SAP SD": 1697, "GRC / Security": 1601, "SAP Fiori": 1565, "SAP MM": 1301, "SAP EWM": 1232, "CPI / Integration Suite": 948, "SAP PP": 876, "OData": 847, "IDoc": 761}, "linkedinGuestSoftSkills": {"Consulting mindset": 41052, "Leadership": 14240, "Communication": 9329, "Analytical thinking": 8193, "Change management": 8132, "Collaboration": 7004, "Project management": 6850, "Training": 5946, "Problem solving": 4465, "Documentation": 4260, "Ownership": 4081, "Stakeholder management": 2858, "Presentation": 1888, "Customer orientation": 388}, "linkedinGuestDegreeFields": {"Engineering": 19098, "Computer Science / Informatics": 17691, "Finance / Accounting": 13272, "Logistics / Supply Chain": 12312, "Business / Economics": 1934, "Information Systems": 1135, "Mathematics / Statistics": 314}};
     const palette = ["#2f6f73", "#3f6db5", "#d99b24", "#c84e3a", "#4f8a5b", "#725ca8", "#8a6a3b", "#64748b"];
     const isMobile = window.matchMedia("(max-width: 700px)").matches;
 

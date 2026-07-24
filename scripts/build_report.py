@@ -14,6 +14,16 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "processed"
 REPORT_DIR = ROOT / "report"
 SNAPSHOT_INDEX = ROOT / "data" / "snapshots" / "index.json"
+DATA_RELEASE_BASE = "https://github.com/sarper1998/global-sap-job-market-report/releases/download/2026-07-24-sap-market-snapshot"
+SAP_JOBS_CSV_URL = f"{DATA_RELEASE_BASE}/sap_jobs.csv"
+SAP_JOBS_JSON_URL = f"{DATA_RELEASE_BASE}/sap_jobs.json"
+LINKEDIN_SIGNAL_URL = f"{DATA_RELEASE_BASE}/linkedin_signal.json"
+LINKEDIN_JOBS_CSV_URL = f"{DATA_RELEASE_BASE}/linkedin_jobs.csv.gz"
+LINKEDIN_JOBS_JSON_URL = f"{DATA_RELEASE_BASE}/linkedin_jobs.json.gz"
+LINKEDIN_JOBS_SUMMARY_URL = f"{DATA_RELEASE_BASE}/linkedin_jobs_summary.json"
+COMPANY_CAREER_CSV_URL = f"{DATA_RELEASE_BASE}/company_career_jobs.csv"
+COMPANY_CAREER_JSON_URL = f"{DATA_RELEASE_BASE}/company_career_jobs.json"
+COMPANY_CAREER_SUMMARY_URL = f"{DATA_RELEASE_BASE}/company_career_jobs_summary.json"
 
 
 def load_json(path: Path):
@@ -367,9 +377,9 @@ def main() -> None:
         <div class="kpi"><strong>{html.escape(linkedin_guest_top_soft_skill)}</strong><span>Top extracted soft skill: {fmt_int(linkedin_guest_top_soft_skill_count)} mentions</span></div>
       </div>
       <div class="actions">
-        <a class="button primary" href="data/linkedin_jobs.csv">Download LinkedIn CSV</a>
-        <a class="button" href="data/linkedin_jobs.json.gz">LinkedIn JSON.gz</a>
-        <a class="button" href="data/linkedin_jobs_summary.json">LinkedIn summary</a>
+        <a class="button primary" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">Download LinkedIn CSV.gz</a>
+        <a class="button" href="{html.escape(LINKEDIN_JOBS_JSON_URL)}">LinkedIn JSON.gz</a>
+        <a class="button" href="{html.escape(LINKEDIN_JOBS_SUMMARY_URL)}">LinkedIn summary</a>
       </div>
     </div>
   </section>
@@ -422,11 +432,11 @@ def main() -> None:
       <div class="table-intro">
         <div>
           <h2>LinkedIn Guest Job Link Sample</h2>
-          <p>The table shows the first {fmt_int(min(len(linkedin_guest_jobs), 120))} collected LinkedIn guest records. The full {linkedin_guest_text}-row link pool is available in CSV and JSON.</p>
+          <p>The table shows the first {fmt_int(min(len(linkedin_guest_jobs), 120))} collected LinkedIn guest records. The full {linkedin_guest_text}-row link pool is available as compressed CSV and JSON downloads.</p>
         </div>
         <div class="actions">
-          <a class="button primary" href="data/linkedin_jobs.csv">Full CSV</a>
-          <a class="button" href="data/linkedin_jobs.json.gz">Full JSON.gz</a>
+          <a class="button primary" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">Full CSV.gz</a>
+          <a class="button" href="{html.escape(LINKEDIN_JOBS_JSON_URL)}">Full JSON.gz</a>
         </div>
       </div>
       <div class="table-scroll">
@@ -466,9 +476,9 @@ def main() -> None:
         <div class="kpi"><strong>{html.escape(company_career_top_role)}</strong><span>Top role family: {fmt_int(company_career_top_role_count)} jobs</span></div>
       </div>
       <div class="actions">
-        <a class="button primary" href="data/company_career_jobs.csv">Download Company Career CSV</a>
-        <a class="button" href="data/company_career_jobs.json">Company career JSON</a>
-        <a class="button" href="data/company_career_jobs_summary.json">Company career summary</a>
+        <a class="button primary" href="{html.escape(COMPANY_CAREER_CSV_URL)}">Download Company Career CSV</a>
+        <a class="button" href="{html.escape(COMPANY_CAREER_JSON_URL)}">Company career JSON</a>
+        <a class="button" href="{html.escape(COMPANY_CAREER_SUMMARY_URL)}">Company career summary</a>
       </div>
     </div>
   </section>
@@ -494,8 +504,8 @@ def main() -> None:
           <p>The table shows the first {fmt_int(min(len(company_career_jobs), 120))} direct company career records. The full {company_career_text}-row pool is available in CSV and JSON.</p>
         </div>
         <div class="actions">
-          <a class="button primary" href="data/company_career_jobs.csv">Full CSV</a>
-          <a class="button" href="data/company_career_jobs.json">Full JSON</a>
+          <a class="button primary" href="{html.escape(COMPANY_CAREER_CSV_URL)}">Full CSV</a>
+          <a class="button" href="{html.escape(COMPANY_CAREER_JSON_URL)}">Full JSON</a>
         </div>
       </div>
       <div class="table-scroll">
@@ -676,9 +686,9 @@ def main() -> None:
       </div>
       <div class="actions">
         <a class="button primary" href="#job-pool">Explore {total_text} linked jobs</a>
-        <a class="button" href="data/sap_jobs.csv">Download CSV</a>
-        <a class="button" href="data/linkedin_jobs.csv">LinkedIn CSV</a>
-        <a class="button" href="data/company_career_jobs.csv">Company Career CSV</a>
+        <a class="button" href="{html.escape(SAP_JOBS_CSV_URL)}">Download CSV</a>
+        <a class="button" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">LinkedIn CSV.gz</a>
+        <a class="button" href="{html.escape(COMPANY_CAREER_CSV_URL)}">Company Career CSV</a>
         <a class="button" href="#methodology">How it was built</a>
         <a class="button" href="#community">Contribute anonymously</a>
       </div>
@@ -917,10 +927,10 @@ def main() -> None:
           <p>This table contains {total_text} deduplicated open-feed postings with original source links. Separate pools contain {linkedin_guest_text} LinkedIn guest job links and {company_career_text} direct company career postings. The full market-size signal remains LinkedIn's rounded {html.escape(linkedin_global_text)} SAP worldwide count.</p>
         </div>
         <div class="actions">
-          <a class="button primary" href="data/sap_jobs.csv">CSV</a>
-          <a class="button" href="data/sap_jobs.json">JSON</a>
-          <a class="button" href="data/linkedin_signal.json">LinkedIn signal</a>
-          <a class="button" href="data/linkedin_jobs.csv">LinkedIn links</a>
+          <a class="button primary" href="{html.escape(SAP_JOBS_CSV_URL)}">CSV</a>
+          <a class="button" href="{html.escape(SAP_JOBS_JSON_URL)}">JSON</a>
+          <a class="button" href="{html.escape(LINKEDIN_SIGNAL_URL)}">LinkedIn signal</a>
+          <a class="button" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">LinkedIn links</a>
         </div>
       </div>
       <div class="toolbar">

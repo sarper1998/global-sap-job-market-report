@@ -1,71 +1,53 @@
-# LinkedIn Post Drafts
+# LinkedIn Post Draft
 
-## Long Version
+## Very Short Main Post
 
-I am building a living research project on the global SAP job market.
+I analyzed the global SAP job market and published the first public snapshot.
 
-For the first public snapshot, I collected 3,485 raw postings from open job sources. After SAP filtering and deduplication, 1,565 source-linked SAP postings were analyzed in detail.
+Key numbers:
 
-I also added two LinkedIn layers:
+- 371,000+ SAP results on LinkedIn worldwide
+- 192,017 deduplicated LinkedIn job links collected
+- 1,976 company career / ATS postings
+- Only 20.4% salary disclosure in the open-feed sample
 
-- LinkedIn Jobs market signal: `SAP` + Worldwide showed 371,000+ results on 2026-07-19.
-- LinkedIn collected pool: 21,085 deduplicated LinkedIn job links gathered across 1,051 keyword/location/filter partitions.
-- LinkedIn description detail: 4,020 collected LinkedIn rows have fetched job-description detail for richer skill, soft-skill, and education analysis.
+The report includes charts, source links, downloadable data and methodology notes.
 
-The early findings:
-
-- LinkedIn Jobs shows 104,000+ SAP results posted in the past week.
-- LinkedIn Jobs shows 17,000+ SAP results marked remote.
-- Only 20.4% of the open source-linked postings disclose salary information.
-- The most frequent SAP areas in the open pool are S/4HANA, BTP / Integration, ABAP / Development, HANA / Data, and FI / CO / FICO.
-- The largest open-pool role family is Technical / Development.
-- The LinkedIn guest pool currently shows strong demand signals around S/4HANA, FICO, ABAP, SAP SD, and SAP BTP.
-- Soft-skill signals in job descriptions include consulting mindset, communication, leadership, collaboration, and analytical thinking.
-- Education-field signals include computer science / informatics, engineering, finance / accounting, and logistics / supply chain.
-
-Important methodology note:
-
-The 371,000+ LinkedIn number is not a downloaded list of 371,000 jobs. It is LinkedIn's rounded search-result count, so I treat it as a market-size signal. The source-linked evidence layer is the downloadable job pool: 1,565 open-feed postings plus 21,085 LinkedIn job links collected so far.
-
-The LinkedIn collector uses public LinkedIn guest job endpoints/search pages only. It does not use logged-in cookies, proxy rotation, CAPTCHA bypass, or private session data. The plan is to grow the pool over time by partitioning searches by SAP keyword, country, recency, and work model, then saving historical snapshots.
-
-This is a baseline, not a final answer. I want this to become a living SAP market observatory tracking:
-
-- Which SAP modules are rising or falling
-- How demand changes by country
-- Remote / hybrid / on-site shifts
-- Salary transparency by role, module, seniority, and country
-- Interview processes and working conditions
-- Role risk, stress level, and career satisfaction
-
-If you work in SAP, hire SAP talent, or recently interviewed for an SAP role, feel free to message me. I am collecting anonymous input on salary ranges, interview processes, working conditions, job risk, stress level, remote/hybrid reality, and what people genuinely enjoy or dislike in SAP roles.
-
-I will only publish anonymous, aggregated insights unless someone explicitly gives permission to be named.
-
-Report:
 https://sarper1998.github.io/global-sap-job-market-report/
 
-## Short Version
+Next: salary ranges, interview processes, working conditions, role risk and anonymous community input.
 
-I am building a living research project on the global SAP job market.
+#SAP #SAPJobs #SAPConsulting #S4HANA #ABAP #SuccessFactors #BTP
 
-First baseline snapshot:
+## Main Post
 
-- 3,485 raw open-source job records
-- 1,565 deduplicated SAP postings analyzed in detail
-- 371,000+ LinkedIn Jobs result-count signal for `SAP` worldwide
-- 21,085 collected LinkedIn job links so far
-- 4,020 LinkedIn rows with fetched job-description detail
-- 1,051 LinkedIn keyword/location/filter partitions represented
-- 104,000+ LinkedIn SAP results posted in the past week
-- 17,000+ LinkedIn SAP results marked remote
-- 20.4% salary disclosure in the open source-linked pool
-- Top areas: S/4HANA, BTP / Integration, ABAP, HANA, FI/CO
-- Added analysis for technical skills, soft skills, education fields, degree mentions, and historical snapshots
+I analyzed the global SAP job market and turned it into a public report.
 
-The 371,000+ number is the market-size signal. The downloadable evidence layer is the source-linked job pool, including the collected LinkedIn guest links.
+Headline:
 
-I will keep expanding this with salary data, interviews, working conditions, risk, stress, and satisfaction signals from anonymous community input.
+- 371,000+ SAP results on LinkedIn worldwide
+- 192,017 deduplicated LinkedIn job links collected
+- 1,976 company career / ATS postings
+- 1,565 open-feed SAP postings analyzed in detail
 
-Report:
+Early signals:
+
+- S/4HANA, FI/CO/FICO, ABAP, BTP, HANA and SuccessFactors stand out
+- Median job age when first collected: 8 days
+- Only 20.4% of open-feed postings disclose salary
+
+Full report with charts, source links and downloadable data:
+
 https://sarper1998.github.io/global-sap-job-market-report/
+
+This is the first baseline. Next I’ll expand it with salaries, interviews, working conditions, role risk and anonymous community input.
+
+#SAP #SAPJobs #SAPConsulting #S4HANA #ABAP #SuccessFactors #BTP #JobMarket
+
+## First Comment / Methodology Note
+
+Methodology note:
+
+The 371,000+ figure is LinkedIn's rounded worldwide SAP search-count signal, not a claim of 371,000 unique jobs.
+
+The evidence pool uses public LinkedIn guest endpoints, public search pages, open feeds and company career / ATS pages. Jobs are deduplicated, classified and timestamped so this can become a living tracker.

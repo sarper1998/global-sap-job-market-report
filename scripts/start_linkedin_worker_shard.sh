@@ -58,7 +58,7 @@ export LINKEDIN_SAVE_EVERY_PARTITIONS="${LINKEDIN_SAVE_EVERY_PARTITIONS:-25}"
 export LINKEDIN_PRINT_FULL_SUMMARY="${LINKEDIN_PRINT_FULL_SUMMARY:-0}"
 
 run_worker() {
-  echo "$BASHPID" > "$pid_file"
+  echo "${BASHPID:-$$}" > "$pid_file"
   trap 'rm -f "$pid_file"' EXIT
   echo "Worker: $worker_id"
   echo "Output: $output_dir"
