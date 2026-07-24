@@ -73,10 +73,93 @@ def optional_json(path: Path, fallback):
 
 
 def load_snapshots() -> List[Dict]:
-    if not SNAPSHOT_INDEX.exists():
-        return []
-    snapshots = load_json(SNAPSHOT_INDEX)
-    return snapshots if isinstance(snapshots, list) else []
+    by_date: Dict[str, Dict] = {}
+
+    if SNAPSHOT_INDEX.exists():
+        snapshots = load_json(SNAPSHOT_INDEX)
+        if isinstance(snapshots, list):
+            for item in snapshots:
+                if isinstance(item, dict) and item.get("date"):
+                    by_date[str(item["date"])] = dict(item)
+
+    snapshot_root = SNAPSHOT_INDEX.parent
+    if snapshot_root.exists():
+        for date_dir in sorted(path for path in snapshot_root.iterdir() if path.is_dir()):
+            date = date_dir.name
+            item = by_date.setdefault(date, {"date": date})
+
+            summary = optional_json(date_dir / "summary.json", {})
+            if summary:
+                item["generated_at"] = max(str(item.get("generated_at") or ""), str(summary.get("generated_at") or ""))
+                item["sap_jobs_after_filter"] = int(summary.get("sap_jobs_after_filter") or item.get("sap_jobs_after_filter") or 0)
+                if summary.get("salary_disclosure"):
+                    item["salary_disclosure"] = summary.get("salary_disclosure")
+                if summary.get("modules"):
+                    item["top_modules"] = dict(top_items(summary.get("modules", {}), 5))
+                if summary.get("primary_locations"):
+                    item["top_locations"] = dict(top_items(summary.get("primary_locations", {}), 5))
+
+            linkedin_summary = optional_json(date_dir / "linkedin_jobs_summary.json", {})
+            if linkedin_summary:
+                item["generated_at"] = max(str(item.get("generated_at") or ""), str(linkedin_summary.get("generated_at") or ""))
+                item["linkedin_jobs_collected"] = int(linkedin_summary.get("jobs_collected") or item.get("linkedin_jobs_collected") or 0)
+
+            linkedin_signal = optional_json(date_dir / "linkedin_signal.json", {})
+            if linkedin_signal:
+                global_count = linkedin_signal.get("global_count") or {}
+                item["linkedin_global_count"] = int(global_count.get("count") or item.get("linkedin_global_count") or 0)
+                item["linkedin_global_count_text"] = global_count.get("count_text") or item.get("linkedin_global_count_text")
+
+            company_summary = optional_json(date_dir / "company_career_jobs_summary.json", {})
+            if company_summary:
+                item["company_career_jobs_collected"] = int(company_summary.get("jobs_collected") or company_summary.get("sap_jobs_after_filter") or 0)
+
+    current_parts = [
+        optional_json(DATA_DIR / "summary.json", {}),
+        optional_json(DATA_DIR / "linkedin_jobs_summary.json", {}),
+        optional_json(DATA_DIR / "company_career_jobs_summary.json", {}),
+    ]
+    current_generated = max((str(part.get("generated_at")) for part in current_parts if part.get("generated_at")), default="")
+    if current_generated:
+        current_date = current_generated[:10]
+        item = by_date.setdefault(current_date, {"date": current_date})
+        item["generated_at"] = max(str(item.get("generated_at") or ""), current_generated)
+
+        current_summary = current_parts[0]
+        if current_summary:
+            item["sap_jobs_after_filter"] = int(current_summary.get("sap_jobs_after_filter") or item.get("sap_jobs_after_filter") or 0)
+            if current_summary.get("salary_disclosure"):
+                item["salary_disclosure"] = current_summary.get("salary_disclosure")
+            if current_summary.get("modules"):
+                item["top_modules"] = dict(top_items(current_summary.get("modules", {}), 5))
+            if current_summary.get("primary_locations"):
+                item["top_locations"] = dict(top_items(current_summary.get("primary_locations", {}), 5))
+
+        current_linkedin = current_parts[1]
+        if current_linkedin:
+            item["linkedin_jobs_collected"] = int(current_linkedin.get("jobs_collected") or item.get("linkedin_jobs_collected") or 0)
+
+        current_company = current_parts[2]
+        if current_company:
+            item["company_career_jobs_collected"] = int(current_company.get("jobs_collected") or current_company.get("sap_jobs_after_filter") or 0)
+
+        current_signal = optional_json(DATA_DIR / "linkedin_signal.json", {})
+        if current_signal:
+            global_count = current_signal.get("global_count") or {}
+            item["linkedin_global_count"] = int(global_count.get("count") or item.get("linkedin_global_count") or 0)
+            item["linkedin_global_count_text"] = global_count.get("count_text") or item.get("linkedin_global_count_text")
+
+    return [by_date[key] for key in sorted(by_date)]
+
+
+def history_counts(snapshots: List[Dict], key: str) -> Dict[str, int]:
+    values: Dict[str, int] = {}
+    for item in snapshots:
+        date = str(item.get("date") or "")
+        value = int(item.get(key) or 0)
+        if date and value > 0:
+            values[date] = value
+    return values
 
 
 def linkedin_jobs_url(keyword: str = "SAP", location: str = "Worldwide", extra: Dict[str, str] | None = None) -> str:
@@ -288,9 +371,9 @@ def main() -> None:
         "degreeFields": dict(top_items(summary.get("degree_fields", {}), 10)),
         "descriptionTerms": dict(top_items(summary.get("description_terms", {}), 20)),
         "salary": summary.get("salary_disclosure", {}),
-        "historyJobs": {item.get("date", ""): item.get("sap_jobs_after_filter", 0) for item in snapshots},
-        "historyLinkedIn": {item.get("date", ""): item.get("linkedin_global_count", 0) for item in snapshots},
-        "historyLinkedInGuest": {item.get("date", ""): item.get("linkedin_jobs_collected", 0) for item in snapshots},
+        "historyJobs": history_counts(snapshots, "sap_jobs_after_filter"),
+        "historyLinkedIn": history_counts(snapshots, "linkedin_global_count"),
+        "historyLinkedInGuest": history_counts(snapshots, "linkedin_jobs_collected"),
         "linkedinKeywords": linkedin_specialist_keyword_counts(linkedin) if linkedin else {},
         "linkedinLocations": list_counts(linkedin.get("location_counts", []), "location") if linkedin else {},
         "linkedinWorkModel": list_counts(linkedin.get("work_model_counts", []), "label") if linkedin else {},

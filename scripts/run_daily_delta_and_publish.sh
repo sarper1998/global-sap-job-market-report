@@ -37,6 +37,9 @@ sync_public_data() {
 
 seed_processed_from_public_data
 
+echo "Refreshing open job feeds."
+python3 scripts/fetch_sap_jobs.py
+
 bash "$ROOT/scripts/run_daily_delta.sh"
 
 # run_daily_delta writes daily_delta_summary after its build step, so rebuild once more
