@@ -529,36 +529,6 @@ def main() -> None:
     </div>
   </section>
 
-  <section>
-    <div class="wrap table-panel">
-      <div class="table-intro">
-        <div>
-          <h2>LinkedIn Guest Job Link Sample</h2>
-          <p>The table shows the first {fmt_int(min(len(linkedin_guest_jobs), 120))} collected LinkedIn guest records. The full {linkedin_guest_text}-row link pool is available as compressed CSV and JSON downloads.</p>
-        </div>
-        <div class="actions">
-          <a class="button primary" href="{html.escape(LINKEDIN_JOBS_CSV_URL)}">Full CSV.gz</a>
-          <a class="button" href="{html.escape(LINKEDIN_JOBS_JSON_URL)}">Full JSON.gz</a>
-        </div>
-      </div>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>Job / Company</th>
-              <th>Collected Via</th>
-              <th>Role</th>
-              <th>SAP Areas</th>
-              <th>Technical Terms</th>
-            </tr>
-          </thead>
-          <tbody>
-            {build_linkedin_guest_rows(linkedin_guest_jobs)}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
 """
 
     company_career_section = ""
@@ -598,37 +568,6 @@ def main() -> None:
     </div>
   </section>
 
-  <section>
-    <div class="wrap table-panel">
-      <div class="table-intro">
-        <div>
-          <h2>Company Career Job Sample</h2>
-          <p>The table shows the first {fmt_int(min(len(company_career_jobs), 120))} direct company career records. The full {company_career_text}-row pool is available in CSV and JSON.</p>
-        </div>
-        <div class="actions">
-          <a class="button primary" href="{html.escape(COMPANY_CAREER_CSV_URL)}">Full CSV</a>
-          <a class="button" href="{html.escape(COMPANY_CAREER_JSON_URL)}">Full JSON</a>
-        </div>
-      </div>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>Job / Company</th>
-              <th>Location</th>
-              <th>Role</th>
-              <th>SAP Areas</th>
-              <th>Salary</th>
-              <th>Source</th>
-            </tr>
-          </thead>
-          <tbody>
-            {build_table_rows(company_career_jobs[:120])}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
 """
 
     report_html = f"""<!doctype html>
