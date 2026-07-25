@@ -48,6 +48,36 @@ print(data.get(key) or 0)
 PY
 }
 
+linkedin_jobs_count() {
+  local dir="$1"
+  python3 - "$dir" <<'PY'
+import gzip
+import json
+import pathlib
+import sys
+
+root = pathlib.Path(sys.argv[1])
+json_path = root / "linkedin_jobs.json"
+gzip_path = root / "linkedin_jobs.json.gz"
+summary_path = root / "linkedin_jobs_summary.json"
+
+try:
+    if json_path.exists():
+        print(len(json.loads(json_path.read_text(encoding="utf-8"))))
+        raise SystemExit
+    if gzip_path.exists():
+        with gzip.open(gzip_path, "rt", encoding="utf-8") as handle:
+            print(len(json.load(handle)))
+        raise SystemExit
+    if summary_path.exists():
+        print(json.loads(summary_path.read_text(encoding="utf-8")).get("jobs_collected") or 0)
+        raise SystemExit
+except Exception:
+    pass
+print(0)
+PY
+}
+
 is_running_pid_file() {
   local file="$1"
   if [ ! -f "$file" ]; then
@@ -129,10 +159,57 @@ print(json.dumps(payload, ensure_ascii=False, indent=2))
 PY
 }
 
+refresh_snapshot_index_counts() {
+  python3 - "$SNAPSHOT_DATE" <<'PY'
+import json
+import pathlib
+import sys
+
+root = pathlib.Path.cwd()
+snapshot_date = sys.argv[1]
+snapshot_root = root / "data" / "snapshots"
+index_path = snapshot_root / "index.json"
+snapshot_dir = snapshot_root / snapshot_date
+
+try:
+    entries = json.loads(index_path.read_text(encoding="utf-8")) if index_path.exists() else []
+except Exception:
+    entries = []
+
+entry_by_date = {str(item.get("date")): item for item in entries if isinstance(item, dict) and item.get("date")}
+item = entry_by_date.setdefault(snapshot_date, {"date": snapshot_date})
+
+def load(name):
+    path = snapshot_dir / name
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+linkedin = load("linkedin_jobs_summary.json")
+if linkedin:
+    item["generated_at"] = max(str(item.get("generated_at") or ""), str(linkedin.get("generated_at") or ""))
+    item["linkedin_jobs_collected"] = int(linkedin.get("jobs_collected") or 0)
+    item["linkedin_guest_searches"] = int(linkedin.get("searches_attempted") or linkedin.get("search_partitions_collected") or 0)
+
+company = load("company_career_jobs_summary.json")
+if company:
+    item["generated_at"] = max(str(item.get("generated_at") or ""), str(company.get("generated_at") or ""))
+    item["company_career_jobs_collected"] = int(company.get("jobs_collected") or company.get("sap_jobs_after_filter") or 0)
+
+daily = load("daily_delta_summary.json")
+if daily:
+    item["generated_at"] = max(str(item.get("generated_at") or ""), str(daily.get("generated_at") or ""))
+
+entries = [entry_by_date[key] for key in sorted(entry_by_date)]
+index_path.write_text(json.dumps(entries, ensure_ascii=False, indent=2), encoding="utf-8")
+PY
+}
+
 cd "$ROOT"
 echo "Daily delta started at $(date +"%Y-%m-%dT%H:%M:%S%z"), snapshot=$SNAPSHOT_DATE"
 
-linkedin_before="$(json_value "$ROOT/data/processed/linkedin_jobs_summary.json" jobs_collected)"
+linkedin_before="$(linkedin_jobs_count "$ROOT/data/processed")"
 company_before="$(json_value "$ROOT/data/processed/company_career_jobs_summary.json" jobs_collected)"
 linkedin_status="skipped"
 company_status="skipped"
@@ -177,8 +254,12 @@ else
   company_status="completed"
 fi
 
-linkedin_after="$(json_value "$ROOT/data/processed/linkedin_jobs_summary.json" jobs_collected)"
+linkedin_after="$(linkedin_jobs_count "$ROOT/data/processed")"
 company_after="$(json_value "$ROOT/data/processed/company_career_jobs_summary.json" jobs_collected)"
+
+if [ -f "$ROOT/data/processed/linkedin_jobs_summary.json" ]; then
+  cp "$ROOT/data/processed/linkedin_jobs_summary.json" "$ROOT/data/snapshots/$SNAPSHOT_DATE/linkedin_jobs_summary.json"
+fi
 
 if [ "${DAILY_DELTA_SKIP_BUILD:-0}" = "1" ]; then
   echo "Skipping report build because DAILY_DELTA_SKIP_BUILD=1."
@@ -191,5 +272,6 @@ else
 fi
 
 write_delta_summary "$linkedin_before" "$linkedin_after" "$linkedin_status" "$company_before" "$company_after" "$company_status"
+refresh_snapshot_index_counts
 maybe_disable_idle_monthly_full
 echo "Daily delta finished at $(date +"%Y-%m-%dT%H:%M:%S%z")"

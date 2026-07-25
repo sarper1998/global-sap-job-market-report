@@ -13,6 +13,7 @@ from urllib.parse import urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "processed"
+PUBLIC_DATA_DIR = ROOT / "data"
 REPORT_DIR = ROOT / "report"
 SNAPSHOT_INDEX = ROOT / "data" / "snapshots" / "index.json"
 DATA_URL_BASE = os.environ.get(
@@ -333,13 +334,18 @@ def main() -> None:
     linkedin = load_json(linkedin_path) if linkedin_path.exists() else None
     linkedin_guest_summary = optional_json(DATA_DIR / "linkedin_jobs_summary.json", {})
     linkedin_guest_jobs = optional_json(DATA_DIR / "linkedin_jobs.json", [])
+    if not linkedin_guest_jobs:
+        public_linkedin_guest_jobs = optional_json(PUBLIC_DATA_DIR / "linkedin_jobs.json", [])
+        if public_linkedin_guest_jobs:
+            linkedin_guest_jobs = public_linkedin_guest_jobs
+            linkedin_guest_summary = optional_json(PUBLIC_DATA_DIR / "linkedin_jobs_summary.json", linkedin_guest_summary)
     company_career_summary = optional_json(DATA_DIR / "company_career_jobs_summary.json", {})
     company_career_jobs = optional_json(DATA_DIR / "company_career_jobs.json", [])
     daily_delta_summary = optional_json(DATA_DIR / "daily_delta_summary.json", {})
     snapshots = load_snapshots()
     total = len(jobs)
     total_text = fmt_int(total)
-    linkedin_guest_total = int(linkedin_guest_summary.get("jobs_collected") or len(linkedin_guest_jobs) or 0)
+    linkedin_guest_total = len(linkedin_guest_jobs) or int(linkedin_guest_summary.get("jobs_collected") or 0)
     linkedin_guest_text = fmt_int(linkedin_guest_total)
     company_career_total = int(company_career_summary.get("jobs_collected") or len(company_career_jobs) or 0)
     company_career_text = fmt_int(company_career_total)

@@ -4,9 +4,9 @@
   "mode": "daily_delta",
   "linkedin": {
     "status": "completed",
-    "jobs_before": 192017,
+    "jobs_before": 101093,
     "jobs_after": 105528,
-    "net_new_jobs": -86489,
+    "net_new_jobs": 4435,
     "jobs_seen_in_snapshot": 5323,
     "new_jobs_in_snapshot": 4435,
     "summary_generated_at": "2026-07-25T07:13:58"

@@ -12,13 +12,19 @@ echo "Daily publish started at $(date +"%Y-%m-%dT%H:%M:%S%z")"
 git pull --ff-only origin main
 
 seed_processed_from_public_data() {
+  local seeded_linkedin_rows=0
   local name
   for name in linkedin_jobs.csv.gz linkedin_jobs.json.gz; do
     if [ -f "$ROOT/data/$name" ] && [ ! -f "$ROOT/data/processed/$name" ]; then
       cp "$ROOT/data/$name" "$ROOT/data/processed/$name"
+      seeded_linkedin_rows=1
       echo "Seeded data/processed/$name from data/$name"
     fi
   done
+  if [ "$seeded_linkedin_rows" = "1" ] && [ -f "$ROOT/data/linkedin_jobs_summary.json" ]; then
+    cp "$ROOT/data/linkedin_jobs_summary.json" "$ROOT/data/processed/linkedin_jobs_summary.json"
+    echo "Seeded data/processed/linkedin_jobs_summary.json from data/linkedin_jobs_summary.json"
+  fi
 }
 
 sync_public_data() {
@@ -42,8 +48,11 @@ python3 scripts/fetch_sap_jobs.py
 
 bash "$ROOT/scripts/run_daily_delta.sh"
 
-# run_daily_delta writes daily_delta_summary after its build step, so rebuild once more
-# to include the latest delta note in the public report.
+sync_public_data
+
+# run_daily_delta writes daily_delta_summary after its internal build step.
+# Rebuild after syncing public data so the HTML and downloadable data files
+# are generated from the same LinkedIn evidence pool.
 python3 scripts/build_report.py
 if [ -f package.json ]; then
   npm run build

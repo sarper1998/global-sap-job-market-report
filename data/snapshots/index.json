@@ -29,12 +29,12 @@
   },
   {
     "date": "2026-07-25",
-    "generated_at": "2026-07-25T06:17:42",
+    "generated_at": "2026-07-25T07:21:26",
     "sap_jobs_after_filter": 1514,
     "linkedin_global_count": 371000,
     "linkedin_global_count_text": "371,000+",
-    "linkedin_jobs_collected": 0,
-    "linkedin_guest_searches": 0,
+    "linkedin_jobs_collected": 105528,
+    "linkedin_guest_searches": 12688,
     "salary_disclosure": {
       "Not disclosed": 1214,
       "Disclosed": 299,
