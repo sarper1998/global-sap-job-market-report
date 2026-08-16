@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-15T07:25:49",
+  "generated_at": "2026-08-16T07:17:11",
   "raw_source_counts": {
     "Capgemini Careers": 0,
     "Atos Careers": 118,
-    "Celonis Greenhouse": 257,
+    "Celonis Greenhouse": 258,
     "Workato Greenhouse": 152,
+    "adesso Careers": 173,
     "Databricks Greenhouse": 809,
-    "adesso Careers": 164,
     "MongoDB Greenhouse": 409,
     "Ripple Greenhouse": 134,
-    "Datadog Greenhouse": 424,
+    "Datadog Greenhouse": 425,
     "Stripe Greenhouse": 578,
     "SAP Careers": 870,
     "Adobe Workday": 18,
@@ -18,32 +18,32 @@
     "Devoteam SmartRecruiters": 186,
     "Bosch SmartRecruiters": 1073
   },
-  "sap_jobs_after_filter": 2828,
+  "sap_jobs_after_filter": 2831,
   "salary_disclosure": {
-    "Not disclosed": 2729,
+    "Not disclosed": 2732,
     "Mentioned in text": 99
   },
   "sources": {
     "SAP Careers": 1419,
-    "Bosch SmartRecruiters": 744,
+    "Bosch SmartRecruiters": 745,
     "adesso Careers": 174,
     "Atos Careers": 152,
-    "Celonis Greenhouse": 128,
+    "Celonis Greenhouse": 129,
     "Devoteam SmartRecruiters": 77,
     "Salesforce Workday": 39,
     "Adobe Workday": 26,
     "Workato Greenhouse": 26,
     "Databricks Greenhouse": 17,
-    "Western Digital SmartRecruiters": 9,
+    "Western Digital SmartRecruiters": 10,
     "Ripple Greenhouse": 7,
     "MongoDB Greenhouse": 5,
     "Stripe Greenhouse": 4,
     "Datadog Greenhouse": 1
   },
   "sap_focus": {
-    "SAP mentioned": 948,
-    "SAP module/technical requirement": 784,
-    "Core SAP delivery role": 677,
+    "SAP mentioned": 949,
+    "SAP module/technical requirement": 785,
+    "Core SAP delivery role": 678,
     "SAP-titled role": 419
   },
   "primary_locations": {
@@ -73,15 +73,15 @@
     "London": 26,
     "München": 26,
     "Sao Paulo": 26,
-    "Campinas": 24,
+    "Campinas": 25,
     "Aachen": 22,
     "Dubai": 21,
     "Middlesex": 20,
+    "Bayan Lepas": 19,
     "Bengaluru": 19,
     "Chicago": 19,
     "San Jose": 19,
     "Seoul": 19,
-    "Bayan Lepas": 18,
     "Guadalajara": 18,
     "Lincolnton": 18,
     "Wroclaw": 18,
@@ -238,6 +238,7 @@
     "Nanjing": 3,
     "Niort": 3,
     "Nürnberg": 3,
+    "Redwood City": 3,
     "Remote Home": 3,
     "Saint Louis Park": 3,
     "San Ramon": 3,
@@ -292,7 +293,6 @@
     "Paris": 2,
     "Pluak daeng District": 2,
     "Queretaro": 2,
-    "Redwood City": 2,
     "Roseville": 2,
     "Saint-Ouen-sur-Seine": 2,
     "Salzgitter": 2,
@@ -420,9 +420,9 @@
     "东莞": 1
   },
   "role_families": {
-    "Technical / Development": 1355,
+    "Technical / Development": 1357,
     "Other SAP-Related": 483,
-    "Data / Analytics": 346,
+    "Data / Analytics": 347,
     "Functional Consulting": 208,
     "Architecture": 161,
     "Basis / Security": 136,
@@ -431,19 +431,19 @@
   },
   "seniority": {
     "Mid / Unspecified": 1046,
-    "Senior": 718,
-    "Lead / Manager": 648,
+    "Senior": 720,
+    "Lead / Manager": 649,
     "Entry / Intern": 302,
     "Junior": 114
   },
   "modules": {
-    "Unspecified SAP": 1220,
-    "HCM / SuccessFactors": 910,
-    "S/4HANA": 562,
+    "Unspecified SAP": 1221,
+    "HCM / SuccessFactors": 911,
+    "S/4HANA": 563,
     "BTP / Integration": 382,
     "HANA / Data": 290,
-    "FI / CO / FICO": 267,
-    "ABAP / Development": 190,
+    "FI / CO / FICO": 268,
+    "ABAP / Development": 191,
     "Basis / Security": 148,
     "Fiori / UI5": 143,
     "MM / Procurement": 113,
@@ -456,16 +456,16 @@
     "MDG / Master Data": 20
   },
   "skills": {
-    "English": 1293,
-    "SuccessFactors": 877,
-    "S/4HANA": 562,
+    "English": 1295,
+    "SuccessFactors": 878,
+    "S/4HANA": 563,
     "German": 547,
     "SAP BTP": 311,
-    "Agile / Scrum": 301,
+    "Agile / Scrum": 302,
     "SAP HANA": 252,
-    "ABAP": 164,
+    "ABAP": 165,
     "SAP Fiori": 131,
-    "FICO": 118,
+    "FICO": 119,
     "GRC / Security": 113,
     "CPI / Integration Suite": 72,
     "SAP Analytics Cloud": 68,
@@ -489,7 +489,7 @@
     "SAP QM": 1
   },
   "soft_skills": {
-    "Consulting mindset": 418,
+    "Consulting mindset": 419,
     "Change management": 237,
     "Leadership": 125,
     "Project management": 56,
@@ -512,18 +512,18 @@
   },
   "degree_fields": {
     "Computer Science / Informatics": 1068,
-    "Engineering": 547,
+    "Engineering": 549,
     "Finance / Accounting": 133,
     "Logistics / Supply Chain": 90,
     "Information Systems": 4,
     "Business / Economics": 1
   },
   "description_terms": {
-    "global": 1281,
+    "global": 1282,
     "work": 988,
-    "over": 972,
-    "what": 914,
-    "where": 851,
+    "over": 973,
+    "what": 915,
+    "where": 852,
     "shape": 847,
     "best": 844,
     "next": 823,
@@ -540,38 +540,38 @@
     "matters": 775,
     "constant": 775,
     "learn": 775,
+    "wellbeing": 774,
+    "truly": 774,
+    "belong": 774,
+    "touching": 774,
     "talents": 774,
     "prioritize": 774,
-    "builders": 774,
-    "challenging": 774,
     "yourself": 774,
-    "simple": 774,
-    "wellbeing": 774,
-    "belong": 774,
-    "touching": 774
+    "challenging": 774,
+    "builders": 774
   },
   "methodology": "Public company career pages and ATS endpoints only. No logged-in sessions, proxy rotation, CAPTCHA bypass, or private candidate data are used.",
-  "jobs_collected": 2828,
+  "jobs_collected": 2831,
   "jobs_seen_in_snapshot": 1817,
-  "new_jobs_in_snapshot": 56,
+  "new_jobs_in_snapshot": 3,
   "providers": {
     "jobs2web": 1745,
-    "smartrecruiters": 830,
-    "greenhouse": 188,
+    "smartrecruiters": 832,
+    "greenhouse": 189,
     "workday": 65
   },
   "companies": {
     "SAP": 1419,
-    "Bosch": 744,
+    "Bosch": 745,
     "adesso": 174,
     "Atos": 152,
-    "Celonis": 128,
+    "Celonis": 129,
     "Devoteam": 77,
     "Salesforce": 39,
     "Adobe": 26,
     "Workato": 26,
     "Databricks": 17,
-    "Western Digital": 9,
+    "Western Digital": 10,
     "Ripple": 7,
     "MongoDB": 5,
     "Stripe": 4,
@@ -584,7 +584,7 @@
       "source_label": "Adobe Workday",
       "raw_count": 18,
       "sap_count": 16,
-      "duration_seconds": 29.02
+      "duration_seconds": 27.35
     },
     {
       "provider": "jobs2web",
@@ -592,7 +592,7 @@
       "source_label": "Atos Careers",
       "raw_count": 118,
       "sap_count": 81,
-      "duration_seconds": 4.75
+      "duration_seconds": 4.18
     },
     {
       "provider": "smartrecruiters",
@@ -600,7 +600,7 @@
       "source_label": "Bosch SmartRecruiters",
       "raw_count": 1073,
       "sap_count": 482,
-      "duration_seconds": 531.81
+      "duration_seconds": 533.06
     },
     {
       "provider": "jobs2web",
@@ -608,15 +608,15 @@
       "source_label": "Capgemini Careers",
       "raw_count": 0,
       "sap_count": 0,
-      "duration_seconds": 0.68
+      "duration_seconds": 0.48
     },
     {
       "provider": "greenhouse",
       "source_key": "celonis_greenhouse",
       "source_label": "Celonis Greenhouse",
-      "raw_count": 257,
+      "raw_count": 258,
       "sap_count": 100,
-      "duration_seconds": 2.2
+      "duration_seconds": 3.0
     },
     {
       "provider": "greenhouse",
@@ -624,15 +624,15 @@
       "source_label": "Databricks Greenhouse",
       "raw_count": 809,
       "sap_count": 16,
-      "duration_seconds": 3.24
+      "duration_seconds": 4.67
     },
     {
       "provider": "greenhouse",
       "source_key": "datadog_greenhouse",
       "source_label": "Datadog Greenhouse",
-      "raw_count": 424,
+      "raw_count": 425,
       "sap_count": 1,
-      "duration_seconds": 3.63
+      "duration_seconds": 2.89
     },
     {
       "provider": "smartrecruiters",
@@ -640,7 +640,7 @@
       "source_label": "Devoteam SmartRecruiters",
       "raw_count": 186,
       "sap_count": 55,
-      "duration_seconds": 95.73
+      "duration_seconds": 98.41
     },
     {
       "provider": "greenhouse",
@@ -648,7 +648,7 @@
       "source_label": "MongoDB Greenhouse",
       "raw_count": 409,
       "sap_count": 4,
-      "duration_seconds": 1.65
+      "duration_seconds": 4.92
     },
     {
       "provider": "greenhouse",
@@ -656,7 +656,7 @@
       "source_label": "Ripple Greenhouse",
       "raw_count": 134,
       "sap_count": 3,
-      "duration_seconds": 0.87
+      "duration_seconds": 1.45
     },
     {
       "provider": "jobs2web",
@@ -664,7 +664,7 @@
       "source_label": "SAP Careers",
       "raw_count": 870,
       "sap_count": 870,
-      "duration_seconds": 37.66
+      "duration_seconds": 40.53
     },
     {
       "provider": "workday",
@@ -672,7 +672,7 @@
       "source_label": "Salesforce Workday",
       "raw_count": 22,
       "sap_count": 22,
-      "duration_seconds": 30.96
+      "duration_seconds": 30.16
     },
     {
       "provider": "greenhouse",
@@ -680,7 +680,7 @@
       "source_label": "Stripe Greenhouse",
       "raw_count": 578,
       "sap_count": 2,
-      "duration_seconds": 2.67
+      "duration_seconds": 2.41
     },
     {
       "provider": "smartrecruiters",
@@ -688,7 +688,7 @@
       "source_label": "Western Digital SmartRecruiters",
       "raw_count": 142,
       "sap_count": 3,
-      "duration_seconds": 73.37
+      "duration_seconds": 74.74
     },
     {
       "provider": "greenhouse",
@@ -696,15 +696,15 @@
       "source_label": "Workato Greenhouse",
       "raw_count": 152,
       "sap_count": 18,
-      "duration_seconds": 0.88
+      "duration_seconds": 1.45
     },
     {
       "provider": "jobs2web",
       "source_key": "adesso_careers",
       "source_label": "adesso Careers",
-      "raw_count": 164,
+      "raw_count": 173,
       "sap_count": 144,
-      "duration_seconds": 11.1
+      "duration_seconds": 9.09
     }
   ],
   "errors": {}
