@@ -673,7 +673,7 @@
   },
   {
     "date": "2026-08-17",
-    "generated_at": "2026-08-17T07:03:09",
+    "generated_at": "2026-08-17T06:17:19",
     "sap_jobs_after_filter": 1491,
     "linkedin_global_count": 371000,
     "linkedin_global_count_text": "371,000+",
@@ -697,7 +697,35 @@
       "India": 127,
       "Worldwide / Not specified": 68,
       "Canada": 50
+    }
+  },
+  {
+    "date": "2026-08-18",
+    "generated_at": "2026-08-18T07:29:46",
+    "sap_jobs_after_filter": 1556,
+    "linkedin_global_count": 371000,
+    "linkedin_global_count_text": "371,000+",
+    "linkedin_jobs_collected": 216517,
+    "linkedin_guest_searches": 13088,
+    "salary_disclosure": {
+      "Not disclosed": 1238,
+      "Disclosed": 306,
+      "Mentioned in text": 12
     },
-    "company_career_jobs_collected": 2832
+    "top_modules": {
+      "S/4HANA": 661,
+      "Unspecified SAP": 416,
+      "BTP / Integration": 338,
+      "ABAP / Development": 333,
+      "HANA / Data": 307
+    },
+    "top_locations": {
+      "United States": 587,
+      "Germany": 227,
+      "India": 129,
+      "Worldwide / Not specified": 72,
+      "Canada": 50
+    },
+    "company_career_jobs_collected": 2890
   }
 ]
