@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-21T07:30:15",
+  "snapshot_date": "2026-08-21",
+  "mode": "daily_delta",
+  "linkedin": {
+    "status": "completed",
+    "jobs_before": 225592,
+    "jobs_after": 231851,
+    "net_new_jobs": 6259,
+    "jobs_seen_in_snapshot": 7778,
+    "new_jobs_in_snapshot": 6259,
+    "summary_generated_at": "2026-08-21T07:21:35"
+  },
+  "company_careers": {
+    "status": "completed",
+    "jobs_before": 2975,
+    "jobs_after": 3035,
+    "net_new_jobs": 60,
+    "jobs_seen_in_snapshot": 1871,
+    "new_jobs_in_snapshot": 60,
+    "summary_generated_at": "2026-08-21T07:30:10"
+  }
+}
