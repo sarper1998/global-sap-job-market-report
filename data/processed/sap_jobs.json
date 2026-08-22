@@ -1020,6 +1020,42 @@
     ]
   },
   {
+    "id": "339bbbb87fe4cc95",
+    "source": "himalayas",
+    "title": "Solutions Architect (m/w/d) - Germany",
+    "company": "Avomind",
+    "url": "https://himalayas.app/companies/avomind/jobs/solutions-architect-m-w-d-germany",
+    "posted_at": 1787344474,
+    "locations": [
+      "Germany"
+    ],
+    "primary_location": "Germany",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "SAP module/technical requirement",
+    "role_family": "Architecture",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "MDG / Master Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "MDG",
+      "English",
+      "German"
+    ],
+    "description_excerpt": "About Us Our client is a leading systems integrator and global professional services firm driven to simplify and maximize the value of their clients’ information. Founded in 2011, they provides complementary services for many digital initiatives, including MDM and PIM Strategy and Implementation, Data Governance and Analytics, Content Management, Data Integration, Enterprise Hosting, and Operational Services that hel",
+    "match_terms": [
+      "SAP",
+      "S/4HANA"
+    ]
+  },
+  {
     "id": "a4c0893eee7a24c7",
     "source": "himalayas",
     "title": "SAP R3/S4HANA Developer",
@@ -1302,71 +1338,6 @@
       "German"
     ],
     "description_excerpt": "Join BLP Digital — The #1 Solution for ERP Automation BLP Digital is redefining ERP automation with agentic AI. Spun out of ETH Zurich and HSG, we build AI agents that automate finance, procurement, logistics, sales, and more for some of the world's largest enterprises. We solve real enterprise problems with cutting-edge technology and a strong sense of ownership. Our solution is live in 40+ countries, used by 550+ c",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "83cd80609b4b6423",
-    "source": "himalayas",
-    "title": "SAP Technical Lead (Remote, FL, US)",
-    "company": "BWX Technologies",
-    "url": "https://himalayas.app/companies/bwx-technologies/jobs/sap-technical-lead-remote-fl-us",
-    "posted_at": 1784844866,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 99410,
-    "salary_max": 157000,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Basis / Security",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "ABAP / Development",
-      "Basis / Security",
-      "TM / GTS / Supply Chain"
-    ],
-    "skills": [
-      "ABAP",
-      "GRC / Security",
-      "Agile / Scrum"
-    ],
-    "description_excerpt": "At BWX Technologies , Inc. (NYSE: BWXT), we are People Strong, Innovation Driven. A U.S.-based company, BWXT is a Fortune 1000 and Defense News Top 100 manufacturing and engineering innovator that provides safe and effective nuclear solutions for global security, clean energy, environmental restoration, nuclear medicine and space exploration. With more than 7,800 employees, BWXT has 14 major operating sites in the U.",
-    "match_terms": [
-      "SAP",
-      "ABAP"
-    ]
-  },
-  {
-    "id": "67558a3bbabff95c",
-    "source": "himalayas",
-    "title": "Manager, Direct Tax (Residence Based, Residence Based, US)",
-    "company": "Bayer",
-    "url": "https://himalayas.app/companies/bayer/jobs/manager-direct-tax-residence-based-residence-based-us",
-    "posted_at": 1786552346,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 115520,
-    "salary_max": 173280,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "At Bayer we’re visionaries, driven to solve the world’s toughest challenges and striving for a world where 'Health for all Hunger for none’ is no longer a dream, but a real possibility. We’re doing it with energy, curiosity and sheer dedication, always learning from unique perspectives of those around us, expanding our thinking, growing our capabilities and redefining ‘impossible’. There are so many reasons to join u",
     "match_terms": [
       "SAP"
     ]
@@ -2104,6 +2075,60 @@
     ]
   },
   {
+    "id": "b305ffe2b73e6dbb",
+    "source": "himalayas",
+    "title": "SAP ABAP Developer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-abap-developer-2149247095",
+    "posted_at": 1787330937,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 165000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "HANA / Data",
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "ABAP",
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "CPI / Integration Suite",
+      "OData",
+      "CDS Views",
+      "RAP / CAP",
+      "IDoc",
+      "FICO"
+    ],
+    "description_excerpt": "SAP ABAP Developer- Remote Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP ABAP Developer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "ABAP",
+      "Fiori",
+      "UI5",
+      "BTP",
+      "HANA",
+      "IDoc"
+    ]
+  },
+  {
     "id": "02febe0ce9db4acb",
     "source": "himalayas",
     "title": "SAP ABAP Developer (S/4HANA)",
@@ -2212,57 +2237,51 @@
     ]
   },
   {
-    "id": "7a546cf9ff0f9d41",
+    "id": "c74c005554b4e3ce",
     "source": "himalayas",
-    "title": "SAP Application Developer",
+    "title": "SAP Access Control Engineer",
     "company": "Bright Vision Technologies",
-    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-application-developer-4435769959",
-    "posted_at": 1786912439,
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-access-control-engineer-7146554361",
+    "posted_at": 1787336798,
     "locations": [
       "United States"
     ],
     "primary_location": "United States",
     "remote": true,
     "salary_status": "Disclosed",
-    "salary_min": 100000,
-    "salary_max": 150000,
+    "salary_min": 128000,
+    "salary_max": 145000,
     "salary_currency": "USD",
     "salary_period": "annual",
     "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
+    "role_family": "Basis / Security",
     "seniority": "Senior",
     "modules": [
       "S/4HANA",
-      "ABAP / Development",
       "BTP / Integration",
       "Fiori / UI5",
+      "Basis / Security",
       "HANA / Data",
-      "FI / CO / FICO"
+      "HCM / SuccessFactors"
     ],
     "skills": [
-      "ABAP",
       "S/4HANA",
       "SAP HANA",
       "SAP BTP",
       "SAP Fiori",
-      "SAPUI5 / UI5",
-      "CPI / Integration Suite",
-      "OData",
-      "CDS Views",
-      "RAP / CAP",
-      "IDoc",
-      "FICO"
+      "SuccessFactors",
+      "SAP BW / BI",
+      "GRC / Security"
     ],
-    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Application Developer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $100,0",
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Access Control Engineer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $128",
     "match_terms": [
       "SAP",
       "S/4HANA",
-      "ABAP",
+      "SuccessFactors",
       "Fiori",
-      "UI5",
       "BTP",
       "HANA",
-      "IDoc"
+      "BW/4HANA"
     ]
   },
   {
@@ -2300,6 +2319,50 @@
       "RAP / CAP"
     ],
     "description_excerpt": "Role Overview We are seeking an experienced SAP BTP Developer to design, build, and operate extensions, side-by-side applications, and integration scenarios on SAP’s Business Technology Platform. The ideal candidate will combine strong hands-on experience with the SAP Cloud Application Programming Model (CAP), SAP Fiori/UI5, BTP services, and CI/CD tooling with a clear understanding of clean-core principles, multi-te",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Fiori",
+      "UI5",
+      "BTP"
+    ]
+  },
+  {
+    "id": "0d91a013d5db1cd0",
+    "source": "himalayas",
+    "title": "SAP BTP Solutions Engineer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-btp-solutions-engineer-6309213591",
+    "posted_at": 1787297222,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 135000,
+    "salary_max": 155000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "CPI / Integration Suite",
+      "OData",
+      "RAP / CAP"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP BTP Solutions Engineer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $135,",
     "match_terms": [
       "SAP",
       "S/4HANA",
@@ -2675,6 +2738,41 @@
     ]
   },
   {
+    "id": "678cadbba45c13dc",
+    "source": "himalayas",
+    "title": "SAP Data Integration Consultant",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-data-integration-consultant-5176909560",
+    "posted_at": 1787311235,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "HANA / Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Data Integration Consultant Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "HANA"
+    ]
+  },
+  {
     "id": "4c87d6d2d5591426",
     "source": "himalayas",
     "title": "SAP Data Migration Consultant",
@@ -2742,6 +2840,94 @@
       "SAP",
       "S/4HANA",
       "HANA"
+    ]
+  },
+  {
+    "id": "6310c20a0dd3ba3e",
+    "source": "himalayas",
+    "title": "SAP Extension Developer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-extension-developer-9612762066",
+    "posted_at": 1787294247,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "CPI / Integration Suite",
+      "OData",
+      "RAP / CAP"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Extension Developer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $100,000",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Fiori",
+      "UI5",
+      "BTP"
+    ]
+  },
+  {
+    "id": "41c487d40788cde6",
+    "source": "himalayas",
+    "title": "SAP Fiori Consultant",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-fiori-consultant-7909208577",
+    "posted_at": 1787293908,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Senior",
+    "modules": [
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security"
+    ],
+    "skills": [
+      "ABAP",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "OData",
+      "CDS Views",
+      "GRC / Security"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Fiori Consultant Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $100,000–$1",
+    "match_terms": [
+      "SAP",
+      "ABAP",
+      "Fiori",
+      "UI5",
+      "BTP"
     ]
   },
   {
@@ -2833,6 +3019,54 @@
     ]
   },
   {
+    "id": "47a0a58e162e68a5",
+    "source": "himalayas",
+    "title": "SAP Governance & Risk Engineer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-governance-risk-engineer-2660774809",
+    "posted_at": 1787349936,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security",
+      "HANA / Data",
+      "HCM / SuccessFactors"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SuccessFactors",
+      "SAP BW / BI",
+      "GRC / Security"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Governance & Risk Engineer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "SuccessFactors",
+      "Fiori",
+      "BTP",
+      "HANA",
+      "BW/4HANA"
+    ]
+  },
+  {
     "id": "2ced8fde71f4edea",
     "source": "himalayas",
     "title": "SAP HANA Consultant",
@@ -2914,6 +3148,51 @@
       "S/4HANA",
       "HANA",
       "BW/4HANA"
+    ]
+  },
+  {
+    "id": "5d9e80b0347cf01c",
+    "source": "himalayas",
+    "title": "SAP HANA Platform Engineer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-hana-platform-engineer-5459380183",
+    "posted_at": 1787305235,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "HANA / Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "CDS Views",
+      "SAP BW / BI",
+      "SAP Analytics Cloud",
+      "Datasphere"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP HANA Platform Engineer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $100,",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "BTP",
+      "HANA",
+      "BW/4HANA",
+      "SAP Analytics Cloud"
     ]
   },
   {
@@ -3048,6 +3327,56 @@
       "Ariba",
       "Concur",
       "BTP"
+    ]
+  },
+  {
+    "id": "56498c08038be17e",
+    "source": "himalayas",
+    "title": "SAP Integration Engineer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-integration-engineer-1025130605",
+    "posted_at": 1787359642,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "MM / Procurement",
+      "HCM / SuccessFactors"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "CPI / Integration Suite",
+      "PI/PO",
+      "OData",
+      "RAP / CAP",
+      "IDoc",
+      "SuccessFactors",
+      "Ariba",
+      "Concur"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States.This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Integration Engineer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $100,000",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "SuccessFactors",
+      "Ariba",
+      "Concur",
+      "BTP",
+      "IDoc"
     ]
   },
   {
@@ -3326,6 +3655,54 @@
     ]
   },
   {
+    "id": "604e0f9924da537c",
+    "source": "himalayas",
+    "title": "SAP Security Consultant",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/sap-security-consultant-7490911857",
+    "posted_at": 1787286324,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 110000,
+    "salary_max": 130000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security",
+      "HANA / Data",
+      "HCM / SuccessFactors"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SuccessFactors",
+      "SAP BW / BI",
+      "GRC / Security"
+    ],
+    "description_excerpt": "SAP Security Consultant – Remote Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: SAP Security Consultant Location: 100% Remote (U.S.) Position Type: Full-time,",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "SuccessFactors",
+      "Fiori",
+      "BTP",
+      "HANA",
+      "BW/4HANA"
+    ]
+  },
+  {
     "id": "021dbf570486e2ea",
     "source": "himalayas",
     "title": "SAP Technical Consultant (ABAP)",
@@ -3468,6 +3845,51 @@
     ]
   },
   {
+    "id": "6cff06aa3018fd63",
+    "source": "himalayas",
+    "title": "Senior SAP BTP Developer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/senior-sap-btp-developer",
+    "posted_at": 1787287981,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 160000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "OData",
+      "RAP / CAP",
+      "GRC / Security"
+    ],
+    "description_excerpt": "Senior SAP BTP Developer - Remote Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: Senior SAP BTP Developer Location: 100% Remote (U.S.) Position Type: Full-tim",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Fiori",
+      "UI5",
+      "BTP"
+    ]
+  },
+  {
     "id": "de5ef45a34dd0e05",
     "source": "himalayas",
     "title": "Senior SAP Basis Engineer",
@@ -3510,6 +3932,246 @@
     ]
   },
   {
+    "id": "9901f5d20340c450",
+    "source": "himalayas",
+    "title": "Senior SAP CPI Developer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/senior-sap-cpi-developer",
+    "posted_at": 1787305209,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 160000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "MM / Procurement",
+      "HCM / SuccessFactors"
+    ],
+    "skills": [
+      "S/4HANA",
+      "CPI / Integration Suite",
+      "PI/PO",
+      "OData",
+      "IDoc",
+      "SuccessFactors",
+      "Ariba",
+      "Concur"
+    ],
+    "description_excerpt": "Senior SAP CPI Developer - Remote Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: Senior SAP CPI Developer Location: 100% Remote (U.S.) Position Type: Full-tim",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "SuccessFactors",
+      "Ariba",
+      "Concur",
+      "IDoc"
+    ]
+  },
+  {
+    "id": "616618a8363401ef",
+    "source": "himalayas",
+    "title": "Senior SAP Fiori Developer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/senior-sap-fiori-developer",
+    "posted_at": 1787317927,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security"
+    ],
+    "skills": [
+      "ABAP",
+      "S/4HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "OData",
+      "CDS Views",
+      "GRC / Security"
+    ],
+    "description_excerpt": "Senior SAP Fiori Developer - Remote Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: Senior SAP Fiori Developer Location: 100% Remote (U.S.) Position Type: Full",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "ABAP",
+      "Fiori",
+      "UI5",
+      "BTP"
+    ]
+  },
+  {
+    "id": "ad03dd0dcb8b524c",
+    "source": "himalayas",
+    "title": "Senior SAP HANA Engineer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/senior-sap-hana-engineer",
+    "posted_at": 1787336288,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "HANA / Data"
+    ],
+    "skills": [
+      "ABAP",
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "CDS Views",
+      "SAP BW / BI"
+    ],
+    "description_excerpt": "Senior SAP HANA Engineer - Remote Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: Senior SAP HANA Engineer Location: 100% Remote (U.S.) Position Type: Full-tim",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "ABAP",
+      "Fiori",
+      "BTP",
+      "HANA",
+      "BW/4HANA"
+    ]
+  },
+  {
+    "id": "c64fcd419fc0a96c",
+    "source": "himalayas",
+    "title": "Senior SAP Security & GRC Engineer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/senior-sap-security-grc-engineer",
+    "posted_at": 1787328783,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 100000,
+    "salary_max": 150000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security",
+      "HANA / Data",
+      "HCM / SuccessFactors"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SuccessFactors",
+      "SAP BW / BI",
+      "GRC / Security"
+    ],
+    "description_excerpt": "Senior SAP Security & GRC Engineer - Remote Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: Senior SAP Security & GRC Engineer Location: 100% Remote (U.S.) Pos",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "SuccessFactors",
+      "Fiori",
+      "BTP",
+      "BW/4HANA"
+    ]
+  },
+  {
+    "id": "eec0cd6465f68b22",
+    "source": "himalayas",
+    "title": "Senior SAP Technical Developer",
+    "company": "Bright Vision Technologies",
+    "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/senior-sap-technical-developer-3235724137",
+    "posted_at": 1787345775,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 140000,
+    "salary_max": 155000,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "HANA / Data",
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "ABAP",
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "CPI / Integration Suite",
+      "OData",
+      "CDS Views",
+      "RAP / CAP",
+      "IDoc",
+      "FICO"
+    ],
+    "description_excerpt": "Bright Vision Technologies is a technology consulting and software development company delivering cloud, AI, data, and enterprise solutions across the United States. This is a fantastic opportunity to join an established and well-respected organization offering tremendous career growth potential. Job Title: Senior SAP Technical Developer Location: 100% Remote (U.S.) Position Type: Full-time, Direct W2 Salary Range: $",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "ABAP",
+      "Fiori",
+      "UI5",
+      "BTP",
+      "HANA",
+      "IDoc"
+    ]
+  },
+  {
     "id": "748bc03de1d66f7d",
     "source": "himalayas",
     "title": "Consultant SAP S/4HANA Cloud Public Edition (w/m/d)",
@@ -3547,6 +4209,88 @@
       "S/4HANA",
       "BTP",
       "HANA"
+    ]
+  },
+  {
+    "id": "8c4a2f0720c53519",
+    "source": "himalayas",
+    "title": "SAP Basis Adminstrator",
+    "company": "CDIT",
+    "url": "https://himalayas.app/companies/cdit/jobs/sap-basis-adminstrator",
+    "posted_at": 1787288608,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "SAP-titled role",
+    "role_family": "Basis / Security",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security",
+      "HANA / Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "GRC / Security"
+    ],
+    "description_excerpt": "This is a remote position. The Opportunity: Join a team where your technical expertise directly powers mission‑critical business operations. As an SAP Basis Administrator, you’ll take ownership of a dynamic SAP S/4HANA landscape, ensuring its stability, performance, and security. You’ll collaborate across infrastructure, cybersecurity, cloud, database, functional, and development teams to shape a highly optimized SAP",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Fiori",
+      "BTP",
+      "HANA",
+      "SAP Basis"
+    ]
+  },
+  {
+    "id": "a05ea50fd87838ef",
+    "source": "himalayas",
+    "title": "SAP Hazmat Functional SME",
+    "company": "CDIT",
+    "url": "https://himalayas.app/companies/cdit/jobs/sap-hazmat-functional-sme",
+    "posted_at": 1787286355,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "SAP-titled role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "MM / Procurement",
+      "SD / Sales",
+      "EWM / WM / Logistics",
+      "TM / GTS / Supply Chain"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP TM",
+      "Agile / Scrum"
+    ],
+    "description_excerpt": "This is a remote position. SAP HAZMAT Functional Resource Position Overview The SAP HAZMAT Functional Resource will support the JTMS SAP S/4HANA program by providing functional expertise for the management, configuration, integration, and sustainment of hazardous material (HAZMAT) processes within the SAP environment. This resource will work closely with functional teams, technical teams, business stakeholders, and c",
+    "match_terms": [
+      "SAP",
+      "S/4HANA"
     ]
   },
   {
@@ -3664,42 +4408,6 @@
     "match_terms": [
       "SAP",
       "Ariba"
-    ]
-  },
-  {
-    "id": "915aae11c737dce0",
-    "source": "himalayas",
-    "title": "FBS SAP ABAP Developer",
-    "company": "Capgemini Technology Services",
-    "url": "https://himalayas.app/companies/capgemini-technology-services/jobs/fbs-sap-abap-developer",
-    "posted_at": 1784925314,
-    "locations": [
-      "Mexico"
-    ],
-    "primary_location": "Mexico",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "ABAP / Development",
-      "HANA / Data"
-    ],
-    "skills": [
-      "ABAP",
-      "SAP BW / BI",
-      "Datasphere"
-    ],
-    "description_excerpt": "FBS – Farmer Business Services is part of Farmers operations with the purpose of building a global approach to identifying, recruiting, hiring, and retaining top talent. By combining international reach with US expertise, we build diverse and high-performing teams that are equipped to thrive in today’s competitive marketplace. We believe that the foundation of every successful business lies in having the right people",
-    "match_terms": [
-      "SAP",
-      "ABAP",
-      "BW/4HANA"
     ]
   },
   {
@@ -4140,38 +4848,6 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
-    ]
-  },
-  {
-    "id": "5c672a6a60cf2c98",
-    "source": "himalayas",
-    "title": "Senior SAP CPQ Developer",
-    "company": "Clarity",
-    "url": "https://himalayas.app/companies/clarity-cx/jobs/senior-sap-cpq-developer",
-    "posted_at": 1782540142,
-    "locations": [
-      "Mexico"
-    ],
-    "primary_location": "Mexico",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "CRM / CX / Commerce"
-    ],
-    "skills": [
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "Required Qualifications for Senior-Level Developer: Proficiency in backend development with Python. Proficiency in scripting languages like JavaScript. Extensive knowledge of SAP CPQ customization, product configuration, pricing rules, and quote generation processes. Strong ability to gather requirements and lead technical discussions with stakeholders. Experience leading and mentoring a development team. Management ",
-    "match_terms": [
-      "SAP"
     ]
   },
   {
@@ -5165,6 +5841,44 @@
     ]
   },
   {
+    "id": "cd28cced62086654",
+    "source": "himalayas",
+    "title": "Senior Consultant (w/m/d) Personal / Personalwirtschaft SAP",
+    "company": "Consileon Business Consultancy GmbH",
+    "url": "https://himalayas.app/companies/consileon-business-consultancy-gmbh/jobs/senior-consultant-w-m-d-personal-personalwirtschaft-sap",
+    "posted_at": 1787286424,
+    "locations": [
+      "Germany"
+    ],
+    "primary_location": "Germany",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "ABAP / Development",
+      "Fiori / UI5",
+      "HCM / SuccessFactors"
+    ],
+    "skills": [
+      "ABAP",
+      "SAPUI5 / UI5",
+      "SuccessFactors"
+    ],
+    "description_excerpt": "dein arbeitsumfeld Consileon Applied Business GmbH ist Teil der Consileon-Gruppe mit Fokus auf fachliche und technische Beratungsdienstleistungen rund um Prozesse zur Steuerung der Vertriebsorganisation und des Personalwesens. Unsere Berater unterstützen Unternehmen von der Strategie über die Implementierung bis hin zum Betrieb. Wir begleiten namhafte Banken, Versicherungen, Automobilhersteller, Energieversorger sowi",
+    "match_terms": [
+      "SAP",
+      "ABAP",
+      "SuccessFactors",
+      "UI5"
+    ]
+  },
+  {
     "id": "946d287e78fafe55",
     "source": "himalayas",
     "title": "ERP Solutions Architect /Consultant",
@@ -5274,44 +5988,6 @@
     "description_excerpt": "Cross ALM GmbH ist ein führendes Unternehmen im Bereich der IT-und Prozess-Beratung. Unterstütze mit uns Mittelstands- und Enterprise-Unternehmen dabei Ihre IT-Prozesswelt zu optimieren. Neben unserer Beratung bieten wir auch Softwarelösungen an, die Business- und IT-Abteilungen unserer Kunden zu besserer Zusammenarbeit verhelfen. Vor allem die Kombination unseres Know-Hows im Bereich SAP, Atlassian und Service Now m",
     "match_terms": [
       "SAP"
-    ]
-  },
-  {
-    "id": "2d546246554e8286",
-    "source": "himalayas",
-    "title": "SAP Data Migration Lead",
-    "company": "Curtiss-Wright Corporation",
-    "url": "https://himalayas.app/companies/curtiss-wright-corporation/jobs/sap-data-migration-lead",
-    "posted_at": 1786726711,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 125300,
-    "salary_max": 167000,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "BTP / Integration",
-      "FI / CO / FICO",
-      "SD / Sales"
-    ],
-    "skills": [
-      "S/4HANA",
-      "IDoc",
-      "Agile / Scrum"
-    ],
-    "description_excerpt": "We are looking for an SAP Data Migration Lead - to join our team! Your Responsibilities: SAP Data Migration Lead will report directly to Director IT Business System – SAP and will be responsible for CW SAP Data Migration activities. Location: Remote, US Salary Range: $125,300 – 167,000 Please note that the salary range information provided is a general guideline only. Criteria such as the candidate’s qualifications a",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "IDoc"
     ]
   },
   {
@@ -5613,43 +6289,6 @@
       "English"
     ],
     "description_excerpt": "D-ploy is an IT and Engineering Solutions company with operations throughout the EMEA region including Switzerland, Germany, Czech Republic, Austria, UK, as well as the USA. We pride ourselves on delivering innovative and superior services and solutions to numerous industry-leading clients. By building relationships and trusted partnerships within the IT community, we optimize our customer’s IT productivity and contr",
-    "match_terms": [
-      "SAP",
-      "S/4HANA"
-    ]
-  },
-  {
-    "id": "f576fdd45eae95f3",
-    "source": "himalayas",
-    "title": "Sr. Manager SAP Billing Systems and Transformation",
-    "company": "DHL Global Forwarding",
-    "url": "https://himalayas.app/companies/dhl-global-forwarding/jobs/sr-manager-sap-billing-systems-and-transformation",
-    "posted_at": 1785390266,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 95850,
-    "salary_max": 176295,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "FI / CO / FICO",
-      "SD / Sales"
-    ],
-    "skills": [
-      "S/4HANA",
-      "FICO",
-      "SAP SD",
-      "Agile / Scrum"
-    ],
-    "description_excerpt": "At DHL, our people are our greatest asset! Everyone’s contribution drives us to be the world's #1 logistics company. Certified as a Great Place to Work and as a Top Employer, we're dedicated to fostering a positive, collaborative, and supportive environment for all. Our commitment and engagement with Our People ensure we continuously build a workplace we're all proud of. Plus, with competitive compensation and except",
     "match_terms": [
       "SAP",
       "S/4HANA"
@@ -7383,6 +8022,288 @@
     ]
   },
   {
+    "id": "00aedd4730169ace",
+    "source": "himalayas",
+    "title": "Consultor Senior SAP FI | Gestión Bancaria y Tesorería - Remoto en México",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/consultor-senior-sap-fi-gestion-bancaria-y-tesoreria-remoto-en-mexico-8553756683",
+    "posted_at": 1787328682,
+    "locations": [
+      "Mexico"
+    ],
+    "primary_location": "Mexico",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 92000,
+    "salary_max": 92000,
+    "salary_currency": "MXN",
+    "salary_period": "annual",
+    "sap_focus": "SAP-titled role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "Fiori / UI5",
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP Fiori",
+      "FICO",
+      "English"
+    ],
+    "description_excerpt": "Important IT company At the Latin American level, growth requires: Consultor Senior SAP FI – Gestión Bancaria y Tesorería Buscamos un SAP FI Senior especializado en Bank Management / Treasury , con experiencia en SAP S/4HANA , para diseñar, configurar y optimizar procesos bancarios, pagos, conciliación y gestión de liquidez. Profesional analítico, orientado a resultados y con capacidad para interactuar con Finanzas, ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Fiori"
+    ]
+  },
+  {
+    "id": "3970f015429a10ff",
+    "source": "himalayas",
+    "title": "SAP Ariba CIG Consultant",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/sap-ariba-cig-consultant",
+    "posted_at": 1787310105,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "MM / Procurement"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP MM",
+      "Ariba"
+    ],
+    "description_excerpt": "The SAP Ariba CIG Consultant will manage integrations between SAP ERP/S4HANA and SAP Ariba solutions. Requirements Configure and manage SAP Ariba CIG integrations Handle master data and transactional data flows Support Ariba Buying, Invoicing, and Supplier Lifecycle modules Monitor and resolve integration errors Coordinate with SAP Ariba and SAP ERP teams Support testing and deployment activities Hands-on experience ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Ariba"
+    ]
+  },
+  {
+    "id": "58ff4ca759e2f06d",
+    "source": "himalayas",
+    "title": "SAP Basis Mid-Level Consultant - Remote in Mexico",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/sap-basis-mid-level-consultant-remote-in-mexico",
+    "posted_at": 1787333804,
+    "locations": [
+      "Mexico"
+    ],
+    "primary_location": "Mexico",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "Basis / Security",
+      "HANA / Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "GRC / Security",
+      "English"
+    ],
+    "description_excerpt": "Important IT company At the Latin American level, growth requires: SAP Basis Mid-Level Consultant We are seeking a SAP Basis Mid-Level Consultant with 5–7 years of hands-on experience , including strong experience supporting SAP production environments . The ideal candidate will be responsible for SAP Basis administration, system stability, performance, security, troubleshooting, and technical maintenance across SAP ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "HANA",
+      "SAP Basis"
+    ]
+  },
+  {
+    "id": "ce64a7d442c2e618",
+    "source": "himalayas",
+    "title": "SAP EWM – ABAP Consultant",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/sap-ewm-abap-consultant-1937653149",
+    "posted_at": 1787304824,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "ABAP / Development",
+      "EWM / WM / Logistics"
+    ],
+    "skills": [
+      "ABAP",
+      "SAP EWM"
+    ],
+    "description_excerpt": "We are looking for a SAP EWM – ABAP Consultant to develop and enhance warehouse management solutions using SAP EWM and ABAP. Requirements Develop and customize SAP EWM solutions using ABAP Enhance warehouse processes like inbound, outbound, and internal movements Work on RF framework, forms, and interfaces Collaborate with functional teams for requirement understanding Debug and optimize EWM-related ABAP programs Sup",
+    "match_terms": [
+      "SAP",
+      "ABAP"
+    ]
+  },
+  {
+    "id": "6b984b5c04ec1344",
+    "source": "himalayas",
+    "title": "SAP FICO Lead",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/sap-fico-lead-511527797",
+    "posted_at": 1787338634,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "FICO"
+    ],
+    "description_excerpt": "We are seeking an experienced SAP FICO Lead to lead finance transformation projects and manage SAP FICO implementations across business units. Requirements Lead end-to-end SAP FICO implementations and upgrades Manage and mentor FICO team members Design and optimize financial processes Act as the key point of contact for finance stakeholders Ensure smooth integration with MM, SD, PS, and other modules Oversee UAT, cut",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "b08769bcb561b427",
+    "source": "himalayas",
+    "title": "SAP PS Consultant",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/sap-ps-consultant-9710522464",
+    "posted_at": 1787324556,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "FICO"
+    ],
+    "description_excerpt": "The SAP PS Consultant will be responsible for implementing and supporting SAP Project System solutions for effective project planning and control. Requirements Configure SAP PS structures, WBS, networks, and milestones Integrate PS with FICO, MM, and SD modules Support project budgeting, costing, and settlement Gather business requirements and provide solutions Prepare functional documentation and support UAT Provide",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "808a7058156c5756",
+    "source": "himalayas",
+    "title": "Senior SAP FI-AR/AP Consultant - Remote in Mexico",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/senior-sap-fi-ar-ap-consultant-remote-in-mexico",
+    "posted_at": 1787333077,
+    "locations": [
+      "Mexico"
+    ],
+    "primary_location": "Mexico",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 92000,
+    "salary_max": 92000,
+    "salary_currency": "MXN",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "FI / CO / FICO",
+      "MM / Procurement",
+      "SD / Sales"
+    ],
+    "skills": [
+      "S/4HANA",
+      "FICO",
+      "SAP MM",
+      "SAP SD",
+      "English"
+    ],
+    "description_excerpt": "Important IT company At the Latin American level, growth requires: Senior SAP FI-AR/AP Consultant We are seeking a Senior SAP FI-AR/AP Consultant with strong functional and technical expertise in SAP Financial Accounting (FI-AR/AP), Order-to-Cash (OTC), Procure-to-Pay (P2P), and integration with SD and General Ledger (GL) . The ideal candidate will have experience supporting large multinational organizations and high",
+    "match_terms": [
+      "SAP",
+      "S/4HANA"
+    ]
+  },
+  {
+    "id": "00a945b8f1705b7c",
+    "source": "himalayas",
+    "title": "Senior SAP FICO Consultant",
+    "company": "GSB Solutions",
+    "url": "https://himalayas.app/companies/gsb-solutions/jobs/senior-sap-fico-consultant-3781534828",
+    "posted_at": 1787283488,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "S/4HANA",
+      "FICO"
+    ],
+    "description_excerpt": "The Senior SAP FICO Consultant will be responsible for delivering robust Finance & Controlling solutions within SAP. The role includes handling enhancements, support, new developments, and participating in full lifecycle implementation projects. The candidate should have deep functional knowledge of financials, taxation, and controlling processes. Requirements Functional & Configuration Expertise Configure and suppor",
+    "match_terms": [
+      "SAP",
+      "S/4HANA"
+    ]
+  },
+  {
     "id": "d1480c12cb75b321",
     "source": "himalayas",
     "title": "Concur Invoice Functional Consultant (Senior)",
@@ -7517,39 +8438,6 @@
     "match_terms": [
       "SAP",
       "S/4HANA",
-      "SuccessFactors"
-    ]
-  },
-  {
-    "id": "7271713260b63715",
-    "source": "himalayas",
-    "title": "SAP Payroll Processing Consultant",
-    "company": "Genesis Consulting Partners, LLC",
-    "url": "https://himalayas.app/companies/genesis-consulting-partners-llc/jobs/sap-payroll-processing-consultant",
-    "posted_at": 1785144537,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "HCM / SuccessFactors"
-    ],
-    "skills": [
-      "SuccessFactors",
-      "Agile / Scrum"
-    ],
-    "description_excerpt": "This is a remote position. Genesis Consulting has an immediate opportunity for an experienced, forward thinking SAP Payroll Processing Consultant with a passion for growth and business transformation. Join our team and utilize SAP technology to configure, develop, deliver and support applications for our clients while leveraging concepts of Lean, Agile, Kanban and SAFe. Our clients are some of the world’s leading com",
-    "match_terms": [
-      "SAP",
       "SuccessFactors"
     ]
   },
@@ -9550,37 +10438,6 @@
     ]
   },
   {
-    "id": "abb48b4d1e71ef25",
-    "source": "himalayas",
-    "title": "Associate Partner, ERP Practice-France",
-    "company": "Infosys Limited",
-    "url": "https://himalayas.app/companies/infosys-limited/jobs/associate-partner-erp-practice-france",
-    "posted_at": 1786998708,
-    "locations": [
-      "France"
-    ],
-    "primary_location": "France",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "SAP mentioned",
-    "role_family": "Functional Consulting",
-    "seniority": "Junior",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "English"
-    ],
-    "description_excerpt": "About Us You want to boost your career and collaborate with expert, talented colleagues to solve and deliver against our clients' most important challenges? We are growing and are looking for people to join our team. You'll be part of an entrepreneurial, high-growth environment of 300.000 employees. Our dynamic organization allows you to work across functional business pillars, contributing your ideas, experiences, d",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "f20d88621cc72bfe",
     "source": "himalayas",
     "title": "ERP EAM Functional Consultant -Spain",
@@ -10731,7 +11588,7 @@
     "title": "Enterprise Architect – SAP GROW (SAP S/4HANA Public Cloud)",
     "company": "KATBOTZ",
     "url": "https://himalayas.app/companies/katbotz/jobs/enterprise-architect-sap-grow-sap-s-4hana-public-cloud",
-    "posted_at": 1782108933,
+    "posted_at": 1787344341,
     "locations": [
       "United States"
     ],
@@ -11263,6 +12120,42 @@
     ]
   },
   {
+    "id": "c121ca57033d7ab7",
+    "source": "himalayas",
+    "title": "SAP Cloud Transformation Lead – SAP GROW",
+    "company": "KATBOTZ",
+    "url": "https://himalayas.app/companies/katbotz/jobs/sap-cloud-transformation-lead-sap-grow",
+    "posted_at": 1787344342,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "Agile / Scrum"
+    ],
+    "description_excerpt": "This is a remote position. KATBOTZ LLC is seeking an experiencedSAP Cloud Transformation Leadto drive end-to-end SAP GROW transformation initiatives for mid-market and enterprise customers adoptingSAP S/4HANA Cloud Public Edition. The ideal candidate will combine strong business process expertise, cloud transformation leadership, stakeholder management, and SAP implementation experience to successfully guide organiza",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "BTP"
+    ]
+  },
+  {
     "id": "5f9d93158fe957a7",
     "source": "himalayas",
     "title": "SAP Data Migration Consultant",
@@ -11543,6 +12436,45 @@
     ]
   },
   {
+    "id": "d3aa63d2ed302314",
+    "source": "himalayas",
+    "title": "SAP Master Data Consultant – SAP GROW (SAP S/4HANA Public Cloud)",
+    "company": "KATBOTZ",
+    "url": "https://himalayas.app/companies/katbotz/jobs/sap-master-data-consultant-sap-grow-sap-s-4hana-public-cloud",
+    "posted_at": 1787344341,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "FI / CO / FICO",
+      "MDG / Master Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "FICO",
+      "MDG"
+    ],
+    "description_excerpt": "This is a remote position. KATBOTZ LLC is seeking an experiencedSAP Master Data Consultantto supportSAP GROW (SAP S/4HANA Public Cloud)transformation initiatives. The ideal candidate will possess strong expertise in master data governance, data migration, data quality management, and business process integration across Finance, Procurement, Manufacturing, Sales, Warehouse Management, and Project Systems. The consulta",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "BTP"
+    ]
+  },
+  {
     "id": "c9620e7355b0b6de",
     "source": "himalayas",
     "title": "SAP Order to Cash Senior Consultant",
@@ -11654,7 +12586,7 @@
     "title": "SAP Program Manager – SAP GROW",
     "company": "KATBOTZ",
     "url": "https://himalayas.app/companies/katbotz/jobs/sap-program-manager-sap-grow",
-    "posted_at": 1782110186,
+    "posted_at": 1787344341,
     "locations": [
       "United States"
     ],
@@ -12101,6 +13033,46 @@
       "SAP",
       "S/4HANA",
       "Fiori"
+    ]
+  },
+  {
+    "id": "f13fe67f45243cb4",
+    "source": "himalayas",
+    "title": "SAP Security & Authorization Consultant – SAP GROW (SAP S/4HANA Public Cloud)",
+    "company": "KATBOTZ",
+    "url": "https://himalayas.app/companies/katbotz/jobs/sap-security-authorization-consultant-sap-grow-sap-s-4hana-public-cloud",
+    "posted_at": 1787344340,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "GRC / Security"
+    ],
+    "description_excerpt": "This is a remote position. KATBOTZ LLC is seeking an experiencedSAP Security & Authorization Consultantto supportSAP GROW (SAP S/4HANA Public Cloud)implementation and transformation initiatives. The ideal candidate will possess deep expertise in SAP security design, role-based access control, authorization concepts, segregation of duties (SoD), identity management, and compliance requirements within SAP cloud environ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Fiori",
+      "BTP"
     ]
   },
   {
@@ -12818,6 +13790,47 @@
     ]
   },
   {
+    "id": "ef1c5346caf55dfb",
+    "source": "himalayas",
+    "title": "XTN-AD64169 | SAP FICO CONSULTANT",
+    "company": "KMC Solutions Inc",
+    "url": "https://himalayas.app/companies/kmc-solutions-inc/jobs/xtn-ad64169-sap-fico-consultant",
+    "posted_at": 1787320115,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "S/4HANA",
+      "Basis / Security",
+      "HANA / Data",
+      "FI / CO / FICO",
+      "SD / Sales"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "FICO",
+      "SAP SD"
+    ],
+    "description_excerpt": "As a member of the team at GC Products, you'll join over 2700 associates dedicated to distributing over 600 products across more than 100 countries. Our aspirations for the future are fueled by our passion for enhancing the quality of life worldwide. The market eagerly anticipates the continued excellence and innovation from our company. The SAP Business Partner Account To Report (ATR) will be working in the Digital ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "HANA",
+      "SAP Basis"
+    ]
+  },
+  {
     "id": "0bb46ecb6bd13075",
     "source": "himalayas",
     "title": "XTN-D0D3718 | SAP BW CONSULTANT",
@@ -12983,6 +13996,46 @@
     "match_terms": [
       "SAP",
       "ABAP"
+    ]
+  },
+  {
+    "id": "89b8dfa22bb58c84",
+    "source": "himalayas",
+    "title": "SAP Integrations Specialist",
+    "company": "Keyrus",
+    "url": "https://himalayas.app/companies/keyrus/jobs/sap-integrations-specialist",
+    "posted_at": 1787337971,
+    "locations": [
+      "Brazil"
+    ],
+    "primary_location": "Brazil",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "ABAP / Development",
+      "BTP / Integration"
+    ],
+    "skills": [
+      "ABAP",
+      "SAP BTP",
+      "CPI / Integration Suite",
+      "PI/PO",
+      "OData",
+      "IDoc"
+    ],
+    "description_excerpt": "Por que Keyrus , por que agora! A Keyrus é um grupo internacional com 2.800 consultores e especialistas presentes em 28 países, construído sobre uma única convicção: a IA não transforma os negócios. A inteligência arquitetada, sim. Há mais de 30 anos, construímos as bases de dados que fazem os sistemas inteligentes funcionarem — projetando o Sistema Operacional da empresa inteligente, no qual a inteligência é incorpo",
+    "match_terms": [
+      "SAP",
+      "ABAP",
+      "BTP",
+      "IDoc"
     ]
   },
   {
@@ -13642,6 +14695,53 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
+    ]
+  },
+  {
+    "id": "81fde837da42cf98",
+    "source": "himalayas",
+    "title": "Software Engineer Sr - E3 - SAP Development",
+    "company": "Lockheed Martin Corporation",
+    "url": "https://himalayas.app/companies/lockheed-martin-corporation/jobs/software-engineer-sr-e3-sap-development",
+    "posted_at": 1787293676,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 98100,
+    "salary_max": 182100,
+    "salary_currency": "USD",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "MM / Procurement"
+    ],
+    "skills": [
+      "ABAP",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "CPI / Integration Suite",
+      "OData",
+      "RAP / CAP",
+      "Ariba",
+      "Agile / Scrum"
+    ],
+    "description_excerpt": "Standard Job Description Join Lockheed Martin’s digital transformation journey as we accelerate the OneLM Mission-Driven Transformation through our 1LMX program. This strategic priority is reshaping our operations and business processes to better serve our customers in terms of cost, quality, and capabilities, while delivering the speed, agility, and insights necessary to stay ahead of rapidly-evolving threats. As a ",
+    "match_terms": [
+      "SAP",
+      "ABAP",
+      "Ariba",
+      "Fiori",
+      "UI5",
+      "BTP"
     ]
   },
   {
@@ -14879,6 +15979,43 @@
     ]
   },
   {
+    "id": "740bb918dd17806c",
+    "source": "himalayas",
+    "title": "SAP FI-AP Consultant",
+    "company": "Lupus Consulting Zrt.",
+    "url": "https://himalayas.app/companies/lupus-consulting-zrt/jobs/sap-fi-ap-consultant",
+    "posted_at": 1787345105,
+    "locations": [
+      "Brazil"
+    ],
+    "primary_location": "Brazil",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "FI / CO / FICO",
+      "MM / Procurement"
+    ],
+    "skills": [
+      "S/4HANA",
+      "FICO",
+      "SAP MM",
+      "English"
+    ],
+    "description_excerpt": "We are looking for an experienced SAP FI-AP Consultant with strong expertise in Accounts Payable and hands-on experience with OpenText Vendor Invoice Management (VIM) . The role focuses on supporting and optimizing SAP Finance and end-to-end Procure-to-Pay (P2P) processes, with a particular focus on invoice management and automation. Key Responsibilities Provide functional expertise in SAP FI-AP and Accounts Payable ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA"
+    ]
+  },
+  {
     "id": "e9ce5239d6a40cf3",
     "source": "himalayas",
     "title": "Senior SAP FI/CO Consultant with Treasury Expertise",
@@ -15685,37 +16822,6 @@
     ]
   },
   {
-    "id": "7f8d6c72cbeca4da",
-    "source": "himalayas",
-    "title": "Presales Consultant",
-    "company": "Müller`s Solutions",
-    "url": "https://himalayas.app/companies/muller-s-solutions/jobs/presales-consultant",
-    "posted_at": 1784465144,
-    "locations": [
-      "India"
-    ],
-    "primary_location": "India",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "SAP mentioned",
-    "role_family": "Functional Consulting",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "English"
-    ],
-    "description_excerpt": "Muller's Solutions is looking for a motivated Presales Consultant to support our sales team by engaging with clients, understanding business requirements, and positioning the right technology solutions. Job Summary The Presales Consultant will work closely with the sales and delivery teams to understand customer needs, prepare technical and commercial proposals, conduct solution demonstrations, and support the sales ",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "8ac3f8878d105397",
     "source": "himalayas",
     "title": "SAP ABAP / CPI Consultant",
@@ -15960,7 +17066,7 @@
     "title": "SAP Supply Chain & Procurement Consultant",
     "company": "Müller`s Solutions",
     "url": "https://himalayas.app/companies/muller-s-solutions/jobs/sap-supply-chain-procurement-consultant",
-    "posted_at": 1782117766,
+    "posted_at": 1787344509,
     "locations": [
       "Egypt"
     ],
@@ -15987,69 +17093,6 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
-    ]
-  },
-  {
-    "id": "4c6ee96e2f1a925c",
-    "source": "himalayas",
-    "title": "SAP BDC Consultant",
-    "company": "NATIONMIND LLC",
-    "url": "https://himalayas.app/companies/nationmind-llc/jobs/sap-bdc-consultant",
-    "posted_at": 1785998793,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": "USD",
-    "salary_period": "hourly",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "About NationMind LLC: NationMind LLC is a technology consulting firm focused on software development and QA testing services. We help clients build reliable, scalable applications with a strong emphasis on automation, performance, and quality. Our team works across industries, delivering solutions that drive innovation and operational efficiency. We are currently hiring skilled professionals for SAP BDC Consultant to",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "c0b347887d5461b1",
-    "source": "himalayas",
-    "title": "Principal SAP/SAC Architect",
-    "company": "NBCUniversal",
-    "url": "https://himalayas.app/companies/nbcuniversal-com/jobs/principal-sap-sac-architect",
-    "posted_at": 1783473683,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 180000,
-    "salary_max": 211150,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Architecture",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "HANA / Data"
-    ],
-    "skills": [
-      "SAP HANA",
-      "SAP Analytics Cloud"
-    ],
-    "description_excerpt": "Role Overview Responsible for development and configuration of an SAP Analytics cloud tool within NBCUniversal Corporate technology. Deliver an efficient SAP Planning and Analytical capability to support multiple business sectors requirements. What You Will Do Design and build the proposed analytics solution, lead requirement gathering sessions, and work with a variety of technologies such as native HANA modeling, HA",
-    "match_terms": [
-      "SAP",
-      "HANA",
-      "SAP Analytics Cloud"
     ]
   },
   {
@@ -16178,41 +17221,6 @@
       "S/4HANA",
       "SuccessFactors",
       "IDoc"
-    ]
-  },
-  {
-    "id": "677e5b0958aedcb4",
-    "source": "himalayas",
-    "title": "SAP AI Leader (Joule BTP) (Remote, TX, US)",
-    "company": "NTT DATA",
-    "url": "https://himalayas.app/companies/nttdata/jobs/sap-ai-leader-joule-btp-remote-tx-us",
-    "posted_at": 1784861738,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "SAP-titled role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "BTP / Integration"
-    ],
-    "skills": [
-      "S/4HANA",
-      "SAP BTP"
-    ],
-    "description_excerpt": "Req ID: 378121 NTT DATA strives to hire exceptional, innovative and passionate individuals who want to grow with us. If you want to be part of an inclusive, adaptable, and forward-thinking organization, apply now. We are currently seeking a SAP AI Leader (Joule BTP) to join our team in Remote, Texas (US-TX), United States (US). SAP AI LEADER Key Responsibilities: A thought leader, deep technical competence, people le",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "BTP"
     ]
   },
   {
@@ -16430,35 +17438,6 @@
     ]
   },
   {
-    "id": "eb962f299bba86af",
-    "source": "himalayas",
-    "title": "Engineer ,SAP Govern Risk Compliance",
-    "company": "Nagarro",
-    "url": "https://himalayas.app/companies/nagarro/jobs/engineer-sap-govern-risk-compliance",
-    "posted_at": 1782712692,
-    "locations": [
-      "India"
-    ],
-    "primary_location": "India",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "You have begun to prove your worth in our industry! How has the experience been so far? We hope it has been rewarding. At Nagarro , we want to take the word “hope” out of that sentence. At Nagarro , if you are ready to take the next step, we are ready to take you to the next level. Want to work with the coolest tech, the brightest minds, and be able to solve the most challenging problems, then look no further. Click ",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "db12fd25be63e9c8",
     "source": "himalayas",
     "title": "Managing Consultant SAP S/4HANA Utilities / IS-U (m/f/d)",
@@ -16493,41 +17472,6 @@
       "SAP",
       "S/4HANA",
       "BTP"
-    ]
-  },
-  {
-    "id": "09dd399573706cc4",
-    "source": "himalayas",
-    "title": "Principal Engineer",
-    "company": "Nagarro",
-    "url": "https://himalayas.app/companies/nagarro/jobs/principal-engineer-1414641689",
-    "posted_at": 1782731313,
-    "locations": [
-      "Mexico"
-    ],
-    "primary_location": "Mexico",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "FI / CO / FICO",
-      "MM / Procurement",
-      "EWM / WM / Logistics"
-    ],
-    "skills": [
-      "FICO",
-      "SAP MM",
-      "English"
-    ],
-    "description_excerpt": "Must have Skills : SAP MM (Expert), SAP WM (Strong), Job Description : â€¢ Provide business and system knowledge in the area of SAP MM and WM modules. Expert functional business process and SAP technical knowledge in the areas of SAP MM with added knowledge of WM processes in ECC environment and interfacing these modules to other SAP modules like PP, SD, as well as experience with processes standardization and harmon",
-    "match_terms": [
-      "SAP"
     ]
   },
   {
@@ -17681,7 +18625,7 @@
     "title": "(Senior) Data Migration Architect (m/w/d)",
     "company": "Natuvion",
     "url": "https://himalayas.app/companies/natuvion/jobs/senior-data-migration-architect-m-w-d",
-    "posted_at": 1782148619,
+    "posted_at": 1787344525,
     "locations": [
       "United States"
     ],
@@ -18245,7 +19189,7 @@
     "title": "SAP IS-U Consultant (m/f/d)",
     "company": "Natuvion",
     "url": "https://himalayas.app/companies/natuvion/jobs/sap-is-u-consultant-m-f-d",
-    "posted_at": 1782158721,
+    "posted_at": 1787344525,
     "locations": [
       "Austria",
       "Germany",
@@ -18352,6 +19296,41 @@
     "match_terms": [
       "SAP",
       "S/4HANA",
+      "ABAP"
+    ]
+  },
+  {
+    "id": "7d138e69f369f86a",
+    "source": "himalayas",
+    "title": "Senior SAP FI/CO - Consultant (m/w/d)",
+    "company": "Natuvion",
+    "url": "https://himalayas.app/companies/natuvion/jobs/senior-sap-fi-co-consultant-m-w-d",
+    "posted_at": 1787344344,
+    "locations": [
+      "Germany"
+    ],
+    "primary_location": "Germany",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": "EUR",
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "ABAP / Development",
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "ABAP",
+      "FICO",
+      "German"
+    ],
+    "description_excerpt": "Möchtest du die Zukunft eines neuen Fachbereichs aktiv mitgestalten? Dann bist du bei uns genau richtig! Wir suchen einen Senior SAP FI/CO - Consultant (m/w/d) , der uns entweder in unserer Transformationssäule bei Projekten im Automotive Umfeld oder im Public Business Bereich unterstützt. Freue Dich auf ein dynamisches Team und die Möglichkeit, an unterschiedlichsten Projekten zu arbeiten. Bei uns erwarten Dich imme",
+    "match_terms": [
+      "SAP",
       "ABAP"
     ]
   },
@@ -18854,6 +19833,58 @@
       "S/4HANA",
       "ABAP",
       "BTP"
+    ]
+  },
+  {
+    "id": "5e86677f1d70b37b",
+    "source": "himalayas",
+    "title": "SAP ABAP Developer",
+    "company": "OmegaHires",
+    "url": "https://himalayas.app/companies/omegahires/jobs/sap-abap-developer",
+    "posted_at": 1787362655,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "HANA / Data"
+    ],
+    "skills": [
+      "ABAP",
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "OData",
+      "CDS Views",
+      "RAP / CAP",
+      "IDoc"
+    ],
+    "description_excerpt": "SAP ABAP Developer **Job Title: SAP Developer** **About the Role** We are seeking a skilled and motivated SAP Developer. In this role, you will design, develop, and maintain SAP solutions that support critical business processes, with a focus on modern, cloud-ready development practices aligned with SAP's Clean Core principles. **Key Responsibilities** - Design, develop, and deliver SAP solutions using ABAP and the R",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "ABAP",
+      "Fiori",
+      "UI5",
+      "BTP",
+      "HANA",
+      "BusinessObjects",
+      "IDoc"
     ]
   },
   {
@@ -19472,74 +20503,6 @@
     "company": "PradeepIT Consulting Services Pvt Ltd",
     "url": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/lead-sap-workflow-developer",
     "posted_at": 1782676814,
-    "locations": [
-      "India"
-    ],
-    "primary_location": "India",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Fiori / UI5"
-    ],
-    "skills": [
-      "SAPUI5 / UI5",
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "About the job Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and hundreds of other Fortune 500 companies and fast-growing startups. With continuous hard",
-    "match_terms": [
-      "SAP",
-      "UI5"
-    ]
-  },
-  {
-    "id": "f34dd2bf21175e71",
-    "source": "himalayas",
-    "title": "Lead SAP Workflow Developer (Cloud)",
-    "company": "PradeepIT Consulting Services Pvt Ltd",
-    "url": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/lead-sap-workflow-developer-cloud-2583413133",
-    "posted_at": 1782707552,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Fiori / UI5"
-    ],
-    "skills": [
-      "SAPUI5 / UI5",
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "About the job Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect Indias deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and hundreds of other Fortune 500 companies and fast-growing startups. With continuous hard ",
-    "match_terms": [
-      "SAP",
-      "UI5"
-    ]
-  },
-  {
-    "id": "3a3084702202900a",
-    "source": "himalayas",
-    "title": "Lead SAP Workflow Developer (Cloud)",
-    "company": "PradeepIT Consulting Services Pvt Ltd",
-    "url": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/lead-sap-workflow-developer-cloud",
-    "posted_at": 1782653986,
     "locations": [
       "India"
     ],
@@ -20566,35 +21529,6 @@
     ]
   },
   {
-    "id": "608fd40c196b6b51",
-    "source": "himalayas",
-    "title": "SAP C|Java",
-    "company": "PradeepIT Consulting Services Pvt Ltd",
-    "url": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/sap-c-java",
-    "posted_at": 1782627378,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "SAP-titled role",
-    "role_family": "Technical / Development",
-    "seniority": "Senior",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "About The Job Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect Indias deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and hundreds of other Fortune 500 companies and fast-growing startups. With continuous hard ",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "4ca653d6473cb892",
     "source": "himalayas",
     "title": "SAP Delivery Manager",
@@ -20817,40 +21751,6 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
-    ]
-  },
-  {
-    "id": "14ef02143be876d9",
-    "source": "himalayas",
-    "title": "SAP HANA BASIS Administrator",
-    "company": "PradeepIT Consulting Services Pvt Ltd",
-    "url": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/sap-hana-basis-administrator",
-    "posted_at": 1782691998,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Basis / Security",
-    "seniority": "Senior",
-    "modules": [
-      "Basis / Security",
-      "HANA / Data"
-    ],
-    "skills": [
-      "SAP HANA"
-    ],
-    "description_excerpt": "About the job Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and hundreds of other Fortune 500 companies and fast-growing startups. With continuous hard",
-    "match_terms": [
-      "SAP",
-      "HANA",
-      "SAP Basis"
     ]
   },
   {
@@ -22762,39 +23662,6 @@
     ]
   },
   {
-    "id": "187168190ecfdb8e",
-    "source": "himalayas",
-    "title": "Strategic Platform Administrator – SAP Role Administration",
-    "company": "Protective",
-    "url": "https://himalayas.app/companies/protective/jobs/strategic-platform-administrator-sap-role-administration",
-    "posted_at": 1784457110,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 77000,
-    "salary_max": 94820,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Basis / Security",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "Basis / Security",
-      "FI / CO / FICO"
-    ],
-    "skills": [
-      "FICO",
-      "GRC / Security"
-    ],
-    "description_excerpt": "The work we do has an impact on millions of lives, and you can be a part of it. We help protect our customers against life’s uncertainties. Regardless of where you work within the company, you’ll be helping provide protection and peace of mind when our customers need it most. We are seeking a self-motivated and detail-oriented SAP Role Administrator to join our IT Operations Strategic Platform Administration team. Th",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "320b906dc9972b0a",
     "source": "himalayas",
     "title": "Senior SAP Basis // NetWeaver Admin",
@@ -23009,93 +23876,36 @@
     ]
   },
   {
-    "id": "8d836fd186012bee",
+    "id": "61537afd25bf21bd",
     "source": "himalayas",
-    "title": "OpenText xECM for SAP Solutions Architect",
-    "company": "Qellus, LLC",
-    "url": "https://himalayas.app/companies/qellus-llc/jobs/opentext-xecm-for-sap-solutions-architect-728265987",
-    "posted_at": 1786743123,
+    "title": "Business Transformation Consultant – Finance Analytics (Tagetik)",
+    "company": "Qualysoft",
+    "url": "https://himalayas.app/companies/qualysoft/jobs/business-transformation-consultant-finance-analytics-tagetik",
+    "posted_at": 1787333517,
     "locations": [
-      "India"
+      "Hungary"
     ],
-    "primary_location": "India",
+    "primary_location": "Hungary",
     "remote": true,
     "salary_status": "Not disclosed",
     "salary_min": null,
     "salary_max": null,
-    "salary_currency": "USD",
+    "salary_currency": null,
     "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Architecture",
+    "sap_focus": "SAP module/technical requirement",
+    "role_family": "Technical / Development",
     "seniority": "Mid / Unspecified",
     "modules": [
-      "S/4HANA",
-      "ABAP / Development",
-      "Fiori / UI5",
-      "Basis / Security",
-      "MM / Procurement",
-      "HCM / SuccessFactors"
+      "HANA / Data"
     ],
     "skills": [
-      "ABAP",
-      "S/4HANA",
-      "SAP Fiori",
-      "SuccessFactors"
+      "SAP HANA",
+      "English"
     ],
-    "description_excerpt": "Summary/Objective: TheOpenText Extended ECM for SAP Solutions Architect role will leverage expertise in OpenText Extended ECM and SAP integration to design and implement tailored solutions that enhance business processes. You will guide clients through the full lifecycle of ECM implementations, ensuring that their SAP systems are fully integrated with OpenText content management solutions, enabling streamlined workfl",
+    "description_excerpt": "Founded in 1999 in Vienna, the Qualysoft Group is a manufacturer-independent IT consulting and services company, which successfully provides support for its international customers with the aim of boosting their competitiveness and economic efficiency through innovative IT solutions. Its focus is on financial services providers, telecommunications companies, the automotive industry and energy service providers. Over ",
     "match_terms": [
       "SAP",
-      "S/4HANA",
-      "ABAP",
-      "SuccessFactors",
-      "Fiori",
-      "BusinessObjects",
-      "SAP Basis"
-    ]
-  },
-  {
-    "id": "38e7c790bd9b5604",
-    "source": "himalayas",
-    "title": "OpenText xECM for SAP Solutions Architect",
-    "company": "Qellus, LLC",
-    "url": "https://himalayas.app/companies/qellus-llc/jobs/opentext-xecm-for-sap-solutions-architect",
-    "posted_at": 1786729126,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 140000,
-    "salary_max": 160000,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Architecture",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "S/4HANA",
-      "ABAP / Development",
-      "Fiori / UI5",
-      "Basis / Security",
-      "MM / Procurement",
-      "HCM / SuccessFactors"
-    ],
-    "skills": [
-      "ABAP",
-      "S/4HANA",
-      "SAP Fiori",
-      "SuccessFactors"
-    ],
-    "description_excerpt": "Summary/Objective: TheOpenText Extended ECM for SAP Solutions Architect role will leverage expertise in OpenText Extended ECM and SAP integration to design and implement tailored solutions that enhance business processes. You will guide clients through the full lifecycle of ECM implementations, ensuring that their SAP systems are fully integrated with OpenText content management solutions, enabling streamlined workfl",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "ABAP",
-      "SuccessFactors",
-      "Fiori",
-      "BusinessObjects",
-      "SAP Basis"
+      "HANA"
     ]
   },
   {
@@ -24076,39 +24886,6 @@
     ]
   },
   {
-    "id": "091627c2d1266ffb",
-    "source": "himalayas",
-    "title": "Support Engineer, SAP MM/WM",
-    "company": "Rimini Street, Inc",
-    "url": "https://himalayas.app/companies/rimini-street-inc/jobs/support-engineer-sap-mm-wm-3699962567",
-    "posted_at": 1783473336,
-    "locations": [
-      "Brazil"
-    ],
-    "primary_location": "Brazil",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "MM / Procurement",
-      "EWM / WM / Logistics"
-    ],
-    "skills": [
-      "SAP MM",
-      "English"
-    ],
-    "description_excerpt": "About Rimini Street, Inc . Rimini Street, Inc . (Nasdaq: RMNI), a Russell 2000® Company, is a global provider of end-to-end enterprise software support, products and services, the leading third-party support provider for Oracle and SAP software and a Salesforce and AWS partner. The Company has operations globally and offers a comprehensive family of unified solutions to run, manage, support, customize, configure, con",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "4fb9ef1c484e74a8",
     "source": "himalayas",
     "title": "SAP PMMO Consultant",
@@ -24210,51 +24987,6 @@
     ]
   },
   {
-    "id": "3fc59cc89881fd98",
-    "source": "himalayas",
-    "title": "(Senior) SAP / ABAP Developer for AI Banking Solutions",
-    "company": "SAP Fioneer",
-    "url": "https://himalayas.app/companies/sapfioneer/jobs/senior-sap-abap-developer-for-ai-banking-solutions",
-    "posted_at": 1782161789,
-    "locations": [
-      "Serbia"
-    ],
-    "primary_location": "Serbia",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Senior",
-    "modules": [
-      "ABAP / Development",
-      "BTP / Integration",
-      "Fiori / UI5",
-      "HANA / Data"
-    ],
-    "skills": [
-      "ABAP",
-      "SAP HANA",
-      "SAP Fiori",
-      "SAPUI5 / UI5",
-      "OData",
-      "CDS Views",
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "Innovation is and will always be the core of SAP Fioneer , and it is the promise of why we were spun out of SAP: agility, innovation, and delivery. SAP Fioneer builds on a heritage of outstanding technology and a deep understanding of corporate and consumer demands. At the heart of it all it is simple: We bring financial services to the next level with innovative software solutions and platforms. We are helping finan",
-    "match_terms": [
-      "SAP",
-      "ABAP",
-      "Fiori",
-      "UI5",
-      "HANA"
-    ]
-  },
-  {
     "id": "726099911329f38a",
     "source": "himalayas",
     "title": "Banking Technical Consultant - SA",
@@ -24303,7 +25035,7 @@
     "title": "Junior - Intermediate ABAP Developer - SA",
     "company": "SAP Fioneer",
     "url": "https://himalayas.app/companies/sapfioneer/jobs/junior-intermediate-abap-developer-sa",
-    "posted_at": 1782144429,
+    "posted_at": 1787344374,
     "locations": [
       "South Africa"
     ],
@@ -24342,55 +25074,12 @@
     ]
   },
   {
-    "id": "902a72138b638f13",
-    "source": "himalayas",
-    "title": "Lead Frontend Entwickler - SAPUI5/Fiori (m/w/d)",
-    "company": "SAP Fioneer",
-    "url": "https://himalayas.app/companies/sapfioneer/jobs/lead-frontend-entwickler-sapui5-fiori-m-w-d",
-    "posted_at": 1783275735,
-    "locations": [
-      "Germany"
-    ],
-    "primary_location": "Germany",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "ABAP / Development",
-      "BTP / Integration",
-      "Fiori / UI5"
-    ],
-    "skills": [
-      "ABAP",
-      "SAP BTP",
-      "SAP Fiori",
-      "SAPUI5 / UI5",
-      "CDS Views",
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "As a Lead Lead SAP Fiori / UI5 Frontend Engineer – Cloud & BTP m/f/d , you will take a central role in designing and developing intuitive, high-performance user interfaces for SAP-based applications. You’ll lead a small team of developers and work closely with cross-functional stakeholders to deliver scalable solutions within SAP BTP environments. Your expertise in SAPUI5 and Fiori Elements will be key to driving inn",
-    "match_terms": [
-      "SAP",
-      "ABAP",
-      "Fiori",
-      "UI5",
-      "BTP"
-    ]
-  },
-  {
     "id": "3ef51da3f97c0e56",
     "source": "himalayas",
     "title": "Lead SAP ABAP Developer",
     "company": "SAP Fioneer",
     "url": "https://himalayas.app/companies/sapfioneer/jobs/lead-sap-abap-developer",
-    "posted_at": 1782136102,
+    "posted_at": 1787344374,
     "locations": [
       "Germany"
     ],
@@ -24763,51 +25452,6 @@
     ]
   },
   {
-    "id": "ea01e94975c87916",
-    "source": "himalayas",
-    "title": "Senior SAP / ABAP Developer for Innovative Banking Solutions",
-    "company": "SAP Fioneer",
-    "url": "https://himalayas.app/companies/sapfioneer/jobs/senior-sap-abap-developer-for-innovative-banking-solutions",
-    "posted_at": 1782168162,
-    "locations": [
-      "Serbia"
-    ],
-    "primary_location": "Serbia",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Senior",
-    "modules": [
-      "ABAP / Development",
-      "BTP / Integration",
-      "Fiori / UI5",
-      "HANA / Data"
-    ],
-    "skills": [
-      "ABAP",
-      "SAP HANA",
-      "SAP Fiori",
-      "SAPUI5 / UI5",
-      "OData",
-      "CDS Views",
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "Innovation is and will always be the core of SAP Fioneer , and it is the promise of why we were spun out of SAP: agility, innovation, and delivery. SAP Fioneer builds on a heritage of outstanding technology and a deep understanding of corporate and consumer demands. At the heart of it all it is simple: We bring financial services to the next level with innovative software solutions and platforms. We are helping finan",
-    "match_terms": [
-      "SAP",
-      "ABAP",
-      "Fiori",
-      "UI5",
-      "HANA"
-    ]
-  },
-  {
     "id": "19c4cdec0221563a",
     "source": "himalayas",
     "title": "Senior SAP ABAP Engineer",
@@ -24975,7 +25619,7 @@
     "title": "Entry Level SAP MM Consultant needed for Project implementation",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/entry-level-sap-mm-consultant-needed-for-project-implementation-4701857034",
-    "posted_at": 1782133273,
+    "posted_at": 1787344478,
     "locations": [
       "United States"
     ],
@@ -25006,7 +25650,7 @@
     "title": "Entry-Level SAP Consultant",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/entry-level-sap-consultant-9412785904",
-    "posted_at": 1782137834,
+    "posted_at": 1787344478,
     "locations": [
       "India"
     ],
@@ -25036,7 +25680,7 @@
     "title": "Entry-Level SAP MM Consultant , Remote",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/entry-level-sap-mm-consultant-remote-3296387149",
-    "posted_at": 1782110688,
+    "posted_at": 1787344415,
     "locations": [
       "United States"
     ],
@@ -25072,7 +25716,7 @@
     "title": "Entry-Level SAP Success Factor Consultant, Remote",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/entry-level-sap-success-factor-consultant-remote-5273945154",
-    "posted_at": 1782152577,
+    "posted_at": 1787344479,
     "locations": [
       "United States"
     ],
@@ -25222,7 +25866,7 @@
     "title": "SAP Consultant needed for Project Implementation",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/sap-consultant-needed-for-project-implementation-8547891668",
-    "posted_at": 1782115456,
+    "posted_at": 1787344479,
     "locations": [
       "United States"
     ],
@@ -25297,7 +25941,7 @@
     "title": "SAP FICO & JVA Consultant-India",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/sap-fico-jva-consultant-india-7618409812",
-    "posted_at": 1782111120,
+    "posted_at": 1787344416,
     "locations": [
       "India"
     ],
@@ -25372,7 +26016,7 @@
     "title": "SAP FICO - Freshers Needed for Project Implementation process- Remote",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/sap-fico-freshers-needed-for-project-implementation-process-remote-7211038458",
-    "posted_at": 1782157673,
+    "posted_at": 1787344479,
     "locations": [
       "United States"
     ],
@@ -25437,7 +26081,7 @@
     "title": "SAP Fico",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/sap-fico-3834699708",
-    "posted_at": 1782144716,
+    "posted_at": 1787344417,
     "locations": [
       "India"
     ],
@@ -25893,7 +26537,7 @@
     "title": "SAP Project system",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/sap-project-system-9780203134",
-    "posted_at": 1782151850,
+    "posted_at": 1787344477,
     "locations": [
       "Canada"
     ],
@@ -26093,7 +26737,7 @@
     "title": "SAP project system",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/sap-project-system-1286933741",
-    "posted_at": 1782144579,
+    "posted_at": 1787344477,
     "locations": [
       "Canada"
     ],
@@ -26202,7 +26846,7 @@
     "title": "SuccessFactors Payroll Consultant",
     "company": "SAPSOL Technologies Inc.",
     "url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/successfactors-payroll-consultant-2454787953",
-    "posted_at": 1782115021,
+    "posted_at": 1787344417,
     "locations": [
       "Canada"
     ],
@@ -26865,7 +27509,7 @@
     "title": "Manager S/4HANA Embedded Analytics (Bundesweit, DE)",
     "company": "Scheer GmbH",
     "url": "https://himalayas.app/companies/scheer-gmbh/jobs/manager-s-4hana-embedded-analytics-bundesweit-de",
-    "posted_at": 1782109276,
+    "posted_at": 1787344318,
     "locations": [
       "Germany"
     ],
@@ -26963,6 +27607,48 @@
     "description_excerpt": "Mit Prozessen in der DNA zum Erfolg. Prozesse sind die Basis unseres Handelns. Der Erfolg jedes Unternehmens hängt von ihrer Qualität ab. Scheer steht für Qualität. Wir sind neugierig auf innovative Technologien und wollen diese intelligent und verantwortungsvoll, mit Leidenschaft und Freude bei unseren Kunden umsetzen. Der Scheer Spirit. In unserer offenen Unternehmenskultur leben wir ein partnerschaftliches und wer",
     "match_terms": [
       "SAP"
+    ]
+  },
+  {
+    "id": "d9477c08cbab874d",
+    "source": "himalayas",
+    "title": "Senior Consultant SAP BW (Bundesweit, DE)",
+    "company": "Scheer GmbH",
+    "url": "https://himalayas.app/companies/scheer-gmbh/jobs/senior-consultant-sap-bw-bundesweit-de",
+    "posted_at": 1787344317,
+    "locations": [
+      "Germany"
+    ],
+    "primary_location": "Germany",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "HANA / Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP BW / BI",
+      "SAP Analytics Cloud"
+    ],
+    "description_excerpt": "Mit Prozessen in der DNA zum Erfolg. Prozesse sind die Basis unseres Handelns. Der Erfolg jedes Unternehmens hängt von ihrer Qualität ab. Scheer steht für Qualität. Wir sind neugierig auf innovative Technologien und wollen diese intelligent und verantwortungsvoll, mit Leidenschaft und Freude bei unseren Kunden umsetzen. Der Scheer Spirit. In unserer offenen Unternehmenskultur leben wir ein partnerschaftliches und wer",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "BTP",
+      "HANA",
+      "BW/4HANA",
+      "SAP Analytics Cloud"
     ]
   },
   {
@@ -27696,7 +28382,7 @@
     "title": "Job Title: Sr SAP Functional SAP MII/ME Consultant - Remote",
     "company": "Simple Software Solutions Group",
     "url": "https://himalayas.app/companies/simple-software-solutions-group/jobs/job-title-sr-sap-functional-sap-mii-me-consultant-remote-9727368409",
-    "posted_at": 1782112108,
+    "posted_at": 1787344437,
     "locations": [
       "United States"
     ],
@@ -28802,6 +29488,42 @@
       "SAP",
       "S/4HANA",
       "ABAP"
+    ]
+  },
+  {
+    "id": "6f0a884a439bc44a",
+    "source": "himalayas",
+    "title": "Consultor SAP PS Sênior",
+    "company": "Softtek",
+    "url": "https://himalayas.app/companies/softtek/jobs/consultor-sap-ps-senior",
+    "posted_at": 1787327575,
+    "locations": [
+      "Brazil"
+    ],
+    "primary_location": "Brazil",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "SAP-titled role",
+    "role_family": "Other SAP-Related",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "FI / CO / FICO",
+      "MM / Procurement"
+    ],
+    "skills": [
+      "S/4HANA",
+      "FICO",
+      "SAP MM"
+    ],
+    "description_excerpt": "Consultor SAP PS Sênior Buscamos um Consultor SAP PS Sênior para atuar na implementação do módulo SAP Project System (PS) em uma empresa do setor de transmissão de energia elétrica , apoiando o desenho, configuração e implantação dos processos relacionados à gestão de projetos de investimento e expansão da infraestrutura. Principais responsabilidades: Levantar e analisar os processos de negócio relacionados à gestão ",
+    "match_terms": [
+      "SAP",
+      "S/4HANA"
     ]
   },
   {
@@ -30814,7 +31536,7 @@
     "title": "SAP HCM Berater (M/W/D)",
     "company": "Teamwork Corporate",
     "url": "https://himalayas.app/companies/teamwork-corporate/jobs/sap-hcm-berater-m-w-d",
-    "posted_at": 1782115763,
+    "posted_at": 1787344505,
     "locations": [
       "Germany"
     ],
@@ -30843,7 +31565,7 @@
     "title": "SAP SuccessFactors Employee Central Senior Consultant (m/w/d)",
     "company": "Teamwork Corporate",
     "url": "https://himalayas.app/companies/teamwork-corporate/jobs/sap-successfactors-employee-central-senior-consultant-m-w-d-914852882",
-    "posted_at": 1782123775,
+    "posted_at": 1787344507,
     "locations": [
       "Germany"
     ],
@@ -31105,6 +31827,40 @@
     ]
   },
   {
+    "id": "37bb5341548179f7",
+    "source": "himalayas",
+    "title": "SAP Finance & Controlling (FI/CO) Consultant (all genders) (Any location in Pola",
+    "company": "Tenthpin",
+    "url": "https://himalayas.app/companies/tenthpin/jobs/sap-finance-controlling-fi-co-consultant-all-genders-any-location-in-pola",
+    "posted_at": 1787358915,
+    "locations": [
+      "Poland"
+    ],
+    "primary_location": "Poland",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "FI / CO / FICO"
+    ],
+    "skills": [
+      "S/4HANA",
+      "FICO"
+    ],
+    "description_excerpt": "At Tenthpin we are seeking talented, client-facing, and collaborative SAP Finance & Controlling (FI/CO) Consultants to join our rapidly growing team. The successful applicants will possess robust S/4HANA transformation experience and will have a passion for delivering innovative solutions that add substantial value to our clients, contributing to our reputation as one of the recent success stories within the Manageme",
+    "match_terms": [
+      "SAP",
+      "S/4HANA"
+    ]
+  },
+  {
     "id": "9d2e69cf2d91dc29",
     "source": "himalayas",
     "title": "SAP Finance and Controlling (FI/CO) Consultant",
@@ -31358,6 +32114,80 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
+    ]
+  },
+  {
+    "id": "a2fc0af765c6c10e",
+    "source": "himalayas",
+    "title": "SAP Quality Management (QM) Consultant (all genders) (Any location in Poland)",
+    "company": "Tenthpin",
+    "url": "https://himalayas.app/companies/tenthpin/jobs/sap-quality-management-qm-consultant-all-genders-any-location-in-poland-8545570500",
+    "posted_at": 1787334053,
+    "locations": [
+      "Poland"
+    ],
+    "primary_location": "Poland",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "HANA / Data",
+      "PP / QM / Manufacturing"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP QM"
+    ],
+    "description_excerpt": "At Tenthpin we are seeking talented, client-facing, and collaborative SAP Quality Management (QM) Consultants to join our rapidly growing team. The successful applicants will possess strong S/4HANA experience and will have a passion for delivering innovative solutions that add substantial value to our clients, contributing to our reputation as one of the recent success stories within the Management Consulting Industr",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "HANA"
+    ]
+  },
+  {
+    "id": "bddc880319b62abb",
+    "source": "himalayas",
+    "title": "SAP Quality Management (QM) Consultant (all genders) (Any location in Portugal)",
+    "company": "Tenthpin",
+    "url": "https://himalayas.app/companies/tenthpin/jobs/sap-quality-management-qm-consultant-all-genders-any-location-in-portugal-9862656133",
+    "posted_at": 1787327187,
+    "locations": [
+      "Portugal"
+    ],
+    "primary_location": "Portugal",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "HANA / Data",
+      "PP / QM / Manufacturing"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP QM"
+    ],
+    "description_excerpt": "At Tenthpin we are seeking talented, client-facing, and collaborative SAP Quality Management (QM) Consultants to join our rapidly growing team. The successful applicants will possess strong S/4HANA experience and will have a passion for delivering innovative solutions that add substantial value to our clients, contributing to our reputation as one of the recent success stories within the Management Consulting Industr",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "HANA"
     ]
   },
   {
@@ -32110,38 +32940,6 @@
     ]
   },
   {
-    "id": "7e563ce890ace7c6",
-    "source": "himalayas",
-    "title": "SAP Logistics Execution Consultant",
-    "company": "VISEO - Spain",
-    "url": "https://himalayas.app/companies/viseo-spain/jobs/sap-logistics-execution-consultant",
-    "posted_at": 1783443190,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "EWM / WM / Logistics",
-      "TM / GTS / Supply Chain"
-    ],
-    "skills": [
-      "English"
-    ],
-    "description_excerpt": "At VISEO , we solve our clients’ challenges across the entire spectrum of digital transformation, guiding them from digital implementations to robust business and technology strategies to drive long-term impact and success. As a global digital and business consulting company, we aim to be the reference player for the end-to-end digitalisation of international mid-sized companies and the provision of advice and suppor",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "d57bfb9e8b2ee533",
     "source": "himalayas",
     "title": "CAP/FIORI/JAVE Node",
@@ -32247,37 +33045,6 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
-    ]
-  },
-  {
-    "id": "ef84f6f87a51dc8a",
-    "source": "himalayas",
-    "title": "Senior SAP FI Specialist (US Based)",
-    "company": "VMG Labs",
-    "url": "https://himalayas.app/companies/vmg-labs/jobs/senior-sap-fi-specialist-us-based",
-    "posted_at": 1784420488,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Functional Consulting",
-    "seniority": "Senior",
-    "modules": [
-      "FI / CO / FICO"
-    ],
-    "skills": [
-      "FICO"
-    ],
-    "description_excerpt": "This is a remote position. Senior FI Solution Architect New Flex GL Financial Business experience background Requirements Financial Business background will be an advantage SAP NEW Flexible GL Excellent communication skills Presentation skills - able to communicate with all levels of Personnel Stakeholder Management SAP S/4 Certified Minimum of 3-4 years S/4 experience and 10 years of SAP Consultant experience Benefi",
-    "match_terms": [
-      "SAP"
     ]
   },
   {
@@ -32856,6 +33623,40 @@
     ]
   },
   {
+    "id": "71c721ecb2ee2e0c",
+    "source": "himalayas",
+    "title": "Consultor SAP Basis Sênior",
+    "company": "Vetta Tecnologia",
+    "url": "https://himalayas.app/companies/vetta-tecnologia/jobs/consultor-sap-basis-senior",
+    "posted_at": 1787304701,
+    "locations": [
+      "Brazil"
+    ],
+    "primary_location": "Brazil",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "SAP-titled role",
+    "role_family": "Basis / Security",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "ABAP / Development",
+      "Basis / Security"
+    ],
+    "skills": [
+      "ABAP"
+    ],
+    "description_excerpt": "Estamos buscando uma pessoa [gestor(a), insira aqui o nome do cargo] para o Time Vetta! Você atuará no time de uma empresa líder na produção e comercialização de aços, que produz soluções para os principais desafios industriais do país. VOCÊ JÁ CONHECE A VETTA? Na Vetta, acreditamos que a tecnologia e a inovação são essenciais para criar um futuro mais sustentável e eficiente para todos. Como uma empresa líder em dig",
+    "match_terms": [
+      "SAP",
+      "ABAP",
+      "SAP Basis"
+    ]
+  },
+  {
     "id": "1c14ae59a016247f",
     "source": "himalayas",
     "title": "Consultor(a) SAP PP Sênior",
@@ -32884,6 +33685,45 @@
     "description_excerpt": "Estamos buscando um(a) Consultor (a) SAP PP Sênior para o Time Vetta! Você fará parte do time de uma empresa líder na produção e comercialização de aços, que produz soluções para os principais desafios industriais do país. VOCÊ JÁ CONHECE A VETTA? Na Vetta, acreditamos que a tecnologia e a inovação são essenciais para criar um futuro mais sustentável e eficiente para todos. Como uma empresa líder em digitalização ind",
     "match_terms": [
       "SAP"
+    ]
+  },
+  {
+    "id": "0beaffda4e763131",
+    "source": "himalayas",
+    "title": "Desenvolvedor ABAP Sênior",
+    "company": "Vetta Tecnologia",
+    "url": "https://himalayas.app/companies/vetta-tecnologia/jobs/desenvolvedor-abap-senior",
+    "posted_at": 1787294119,
+    "locations": [
+      "Brazil"
+    ],
+    "primary_location": "Brazil",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "SAP-titled role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "Fiori / UI5",
+      "PM / Asset Management"
+    ],
+    "skills": [
+      "ABAP",
+      "S/4HANA",
+      "SAP Fiori"
+    ],
+    "description_excerpt": "Estamos buscando uma pessoa [gestor(a), insira aqui o nome do cargo] para o Time Vetta! Você atuará no time de uma empresa líder na produção e comercialização de aços, que produz soluções para os principais desafios industriais do país. VOCÊ JÁ CONHECE A VETTA? Na Vetta, acreditamos que a tecnologia e a inovação são essenciais para criar um futuro mais sustentável e eficiente para todos. Como uma empresa líder em dig",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "ABAP",
+      "Fiori"
     ]
   },
   {
@@ -33511,6 +34351,52 @@
     ]
   },
   {
+    "id": "ed771ddbdc4a2ffc",
+    "source": "himalayas",
+    "title": "SAP Basis Lead Consultant / remote 2857",
+    "company": "Xideral",
+    "url": "https://himalayas.app/companies/xideral/jobs/sap-basis-lead-consultant-remote-2857",
+    "posted_at": 1787297240,
+    "locations": [
+      "Mexico"
+    ],
+    "primary_location": "Mexico",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": "annual",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Basis / Security",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "Basis / Security",
+      "HANA / Data"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "SAP Fiori",
+      "CPI / Integration Suite",
+      "SAP BW / BI",
+      "English"
+    ],
+    "description_excerpt": "Seeking Experienced SAP Basis Lead Consultant for Exciting Projects Remote in Mexico We are looking for a SAP Basis Lead Consultant to join our team in a long-term project with a leading technology organization. This is a senior-level position focused on SAP Basis, S/4HANA, cloud migrations, technical architecture, and leadership of complex SAP technology initiatives. Key Responsibilities: • Lead SAP Basis solution d",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "Fiori",
+      "HANA",
+      "BW/4HANA",
+      "BusinessObjects",
+      "SAP Basis"
+    ]
+  },
+  {
     "id": "4ccf22ef168a5229",
     "source": "himalayas",
     "title": "SAP FSCM Consultant 2837",
@@ -33545,46 +34431,6 @@
     "match_terms": [
       "SAP",
       "BTP"
-    ]
-  },
-  {
-    "id": "520f03fe38b5a178",
-    "source": "himalayas",
-    "title": "SAP Functional Analyst – SAP FICO (Accounts Payable)",
-    "company": "Xideral",
-    "url": "https://himalayas.app/companies/xideral/jobs/sap-functional-analyst-sap-fico-accounts-payable",
-    "posted_at": 1787015593,
-    "locations": [
-      "Canada"
-    ],
-    "primary_location": "Canada",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": "annual",
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Data / Analytics",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "S/4HANA",
-      "FI / CO / FICO",
-      "MM / Procurement"
-    ],
-    "skills": [
-      "S/4HANA",
-      "FICO",
-      "SAP MM",
-      "Concur",
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "Lieu du mandat : Remote (Candidates must be based in Quebec or Ontario) Type de poste : Full-time Contract Durée de la mission : 6 months, with possibility of extension Heures de travail : 35 hours per week Langue requise : English or Bilingual À propos du poste We are looking for an experienced SAP Functional Analyst – FICO to join BRP's SAP Center of Expertise (CoE). This role will serve as the functional owner for",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "Concur"
     ]
   },
   {
@@ -34763,41 +35609,6 @@
     ]
   },
   {
-    "id": "1518d4c0a59a56a3",
-    "source": "himalayas",
-    "title": "Trainee IT Consultant (m/w/d)",
-    "company": "mindsquare AG",
-    "url": "https://himalayas.app/companies/mindsquare-ag/jobs/trainee-it-consultant-m-w-d",
-    "posted_at": 1782625930,
-    "locations": [
-      "Austria",
-      "Germany",
-      "Switzerland"
-    ],
-    "primary_location": "Austria",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 51000,
-    "salary_max": 51000,
-    "salary_currency": "EUR",
-    "salary_period": "annual",
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Technical / Development",
-    "seniority": "Entry / Intern",
-    "modules": [
-      "ABAP / Development"
-    ],
-    "skills": [
-      "ABAP",
-      "German"
-    ],
-    "description_excerpt": "Wenn du glaubst, dass Arbeiten bei allen IT-Beratungen gleich ist. Free your mind! Bei mindsquare geht´s um mehr: mehr Anspruch, mehr Impact, mehr du. Hier kommst du nicht einfach irgendwo unter. Du wirst Teil einer einzigartigen Community, die dich fordert, fördert und feiert. Wer bei uns einsteigt, entwickelt sich – fachlich, persönlich & menschlich. Weil Durchschnitt keine Option ist. Free your mind @mindsquare! 📅",
-    "match_terms": [
-      "SAP",
-      "ABAP"
-    ]
-  },
-  {
     "id": "52bed1de68653ea4",
     "source": "himalayas",
     "title": "(Senior) SAP ABAP Developer – Schwerpunkt EWM (m/w/d)",
@@ -34977,38 +35788,6 @@
       "ABAP",
       "Fiori",
       "UI5"
-    ]
-  },
-  {
-    "id": "b8f59663e432e2fb",
-    "source": "himalayas",
-    "title": "Come join us in reshaping the future: Senior Technical Consultant for AI-driven",
-    "company": "xSuite Solutions Inc.",
-    "url": "https://himalayas.app/companies/xsuite-solutions-inc/jobs/come-join-us-in-reshaping-the-future-senior-technical-consultant-for-ai-driven",
-    "posted_at": 1785141465,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 75000,
-    "salary_max": 100000,
-    "salary_currency": "USD",
-    "salary_period": "annual",
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Basis / Security",
-    "seniority": "Senior",
-    "modules": [
-      "Basis / Security"
-    ],
-    "skills": [
-      "GRC / Security",
-      "English"
-    ],
-    "description_excerpt": "Do you have a passion Artificial Intelligence driven solutions? xSuite North America is seeking an experienced Senior Technical Consultant to join our team! To be successful in this position you must have strong understanding of technology, great communication skills, and be a team player. If you are looking for an opportunity to utilize your skills and grow within an outstanding company, apply today! This position w",
-    "match_terms": [
-      "SAP"
     ]
   },
   {
@@ -35832,35 +36611,6 @@
     ]
   },
   {
-    "id": "6459af67995681ea",
-    "source": "remotefirst",
-    "title": "Associate Director, Biostatistics",
-    "company": "4D Molecular Therapeutics",
-    "url": "https://remotefirstjobs.com/companies/4d-molecular-therapeutics/jobs/associate-director-biostatistics-840216",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 193000,
-    "salary_max": 212000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Junior",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "Attention recruitment agencies: All agency inquiries are vetted through 4DMT’s internal Talent Acquisition team. No unsolicited resumes will be accepted. The 4DMT Talent Acquisition team must expressly engage agencies on any requisition. Agencies contacting hiring managers directly will not be tolerated, and doing so may impact your ability to work with 4DMT in the future. 4DMT is a leading late-stage biotechnology c",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "2b13b3a332170c0a",
     "source": "remotefirst",
     "title": "Senior Software Engineer-Founding Engineer",
@@ -36093,35 +36843,6 @@
     ],
     "skills": [],
     "description_excerpt": "About AlphaSense: The world’s most sophisticated companies rely on AlphaSense to remove uncertainty from decision-making. With market intelligence and search built on proven AI, AlphaSense delivers insights that matter from content you can trust. Our universe of public and private content includes equity research, company filings, event transcripts, expert calls, news, trade journals, and clients’ own research conten",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "add73c3f92af235c",
-    "source": "remotefirst",
-    "title": "Senior Software Engineer, PLM",
-    "company": "Anduril Industries",
-    "url": "https://remotefirstjobs.com/companies/anduril-industries/jobs/senior-software-engineer-plm-843205",
-    "posted_at": null,
-    "locations": [
-      "Worldwide / Not specified"
-    ],
-    "primary_location": "Worldwide / Not specified",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 166000,
-    "salary_max": 220000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Technical / Development",
-    "seniority": "Senior",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "Anduril Industries is a defense technology company with a mission to transform U.S. and allied military capabilities with advanced technology. By bringing the expertise, technology, and business model of the 21st century’s most innovative companies to the defense industry, Anduril is changing how military systems are designed, built and sold. Anduril’s family of systems is powered by Lattice OS, an AI-powered operati",
     "match_terms": [
       "SAP"
     ]
@@ -36597,35 +37318,6 @@
     ]
   },
   {
-    "id": "3b31c05da0f9547b",
-    "source": "remotefirst",
-    "title": "Merchandise Planner",
-    "company": "CSC Generation",
-    "url": "https://remotefirstjobs.com/companies/csc-generation/jobs/merchandise-planner-821124",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "Adventure is our Culture. Join a team that celebrates a lifestyle as bold as the terrain we love. At Backcountry, we are rooted in adventure, recognition, and wellbeing on and off the mountain. We spotlight employee stories, celebrate milestones, and offer exclusive outdoor perks. Whether you are at HQ, in a retail store, or remote, you will be part of a team that thrives on energy, exploration, and connection. Repor",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "1d52f6370e4d955d",
     "source": "remotefirst",
     "title": "Controller",
@@ -36742,6 +37434,68 @@
     ]
   },
   {
+    "id": "8262e882d8ee3345",
+    "source": "remotefirst",
+    "title": "Associate",
+    "company": "Celerity",
+    "url": "https://remotefirstjobs.com/companies/celerity-consulting-group/jobs/associate-851220",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 58240,
+    "salary_max": 64480,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Junior",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [
+      "Agile / Scrum"
+    ],
+    "description_excerpt": "Job Title: Associate Company: Celerity Location: Remote Job Type: Full-Time - Hourly About Celerity: Celerity is an agile risk optimization company that empowers public utility organizations by converting complex data into clear, actionable intelligence to mitigate risk, optimize assets, and maximize project results. Blending extensive client experience with deep vendor-side acumen, Celerity energy engineers orchestr",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "4d11fdd11bd90575",
+    "source": "remotefirst",
+    "title": "Engineering Consultant I",
+    "company": "Celerity",
+    "url": "https://remotefirstjobs.com/companies/celerity-consulting-group/jobs/engineering-consultant-i-851222",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 60320,
+    "salary_max": 68640,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [
+      "Agile / Scrum"
+    ],
+    "description_excerpt": "Job Title: Engineering Consultant I Company: Celerity Location: Remote (work from home eligible) US based Job Type: Hourly Pay: $29 - $33/hour About Celerity Celerity is an agile risk optimization company that empowers public utility organizations by converting complex data into clear, actionable intelligence to mitigate risk, optimize assets, and maximize project results. Blending extensive client experience with de",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "1e29f4ee928980df",
     "source": "remotefirst",
     "title": "Engineering Lead",
@@ -36834,6 +37588,35 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
+    ]
+  },
+  {
+    "id": "d83e24a944327956",
+    "source": "remotefirst",
+    "title": "Utility Data Programmer Analyst",
+    "company": "Celerity",
+    "url": "https://remotefirstjobs.com/companies/celerity-consulting-group/jobs/utility-data-programmer-analyst-851223",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 90000,
+    "salary_max": 125000,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP module/technical requirement",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "PM / Asset Management"
+    ],
+    "skills": [],
+    "description_excerpt": "Utility Data Programmer Analyst Position Overview Celerity is seeking a Utility Data Programmer Analyst to support data-intensive electric, gas, and water utility projects. This position will initially support a large-scale electric utility asset-data validation program and may contribute to additional engagements involving asset management, data quality, geographic information systems, regulatory compliance, operati",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
@@ -37781,35 +38564,6 @@
       "English"
     ],
     "description_excerpt": "▶︎ Job Details ・Job Title: Senior Accountant – Japanese Bilingual ・Client: Japanese Client ・Working Location: Irving, TX ・Working Style: Hybrid (2 days in office) ・Employment Type: Full-time ・Salary: $65,000–$75,000(DOE) ・Benefit: Full Benefits ・Visa Support: No ・Working Hours: Monday–Friday 9:00AM-5:30PM ・Language: English & Japanese ▶︎ Key Responsibilities Independently manage day-to-day corporate accounting operat",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "186f6cb8ca8241fb",
-    "source": "remotefirst",
-    "title": "Senior Business Development Representative",
-    "company": "Commercetools",
-    "url": "https://remotefirstjobs.com/companies/commercetools/jobs/senior-business-development-representative-800869",
-    "posted_at": null,
-    "locations": [
-      "Australia"
-    ],
-    "primary_location": "Australia",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Functional Consulting",
-    "seniority": "Senior",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "About commercetools Real innovation starts with a strong foundation, and at commercetools, that comes from the perfect balance of our product and our people. Behind every leap forward is a collective of builders, explorers, doers, makers, and problem-solvers. The kind of people who not only created composable commerce but also shaped the culture of experimentation that idea unlocked. Together they are the engine of c",
     "match_terms": [
       "SAP"
     ]
@@ -38766,37 +39520,6 @@
     ]
   },
   {
-    "id": "580060766c98c3b0",
-    "source": "remotefirst",
-    "title": "GL Analyst I",
-    "company": "Experian",
-    "url": "https://remotefirstjobs.com/companies/experian/jobs/gl-analyst-i-837579",
-    "posted_at": null,
-    "locations": [
-      "Costa Rica"
-    ],
-    "primary_location": "Costa Rica",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "English"
-    ],
-    "description_excerpt": "Company Description Experian is a global data and technology company, powering opportunities for people and businesses around the world. We operate across a range of markets, from financial services to healthcare, automotive, agribusiness, insurance, and many more. Experian invests in people and new advanced technologies to unlock the power of data. We have an amazing team of 25,200 people in 32 countries. Job Descri",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "5fca3fd7e3212430",
     "source": "remotefirst",
     "title": "AP Accountant (Fixed-term, 1 year)",
@@ -38979,6 +39702,36 @@
     "match_terms": [
       "SAP",
       "HANA"
+    ]
+  },
+  {
+    "id": "2e61f4df9472799d",
+    "source": "remotefirst",
+    "title": "Senior Sales Engineer, Enterprise",
+    "company": "Fivetran",
+    "url": "https://remotefirstjobs.com/companies/fivetran/jobs/senior-sales-engineer-enterprise-850849",
+    "posted_at": null,
+    "locations": [
+      "United States",
+      "Spain"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 166788,
+    "salary_max": 208485,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "From Fivetran’s founding until now, our mission has remained the same: to make access to data as simple and reliable as electricity. With Fivetran, customer data arrives in their warehouses, canonical and ready to query, with no engineering or maintenance required. We’re proud that more organizations continue to leverage our technology every day to become truly data-driven. About Us Fivetran and dbt Labs are bringing",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
@@ -40970,32 +41723,32 @@
     ]
   },
   {
-    "id": "8e407d416285cd6b",
+    "id": "b20d0f22d24d5d10",
     "source": "remotefirst",
-    "title": "Global Payroll Transformation Senior Manager",
+    "title": "Senior Associate, HR Shared Services",
     "company": "MongoDB",
-    "url": "https://remotefirstjobs.com/companies/mongodb/jobs/global-payroll-transformation-senior-manager-819692",
+    "url": "https://remotefirstjobs.com/companies/mongodb/jobs/senior-associate-hr-shared-services-850931",
     "posted_at": null,
     "locations": [
-      "United States"
+      "India"
     ],
-    "primary_location": "United States",
+    "primary_location": "India",
     "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 101000,
-    "salary_max": 198000,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
     "salary_currency": null,
     "salary_period": null,
     "sap_focus": "SAP module/technical requirement",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
+    "role_family": "Data / Analytics",
+    "seniority": "Junior",
     "modules": [
       "HCM / SuccessFactors"
     ],
     "skills": [
       "SuccessFactors"
     ],
-    "description_excerpt": "The Senior Global Payroll Transformation Manager will be responsible for supporting the global payroll processes covering compliance, equity, mobility, and payroll projects. The incumbent will possess the knowledge to drive process improvement and compliance globally, determine the root cause of problems and issues, and work collaboratively across multiple functions to improve the customer experience. The incumbent w",
+    "description_excerpt": "The HR Shared Services Compensation operations senior associate combines analytical rigour with a service-orientated mindset. They will be comfortable working in the details of HR systems and cases while also understanding the broader impact of compensation data and decisions on employees, managers, payroll, reporting, and business operations. We are looking to speak to candidates who are based in Gurugram for our hy",
     "match_terms": [
       "SuccessFactors"
     ]
@@ -41060,46 +41813,6 @@
     "match_terms": [
       "SAP",
       "BusinessObjects"
-    ]
-  },
-  {
-    "id": "4c7b7d954ec71e4d",
-    "source": "remotefirst",
-    "title": "Director, Finance Transformation",
-    "company": "NBCUniversal",
-    "url": "https://remotefirstjobs.com/companies/nbcuniversal/jobs/director-finance-transformation-819569",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 130000,
-    "salary_max": 170000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "HANA / Data",
-      "FI / CO / FICO",
-      "SD / Sales"
-    ],
-    "skills": [
-      "S/4HANA",
-      "SAP HANA",
-      "SAP Analytics Cloud",
-      "Agile / Scrum"
-    ],
-    "description_excerpt": "Company Description NBCUniversal is one of the world’s leading media and entertainment companies. We create world-class content, which we distribute across our portfolio of film, television, and streaming, and bring to life through our global theme park destinations, consumer products, and experiences. We own and operate leading entertainment and news brands, including NBC, NBC News, NBC Sports, Telemundo, NBC Local ",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "HANA",
-      "SAP Analytics Cloud"
     ]
   },
   {
@@ -42185,6 +42898,41 @@
     ]
   },
   {
+    "id": "07bc95790ac08116",
+    "source": "remotefirst",
+    "title": "SAP SuccessFactors Solution Architect (m/f/d)",
+    "company": "Nagarro",
+    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/sap-successfactors-solution-architect-mfd-851466",
+    "posted_at": null,
+    "locations": [
+      "Germany"
+    ],
+    "primary_location": "Germany",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Architecture",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "HCM / SuccessFactors"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SuccessFactors"
+    ],
+    "description_excerpt": "Company Description We are a Digital Product Engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18000+ experts across 36 countries, to be exact). Our work culture is dynamic and non-hierarchical. We are looking for great new colleagues.",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "SuccessFactors"
+    ]
+  },
+  {
     "id": "51066a9f7af92e85",
     "source": "remotefirst",
     "title": "Senior Consultant SAP Digital Adoption & Enablement (m/w/d)",
@@ -42700,6 +43448,35 @@
       "SAP",
       "S/4HANA",
       "SuccessFactors"
+    ]
+  },
+  {
+    "id": "6b9b5f53fe4e513a",
+    "source": "remotefirst",
+    "title": "Working Student / Werkstudent (f/m/d) SAP Sales & Demand Generation",
+    "company": "Nagarro",
+    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/working-student-werkstudent-fmd-sap-sales-demand-generation-851461",
+    "posted_at": null,
+    "locations": [
+      "Germany"
+    ],
+    "primary_location": "Germany",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP-titled role",
+    "role_family": "Data / Analytics",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Company Description We are a Digital Product Engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18000+ experts across 36 countries, to be exact). Our work culture is dynamic and non-hierarchical. We are looking for great new colleagues.",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
@@ -43879,6 +44656,58 @@
     "description_excerpt": "Thanks for your interest in Oklo! We are searching for a Project Planner to join our team. Position Description Project Planners at Oklo are responsible for tracking all aspects of ongoing projects including but not limited to: initial charter and project team assignments, specification of deliverables and vendor engagement and selection, project schedule kept to a daily WBS level of detail, project milestones, and r",
     "match_terms": [
       "SAP"
+    ]
+  },
+  {
+    "id": "966afa52a202b530",
+    "source": "remotefirst",
+    "title": "SAP ABAP Developer",
+    "company": "OmegaHires",
+    "url": "https://remotefirstjobs.com/companies/omegahires/jobs/sap-abap-developer-850860",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "S/4HANA",
+      "ABAP / Development",
+      "BTP / Integration",
+      "Fiori / UI5",
+      "HANA / Data"
+    ],
+    "skills": [
+      "ABAP",
+      "S/4HANA",
+      "SAP HANA",
+      "SAP BTP",
+      "SAP Fiori",
+      "SAPUI5 / UI5",
+      "OData",
+      "CDS Views",
+      "RAP / CAP",
+      "IDoc"
+    ],
+    "description_excerpt": "SAP ABAP Developer **Job Title: SAP Developer** **About the Role** We are seeking a skilled and motivated SAP Developer. In this role, you will design, develop, and maintain SAP solutions that support critical business processes, with a focus on modern, cloud-ready development practices aligned with SAP’s Clean Core principles. **Key Responsibilities** - Design, develop, and deliver SAP solutions using ABAP and the R",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "ABAP",
+      "Fiori",
+      "UI5",
+      "BTP",
+      "HANA",
+      "BusinessObjects",
+      "IDoc"
     ]
   },
   {
@@ -45979,6 +46808,37 @@
     ]
   },
   {
+    "id": "a7e2e9b8d7d578bf",
+    "source": "remotefirst",
+    "title": "Corporate Account Manager",
+    "company": "Public Group",
+    "url": "https://remotefirstjobs.com/companies/public-group/jobs/corporate-account-manager-851285",
+    "posted_at": null,
+    "locations": [
+      "Greece"
+    ],
+    "primary_location": "Greece",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [
+      "English"
+    ],
+    "description_excerpt": "The Organization Why Join Us? It’s More Than a Job in Retail, It’s Your Story. At Public Group, we believe in the power of our people in a sustainable way. That’s why we’re not just focused on what you do, but who you become. We’re committed to fueling your growth, because when you win, we all win. Imagine a place where you feel supported, valued, and empowered to make a real difference. A place where you can build a",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "0de79d2550214582",
     "source": "remotefirst",
     "title": "Financial Analyst",
@@ -46327,6 +47187,64 @@
     ]
   },
   {
+    "id": "d29e9d1a7a762e3b",
+    "source": "remotefirst",
+    "title": "Senior Integration Manager (ERP experience required) - US Based",
+    "company": "ReSource Pro",
+    "url": "https://remotefirstjobs.com/companies/resource-pro/jobs/senior-integration-manager-erp-experience-required-us-based-851115",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 96655,
+    "salary_max": 163676,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Do you thrive on turning complex acquisitions into seamless, well-orchestrated integrations? Are you detail-oriented enough to track every milestone, yet flexible enough to adapt when plans change? Come Join ReSource Pro!! Your Role… As a Senior M&A Integration Manager, you will serve as the acquisition integration partner focused on ERP integrations, Accounting & Finance, Tax, and Treasury to support, supporting the",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "230286996c49923c",
+    "source": "remotefirst",
+    "title": "Senior Integration Manager (ERP experience required) - US Based Only",
+    "company": "ReSource Pro",
+    "url": "https://remotefirstjobs.com/companies/resource-pro/jobs/senior-integration-manager-erp-experience-required-us-based-only-851118",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 96655,
+    "salary_max": 163676,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Do you thrive on turning complex acquisitions into seamless, well-orchestrated integrations? Are you detail-oriented enough to track every milestone, yet flexible enough to adapt when plans change? Come Join ReSource Pro!! Your Role… As a Senior M&A Integration Manager, you will serve as the acquisition integration partner focused on ERP integrations, Accounting & Finance, Tax, and Treasury to support, supporting the",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "2d1868e00ba0de48",
     "source": "remotefirst",
     "title": "Accountant",
@@ -46653,68 +47571,6 @@
     "salary_status": "Disclosed",
     "salary_min": 46500,
     "salary_max": 104650,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "English"
-    ],
-    "description_excerpt": "About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different conti",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "740036e699282a5b",
-    "source": "remotefirst",
-    "title": "Payroll Specialist Lead",
-    "company": "Remote",
-    "url": "https://remotefirstjobs.com/companies/remote/jobs/payroll-specialist-lead-737506",
-    "posted_at": null,
-    "locations": [
-      "Worldwide / Not specified"
-    ],
-    "primary_location": "Worldwide / Not specified",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 33300,
-    "salary_max": 84250,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "English"
-    ],
-    "description_excerpt": "About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different conti",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "c6e5ff765070e868",
-    "source": "remotefirst",
-    "title": "Payroll Specialist Lead",
-    "company": "Remote",
-    "url": "https://remotefirstjobs.com/companies/remote/jobs/payroll-specialist-lead-737385",
-    "posted_at": null,
-    "locations": [
-      "Denmark"
-    ],
-    "primary_location": "Denmark",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 33300,
-    "salary_max": 84250,
     "salary_currency": null,
     "salary_period": null,
     "sap_focus": "SAP mentioned",
@@ -47760,11 +48616,11 @@
     ]
   },
   {
-    "id": "dbba86dd09f70e5e",
+    "id": "7f0f5c6eeac13742",
     "source": "remotefirst",
-    "title": "Specialist, LMS & Employee Onboarding",
+    "title": "Specialist, Mechanical Engineer",
     "company": "Scout Motors Inc.",
-    "url": "https://remotefirstjobs.com/companies/scout-motors-inc/jobs/specialist-lms-employee-onboarding-839396",
+    "url": "https://remotefirstjobs.com/companies/scout-motors-inc/jobs/specialist-mechanical-engineer-850937",
     "posted_at": null,
     "locations": [
       "United States"
@@ -47772,22 +48628,20 @@
     "primary_location": "United States",
     "remote": true,
     "salary_status": "Disclosed",
-    "salary_min": 90000,
-    "salary_max": 112500,
+    "salary_min": 95000,
+    "salary_max": 120000,
     "salary_currency": null,
     "salary_period": null,
     "sap_focus": "SAP module/technical requirement",
-    "role_family": "Data / Analytics",
+    "role_family": "Technical / Development",
     "seniority": "Mid / Unspecified",
     "modules": [
-      "HCM / SuccessFactors"
+      "PM / Asset Management"
     ],
-    "skills": [
-      "SuccessFactors"
-    ],
+    "skills": [],
     "description_excerpt": "Here at Scout Motors, we’re carrying forward the heritage of one of the most iconic American vehicles in history. A vehicle dating back to 1960. One that forged the path for future generations of rugged SUVs and trucks and will do so once again. But Scout is more than just a brand, it’s a legacy steeped in a culture of exploration, caretaking, and hard work. The Scout brand is all about respect. Respect for the past ",
     "match_terms": [
-      "SuccessFactors"
+      "SAP"
     ]
   },
   {
@@ -47950,36 +48804,6 @@
     "match_terms": [
       "SAP",
       "Ariba"
-    ]
-  },
-  {
-    "id": "2b2396fbae6257bc",
-    "source": "remotefirst",
-    "title": "Sr. Manager, Continuous Improvement",
-    "company": "SharkNinja",
-    "url": "https://remotefirstjobs.com/companies/sharkninja/jobs/sr-manager-continuous-improvement-849234",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 145000,
-    "salary_max": 175000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "CRM / CX / Commerce"
-    ],
-    "skills": [],
-    "description_excerpt": "About Us SharkNinja is a global product design and technology company, with a diversified portfolio of 5-star rated lifestyle solutions that positively impact people’s lives in homes around the world. Powered by two trusted, global brands, Shark and Ninja , the company has a proven track record of bringing disruptive innovation to market and developing one consumer product after another has allowed SharkNinja to ente",
-    "match_terms": [
-      "SAP",
-      "Hybris / Commerce Cloud"
     ]
   },
   {
@@ -48877,6 +49701,35 @@
     ]
   },
   {
+    "id": "9f604c206cacddf9",
+    "source": "remotefirst",
+    "title": "Finance Intern",
+    "company": "Taboola",
+    "url": "https://remotefirstjobs.com/companies/taboola/jobs/finance-intern-851060",
+    "posted_at": null,
+    "locations": [
+      "India"
+    ],
+    "primary_location": "India",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Entry / Intern",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Realize your potential by joining the leading performance-driven advertising company and a proud Great Place to Work® Certified employer in India. As a Finance Shared Services Intern on the Finance Shared Services Center (FSSC) team in our Gurugram office , you’ll support global Accounts Payable, Accounts Receivable and Collections operations while contributing to projects that standardize, scale and automate finance",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "1a3f18ff0ce67f7a",
     "source": "remotefirst",
     "title": "Scrum Master",
@@ -49030,6 +49883,64 @@
       "GRC / Security"
     ],
     "description_excerpt": "Lead Federal Auditor The Basics The ideal candidate has solid, hands-on experience with FedRAMP compliance processes and federal risk management frameworks, including exposure to FedRAMP High and DoD Impact Level (IL4/IL5) environments. This role supports the organization’s cloud authorization activities by contributing to authorization package development, continuous monitoring, and control implementation efforts. W",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "d14b398c90a70338",
+    "source": "remotefirst",
+    "title": "CMC Program Lead, Commercial Radiochemistry",
+    "company": "Telix Pharmaceuticals Limited",
+    "url": "https://remotefirstjobs.com/companies/telxius/jobs/cmc-program-lead-commercial-radiochemistry-851224",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Functional Consulting",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Telix Pharmaceuticals is a dynamic, fast-growing radiopharmaceutical company with offices in Australia (HQ), Belgium, Japan, Switzerland, and the United States. Our mission is to deliver on the promise of precision medicine through targeted radiation. At our core, we exist to create products that seek to improve the quality of life for people living with cancer and rare diseases. You will be supporting the internatio",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "68ae1e12c105c8b8",
+    "source": "remotefirst",
+    "title": "CMC Program Lead, Commercial Radiochemistry",
+    "company": "Telix Pharmaceuticals Limited",
+    "url": "https://remotefirstjobs.com/companies/telxius/jobs/cmc-program-lead-commercial-radiochemistry-851216",
+    "posted_at": null,
+    "locations": [
+      "Canada"
+    ],
+    "primary_location": "Canada",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Functional Consulting",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Telix Pharmaceuticals is a dynamic, fast-growing radiopharmaceutical company with offices in Australia (HQ), Belgium, Japan, Switzerland, and the United States. Our mission is to deliver on the promise of precision medicine through targeted radiation. At our core, we exist to create products that seek to improve the quality of life for people living with cancer and rare diseases. You will be supporting the internatio",
     "match_terms": [
       "SAP"
     ]
@@ -50042,16 +50953,16 @@
     ]
   },
   {
-    "id": "a030f2c1d7051401",
+    "id": "48c1c9876e82b56e",
     "source": "remotefirst",
-    "title": "Director Client Partner",
-    "company": "Zaelab",
-    "url": "https://remotefirstjobs.com/companies/zaelab/jobs/director-client-partner-787877",
+    "title": "Senior Data Engineer - Fully Remote Opportunity",
+    "company": "Zealogics",
+    "url": "https://remotefirstjobs.com/companies/zealogics-inc/jobs/senior-data-engineer-fully-remote-opportunity-851412",
     "posted_at": null,
     "locations": [
-      "Canada"
+      "Worldwide / Not specified"
     ],
-    "primary_location": "Canada",
+    "primary_location": "Worldwide / Not specified",
     "remote": true,
     "salary_status": "Not disclosed",
     "salary_min": null,
@@ -50059,15 +50970,13 @@
     "salary_currency": null,
     "salary_period": null,
     "sap_focus": "SAP mentioned",
-    "role_family": "Functional Consulting",
-    "seniority": "Lead / Manager",
+    "role_family": "Technical / Development",
+    "seniority": "Senior",
     "modules": [
       "Unspecified SAP"
     ],
-    "skills": [
-      "Agile / Scrum"
-    ],
-    "description_excerpt": "The Director of Client Partner acts as the strategic lead across a portfolio of roughly $10M+ of complex enterprise B2B accounts, reporting directly to the SVP of Client Experience. This role is responsible for shaping and driving strategic account plans, delivering exceptional consulting solutions, and ensuring the long-term success of client relationships. The Director of Client Partner is the trusted advisor and a",
+    "skills": [],
+    "description_excerpt": "Job Title: Senior Data Engineer (Data Modeling & Multi-Source Integration) Experience: 5 – 8 Years Position Overview Zealogics Technologies is seeking an experienced and analytical Senior Data Engineer (5–8 years) to architect, model, and optimize the foundational data infrastructure for a brand-new strategic project. This role requires deep expertise in establishing relationships across heterogeneous data sources (S",
     "match_terms": [
       "SAP"
     ]
