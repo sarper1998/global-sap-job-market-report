@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-09-04T06:47:04",
-  "snapshot_date": "2026-09-04",
+  "generated_at": "2026-09-05T07:31:18",
+  "snapshot_date": "2026-09-05",
   "mode": "daily_delta",
   "linkedin": {
     "status": "completed",
-    "jobs_before": 294534,
-    "jobs_after": 295847,
-    "net_new_jobs": 1313,
-    "jobs_seen_in_snapshot": 1804,
-    "new_jobs_in_snapshot": 1313,
-    "summary_generated_at": "2026-09-04T06:38:15"
+    "jobs_before": 295847,
+    "jobs_after": 301959,
+    "net_new_jobs": 6112,
+    "jobs_seen_in_snapshot": 7620,
+    "new_jobs_in_snapshot": 6112,
+    "summary_generated_at": "2026-09-05T07:22:37"
   },
   "company_careers": {
     "status": "completed",
-    "jobs_before": 3537,
-    "jobs_after": 3568,
+    "jobs_before": 3568,
+    "jobs_after": 3599,
     "net_new_jobs": 31,
-    "jobs_seen_in_snapshot": 1881,
+    "jobs_seen_in_snapshot": 1866,
     "new_jobs_in_snapshot": 31,
-    "summary_generated_at": "2026-09-04T06:46:58"
+    "summary_generated_at": "2026-09-05T07:31:11"
   }
 }
