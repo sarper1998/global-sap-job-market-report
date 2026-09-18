@@ -46466,61 +46466,36 @@
     ]
   },
   {
-    "id": "f46621e87862d467",
+    "id": "3cc00901ba6c49ce",
     "source": "jobicy",
-    "title": "SHI Channel Sales Engineer",
-    "company": "Commvault",
-    "url": "https://jobicy.com/jobs/152430-shi-channel-sales-engineer",
-    "posted_at": "2026-09-03T16:27:04+00:00",
+    "title": "AR & Collections Manager",
+    "company": "AssetWatch",
+    "url": "https://jobicy.com/jobs/150919-ar-collections-manager",
+    "posted_at": "2026-09-17T05:30:17+00:00",
     "locations": [
       "United States"
     ],
     "primary_location": "United States",
     "remote": true,
     "salary_status": "Disclosed",
-    "salary_min": 93500,
-    "salary_max": 182850,
+    "salary_min": 92000,
+    "salary_max": 114000,
     "salary_currency": "USD",
     "salary_period": "annual",
-    "sap_focus": "SAP mentioned",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
+    "sap_focus": "SAP module/technical requirement",
+    "role_family": "Basis / Security",
+    "seniority": "Lead / Manager",
     "modules": [
-      "Unspecified SAP"
+      "Basis / Security",
+      "MM / Procurement"
     ],
-    "skills": [],
-    "description_excerpt": "Recruitment Fraud Alert We’ve learned that scammers are impersonating Commvault team members—including HR and leadership—via email or text. These bad actors may conduct fake interviews and ask for personal information, such as your social security number. What to know: Commvault does not conduct interviews by email or text. We will never ask you to submit sensitive documents (including banking information, SSN, etc) ",
+    "skills": [
+      "Ariba",
+      "GRC / Security"
+    ],
+    "description_excerpt": "AssetWatch serves global manufacturers by powering manufacturing uptime through the delivery of an unparalleled condition monitoring experience, with a passion to care about the assets our customers care for every day. We are a devoted and capable team that includes world-renowned engineers and distinguished business leaders united by a common goal – To build the future of predictive maintenance. As we enter the next",
     "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "8a77ce7bd5e52cdd",
-    "source": "jobicy",
-    "title": "Sales Engineer",
-    "company": "Commvault",
-    "url": "https://jobicy.com/jobs/152425-sales-engineer-6",
-    "posted_at": "2026-09-03T16:25:22+00:00",
-    "locations": [
-      "Canada"
-    ],
-    "primary_location": "Canada",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 135150,
-    "salary_max": 182850,
-    "salary_currency": "CAD",
-    "salary_period": "annual",
-    "sap_focus": "SAP mentioned",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "Recruitment Fraud Alert We’ve learned that scammers are impersonating Commvault team members—including HR and leadership—via email or text. These bad actors may conduct fake interviews and ask for personal information, such as your social security number. What to know: Commvault does not conduct interviews by email or text. We will never ask you to submit sensitive documents (including banking information, SSN, etc) ",
-    "match_terms": [
-      "SAP"
+      "Ariba"
     ]
   },
   {
@@ -46756,6 +46731,35 @@
     ]
   },
   {
+    "id": "50aa2821ce916067",
+    "source": "jobicy",
+    "title": "Change Management Consultant",
+    "company": "NTT DATA",
+    "url": "https://jobicy.com/jobs/146303-change-management-consultant",
+    "posted_at": "2026-09-17T05:35:06+00:00",
+    "locations": [
+      "Latin America"
+    ],
+    "primary_location": "Latin America",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "NTT DATA is a team of more than 190,000 diverse professionals, operating in more than 50 countries throughout the world. The sectors where we have activities include: telecommunications, finance, industry, utilities, energy, public administration and health. Our mission? Offer technological solutions, business, strategy, development and maintenance of applications, while being a benchmark in consulting. All thanks to",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "79feccb6bd6eb701",
     "source": "jobicy",
     "title": "Technical Consultant, Mid-Market",
@@ -46819,6 +46823,38 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
+    ]
+  },
+  {
+    "id": "4a08d5d1e68b0905",
+    "source": "jobicy",
+    "title": "Accountant",
+    "company": "Remote",
+    "url": "https://jobicy.com/jobs/150884-accountant",
+    "posted_at": "2026-09-17T05:35:03+00:00",
+    "locations": [
+      "Portugal",
+      "Spain"
+    ],
+    "primary_location": "Portugal",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 45250,
+    "salary_max": 50900,
+    "salary_currency": "EUR",
+    "salary_period": "annual",
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [
+      "English"
+    ],
+    "description_excerpt": "About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core values at heart and future focused work culture, our team works tirelessly on ambitious problems, asynchronously, around the world. You can find Remoters working from 6 different conti",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
@@ -47416,6 +47452,38 @@
     "match_terms": [
       "SAP",
       "S/4HANA"
+    ]
+  },
+  {
+    "id": "315de8f71b9beba6",
+    "source": "remotefirst",
+    "title": "Wholesale Footwear Manager EMEA - Remote (m/w/d)",
+    "company": "Arc'teryx Equipment",
+    "url": "https://remotefirstjobs.com/companies/arcteryx-equipment/jobs/wholesale-footwear-manager-emea-remote-mwd-861043",
+    "posted_at": null,
+    "locations": [
+      "Netherlands"
+    ],
+    "primary_location": "Netherlands",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [
+      "English",
+      "German"
+    ],
+    "description_excerpt": "Your Opportunity at ARC’TERYX: As Wholesale Footwear Manager EMEA, you will be responsible for driving sustainable commercial growth across the region while protecting the premium positioning and long-term equity of ARC’TERYX. You will shape and execute the regional wholesale strategy, developing strategic partnerships with leading outdoor specialty, mountain, trail running and premium sporting goods retailers. You w",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
@@ -48825,37 +48893,6 @@
     ]
   },
   {
-    "id": "ded95e9ccc2ac1fc",
-    "source": "remotefirst",
-    "title": "Senior Manager, Joint Venture & VIE",
-    "company": "CoreWeave",
-    "url": "https://remotefirstjobs.com/companies/coreweave/jobs/senior-manager-joint-venture-vie-788282",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 135000,
-    "salary_max": 180000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Basis / Security",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Basis / Security"
-    ],
-    "skills": [
-      "GRC / Security"
-    ],
-    "description_excerpt": "CoreWeave is The Essential Cloud for AI™. Built for pioneers by pioneers, CoreWeave delivers a platform of technology, tools, and teams that enables innovators to build and scale AI with confidence. Trusted by leading AI labs, startups, and global enterprises, CoreWeave combines superior infrastructure performance with deep technical expertise to accelerate breakthroughs and turn compute into capability. Founded in 2",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "b7a771ddc0d81abf",
     "source": "remotefirst",
     "title": "Staff Business Systems Engineer Data Center Systems",
@@ -48884,40 +48921,6 @@
     "description_excerpt": "CoreWeave is The Essential Cloud for AI™. Built for pioneers by pioneers, CoreWeave delivers a platform of technology, tools, and teams that enables innovators to build and scale AI with confidence. Trusted by leading AI labs, startups, and global enterprises, CoreWeave combines superior infrastructure performance with deep technical expertise to accelerate breakthroughs and turn compute into capability. Founded in 2",
     "match_terms": [
       "SAP"
-    ]
-  },
-  {
-    "id": "43dfd52683f564a6",
-    "source": "remotefirst",
-    "title": "Senior Solution Advisor - 11612",
-    "company": "Coupa",
-    "url": "https://remotefirstjobs.com/companies/coupa-software/jobs/senior-solution-advisor-11612-827604",
-    "posted_at": null,
-    "locations": [
-      "Germany"
-    ],
-    "primary_location": "Germany",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 109478,
-    "salary_max": 124843,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Data / Analytics",
-    "seniority": "Senior",
-    "modules": [
-      "MM / Procurement"
-    ],
-    "skills": [
-      "Ariba",
-      "English",
-      "German"
-    ],
-    "description_excerpt": "Coupa makes margins multiply through its community-generated AI and industry-leading total spend management platform for businesses large and small. Coupa AI is informed by trillions of dollars of direct and indirect spend data across a global network of 10M+ buyers and suppliers. We empower you with the ability to predict, prescribe, and automate smarter, more profitable business decisions to improve operating margi",
-    "match_terms": [
-      "SAP",
-      "Ariba"
     ]
   },
   {
@@ -50167,37 +50170,6 @@
     "description_excerpt": "WPP is the trusted growth partner for the world’s leading brands. We unite cutting-edge media intelligence and data solutions, world-class creativity, next-generation production, transformative enterprise solutions and expert strategic counsel in a single company – powered by exceptional talent and our agentic marketing platform, WPP Open, to help our clients navigate change, capture opportunity and deliver transform",
     "match_terms": [
       "SAP"
-    ]
-  },
-  {
-    "id": "db37f05a91f4db4e",
-    "source": "remotefirst",
-    "title": "Director, HR Business Partner, Advertising",
-    "company": "Groupon",
-    "url": "https://remotefirstjobs.com/companies/groupon/jobs/director-hr-business-partner-advertising-819728",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 185000,
-    "salary_max": 205000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "HCM / SuccessFactors"
-    ],
-    "skills": [
-      "SuccessFactors"
-    ],
-    "description_excerpt": "The mission of The New York Times is to seek the truth and help people understand the world. That means independent journalism is at the heart of all we do as a company. It’s why we have a world-renowned newsroom that sends journalists to report on the ground from nearly 160 countries. It’s why we focus deeply on how our readers will experience our journalism, from print to audio to a world-class digital and app dest",
-    "match_terms": [
-      "SuccessFactors"
     ]
   },
   {
@@ -51729,35 +51701,6 @@
     ]
   },
   {
-    "id": "f79a8554134b0edf",
-    "source": "remotefirst",
-    "title": "Associate Staff Engineer, SAP Industry Solutions",
-    "company": "Nagarro",
-    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/associate-staff-engineer-sap-industry-solutions-823137",
-    "posted_at": null,
-    "locations": [
-      "India"
-    ],
-    "primary_location": "India",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Junior",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "Company Description 👋🏼We’re Nagarro. We are a Digital Product Engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at a scale — across all devices and digital mediums, and our people exist everywhere in the world (18000+ experts across 40 countries, to be exact). Our work culture is dynamic and non-hierarchical. We are looking for gr",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "9acf55c2336a624f",
     "source": "remotefirst",
     "title": "Cloud Senior Sales Specialist",
@@ -52237,102 +52180,6 @@
     "match_terms": [
       "SAP",
       "SuccessFactors"
-    ]
-  },
-  {
-    "id": "0d82412f6f15c513",
-    "source": "remotefirst",
-    "title": "Senior SAP ABAP Developer with German",
-    "company": "Nagarro",
-    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/senior-sap-abap-developer-with-german-839284",
-    "posted_at": null,
-    "locations": [
-      "Poland"
-    ],
-    "primary_location": "Poland",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Senior",
-    "modules": [
-      "S/4HANA",
-      "ABAP / Development",
-      "BTP / Integration",
-      "Fiori / UI5"
-    ],
-    "skills": [
-      "ABAP",
-      "S/4HANA",
-      "SAP Fiori",
-      "SAPUI5 / UI5",
-      "OData",
-      "CDS Views",
-      "RAP / CAP",
-      "IDoc",
-      "English",
-      "German"
-    ],
-    "description_excerpt": "Company Description 👋🏼 We’re Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18 000+ experts across 39 countries, to be exact). Our work culture is dynamic and non-hierarchical. We’re looking for gre",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "ABAP",
-      "Fiori",
-      "UI5",
-      "IDoc"
-    ]
-  },
-  {
-    "id": "38457e29562fe459",
-    "source": "remotefirst",
-    "title": "Senior SAP ABAP Developer with German",
-    "company": "Nagarro",
-    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/senior-sap-abap-developer-with-german-839283",
-    "posted_at": null,
-    "locations": [
-      "Romania"
-    ],
-    "primary_location": "Romania",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Senior",
-    "modules": [
-      "S/4HANA",
-      "ABAP / Development",
-      "BTP / Integration",
-      "Fiori / UI5"
-    ],
-    "skills": [
-      "ABAP",
-      "S/4HANA",
-      "SAP Fiori",
-      "SAPUI5 / UI5",
-      "OData",
-      "CDS Views",
-      "RAP / CAP",
-      "IDoc",
-      "English",
-      "German"
-    ],
-    "description_excerpt": "Company Description 👋🏼 We’re Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18 000+ experts across 39 countries, to be exact). Our work culture is dynamic and non-hierarchical. We’re looking for gre",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "ABAP",
-      "Fiori",
-      "UI5",
-      "IDoc"
     ]
   },
   {
@@ -52957,53 +52804,6 @@
     "title": "SAP ABAP Developer Senior-Lead",
     "company": "Netcompany",
     "url": "https://remotefirstjobs.com/companies/netcompany/jobs/sap-abap-developer-seniorlead-585347",
-    "posted_at": null,
-    "locations": [
-      "Greece"
-    ],
-    "primary_location": "Greece",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "ABAP / Development",
-      "BTP / Integration",
-      "Fiori / UI5",
-      "MM / Procurement"
-    ],
-    "skills": [
-      "ABAP",
-      "S/4HANA",
-      "SAP BTP",
-      "SAP Fiori",
-      "SAPUI5 / UI5",
-      "CPI / Integration Suite",
-      "PI/PO",
-      "English"
-    ],
-    "description_excerpt": "Company Description Are you ready to shape the future technological landscape in Europe? We are dedicated to responsible digitalisation, building innovative, inclusive solutions that drive meaningful impact. With over 8,900 professionals across Europe, we help EU institutions, public and private organisations thrive in a rapidly evolving digital world. Are you ready to shape the future through technology? Your journe",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "ABAP",
-      "Fiori",
-      "UI5",
-      "BTP"
-    ]
-  },
-  {
-    "id": "54592d04cc55591b",
-    "source": "remotefirst",
-    "title": "SAP ABAP Developer Senior-Lead",
-    "company": "Netcompany",
-    "url": "https://remotefirstjobs.com/companies/netcompany/jobs/sap-abap-developer-seniorlead-585243",
     "posted_at": null,
     "locations": [
       "Greece"
@@ -55764,11 +55564,11 @@
     ]
   },
   {
-    "id": "8835657dfb371e3e",
+    "id": "d8bcada190508dc6",
     "source": "remotefirst",
-    "title": "Junior Product Manager",
+    "title": "Junior SAP ABAP Developer",
     "company": "Public Group",
-    "url": "https://remotefirstjobs.com/companies/public-group/jobs/junior-product-manager-826156",
+    "url": "https://remotefirstjobs.com/companies/public-group/jobs/junior-sap-abap-developer-861010",
     "posted_at": null,
     "locations": [
       "Greece"
@@ -55780,18 +55580,20 @@
     "salary_max": null,
     "salary_currency": null,
     "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Support / Operations",
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Technical / Development",
     "seniority": "Junior",
     "modules": [
-      "Unspecified SAP"
+      "ABAP / Development"
     ],
     "skills": [
+      "ABAP",
       "English"
     ],
-    "description_excerpt": "The organization Why Join Us? It’s More Than a Job in Retail, It’s Your Story. At Public Group, we believe in the power of our people in a sustainable way. That’s why we’re not just focused on what you do, but who you become. We’re committed to fueling your growth, because when you win, we all win. Imagine a place where you feel supported, valued, and empowered to make a real difference. A place where you can build a",
+    "description_excerpt": "Public Group strategically invests to create an ecosystem of innovative scaleups around its Omnichannel Retail business, with the objective to provide exciting customer experiences and foster Entrepreneurship in Greece. We bring together technology, talent & entrepreneurship to create value in the Greek market. Our role is to help our subsidiaries or investee companies grow and their founders to succeed through capit",
     "match_terms": [
-      "SAP"
+      "SAP",
+      "ABAP"
     ]
   },
   {
@@ -58205,38 +58007,6 @@
     ]
   },
   {
-    "id": "ffa19527f8dfaa0b",
-    "source": "remotefirst",
-    "title": "SSR Fullstack Java / Angular",
-    "company": "Talan",
-    "url": "https://remotefirstjobs.com/companies/talan/jobs/ssr-fullstack-java-angular-855778",
-    "posted_at": null,
-    "locations": [
-      "Spain"
-    ],
-    "primary_location": "Spain",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Technical / Development",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "Agile / Scrum",
-      "English"
-    ],
-    "description_excerpt": "Company Description Talan – Positive Innovation Talan is an international consulting group specializing in innovation and business transformation through technology. With over 7,200 consultants in 21 countries and a turnover of €850M, we are committed to delivering impactful, future-ready solutions. Talan at a Glance Headquartered in Paris and operating globally, Talan combines technology, innovation, and empowerment",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "e8923973476dae1c",
     "source": "remotefirst",
     "title": "Senior Data Engineer",
@@ -58420,38 +58190,6 @@
     "description_excerpt": "Telix Pharmaceuticals is a dynamic, fast-growing radiopharmaceutical company with offices in Australia (HQ), Belgium, Japan, Switzerland, and the United States. Our mission is to deliver on the promise of precision medicine through targeted radiation. At our core, we exist to create products that seek to improve the quality of life for people living with cancer and rare diseases. You will be supporting the internatio",
     "match_terms": [
       "SAP"
-    ]
-  },
-  {
-    "id": "ddb61c03bd4573b4",
-    "source": "remotefirst",
-    "title": "Manager, Accounts Payable",
-    "company": "TerrAscend New Jersey",
-    "url": "https://remotefirstjobs.com/companies/terrascend/jobs/manager-accounts-payable-854383",
-    "posted_at": null,
-    "locations": [
-      "Worldwide / Not specified"
-    ],
-    "primary_location": "Worldwide / Not specified",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 95000,
-    "salary_max": 115000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "Concur"
-    ],
-    "description_excerpt": "At TerrAscend, we don’t just grow cannabis — we grow possibility. Whether it’s cultivating top-tier flower, supporting patients with trusted therapies, or crafting premium products for adult use, we’re here to elevate lives. As a trailblazer in the cannabis industry, our roots run deep and our sights are set high. If you’re ready to shape the future of cannabis with a team that believes in quality, care, and communit",
-    "match_terms": [
-      "SAP",
-      "Concur"
     ]
   },
   {
