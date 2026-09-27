@@ -44540,6 +44540,38 @@
     ]
   },
   {
+    "id": "f03a01f20b1dc7db",
+    "source": "jobicy",
+    "title": "ERP System Administrator (Acumatica)",
+    "company": "Alimentiv",
+    "url": "https://jobicy.com/jobs/151608-erp-system-administrator-acumatica",
+    "posted_at": "2026-09-26T11:25:09+00:00",
+    "locations": [
+      "Canada"
+    ],
+    "primary_location": "Canada",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 78000,
+    "salary_max": 130000,
+    "salary_currency": "CAD",
+    "salary_period": "annual",
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [
+      "Concur"
+    ],
+    "description_excerpt": "The ERP System Administrator is an individual contributor role within Alimentiv ’s Corporate Digital Enablement function, serving as the primary functional and technical owner of the Acumatica ERP platform that powers our Finance, Procurement, Logistics and Project accounting operations. This is a hands-on administration role — the successful candidate will configure, operate, and continuously improve Acumatica. Anot",
+    "match_terms": [
+      "SAP",
+      "Concur"
+    ]
+  },
+  {
     "id": "3cc00901ba6c49ce",
     "source": "jobicy",
     "title": "AR & Collections Manager",
@@ -46092,37 +46124,6 @@
     ]
   },
   {
-    "id": "0e21aaf0ec5f20f4",
-    "source": "remotefirst",
-    "title": "Sr. Key Account Manager - Lowe's",
-    "company": "Bosch",
-    "url": "https://remotefirstjobs.com/companies/bosch/jobs/sr-key-account-manager-lowes-864252",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 125000,
-    "salary_max": 160000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP module/technical requirement",
-    "role_family": "Basis / Security",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Basis / Security"
-    ],
-    "skills": [
-      "GRC / Security"
-    ],
-    "description_excerpt": "Company Description GO WITH THE TEAM THAT’S SHAPING TOMORROW WITH NEW PRODUCTS EVERY DAY. At the Robert Bosch Tool Corporation, we know that every career matters. Which is why you should conduct yours on a grand scale. Headquartered in the northwest Chicago suburb of Mount Prospect, we are a $990 million division of Bosch, a multinational engineering and electronics organization and the largest privately held employe",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "5a410bc62f9023a2",
     "source": "remotefirst",
     "title": "Senior Associate -Finance",
@@ -46264,6 +46265,35 @@
     ],
     "skills": [],
     "description_excerpt": "Adventure is our Culture. Join a team that celebrates a lifestyle as bold as the terrain we love. At Backcountry, we are rooted in adventure, recognition, and wellbeing on and off the mountain. We spotlight employee stories, celebrate milestones, and offer exclusive outdoor perks. Whether you are at HQ, in a retail store, or remote, you will be part of a team that thrives on energy, exploration, and connection. Repor",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "8f7186de025ab95c",
+    "source": "remotefirst",
+    "title": "Sr. Manager, HRIS & Operations",
+    "company": "CannonDesign",
+    "url": "https://remotefirstjobs.com/companies/cannondesign/jobs/sr-manager-hris-operations-865066",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 120560,
+    "salary_max": 150700,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP module/technical requirement",
+    "role_family": "Data / Analytics",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "HCM / SuccessFactors"
+    ],
+    "skills": [],
+    "description_excerpt": "If you think your skills, experience and aspirations make you a good match for this position, we encourage you to apply. This position may be filled anywhere in the United States. ABOUT THE ROLE CannonDesign is seeking a strategic and results-oriented Sr. Manager, HRIS & Operations to lead the evolution of our HR technology ecosystem and core HR operations. This role serves as the primary owner of our Human Resources",
     "match_terms": [
       "SAP"
     ]
@@ -48497,35 +48527,6 @@
     ]
   },
   {
-    "id": "bf831c3ee3315f7e",
-    "source": "remotefirst",
-    "title": "Accounts Payable Coder",
-    "company": "Hudl",
-    "url": "https://remotefirstjobs.com/companies/hudl/jobs/accounts-payable-coder-862608",
-    "posted_at": null,
-    "locations": [
-      "United States"
-    ],
-    "primary_location": "United States",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 33000,
-    "salary_max": 56000,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Data / Analytics",
-    "seniority": "Mid / Unspecified",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "At Hudl, we build great teams. We hire the best of the best to ensure you’re working with people you can constantly learn from. You’re trusted to get your work done your way while testing the limits of what’s possible and what’s next. We work hard to provide a culture where everyone feels supported, and our employees feel it—their votes helped us become one of Newsweek’s Top 100 Global Most Loved Workplaces. We think",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "3050eaf482067374",
     "source": "remotefirst",
     "title": "Enterprise Account Executive",
@@ -48707,6 +48708,35 @@
     "description_excerpt": "We’re transforming the grocery industry At Instacart, we invite the world to share love through food because we believe everyone should have access to the food they love and more time to enjoy it together. Where others see a simple need for grocery delivery, we see exciting complexity and endless opportunity to serve the varied needs of our community. We work to deliver an essential service that customers rely on to ",
     "match_terms": [
       "Ariba"
+    ]
+  },
+  {
+    "id": "3c3d92d0ba4d7151",
+    "source": "remotefirst",
+    "title": "Billing Operations Lead",
+    "company": "Instacart",
+    "url": "https://remotefirstjobs.com/companies/instacart/jobs/billing-operations-lead-864826",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 92000,
+    "salary_max": 97000,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "We’re transforming the grocery industry At Instacart, we invite the world to share love through food because we believe everyone should have access to the food they love and more time to enjoy it together. Where others see a simple need for grocery delivery, we see exciting complexity and endless opportunity to serve the varied needs of our community. We work to deliver an essential service that customers rely on to ",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
@@ -50703,132 +50733,6 @@
       "ABAP",
       "Fiori",
       "UI5"
-    ]
-  },
-  {
-    "id": "c99a1f6cb808eacc",
-    "source": "remotefirst",
-    "title": "Senior SAP SD Consultant with German",
-    "company": "Nagarro",
-    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/senior-sap-sd-consultant-with-german-863565",
-    "posted_at": null,
-    "locations": [
-      "Poland"
-    ],
-    "primary_location": "Poland",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "Fiori / UI5",
-      "HANA / Data",
-      "SD / Sales"
-    ],
-    "skills": [
-      "S/4HANA",
-      "SAP HANA",
-      "SAP Fiori",
-      "SAP SD",
-      "English",
-      "German"
-    ],
-    "description_excerpt": "Company Description 👋🏼 We’re Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18 000+ experts across 39 countries, to be exact). Our work culture is dynamic and non-hierarchical. We’re looking for gre",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "Fiori",
-      "HANA"
-    ]
-  },
-  {
-    "id": "4210f33e60ef6b41",
-    "source": "remotefirst",
-    "title": "Senior SAP SD Consultant with German",
-    "company": "Nagarro",
-    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/senior-sap-sd-consultant-with-german-863564",
-    "posted_at": null,
-    "locations": [
-      "Romania"
-    ],
-    "primary_location": "Romania",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "Fiori / UI5",
-      "HANA / Data",
-      "SD / Sales"
-    ],
-    "skills": [
-      "S/4HANA",
-      "SAP HANA",
-      "SAP Fiori",
-      "SAP SD",
-      "English",
-      "German"
-    ],
-    "description_excerpt": "Company Description 👋🏼 We’re Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18 000+ experts across 39 countries, to be exact). Our work culture is dynamic and non-hierarchical. We’re looking for gre",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "Fiori",
-      "HANA"
-    ]
-  },
-  {
-    "id": "bdcdf485b4b53080",
-    "source": "remotefirst",
-    "title": "Senior SAP SD Consultant with German",
-    "company": "Nagarro",
-    "url": "https://remotefirstjobs.com/companies/nagarro/jobs/senior-sap-sd-consultant-with-german-863560",
-    "posted_at": null,
-    "locations": [
-      "Hungary"
-    ],
-    "primary_location": "Hungary",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "Core SAP delivery role",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "S/4HANA",
-      "Fiori / UI5",
-      "HANA / Data",
-      "SD / Sales"
-    ],
-    "skills": [
-      "S/4HANA",
-      "SAP HANA",
-      "SAP Fiori",
-      "SAP SD",
-      "English",
-      "German"
-    ],
-    "description_excerpt": "Company Description 👋🏼 We’re Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18 000+ experts across 39 countries, to be exact). Our work culture is dynamic and non-hierarchical. We’re looking for gre",
-    "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "Fiori",
-      "HANA"
     ]
   },
   {
@@ -54138,35 +54042,6 @@
     ]
   },
   {
-    "id": "230286996c49923c",
-    "source": "remotefirst",
-    "title": "Senior Integration Manager (ERP experience required) - US Based Only",
-    "company": "ReSource Pro",
-    "url": "https://remotefirstjobs.com/companies/resource-pro/jobs/senior-integration-manager-erp-experience-required-us-based-only-851118",
-    "posted_at": null,
-    "locations": [
-      "Worldwide / Not specified"
-    ],
-    "primary_location": "Worldwide / Not specified",
-    "remote": true,
-    "salary_status": "Disclosed",
-    "salary_min": 96655,
-    "salary_max": 163676,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Technical / Development",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [],
-    "description_excerpt": "Do you thrive on turning complex acquisitions into seamless, well-orchestrated integrations? Are you detail-oriented enough to track every milestone, yet flexible enough to adapt when plans change? Come Join ReSource Pro!! Your Role… As a Senior M&A Integration Manager, you will serve as the acquisition integration partner focused on ERP integrations, Accounting & Finance, Tax, and Treasury to support, supporting the",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
     "id": "2d1868e00ba0de48",
     "source": "remotefirst",
     "title": "Accountant",
@@ -55143,6 +55018,35 @@
     ]
   },
   {
+    "id": "c8784719ec7645b4",
+    "source": "remotefirst",
+    "title": "Staff MLE - Supply Chain",
+    "company": "Samsara",
+    "url": "https://remotefirstjobs.com/companies/samsara/jobs/staff-mle-supply-chain-865051",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 178640,
+    "salary_max": 319000,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Who we are Samsara (NYSE: IOT) is the pioneer of the Connected Operations™ Cloud, which is a platform that enables organizations that depend on physical operations to harness Internet of Things (IoT) data to develop actionable insights and improve their operations. At Samsara, we are helping improve the safety, efficiency and sustainability of the physical operations that power our global economy. Representing more t",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "b0119bb0f3e00515",
     "source": "remotefirst",
     "title": "Analyst, Freight Cost Auditing",
@@ -55582,6 +55486,35 @@
     "match_terms": [
       "SAP",
       "HANA"
+    ]
+  },
+  {
+    "id": "e7c527612d243969",
+    "source": "remotefirst",
+    "title": "Sr. Internal Auditor",
+    "company": "ServiceNow",
+    "url": "https://remotefirstjobs.com/companies/servicenow/jobs/sr-internal-auditor-864868",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Company Description It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company that could do that for everyone—freeing people from busywork so they could focus on meaningful work. Today, ServiceNow is the AI control tower for business reinvention. Our ServiceNow AI platform brings together any AI, any",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
@@ -57145,6 +57078,54 @@
     "description_excerpt": "About Wing: Wing offers drone delivery as a safe, fast, and sustainable solution for last mile logistics. Consumer appetites for on-demand services are increasing, but current delivery methods are inefficient, costly, and contribute to road accidents and air pollution. Wing’s fleet of highly automated delivery drones can transport small packages directly from businesses to homes on-demand, in minutes. We design, buil",
     "match_terms": [
       "SAP"
+    ]
+  },
+  {
+    "id": "6dbf5f8f04a43d5b",
+    "source": "remotefirst",
+    "title": "Senior SAP Solutions Architect",
+    "company": "Wing",
+    "url": "https://remotefirstjobs.com/companies/wing/jobs/senior-sap-solutions-architect-865072",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 140000,
+    "salary_max": 185000,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "Core SAP delivery role",
+    "role_family": "Architecture",
+    "seniority": "Senior",
+    "modules": [
+      "S/4HANA",
+      "BTP / Integration",
+      "HANA / Data",
+      "FI / CO / FICO",
+      "MM / Procurement",
+      "SD / Sales",
+      "PP / QM / Manufacturing",
+      "EWM / WM / Logistics",
+      "TM / GTS / Supply Chain"
+    ],
+    "skills": [
+      "S/4HANA",
+      "SAP HANA",
+      "IDoc",
+      "FICO",
+      "SAP MM",
+      "SAP SD",
+      "SAP PP"
+    ],
+    "description_excerpt": "About Wing: Wing offers drone delivery as a safe, fast, and sustainable solution for last mile logistics. Consumer appetites for on-demand services are increasing, but current delivery methods are inefficient, costly, and contribute to road accidents and air pollution. Wing’s fleet of highly automated delivery drones can transport small packages directly from businesses to homes on-demand, in minutes. We design, buil",
+    "match_terms": [
+      "SAP",
+      "S/4HANA",
+      "HANA",
+      "IDoc"
     ]
   },
   {
