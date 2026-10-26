@@ -47153,40 +47153,34 @@
     ]
   },
   {
-    "id": "e63f4909df440e2b",
+    "id": "1e96daa5c42625ee",
     "source": "jobicy",
-    "title": "Senior Software Developer, API Platform and Ecosystem",
-    "company": "MaintainX",
-    "url": "https://jobicy.com/jobs/153545-senior-software-developer-api-platform-and-ecosystem",
-    "posted_at": "2026-10-19T02:35:23+00:00",
+    "title": "Procurement Solutions Architect",
+    "company": "Ramp",
+    "url": "https://jobicy.com/jobs/157015-procurement-solutions-architect",
+    "posted_at": "2026-10-25T17:55:47+00:00",
     "locations": [
-      "Canada"
+      "United States"
     ],
-    "primary_location": "Canada",
+    "primary_location": "United States",
     "remote": true,
     "salary_status": "Disclosed",
-    "salary_min": 107000,
-    "salary_max": 165000,
-    "salary_currency": "CAD",
+    "salary_min": 202400,
+    "salary_max": 278300,
+    "salary_currency": "USD",
     "salary_period": "annual",
     "sap_focus": "SAP module/technical requirement",
-    "role_family": "Basis / Security",
-    "seniority": "Senior",
+    "role_family": "Architecture",
+    "seniority": "Mid / Unspecified",
     "modules": [
-      "S/4HANA",
-      "BTP / Integration",
-      "Basis / Security"
+      "MM / Procurement"
     ],
     "skills": [
-      "S/4HANA",
-      "SAP BTP",
-      "GRC / Security"
+      "Ariba"
     ],
-    "description_excerpt": "MaintainX is a leading mobile-first work execution platform for industrial and frontline teams. More than 13,000 customers , including Duracell, McDonald's, Shell, DHL and Volvo, use MaintainX to cut unplanned downtime and run better operations, across 13.9 million managed assets and 79.5 million completed work orders. In August 2026 MaintainX became part of Autodesk, joining Autodesk Operations Solutions , the organ",
+    "description_excerpt": "About Ramp Ramp is building the smart infrastructure for finance teams, embedded in the transaction flow of every dollar a business spends. We automate how over $275B in annualized spend flows in and out of 85,000+ companies: authorizing payments, flagging risk, categorizing spend, and closing books. The problems are high-stakes, data-dense, and unforgiving. We hire people with high agency and high urgency. We look f",
     "match_terms": [
-      "SAP",
-      "S/4HANA",
-      "BTP"
+      "Ariba"
     ]
   },
   {
@@ -47330,6 +47324,38 @@
     ],
     "skills": [],
     "description_excerpt": "Tines is the intelligent workflow company that powers some of the world's most important workflows. Tines has been supporting IT and security teams from a diverse range of customers, including Canva, Reddit, SAP, Coinbase, Mars, Fin (Intercom), and McKesson. Tines 3B, launched in 2026, is the next generation of Tines – a single, secure environment for every team’s apps, agents and automations. As an integrator across",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "c7b9a3a08564dc73",
+    "source": "jobicy",
+    "title": "Lead Program Manager, Finance Transformation",
+    "company": "Veeam Software",
+    "url": "https://jobicy.com/jobs/156956-lead-program-manager-finance-transformation",
+    "posted_at": "2026-10-25T10:46:39+00:00",
+    "locations": [
+      "Costa Rica"
+    ],
+    "primary_location": "Costa Rica",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Project / Program",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [
+      "Agile / Scrum",
+      "English"
+    ],
+    "description_excerpt": "Veeam is the Data and AI Trust Company, specializing in helping organizations ensure their data and AI are fully understood, secured, and resilient to enable the acceleration of safe AI at scale. As the market leader in both data resilience and data security posture management, Veeam is built for the convergence of identity, data, security, and AI risk. Headquartered in Seattle with offices in more than 30 countries,",
     "match_terms": [
       "SAP"
     ]
@@ -50359,6 +50385,35 @@
     ]
   },
   {
+    "id": "4b98af56c9cd0678",
+    "source": "remotefirst",
+    "title": "Lead Operations Demand Planning Analyst",
+    "company": "Great Minds",
+    "url": "https://remotefirstjobs.com/companies/great-minds/jobs/lead-operations-demand-planning-analyst-875736",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 94000,
+    "salary_max": 102000,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Data / Analytics",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Description Who We Are Great Minds is a high-growth, mission-driven organization founded by educators in 2007. As a for-profit, Public Benefit Corporation, we believe all students deserve access to meaningful, challenging content—and all teachers deserve tools that are intuitive, effective, and built for the realities of today’s classrooms. We develop high-quality, knowledge-rich math, science and ELA curricula groun",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "0ecf3326f824a64d",
     "source": "remotefirst",
     "title": "GL Reporting Analyst",
@@ -50667,37 +50722,6 @@
     ],
     "skills": [],
     "description_excerpt": "IDMWORKS is an award-winning identity and access management (IAM) solutions firm that has been serving a wide range of sectors since its inception in 2004. As a firm that’s purely focused on IAM, IDMWORKS offers a comprehensive range of services designed to enable enterprises to effectively manage, secure and scale employee and customer access to systems, data, and software applications. This specialized service empo",
-    "match_terms": [
-      "SAP"
-    ]
-  },
-  {
-    "id": "5285a1548ff54f6a",
-    "source": "remotefirst",
-    "title": "Program Manager",
-    "company": "Innovapptive",
-    "url": "https://remotefirstjobs.com/companies/innovapptive-inc/jobs/program-manager-852459",
-    "posted_at": null,
-    "locations": [
-      "Worldwide / Not specified"
-    ],
-    "primary_location": "Worldwide / Not specified",
-    "remote": true,
-    "salary_status": "Not disclosed",
-    "salary_min": null,
-    "salary_max": null,
-    "salary_currency": null,
-    "salary_period": null,
-    "sap_focus": "SAP mentioned",
-    "role_family": "Project / Program",
-    "seniority": "Lead / Manager",
-    "modules": [
-      "Unspecified SAP"
-    ],
-    "skills": [
-      "Agile / Scrum"
-    ],
-    "description_excerpt": "Program Manager Location: Remote, USA or Remote, CA Travel Percentage:25% - 40% Employment Type: Full-Time; Salaried Reports To: EVP of Digital Transformation Compensation: Base Salary, Bonus, Stock Options, 401k, Medical, etc. Job Description About Us Innovapptive is a global leader for industrial connected worker solutions that brings front-line workers, back-office and assets together. The company uniquely unlocks",
     "match_terms": [
       "SAP"
     ]
@@ -56926,6 +56950,38 @@
     ]
   },
   {
+    "id": "b802c4dec8ec21aa",
+    "source": "remotefirst",
+    "title": "Transportation Coordinator, Temporary (6 Months)",
+    "company": "SMA America",
+    "url": "https://remotefirstjobs.com/companies/sma-america/jobs/transportation-coordinator-temporary-6-months-875560",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 52000,
+    "salary_max": 52000,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP module/technical requirement",
+    "role_family": "Basis / Security",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "Basis / Security",
+      "TM / GTS / Supply Chain"
+    ],
+    "skills": [
+      "GRC / Security"
+    ],
+    "description_excerpt": "Why Work at SMA America Power the future. Build your career at SMA America. As the U.S. subsidiary of SMA Solar Technology AG, we have been at the forefront of solar inverter technology since 1981, developing solutions that make photovoltaic power plants simpler, more reliable, safer, and more cost effective. Headquartered in Rocklin, California, SMA America has spent more than two decades helping homes, businesses, ",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "3fa9ff0561db8d16",
     "source": "remotefirst",
     "title": "Information System Security Officer (ISSO) – Intermediate (5756)",
@@ -57322,6 +57378,64 @@
     ]
   },
   {
+    "id": "44f179c0fbe324a2",
+    "source": "remotefirst",
+    "title": "Senior Auditor – Business & IT Operations",
+    "company": "ServiceNow",
+    "url": "https://remotefirstjobs.com/companies/servicenow/jobs/senior-auditor-business-it-operations-875691",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Company Description It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company that could do that for everyone—freeing people from busywork so they could focus on meaningful work. Today, ServiceNow is the AI control tower for business reinvention. Our ServiceNow AI platform brings together any AI, any",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
+    "id": "5b6187bbdf7bcd48",
+    "source": "remotefirst",
+    "title": "Senior Auditor – Business & IT Operations",
+    "company": "ServiceNow",
+    "url": "https://remotefirstjobs.com/companies/servicenow/jobs/senior-auditor-business-it-operations-875687",
+    "posted_at": null,
+    "locations": [
+      "United States"
+    ],
+    "primary_location": "United States",
+    "remote": true,
+    "salary_status": "Not disclosed",
+    "salary_min": null,
+    "salary_max": null,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP mentioned",
+    "role_family": "Technical / Development",
+    "seniority": "Lead / Manager",
+    "modules": [
+      "Unspecified SAP"
+    ],
+    "skills": [],
+    "description_excerpt": "Company Description It all started when engineer Fred Luddy wrote code that automated a tedious task for his coworker, Phyllis. She cried tears of joy. That moment inspired Fred to build a company that could do that for everyone—freeing people from busywork so they could focus on meaningful work. Today, ServiceNow is the AI control tower for business reinvention. Our ServiceNow AI platform brings together any AI, any",
+    "match_terms": [
+      "SAP"
+    ]
+  },
+  {
     "id": "c42ab32278e4c6e3",
     "source": "remotefirst",
     "title": "Staff Accountant",
@@ -57696,6 +57810,36 @@
       "S/4HANA",
       "Ariba",
       "HANA"
+    ]
+  },
+  {
+    "id": "b0a1585d03c8963f",
+    "source": "remotefirst",
+    "title": "Temporary Transportation & Trade Compliance Coordinator",
+    "company": "Sol de Janeiro",
+    "url": "https://remotefirstjobs.com/companies/sol-de-janeiro/jobs/temporary-transportation-trade-compliance-coordinator-875539",
+    "posted_at": null,
+    "locations": [
+      "Worldwide / Not specified"
+    ],
+    "primary_location": "Worldwide / Not specified",
+    "remote": true,
+    "salary_status": "Disclosed",
+    "salary_min": 62400,
+    "salary_max": 72800,
+    "salary_currency": null,
+    "salary_period": null,
+    "sap_focus": "SAP module/technical requirement",
+    "role_family": "Functional Consulting",
+    "seniority": "Mid / Unspecified",
+    "modules": [
+      "EWM / WM / Logistics",
+      "TM / GTS / Supply Chain"
+    ],
+    "skills": [],
+    "description_excerpt": "Our Story Launched in 2015, Solde Janeiro is a globally recognized, award-winning beauty brand, drawing inspiration from Brazil’s beauty rituals, warmth, and spirit. Solde Janeirodelivers a sensory experience beloved by multi-generational consumers worldwide, with clinically proven results, transformative textures, and transportive fragrances. Headquartered in New York and launched as a digitally native brand, we hav",
+    "match_terms": [
+      "SAP"
     ]
   },
   {
