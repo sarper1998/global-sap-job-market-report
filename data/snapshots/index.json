@@ -2381,7 +2381,7 @@
   },
   {
     "date": "2026-11-05",
-    "generated_at": "2026-11-05T07:36:29",
+    "generated_at": "2026-11-05T06:19:02",
     "sap_jobs_after_filter": 1835,
     "linkedin_global_count": 371000,
     "linkedin_global_count_text": "371,000+",
@@ -2405,7 +2405,35 @@
       "Germany": 158,
       "Mexico": 82,
       "Worldwide / Not specified": 76
+    }
+  },
+  {
+    "date": "2026-11-06",
+    "generated_at": "2026-11-06T07:37:59",
+    "sap_jobs_after_filter": 1852,
+    "linkedin_global_count": 371000,
+    "linkedin_global_count_text": "371,000+",
+    "linkedin_jobs_collected": 492904,
+    "linkedin_guest_searches": 13109,
+    "salary_disclosure": {
+      "Not disclosed": 1378,
+      "Disclosed": 465,
+      "Mentioned in text": 9
     },
-    "company_career_jobs_collected": 4563
+    "top_modules": {
+      "Unspecified SAP": 624,
+      "S/4HANA": 595,
+      "BTP / Integration": 321,
+      "ABAP / Development": 262,
+      "HCM / SuccessFactors": 259
+    },
+    "top_locations": {
+      "United States": 539,
+      "India": 183,
+      "Germany": 154,
+      "Mexico": 79,
+      "Worldwide / Not specified": 73
+    },
+    "company_career_jobs_collected": 4585
   }
 ]
